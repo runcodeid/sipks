@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>City:</strong>
+  <%= @action_plan.city %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @action_plan.year %>
+</p>
+
+<p>
+  <strong>Code action plans:</strong>
+  <%= @action_plan.code_action_plans %>
+</p>
+
+<p>
+  <strong>Action plan:</strong>
+  <%= @action_plan.action_plan %>
+</p>
+
+<%= link_to 'Edit', edit_action_plan_path(@action_plan) %> |
+<%= link_to 'Back', action_plans_path %>

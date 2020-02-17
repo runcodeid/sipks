@@ -1,0 +1,74 @@
+
+# Set docker-compose version
+version: '3'
+volumes:  
+  mysql_data: {} 
+services:
+  mysql:
+    ports:
+      - "3307:3306"
+    command: "--explicit_defaults_for_timestamp"
+    volumes:      
+      - mysql_data:/var/lib/mysql/data
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    image: mariadb:latest
+
+  redis:
+    ports:
+      - "6379:6379"
+    links:
+      - mysql
+    image: redis:5.0-rc
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    links:
+      - mysql
+    ports:
+      - "8080:80"
+    environment:
+      MYSQL_USERNAME: "root"
+      PMA_HOST: mysql
+
+  web:
+    build: 
+      context: .
+    ports:
+      - "3000:3000"
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - .:/sipks
+    depends_on:
+      - mysql
+      - redis
+      # - elasticsearch
+
+  solar:
+    build: .
+    image: sourcegraph/codeintel-ruby
+    command: 'bundle exec solargraph socket --host=0.0.0.0 --port=7658'
+    working_dir: /sipks
+    volumes:
+      - .:/sipks
+    ports:
+      - "7658:7658"
+    
+  # elasticsearch:
+  #   image: docker.elastic.co/elasticsearch/elasticsearch:6.4.2
+  #   environment:
+  #     - cluster.name=docker-cluster
+  #     - bootstrap.memory_lock=true
+  #     - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+  #   volumes:
+  #     - ./docker_data/elasticsearch/data:/usr/share/elasticsearch/data
+  #   ports:
+  #     - 9200:9200
+
+
+# Environment variables that allow my app to find other services
+    # environment:
+    #   REDISTOGO_URL: "redis://redis:6379"
+      # POSTGRES_USER: postgres
+      # POSTGRES_HOST: postgres
+      # ELASTICSEARCH_URL: "http://elasticsearch:9200"

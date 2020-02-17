@@ -1,0 +1,22 @@
+<%= form_with(model: b_eight, local: true) do |form| %>
+  <% if b_eight.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(b_eight.errors.count, "error") %> prohibited this b_eight from being saved:</h2>
+
+      <ul>
+      <% b_eight.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :action_plan_id %>
+    <%= form.text_field :action_plan_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
