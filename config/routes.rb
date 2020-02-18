@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :b_eights
     resources :b_twelves
   end
+
   
   resources :cities
   resources :years
