@@ -31,11 +31,43 @@
       <% end %>
       </ul>
     </div>
+
   <% end %>
 
-  <div class="field">
-    <%= form.label :action_plan_id %>
-    <%= form.text_field :action_plan_id %>
+  <div class="form-group"> 
+    <%= form.label :daftar_hadir %>
+    <%= form.file_field :daftar_hadir, class: "form-control" %>
+  </div>
+
+  <div class="form-group"> 
+    <%= form.label :foto_atau_materi %>
+    <%= form.file_field :foto_atau_materi, class: "form-control" %>
+  </div>
+
+
+  <div class="form-group"> 
+    <%= form.label :foto_kegiatan %>
+    <%= form.file_field :foto_kegiatan, class: "form-control" %>
+  </div>
+
+  <div class="form-group"> 
+    <%= form.label :materi %>
+    <%= form.file_field :materi, class: "form-control" %>
+  </div>
+
+  <div class="form-group"> 
+    <%= form.label :notulen %>
+    <%= form.file_field :notulen, class: "form-control" %>
+  </div>
+
+  <div class="form-group"> 
+    <%= form.label :scan_document %>
+    <%= form.file_field :scan_document, class: "form-control" %>
+  </div>
+
+  <div class="form-group"> 
+    <%= form.label :scan_document_ttd %>
+    <%= form.file_field :scan_document_ttd, class: "form-control" %>
   </div>
 
   <div class="actions">
@@ -61,6 +93,7 @@
     <%= form.label :action_plan_id %>
     <%= form.text_field :action_plan_id %>
   </div>
+  
 
   <div class="actions">
     <%= form.submit %>
