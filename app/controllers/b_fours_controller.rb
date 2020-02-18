@@ -64,7 +64,7 @@ class BFoursController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_b_four
-      @b_four = BFour.find(params[:id])
+      @b_four = BFour.friendly.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

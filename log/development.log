@@ -717,3 +717,1781 @@ app/models/user.rb:49:in `<class:User>'
 app/models/user.rb:46:in `<top (required)>'
 config/routes.rb:4:in `block in <top (required)>'
 config/routes.rb:1:in `<top (required)>'
+Started GET "/" for 172.23.0.1 at 2020-02-18 14:33:44 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+Mysql2::Error::ConnectionError (Can't connect to MySQL server on 'mysql' (111 "Connection refused")):
+  
+mysql2 (0.5.3) lib/mysql2/client.rb:90:in `connect'
+mysql2 (0.5.3) lib/mysql2/client.rb:90:in `initialize'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/mysql2_adapter.rb:22:in `new'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/mysql2_adapter.rb:22:in `mysql2_connection'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:830:in `new_connection'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:874:in `checkout_new_connection'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:853:in `try_to_checkout_new_connection'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:814:in `acquire_connection'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:538:in `checkout'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:382:in `connection'
+activerecord (5.2.4.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:1033:in `retrieve_connection'
+activerecord (5.2.4.1) lib/active_record/connection_handling.rb:118:in `retrieve_connection'
+activerecord (5.2.4.1) lib/active_record/connection_handling.rb:90:in `connection'
+activerecord (5.2.4.1) lib/active_record/migration.rb:554:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/bundle/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE `sipks_development` DEFAULT CHARACTER SET `utf8`[0m
+  ↳ /usr/local/bundle/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/bundle/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE `sipks_test` DEFAULT CHARACTER SET `utf8`[0m
+  ↳ /usr/local/bundle/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:4
+  [1m[35m (210.3ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:4
+  [1m[35m (187.2ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('2127749988788325090', 0)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateYears (20200215083947)
+  [1m[35m (418.1ms)[0m  [1m[35mCREATE TABLE `years` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `year` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200215083947_create_years.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215083947')[0m
+  ↳ bin/rails:4
+  [1m[35m (34.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateCities (20200215084003)
+  [1m[35m (210.7ms)[0m  [1m[35mCREATE TABLE `cities` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `city` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200215084003_create_cities.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215084003')[0m
+  ↳ bin/rails:4
+  [1m[35m (63.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddSlugToYears (20200215084412)
+  [1m[35m (66.3ms)[0m  [1m[35mALTER TABLE `years` ADD `slug` varchar(255)[0m
+  ↳ db/migrate/20200215084412_add_slug_to_years.rb:3
+  [1m[35m (188.3ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_years_on_slug`  ON `years` (`slug`) [0m
+  ↳ db/migrate/20200215084412_add_slug_to_years.rb:4
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215084412')[0m
+  ↳ bin/rails:4
+  [1m[35m (43.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddSlugToCities (20200215084423)
+  [1m[35m (78.1ms)[0m  [1m[35mALTER TABLE `cities` ADD `slug` varchar(255)[0m
+  ↳ db/migrate/20200215084423_add_slug_to_cities.rb:3
+  [1m[35m (220.6ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_cities_on_slug`  ON `cities` (`slug`) [0m
+  ↳ db/migrate/20200215084423_add_slug_to_cities.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215084423')[0m
+  ↳ bin/rails:4
+  [1m[35m (31.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateActionPlans (20200215084537)
+  [1m[35m (231.8ms)[0m  [1m[35mCREATE TABLE `action_plans` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `city_id` bigint, `year_id` bigint, `code_action_plans` varchar(255), `action_plan` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_action_plans_on_city_id`  (`city_id`),  INDEX `index_action_plans_on_year_id`  (`year_id`), CONSTRAINT `fk_rails_79821d3c70`
+FOREIGN KEY (`city_id`)
+  REFERENCES `cities` (`id`)
+, CONSTRAINT `fk_rails_cf1ede9f09`
+FOREIGN KEY (`year_id`)
+  REFERENCES `years` (`id`)
+)[0m
+  ↳ db/migrate/20200215084537_create_action_plans.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215084537')[0m
+  ↳ bin/rails:4
+  [1m[35m (31.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddSlugToActionPlans (20200215084626)
+  [1m[35m (77.6ms)[0m  [1m[35mALTER TABLE `action_plans` ADD `slug` varchar(255)[0m
+  ↳ db/migrate/20200215084626_add_slug_to_action_plans.rb:3
+  [1m[35m (188.2ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_action_plans_on_slug`  ON `action_plans` (`slug`) [0m
+  ↳ db/migrate/20200215084626_add_slug_to_action_plans.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215084626')[0m
+  ↳ bin/rails:4
+  [1m[35m (31.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateBFours (20200215084854)
+  [1m[35m (210.0ms)[0m  [1m[35mCREATE TABLE `b_fours` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `action_plan_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_b_fours_on_action_plan_id`  (`action_plan_id`), CONSTRAINT `fk_rails_ae2c3509e4`
+FOREIGN KEY (`action_plan_id`)
+  REFERENCES `action_plans` (`id`)
+)[0m
+  ↳ db/migrate/20200215084854_create_b_fours.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215084854')[0m
+  ↳ bin/rails:4
+  [1m[35m (31.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddAttachmentNotulenToBFours (20200215085005)
+  [1m[35m (98.5ms)[0m  [1m[35mALTER TABLE `b_fours` ADD `notulen_file_name` varchar(255)[0m
+  ↳ db/migrate/20200215085005_add_attachment_notulen_to_b_fours.rb:4
+  [1m[35m (66.6ms)[0m  [1m[35mALTER TABLE `b_fours` ADD `notulen_content_type` varchar(255)[0m
+  ↳ db/migrate/20200215085005_add_attachment_notulen_to_b_fours.rb:4
+  [1m[35m (66.7ms)[0m  [1m[35mALTER TABLE `b_fours` ADD `notulen_file_size` int[0m
+  ↳ db/migrate/20200215085005_add_attachment_notulen_to_b_fours.rb:4
+  [1m[35m (66.8ms)[0m  [1m[35mALTER TABLE `b_fours` ADD `notulen_updated_at` datetime[0m
+  ↳ db/migrate/20200215085005_add_attachment_notulen_to_b_fours.rb:4
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215085005')[0m
+  ↳ bin/rails:4
+  [1m[35m (31.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddAttachmentDaftarHadirToBFours (20200215085052)
+  [1m[35m (65.2ms)[0m  [1m[35mALTER TABLE `b_fours` ADD `daftar_hadir_file_name` varchar(255)[0m
+  ↳ db/migrate/20200215085052_add_attachment_daftar_hadir_to_b_fours.rb:4
+  [1m[35m (66.8ms)[0m  [1m[35mALTER TABLE `b_fours` ADD `daftar_hadir_content_type` varchar(255)[0m
+  ↳ db/migrate/20200215085052_add_attachment_daftar_hadir_to_b_fours.rb:4
+  [1m[35m (66.7ms)[0m  [1m[35mALTER TABLE `b_fours` ADD `daftar_hadir_file_size` int[0m
+  ↳ db/migrate/20200215085052_add_attachment_daftar_hadir_to_b_fours.rb:4
+  [1m[35m (66.9ms)[0m  [1m[35mALTER TABLE `b_fours` ADD `daftar_hadir_updated_at` datetime[0m
+  ↳ db/migrate/20200215085052_add_attachment_daftar_hadir_to_b_fours.rb:4
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215085052')[0m
+  ↳ bin/rails:4
+  [1m[35m (43.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddAttachmentFotoKegiatanToBFours (20200215085100)
+  [1m[35m (76.6ms)[0m  [1m[35mALTER TABLE `b_fours` ADD `foto_kegiatan_file_name` varchar(255)[0m
+  ↳ db/migrate/20200215085100_add_attachment_foto_kegiatan_to_b_fours.rb:4
+  [1m[35m (66.7ms)[0m  [1m[35mALTER TABLE `b_fours` ADD `foto_kegiatan_content_type` varchar(255)[0m
+  ↳ db/migrate/20200215085100_add_attachment_foto_kegiatan_to_b_fours.rb:4
+  [1m[35m (77.4ms)[0m  [1m[35mALTER TABLE `b_fours` ADD `foto_kegiatan_file_size` int[0m
+  ↳ db/migrate/20200215085100_add_attachment_foto_kegiatan_to_b_fours.rb:4
+  [1m[35m (133.0ms)[0m  [1m[35mALTER TABLE `b_fours` ADD `foto_kegiatan_updated_at` datetime[0m
+  ↳ db/migrate/20200215085100_add_attachment_foto_kegiatan_to_b_fours.rb:4
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215085100')[0m
+  ↳ bin/rails:4
+  [1m[35m (54.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddAttachmentMateriToBFours (20200215085108)
+  [1m[35m (99.5ms)[0m  [1m[35mALTER TABLE `b_fours` ADD `materi_file_name` varchar(255)[0m
+  ↳ db/migrate/20200215085108_add_attachment_materi_to_b_fours.rb:4
+  [1m[35m (77.8ms)[0m  [1m[35mALTER TABLE `b_fours` ADD `materi_content_type` varchar(255)[0m
+  ↳ db/migrate/20200215085108_add_attachment_materi_to_b_fours.rb:4
+  [1m[35m (77.9ms)[0m  [1m[35mALTER TABLE `b_fours` ADD `materi_file_size` int[0m
+  ↳ db/migrate/20200215085108_add_attachment_materi_to_b_fours.rb:4
+  [1m[35m (66.8ms)[0m  [1m[35mALTER TABLE `b_fours` ADD `materi_updated_at` datetime[0m
+  ↳ db/migrate/20200215085108_add_attachment_materi_to_b_fours.rb:4
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215085108')[0m
+  ↳ bin/rails:4
+  [1m[35m (31.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddAttachmentScanDocumentToBFours (20200215085118)
+  [1m[35m (77.2ms)[0m  [1m[35mALTER TABLE `b_fours` ADD `scan_document_file_name` varchar(255)[0m
+  ↳ db/migrate/20200215085118_add_attachment_scan_document_to_b_fours.rb:4
+  [1m[35m (66.7ms)[0m  [1m[35mALTER TABLE `b_fours` ADD `scan_document_content_type` varchar(255)[0m
+  ↳ db/migrate/20200215085118_add_attachment_scan_document_to_b_fours.rb:4
+  [1m[35m (66.8ms)[0m  [1m[35mALTER TABLE `b_fours` ADD `scan_document_file_size` int[0m
+  ↳ db/migrate/20200215085118_add_attachment_scan_document_to_b_fours.rb:4
+  [1m[35m (66.7ms)[0m  [1m[35mALTER TABLE `b_fours` ADD `scan_document_updated_at` datetime[0m
+  ↳ db/migrate/20200215085118_add_attachment_scan_document_to_b_fours.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215085118')[0m
+  ↳ bin/rails:4
+  [1m[35m (31.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddAttachmentScanDocumentTtdToBFours (20200215085125)
+  [1m[35m (66.2ms)[0m  [1m[35mALTER TABLE `b_fours` ADD `scan_document_ttd_file_name` varchar(255)[0m
+  ↳ db/migrate/20200215085125_add_attachment_scan_document_ttd_to_b_fours.rb:4
+  [1m[35m (66.6ms)[0m  [1m[35mALTER TABLE `b_fours` ADD `scan_document_ttd_content_type` varchar(255)[0m
+  ↳ db/migrate/20200215085125_add_attachment_scan_document_ttd_to_b_fours.rb:4
+  [1m[35m (66.8ms)[0m  [1m[35mALTER TABLE `b_fours` ADD `scan_document_ttd_file_size` int[0m
+  ↳ db/migrate/20200215085125_add_attachment_scan_document_ttd_to_b_fours.rb:4
+  [1m[35m (66.6ms)[0m  [1m[35mALTER TABLE `b_fours` ADD `scan_document_ttd_updated_at` datetime[0m
+  ↳ db/migrate/20200215085125_add_attachment_scan_document_ttd_to_b_fours.rb:4
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215085125')[0m
+  ↳ bin/rails:4
+  [1m[35m (42.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddAttachmentFotoAtauMateriToBFours (20200215085134)
+  [1m[35m (122.1ms)[0m  [1m[35mALTER TABLE `b_fours` ADD `foto_atau_materi_file_name` varchar(255)[0m
+  ↳ db/migrate/20200215085134_add_attachment_foto_atau_materi_to_b_fours.rb:4
+  [1m[35m (99.9ms)[0m  [1m[35mALTER TABLE `b_fours` ADD `foto_atau_materi_content_type` varchar(255)[0m
+  ↳ db/migrate/20200215085134_add_attachment_foto_atau_materi_to_b_fours.rb:4
+  [1m[35m (66.7ms)[0m  [1m[35mALTER TABLE `b_fours` ADD `foto_atau_materi_file_size` int[0m
+  ↳ db/migrate/20200215085134_add_attachment_foto_atau_materi_to_b_fours.rb:4
+  [1m[35m (68.8ms)[0m  [1m[35mALTER TABLE `b_fours` ADD `foto_atau_materi_updated_at` datetime[0m
+  ↳ db/migrate/20200215085134_add_attachment_foto_atau_materi_to_b_fours.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215085134')[0m
+  ↳ bin/rails:4
+  [1m[35m (31.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateBEights (20200215103907)
+  [1m[35m (208.3ms)[0m  [1m[35mCREATE TABLE `b_eights` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `action_plan_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_b_eights_on_action_plan_id`  (`action_plan_id`), CONSTRAINT `fk_rails_588874d435`
+FOREIGN KEY (`action_plan_id`)
+  REFERENCES `action_plans` (`id`)
+)[0m
+  ↳ db/migrate/20200215103907_create_b_eights.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215103907')[0m
+  ↳ bin/rails:4
+  [1m[35m (30.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddAttachmentNotulenToBEights (20200215103923)
+  [1m[35m (65.7ms)[0m  [1m[35mALTER TABLE `b_eights` ADD `notulen_file_name` varchar(255)[0m
+  ↳ db/migrate/20200215103923_add_attachment_notulen_to_b_eights.rb:4
+  [1m[35m (66.6ms)[0m  [1m[35mALTER TABLE `b_eights` ADD `notulen_content_type` varchar(255)[0m
+  ↳ db/migrate/20200215103923_add_attachment_notulen_to_b_eights.rb:4
+  [1m[35m (66.8ms)[0m  [1m[35mALTER TABLE `b_eights` ADD `notulen_file_size` int[0m
+  ↳ db/migrate/20200215103923_add_attachment_notulen_to_b_eights.rb:4
+  [1m[35m (66.7ms)[0m  [1m[35mALTER TABLE `b_eights` ADD `notulen_updated_at` datetime[0m
+  ↳ db/migrate/20200215103923_add_attachment_notulen_to_b_eights.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215103923')[0m
+  ↳ bin/rails:4
+  [1m[35m (31.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddAttachmentDaftarHadirToBEights (20200215103938)
+  [1m[35m (65.4ms)[0m  [1m[35mALTER TABLE `b_eights` ADD `daftar_hadir_file_name` varchar(255)[0m
+  ↳ db/migrate/20200215103938_add_attachment_daftar_hadir_to_b_eights.rb:4
+  [1m[35m (66.4ms)[0m  [1m[35mALTER TABLE `b_eights` ADD `daftar_hadir_content_type` varchar(255)[0m
+  ↳ db/migrate/20200215103938_add_attachment_daftar_hadir_to_b_eights.rb:4
+  [1m[35m (66.5ms)[0m  [1m[35mALTER TABLE `b_eights` ADD `daftar_hadir_file_size` int[0m
+  ↳ db/migrate/20200215103938_add_attachment_daftar_hadir_to_b_eights.rb:4
+  [1m[35m (100.4ms)[0m  [1m[35mALTER TABLE `b_eights` ADD `daftar_hadir_updated_at` datetime[0m
+  ↳ db/migrate/20200215103938_add_attachment_daftar_hadir_to_b_eights.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215103938')[0m
+  ↳ bin/rails:4
+  [1m[35m (42.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddAttachmentFotoKegiatanToBEights (20200215104000)
+  [1m[35m (65.8ms)[0m  [1m[35mALTER TABLE `b_eights` ADD `foto_kegiatan_file_name` varchar(255)[0m
+  ↳ db/migrate/20200215104000_add_attachment_foto_kegiatan_to_b_eights.rb:4
+  [1m[35m (66.4ms)[0m  [1m[35mALTER TABLE `b_eights` ADD `foto_kegiatan_content_type` varchar(255)[0m
+  ↳ db/migrate/20200215104000_add_attachment_foto_kegiatan_to_b_eights.rb:4
+  [1m[35m (78.0ms)[0m  [1m[35mALTER TABLE `b_eights` ADD `foto_kegiatan_file_size` int[0m
+  ↳ db/migrate/20200215104000_add_attachment_foto_kegiatan_to_b_eights.rb:4
+  [1m[35m (77.7ms)[0m  [1m[35mALTER TABLE `b_eights` ADD `foto_kegiatan_updated_at` datetime[0m
+  ↳ db/migrate/20200215104000_add_attachment_foto_kegiatan_to_b_eights.rb:4
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215104000')[0m
+  ↳ bin/rails:4
+  [1m[35m (31.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddAttachmentMateriToBEights (20200215104011)
+  [1m[35m (65.2ms)[0m  [1m[35mALTER TABLE `b_eights` ADD `materi_file_name` varchar(255)[0m
+  ↳ db/migrate/20200215104011_add_attachment_materi_to_b_eights.rb:4
+  [1m[35m (111.7ms)[0m  [1m[35mALTER TABLE `b_eights` ADD `materi_content_type` varchar(255)[0m
+  ↳ db/migrate/20200215104011_add_attachment_materi_to_b_eights.rb:4
+  [1m[35m (200.3ms)[0m  [1m[35mALTER TABLE `b_eights` ADD `materi_file_size` int[0m
+  ↳ db/migrate/20200215104011_add_attachment_materi_to_b_eights.rb:4
+  [1m[35m (66.8ms)[0m  [1m[35mALTER TABLE `b_eights` ADD `materi_updated_at` datetime[0m
+  ↳ db/migrate/20200215104011_add_attachment_materi_to_b_eights.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215104011')[0m
+  ↳ bin/rails:4
+  [1m[35m (33.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddAttachmentScanDocumentToBEights (20200215104031)
+  [1m[35m (76.6ms)[0m  [1m[35mALTER TABLE `b_eights` ADD `scan_document_file_name` varchar(255)[0m
+  ↳ db/migrate/20200215104031_add_attachment_scan_document_to_b_eights.rb:4
+  [1m[35m (66.5ms)[0m  [1m[35mALTER TABLE `b_eights` ADD `scan_document_content_type` varchar(255)[0m
+  ↳ db/migrate/20200215104031_add_attachment_scan_document_to_b_eights.rb:4
+  [1m[35m (66.8ms)[0m  [1m[35mALTER TABLE `b_eights` ADD `scan_document_file_size` int[0m
+  ↳ db/migrate/20200215104031_add_attachment_scan_document_to_b_eights.rb:4
+  [1m[35m (66.7ms)[0m  [1m[35mALTER TABLE `b_eights` ADD `scan_document_updated_at` datetime[0m
+  ↳ db/migrate/20200215104031_add_attachment_scan_document_to_b_eights.rb:4
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215104031')[0m
+  ↳ bin/rails:4
+  [1m[35m (31.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddAttachmentScanDocumentTtdToBEights (20200215104049)
+  [1m[35m (76.0ms)[0m  [1m[35mALTER TABLE `b_eights` ADD `scan_document_ttd_file_name` varchar(255)[0m
+  ↳ db/migrate/20200215104049_add_attachment_scan_document_ttd_to_b_eights.rb:4
+  [1m[35m (66.7ms)[0m  [1m[35mALTER TABLE `b_eights` ADD `scan_document_ttd_content_type` varchar(255)[0m
+  ↳ db/migrate/20200215104049_add_attachment_scan_document_ttd_to_b_eights.rb:4
+  [1m[35m (66.7ms)[0m  [1m[35mALTER TABLE `b_eights` ADD `scan_document_ttd_file_size` int[0m
+  ↳ db/migrate/20200215104049_add_attachment_scan_document_ttd_to_b_eights.rb:4
+  [1m[35m (122.7ms)[0m  [1m[35mALTER TABLE `b_eights` ADD `scan_document_ttd_updated_at` datetime[0m
+  ↳ db/migrate/20200215104049_add_attachment_scan_document_ttd_to_b_eights.rb:4
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215104049')[0m
+  ↳ bin/rails:4
+  [1m[35m (41.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddAttachmentFotoAtauMateriToBEights (20200215104100)
+  [1m[35m (65.9ms)[0m  [1m[35mALTER TABLE `b_eights` ADD `foto_atau_materi_file_name` varchar(255)[0m
+  ↳ db/migrate/20200215104100_add_attachment_foto_atau_materi_to_b_eights.rb:4
+  [1m[35m (77.7ms)[0m  [1m[35mALTER TABLE `b_eights` ADD `foto_atau_materi_content_type` varchar(255)[0m
+  ↳ db/migrate/20200215104100_add_attachment_foto_atau_materi_to_b_eights.rb:4
+  [1m[35m (77.7ms)[0m  [1m[35mALTER TABLE `b_eights` ADD `foto_atau_materi_file_size` int[0m
+  ↳ db/migrate/20200215104100_add_attachment_foto_atau_materi_to_b_eights.rb:4
+  [1m[35m (66.8ms)[0m  [1m[35mALTER TABLE `b_eights` ADD `foto_atau_materi_updated_at` datetime[0m
+  ↳ db/migrate/20200215104100_add_attachment_foto_atau_materi_to_b_eights.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215104100')[0m
+  ↳ bin/rails:4
+  [1m[35m (31.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateBTwelves (20200215104139)
+  [1m[35m (242.1ms)[0m  [1m[35mCREATE TABLE `b_twelves` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `action_plan_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_b_twelves_on_action_plan_id`  (`action_plan_id`), CONSTRAINT `fk_rails_ea175ca362`
+FOREIGN KEY (`action_plan_id`)
+  REFERENCES `action_plans` (`id`)
+)[0m
+  ↳ db/migrate/20200215104139_create_b_twelves.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215104139')[0m
+  ↳ bin/rails:4
+  [1m[35m (31.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddAttachmentNotulenToBTwelves (20200215104155)
+  [1m[35m (76.3ms)[0m  [1m[35mALTER TABLE `b_twelves` ADD `notulen_file_name` varchar(255)[0m
+  ↳ db/migrate/20200215104155_add_attachment_notulen_to_b_twelves.rb:4
+  [1m[35m (75.0ms)[0m  [1m[35mALTER TABLE `b_twelves` ADD `notulen_content_type` varchar(255)[0m
+  ↳ db/migrate/20200215104155_add_attachment_notulen_to_b_twelves.rb:4
+  [1m[35m (69.9ms)[0m  [1m[35mALTER TABLE `b_twelves` ADD `notulen_file_size` int[0m
+  ↳ db/migrate/20200215104155_add_attachment_notulen_to_b_twelves.rb:4
+  [1m[35m (66.7ms)[0m  [1m[35mALTER TABLE `b_twelves` ADD `notulen_updated_at` datetime[0m
+  ↳ db/migrate/20200215104155_add_attachment_notulen_to_b_twelves.rb:4
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215104155')[0m
+  ↳ bin/rails:4
+  [1m[35m (21.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddAttachmentDaftarHadirToBTwelves (20200215104216)
+  [1m[35m (77.3ms)[0m  [1m[35mALTER TABLE `b_twelves` ADD `daftar_hadir_file_name` varchar(255)[0m
+  ↳ db/migrate/20200215104216_add_attachment_daftar_hadir_to_b_twelves.rb:4
+  [1m[35m (66.8ms)[0m  [1m[35mALTER TABLE `b_twelves` ADD `daftar_hadir_content_type` varchar(255)[0m
+  ↳ db/migrate/20200215104216_add_attachment_daftar_hadir_to_b_twelves.rb:4
+  [1m[35m (77.8ms)[0m  [1m[35mALTER TABLE `b_twelves` ADD `daftar_hadir_file_size` int[0m
+  ↳ db/migrate/20200215104216_add_attachment_daftar_hadir_to_b_twelves.rb:4
+  [1m[35m (66.9ms)[0m  [1m[35mALTER TABLE `b_twelves` ADD `daftar_hadir_updated_at` datetime[0m
+  ↳ db/migrate/20200215104216_add_attachment_daftar_hadir_to_b_twelves.rb:4
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215104216')[0m
+  ↳ bin/rails:4
+  [1m[35m (42.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddAttachmentFotoKegiatanToBTwelves (20200215104237)
+  [1m[35m (77.0ms)[0m  [1m[35mALTER TABLE `b_twelves` ADD `foto_kegiatan_file_name` varchar(255)[0m
+  ↳ db/migrate/20200215104237_add_attachment_foto_kegiatan_to_b_twelves.rb:4
+  [1m[35m (55.6ms)[0m  [1m[35mALTER TABLE `b_twelves` ADD `foto_kegiatan_content_type` varchar(255)[0m
+  ↳ db/migrate/20200215104237_add_attachment_foto_kegiatan_to_b_twelves.rb:4
+  [1m[35m (66.8ms)[0m  [1m[35mALTER TABLE `b_twelves` ADD `foto_kegiatan_file_size` int[0m
+  ↳ db/migrate/20200215104237_add_attachment_foto_kegiatan_to_b_twelves.rb:4
+  [1m[35m (111.3ms)[0m  [1m[35mALTER TABLE `b_twelves` ADD `foto_kegiatan_updated_at` datetime[0m
+  ↳ db/migrate/20200215104237_add_attachment_foto_kegiatan_to_b_twelves.rb:4
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215104237')[0m
+  ↳ bin/rails:4
+  [1m[35m (31.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddAttachmentMateriToBTwelves (20200215104244)
+  [1m[35m (76.1ms)[0m  [1m[35mALTER TABLE `b_twelves` ADD `materi_file_name` varchar(255)[0m
+  ↳ db/migrate/20200215104244_add_attachment_materi_to_b_twelves.rb:4
+  [1m[35m (66.7ms)[0m  [1m[35mALTER TABLE `b_twelves` ADD `materi_content_type` varchar(255)[0m
+  ↳ db/migrate/20200215104244_add_attachment_materi_to_b_twelves.rb:4
+  [1m[35m (66.7ms)[0m  [1m[35mALTER TABLE `b_twelves` ADD `materi_file_size` int[0m
+  ↳ db/migrate/20200215104244_add_attachment_materi_to_b_twelves.rb:4
+  [1m[35m (66.8ms)[0m  [1m[35mALTER TABLE `b_twelves` ADD `materi_updated_at` datetime[0m
+  ↳ db/migrate/20200215104244_add_attachment_materi_to_b_twelves.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215104244')[0m
+  ↳ bin/rails:4
+  [1m[35m (31.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddAttachmentScanDocumentToBTwelves (20200215104253)
+  [1m[35m (65.2ms)[0m  [1m[35mALTER TABLE `b_twelves` ADD `scan_document_file_name` varchar(255)[0m
+  ↳ db/migrate/20200215104253_add_attachment_scan_document_to_b_twelves.rb:4
+  [1m[35m (66.2ms)[0m  [1m[35mALTER TABLE `b_twelves` ADD `scan_document_content_type` varchar(255)[0m
+  ↳ db/migrate/20200215104253_add_attachment_scan_document_to_b_twelves.rb:4
+  [1m[35m (66.8ms)[0m  [1m[35mALTER TABLE `b_twelves` ADD `scan_document_file_size` int[0m
+  ↳ db/migrate/20200215104253_add_attachment_scan_document_to_b_twelves.rb:4
+  [1m[35m (66.8ms)[0m  [1m[35mALTER TABLE `b_twelves` ADD `scan_document_updated_at` datetime[0m
+  ↳ db/migrate/20200215104253_add_attachment_scan_document_to_b_twelves.rb:4
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215104253')[0m
+  ↳ bin/rails:4
+  [1m[35m (30.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddAttachmentScanDocumentTtdToBTwelves (20200215104258)
+  [1m[35m (65.3ms)[0m  [1m[35mALTER TABLE `b_twelves` ADD `scan_document_ttd_file_name` varchar(255)[0m
+  ↳ db/migrate/20200215104258_add_attachment_scan_document_ttd_to_b_twelves.rb:4
+  [1m[35m (66.7ms)[0m  [1m[35mALTER TABLE `b_twelves` ADD `scan_document_ttd_content_type` varchar(255)[0m
+  ↳ db/migrate/20200215104258_add_attachment_scan_document_ttd_to_b_twelves.rb:4
+  [1m[35m (66.8ms)[0m  [1m[35mALTER TABLE `b_twelves` ADD `scan_document_ttd_file_size` int[0m
+  ↳ db/migrate/20200215104258_add_attachment_scan_document_ttd_to_b_twelves.rb:4
+  [1m[35m (57.4ms)[0m  [1m[35mALTER TABLE `b_twelves` ADD `scan_document_ttd_updated_at` datetime[0m
+  ↳ db/migrate/20200215104258_add_attachment_scan_document_ttd_to_b_twelves.rb:4
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215104258')[0m
+  ↳ bin/rails:4
+  [1m[35m (41.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddAttachmentFotoAtauMateriToBTwelves (20200215104308)
+  [1m[35m (99.2ms)[0m  [1m[35mALTER TABLE `b_twelves` ADD `foto_atau_materi_file_name` varchar(255)[0m
+  ↳ db/migrate/20200215104308_add_attachment_foto_atau_materi_to_b_twelves.rb:4
+  [1m[35m (77.8ms)[0m  [1m[35mALTER TABLE `b_twelves` ADD `foto_atau_materi_content_type` varchar(255)[0m
+  ↳ db/migrate/20200215104308_add_attachment_foto_atau_materi_to_b_twelves.rb:4
+  [1m[35m (77.9ms)[0m  [1m[35mALTER TABLE `b_twelves` ADD `foto_atau_materi_file_size` int[0m
+  ↳ db/migrate/20200215104308_add_attachment_foto_atau_materi_to_b_twelves.rb:4
+  [1m[35m (77.9ms)[0m  [1m[35mALTER TABLE `b_twelves` ADD `foto_atau_materi_updated_at` datetime[0m
+  ↳ db/migrate/20200215104308_add_attachment_foto_atau_materi_to_b_twelves.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215104308')[0m
+  ↳ bin/rails:4
+  [1m[35m (42.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to DeviseCreateUsers (20200215105011)
+  [1m[35m (263.4ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `username` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `confirmation_token` varchar(255), `confirmed_at` datetime, `confirmation_sent_at` datetime, `unconfirmed_email` varchar(255), `failed_attempts` int DEFAULT 0 NOT NULL, `unlock_token` varchar(255), `locked_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200215105011_devise_create_users.rb:5
+  [1m[35m (209.4ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_username`  ON `users` (`username`) [0m
+  ↳ db/migrate/20200215105011_devise_create_users.rb:40
+  [1m[35m (199.7ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_email`  ON `users` (`email`) [0m
+  ↳ db/migrate/20200215105011_devise_create_users.rb:41
+  [1m[35m (198.7ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_reset_password_token`  ON `users` (`reset_password_token`) [0m
+  ↳ db/migrate/20200215105011_devise_create_users.rb:42
+  [1m[35m (188.2ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_confirmation_token`  ON `users` (`confirmation_token`) [0m
+  ↳ db/migrate/20200215105011_devise_create_users.rb:43
+  [1m[35m (188.1ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_unlock_token`  ON `users` (`unlock_token`) [0m
+  ↳ db/migrate/20200215105011_devise_create_users.rb:44
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215105011')[0m
+  ↳ bin/rails:4
+  [1m[35m (31.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddDeletedAtToCities (20200215135554)
+  [1m[35m (65.2ms)[0m  [1m[35mALTER TABLE `cities` ADD `deleted_at` datetime[0m
+  ↳ db/migrate/20200215135554_add_deleted_at_to_cities.rb:3
+  [1m[35m (255.3ms)[0m  [1m[35mCREATE  INDEX `index_cities_on_deleted_at`  ON `cities` (`deleted_at`) [0m
+  ↳ db/migrate/20200215135554_add_deleted_at_to_cities.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215135554')[0m
+  ↳ bin/rails:4
+  [1m[35m (31.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddDeletedAtToYears (20200215135606)
+  [1m[35m (112.6ms)[0m  [1m[35mALTER TABLE `years` ADD `deleted_at` datetime[0m
+  ↳ db/migrate/20200215135606_add_deleted_at_to_years.rb:3
+  [1m[35m (188.2ms)[0m  [1m[35mCREATE  INDEX `index_years_on_deleted_at`  ON `years` (`deleted_at`) [0m
+  ↳ db/migrate/20200215135606_add_deleted_at_to_years.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215135606')[0m
+  ↳ bin/rails:4
+  [1m[35m (31.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddDeletedAtToActionPlans (20200215135627)
+  [1m[35m (66.4ms)[0m  [1m[35mALTER TABLE `action_plans` ADD `deleted_at` datetime[0m
+  ↳ db/migrate/20200215135627_add_deleted_at_to_action_plans.rb:3
+  [1m[35m (199.5ms)[0m  [1m[35mCREATE  INDEX `index_action_plans_on_deleted_at`  ON `action_plans` (`deleted_at`) [0m
+  ↳ db/migrate/20200215135627_add_deleted_at_to_action_plans.rb:4
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215135627')[0m
+  ↳ bin/rails:4
+  [1m[35m (108.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddDeletedAtToBFours (20200215135639)
+  [1m[35m (66.1ms)[0m  [1m[35mALTER TABLE `b_fours` ADD `deleted_at` datetime[0m
+  ↳ db/migrate/20200215135639_add_deleted_at_to_b_fours.rb:3
+  [1m[35m (188.6ms)[0m  [1m[35mCREATE  INDEX `index_b_fours_on_deleted_at`  ON `b_fours` (`deleted_at`) [0m
+  ↳ db/migrate/20200215135639_add_deleted_at_to_b_fours.rb:4
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215135639')[0m
+  ↳ bin/rails:4
+  [1m[35m (30.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddDeletedAtToBEights (20200215135650)
+  [1m[35m (66.0ms)[0m  [1m[35mALTER TABLE `b_eights` ADD `deleted_at` datetime[0m
+  ↳ db/migrate/20200215135650_add_deleted_at_to_b_eights.rb:3
+  [1m[35m (221.1ms)[0m  [1m[35mCREATE  INDEX `index_b_eights_on_deleted_at`  ON `b_eights` (`deleted_at`) [0m
+  ↳ db/migrate/20200215135650_add_deleted_at_to_b_eights.rb:4
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215135650')[0m
+  ↳ bin/rails:4
+  [1m[35m (30.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddDeletedAtToBTwelves (20200215135705)
+  [1m[35m (65.7ms)[0m  [1m[35mALTER TABLE `b_twelves` ADD `deleted_at` datetime[0m
+  ↳ db/migrate/20200215135705_add_deleted_at_to_b_twelves.rb:3
+  [1m[35m (410.6ms)[0m  [1m[35mCREATE  INDEX `index_b_twelves_on_deleted_at`  ON `b_twelves` (`deleted_at`) [0m
+  ↳ db/migrate/20200215135705_add_deleted_at_to_b_twelves.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215135705')[0m
+  ↳ bin/rails:4
+  [1m[35m (42.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddDeletedAtToUsers (20200215135728)
+  [1m[35m (65.7ms)[0m  [1m[35mALTER TABLE `users` ADD `deleted_at` datetime[0m
+  ↳ db/migrate/20200215135728_add_deleted_at_to_users.rb:3
+  [1m[35m (201.1ms)[0m  [1m[35mCREATE  INDEX `index_users_on_deleted_at`  ON `users` (`deleted_at`) [0m
+  ↳ db/migrate/20200215135728_add_deleted_at_to_users.rb:4
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215135728')[0m
+  ↳ bin/rails:4
+  [1m[35m (30.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreatePermissions (20200215140040)
+  [1m[35m (220.4ms)[0m  [1m[35mCREATE TABLE `permissions` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `resource` varchar(255), `action` varchar(255), `description` text, `page` tinyint(1), `path` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200215140040_create_permissions.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215140040')[0m
+  ↳ bin/rails:4
+  [1m[35m (31.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateRoles (20200215140113)
+  [1m[35m (210.1ms)[0m  [1m[35mCREATE TABLE `roles` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name_role` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200215140113_create_roles.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215140113')[0m
+  ↳ bin/rails:4
+  [1m[35m (30.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddDeletedAtToRoles (20200215140125)
+  [1m[35m (77.3ms)[0m  [1m[35mALTER TABLE `roles` ADD `deleted_at` datetime[0m
+  ↳ db/migrate/20200215140125_add_deleted_at_to_roles.rb:3
+  [1m[35m (288.0ms)[0m  [1m[35mCREATE  INDEX `index_roles_on_deleted_at`  ON `roles` (`deleted_at`) [0m
+  ↳ db/migrate/20200215140125_add_deleted_at_to_roles.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215140125')[0m
+  ↳ bin/rails:4
+  [1m[35m (31.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddDeletedAtToPermissions (20200215140136)
+  [1m[35m (66.1ms)[0m  [1m[35mALTER TABLE `permissions` ADD `deleted_at` datetime[0m
+  ↳ db/migrate/20200215140136_add_deleted_at_to_permissions.rb:3
+  [1m[35m (187.8ms)[0m  [1m[35mCREATE  INDEX `index_permissions_on_deleted_at`  ON `permissions` (`deleted_at`) [0m
+  ↳ db/migrate/20200215140136_add_deleted_at_to_permissions.rb:4
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215140136')[0m
+  ↳ bin/rails:4
+  [1m[35m (31.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddSlugToUsers (20200215140224)
+  [1m[35m (65.7ms)[0m  [1m[35mALTER TABLE `users` ADD `slug` varchar(255)[0m
+  ↳ db/migrate/20200215140224_add_slug_to_users.rb:3
+  [1m[35m (188.1ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_slug`  ON `users` (`slug`) [0m
+  ↳ db/migrate/20200215140224_add_slug_to_users.rb:4
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215140224')[0m
+  ↳ bin/rails:4
+  [1m[35m (41.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddSlugToPermissions (20200215140234)
+  [1m[35m (165.7ms)[0m  [1m[35mALTER TABLE `permissions` ADD `slug` varchar(255)[0m
+  ↳ db/migrate/20200215140234_add_slug_to_permissions.rb:3
+  [1m[35m (288.4ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_permissions_on_slug`  ON `permissions` (`slug`) [0m
+  ↳ db/migrate/20200215140234_add_slug_to_permissions.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215140234')[0m
+  ↳ bin/rails:4
+  [1m[35m (42.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddSlugToRoles (20200215140243)
+  [1m[35m (65.9ms)[0m  [1m[35mALTER TABLE `roles` ADD `slug` varchar(255)[0m
+  ↳ db/migrate/20200215140243_add_slug_to_roles.rb:3
+  [1m[35m (193.7ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_roles_on_slug`  ON `roles` (`slug`) [0m
+  ↳ db/migrate/20200215140243_add_slug_to_roles.rb:4
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215140243')[0m
+  ↳ bin/rails:4
+  [1m[35m (31.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddCityToUsers (20200215140949)
+  [1m[35m (76.4ms)[0m  [1m[35mALTER TABLE `users` ADD `city_id` bigint[0m
+  ↳ db/migrate/20200215140949_add_city_to_users.rb:3
+  [1m[35m (411.0ms)[0m  [1m[35mCREATE  INDEX `index_users_on_city_id`  ON `users` (`city_id`) [0m
+  ↳ db/migrate/20200215140949_add_city_to_users.rb:3
+  [1m[35m (2428.7ms)[0m  [1m[35mALTER TABLE `users` ADD CONSTRAINT `fk_rails_9c7442481a`
+FOREIGN KEY (`city_id`)
+  REFERENCES `cities` (`id`)
+[0m
+  ↳ db/migrate/20200215140949_add_city_to_users.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200215140949')[0m
+  ↳ bin/rails:4
+  [1m[35m (30.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2020-02-18 14:54:35', '2020-02-18 14:54:35')[0m
+  ↳ bin/rails:4
+  [1m[35m (28.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('2127749988788325090')[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:4
+Started GET "/rails/info/routes" for 172.23.0.1 at 2020-02-18 15:01:53 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Rails::InfoController#routes as HTML
+  Rendering /usr/local/bundle/gems/railties-5.2.4.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /usr/local/bundle/gems/actionpack-5.2.4.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [84 times] (21.9ms)
+  Rendered /usr/local/bundle/gems/actionpack-5.2.4.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.3ms)
+  Rendered /usr/local/bundle/gems/railties-5.2.4.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (34.8ms)
+Completed 200 OK in 50ms (Views: 41.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes?path=action_" for 172.23.0.1 at 2020-02-18 15:02:00 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"action_"}
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes?path=action_p" for 172.23.0.1 at 2020-02-18 15:02:03 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"action_p"}
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes?path=action_pl" for 172.23.0.1 at 2020-02-18 15:02:04 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"action_pl"}
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes?path=action_plan" for 172.23.0.1 at 2020-02-18 15:02:05 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"action_plan"}
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes?path=action_plan" for 172.23.0.1 at 2020-02-18 15:02:06 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"action_plan"}
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/action_plans" for 172.23.0.1 at 2020-02-18 15:08:15 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by ActionPlansController#index as HTML
+Completed 500 Internal Server Error in 102ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `add_breadcrumb' for #<ActionPlansController:0x00007f4d3435e818>):
+  
+app/controllers/action_plans_controller.rb:77:in `add_breadcrum'
+Started GET "/action_plans" for 172.23.0.1 at 2020-02-18 15:09:53 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#index as HTML
+Completed 404 Not Found in 17ms (ActiveRecord: 1.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find City without an ID):
+  
+app/controllers/action_plans_controller.rb:76:in `set_params_url'
+Started GET "/action_plans" for 172.23.0.1 at 2020-02-18 15:10:13 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#index as HTML
+Completed 404 Not Found in 13ms (ActiveRecord: 2.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find City without an ID):
+  
+app/controllers/action_plans_controller.rb:76:in `set_params_url'
+Started GET "/action_plans" for 172.23.0.1 at 2020-02-18 15:10:34 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#index as HTML
+Completed 404 Not Found in 9ms (ActiveRecord: 1.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find City without an ID):
+  
+app/controllers/action_plans_controller.rb:76:in `set_params_url'
+Started GET "/action_plans" for 172.23.0.1 at 2020-02-18 15:11:19 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant ActionPlansController::Cities):
+  
+app/controllers/action_plans_controller.rb:76:in `set_params_url'
+Started GET "/action_plans" for 172.23.0.1 at 2020-02-18 15:12:48 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `kept' for nil:NilClass):
+  
+app/controllers/action_plans_controller.rb:7:in `index'
+Started GET "/action_plans" for 172.23.0.1 at 2020-02-18 15:13:53 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#index as HTML
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `kept' for #<Class:0x00007f4d342a9418>):
+  
+app/controllers/action_plans_controller.rb:7:in `index'
+Started GET "/action_plans" for 172.23.0.1 at 2020-02-18 15:14:17 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#index as HTML
+  Rendering action_plans/index.html.erb within layouts/application
+  [1m[36mActionPlan Load (0.5ms)[0m  [1m[34mSELECT `action_plans`.* FROM `action_plans` WHERE `action_plans`.`deleted_at` IS NULL[0m
+  ↳ app/views/action_plans/index.html.erb:17
+  Rendered action_plans/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 1820ms (Views: 1806.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/action_plans/new" for 172.23.0.1 at 2020-02-18 15:14:22 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#new as HTML
+  Rendering action_plans/new.html.erb within layouts/application
+  Rendered action_plans/_form.html.erb (15.5ms)
+  Rendered action_plans/new.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 59ms (Views: 45.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/action_plans" for 172.23.0.1 at 2020-02-18 15:14:38 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#index as HTML
+Completed 500 Internal Server Error in 123ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `set_params_url' for #<ActionPlansController:0x00007f4d3e6b5a98>):
+  
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.4.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.4.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/action_plans" for 172.23.0.1 at 2020-02-18 15:14:54 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#index as HTML
+Completed 404 Not Found in 11ms (ActiveRecord: 2.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find City without an ID):
+  
+app/controllers/action_plans_controller.rb:76:in `set_params_url'
+Started GET "/city" for 172.23.0.1 at 2020-02-18 15:15:12 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/city"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/cities" for 172.23.0.1 at 2020-02-18 15:15:16 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CitiesController#index as HTML
+  Rendering cities/index.html.erb within layouts/application
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL[0m
+  ↳ app/views/cities/index.html.erb:14
+  Rendered cities/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 38ms (Views: 36.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/cities/new" for 172.23.0.1 at 2020-02-18 15:18:25 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CitiesController#new as HTML
+  Rendering cities/new.html.erb within layouts/application
+  Rendered cities/_form.html.erb (2.0ms)
+  Rendered cities/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 43ms (Views: 33.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/cities" for 172.23.0.1 at 2020-02-18 15:18:31 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"svYVnkASQ1V+sMHlruNzLa0H9rHSllhp7LOg/fEE4QuBQkCH6wKdDL41xkcDQBNv3gh7jba4pjytYVq/fwlYaQ==", "city"=>{"city"=>"Banjarmabin"}, "commit"=>"Create City"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cities_controller.rb:30
+  [1m[36mCity Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `cities` WHERE `cities`.`id` IS NOT NULL AND `cities`.`slug` = '1582039111478281-f1e31331-3d06-4e05-8202-50043fce8baf' LIMIT 1[0m
+  ↳ app/controllers/cities_controller.rb:30
+  [1m[36mCity Create (0.5ms)[0m  [1m[32mINSERT INTO `cities` (`city`, `created_at`, `updated_at`, `slug`) VALUES ('Banjarmabin', '2020-02-18 15:18:31', '2020-02-18 15:18:31', '1582039111478281-f1e31331-3d06-4e05-8202-50043fce8baf')[0m
+  ↳ app/controllers/cities_controller.rb:30
+  [1m[35m (44.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/cities_controller.rb:30
+Redirected to http://localhost:3000/cities/1582039111478281-f1e31331-3d06-4e05-8202-50043fce8baf
+Completed 302 Found in 145ms (ActiveRecord: 45.2ms)
+
+
+Started GET "/cities/1582039111478281-f1e31331-3d06-4e05-8202-50043fce8baf" for 172.23.0.1 at 2020-02-18 15:18:31 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1582039111478281-f1e31331-3d06-4e05-8202-50043fce8baf"}
+  [1m[36mCity Load (2.3ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL AND `cities`.`id` = 1582039111478281 LIMIT 1[0m
+  ↳ app/controllers/cities_controller.rb:67
+Completed 404 Not Found in 5ms (ActiveRecord: 2.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find City with 'id'=1582039111478281-f1e31331-3d06-4e05-8202-50043fce8baf [WHERE `cities`.`deleted_at` IS NULL]):
+  
+app/controllers/cities_controller.rb:67:in `set_city'
+Started GET "/cities/1582039111478281-f1e31331-3d06-4e05-8202-50043fce8baf" for 172.23.0.1 at 2020-02-18 15:18:55 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1582039111478281-f1e31331-3d06-4e05-8202-50043fce8baf"}
+  [1m[36mCity Load (1.0ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL AND `cities`.`slug` = '1582039111478281-f1e31331-3d06-4e05-8202-50043fce8baf' LIMIT 1[0m
+  ↳ app/controllers/cities_controller.rb:67
+  Rendering cities/show.html.erb within layouts/application
+  Rendered cities/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 56ms (Views: 36.7ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/cities" for 172.23.0.1 at 2020-02-18 15:18:57 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CitiesController#index as HTML
+  Rendering cities/index.html.erb within layouts/application
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL[0m
+  ↳ app/views/cities/index.html.erb:14
+  Rendered cities/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 46ms (Views: 43.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/cities/new" for 172.23.0.1 at 2020-02-18 15:18:58 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CitiesController#new as HTML
+  Rendering cities/new.html.erb within layouts/application
+  Rendered cities/_form.html.erb (1.7ms)
+  Rendered cities/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 30ms (Views: 27.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/cities" for 172.23.0.1 at 2020-02-18 15:19:04 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hH1wRhvRKXzeIpEhW0EwpzA84WkGdy2Et1lQwfUn2k63ySVfsMH3JR6nloP24lDlQzNsVWJZ09H2i6qDeypjLA==", "city"=>{"city"=>"Martapoera"}, "commit"=>"Create City"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cities_controller.rb:30
+  [1m[36mCity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `cities` WHERE `cities`.`id` IS NOT NULL AND `cities`.`slug` = '1582039144471384-63e3dafa-fa94-49d8-b641-6c882e08f2c6' LIMIT 1[0m
+  ↳ app/controllers/cities_controller.rb:30
+  [1m[36mCity Create (0.3ms)[0m  [1m[32mINSERT INTO `cities` (`city`, `created_at`, `updated_at`, `slug`) VALUES ('Martapoera', '2020-02-18 15:19:04', '2020-02-18 15:19:04', '1582039144471384-63e3dafa-fa94-49d8-b641-6c882e08f2c6')[0m
+  ↳ app/controllers/cities_controller.rb:30
+  [1m[35m (152.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/cities_controller.rb:30
+Redirected to http://localhost:3000/cities/1582039144471384-63e3dafa-fa94-49d8-b641-6c882e08f2c6
+Completed 302 Found in 160ms (ActiveRecord: 153.5ms)
+
+
+Started GET "/cities/1582039144471384-63e3dafa-fa94-49d8-b641-6c882e08f2c6" for 172.23.0.1 at 2020-02-18 15:19:04 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1582039144471384-63e3dafa-fa94-49d8-b641-6c882e08f2c6"}
+  [1m[36mCity Load (28.3ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL AND `cities`.`slug` = '1582039144471384-63e3dafa-fa94-49d8-b641-6c882e08f2c6' LIMIT 1[0m
+  ↳ app/controllers/cities_controller.rb:67
+  Rendering cities/show.html.erb within layouts/application
+  Rendered cities/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 70ms (Views: 39.8ms | ActiveRecord: 28.3ms)
+
+
+Started GET "/cities" for 172.23.0.1 at 2020-02-18 15:19:05 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CitiesController#index as HTML
+  Rendering cities/index.html.erb within layouts/application
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL[0m
+  ↳ app/views/cities/index.html.erb:14
+  Rendered cities/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 51ms (Views: 33.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/years" for 172.23.0.1 at 2020-02-18 15:19:09 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by YearsController#index as HTML
+  Rendering years/index.html.erb within layouts/application
+  [1m[36mYear Load (0.7ms)[0m  [1m[34mSELECT `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL[0m
+  ↳ app/views/years/index.html.erb:14
+  Rendered years/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 48ms (Views: 41.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/years/new" for 172.23.0.1 at 2020-02-18 15:19:26 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by YearsController#new as HTML
+  Rendering years/new.html.erb within layouts/application
+  Rendered years/_form.html.erb (3.2ms)
+  Rendered years/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 52ms (Views: 37.3ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/years" for 172.23.0.1 at 2020-02-18 15:19:30 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by YearsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hlihb6TnD6eYXXQ4YxLclAaTHQ9jUNLYzcmlltAivf66HN1L13XCgE9o/c4wyg28qkKmp+t4vvFXGTczR92dXQ==", "year"=>{"year"=>"2020"}, "commit"=>"Create Year"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/years_controller.rb:30
+  [1m[36mYear Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM `years` WHERE `years`.`id` IS NOT NULL AND `years`.`slug` = '1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe' LIMIT 1[0m
+  ↳ app/controllers/years_controller.rb:30
+  [1m[36mYear Create (0.6ms)[0m  [1m[32mINSERT INTO `years` (`year`, `created_at`, `updated_at`, `slug`) VALUES ('2020', '2020-02-18 15:19:30', '2020-02-18 15:19:30', '1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe')[0m
+  ↳ app/controllers/years_controller.rb:30
+  [1m[35m (78.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/years_controller.rb:30
+Redirected to http://localhost:3000/years/1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe
+Completed 302 Found in 93ms (ActiveRecord: 80.8ms)
+
+
+Started GET "/years/1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe" for 172.23.0.1 at 2020-02-18 15:19:30 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by YearsController#show as HTML
+  Parameters: {"id"=>"1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe"}
+  [1m[36mYear Load (0.6ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`slug` = '1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe' LIMIT 1[0m
+  ↳ app/controllers/years_controller.rb:67
+  Rendering years/show.html.erb within layouts/application
+  Rendered years/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 46ms (Views: 41.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/years" for 172.23.0.1 at 2020-02-18 15:19:32 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by YearsController#index as HTML
+  Rendering years/index.html.erb within layouts/application
+  [1m[36mYear Load (1.1ms)[0m  [1m[34mSELECT `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL[0m
+  ↳ app/views/years/index.html.erb:14
+  Rendered years/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 40ms (Views: 37.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/years/new" for 172.23.0.1 at 2020-02-18 15:19:33 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by YearsController#new as HTML
+  Rendering years/new.html.erb within layouts/application
+  Rendered years/_form.html.erb (2.0ms)
+  Rendered years/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 38ms (Views: 36.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/years" for 172.23.0.1 at 2020-02-18 15:19:37 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by YearsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IdQVs05rEDIdmwD+N6AeVQcsDS3OznlDPQVh3F6dXtcdkGmXPfndFcquiQhkeM99q/22hUbmFWqn1fN5yWJ+dA==", "year"=>{"year"=>"2021"}, "commit"=>"Create Year"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/years_controller.rb:30
+  [1m[36mYear Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM `years` WHERE `years`.`id` IS NOT NULL AND `years`.`slug` = '1582039177757674-212fb9ec-8532-4a29-8656-c969b55486c9' LIMIT 1[0m
+  ↳ app/controllers/years_controller.rb:30
+  [1m[36mYear Create (0.4ms)[0m  [1m[32mINSERT INTO `years` (`year`, `created_at`, `updated_at`, `slug`) VALUES ('2021', '2020-02-18 15:19:37', '2020-02-18 15:19:37', '1582039177757674-212fb9ec-8532-4a29-8656-c969b55486c9')[0m
+  ↳ app/controllers/years_controller.rb:30
+  [1m[35m (101.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/years_controller.rb:30
+Redirected to http://localhost:3000/years/1582039177757674-212fb9ec-8532-4a29-8656-c969b55486c9
+Completed 302 Found in 109ms (ActiveRecord: 103.2ms)
+
+
+Started GET "/years/1582039177757674-212fb9ec-8532-4a29-8656-c969b55486c9" for 172.23.0.1 at 2020-02-18 15:19:37 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by YearsController#show as HTML
+  Parameters: {"id"=>"1582039177757674-212fb9ec-8532-4a29-8656-c969b55486c9"}
+  [1m[36mYear Load (20.3ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`slug` = '1582039177757674-212fb9ec-8532-4a29-8656-c969b55486c9' LIMIT 1[0m
+  ↳ app/controllers/years_controller.rb:67
+  Rendering years/show.html.erb within layouts/application
+  Rendered years/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 56ms (Views: 33.1ms | ActiveRecord: 20.3ms)
+
+
+Started GET "/years" for 172.23.0.1 at 2020-02-18 15:19:39 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by YearsController#index as HTML
+  Rendering years/index.html.erb within layouts/application
+  [1m[36mYear Load (0.6ms)[0m  [1m[34mSELECT `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL[0m
+  ↳ app/views/years/index.html.erb:14
+  Rendered years/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 53ms (Views: 49.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/action_plans" for 172.23.0.1 at 2020-02-18 15:19:47 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#index as HTML
+Completed 404 Not Found in 12ms (ActiveRecord: 1.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find City without an ID):
+  
+app/controllers/action_plans_controller.rb:76:in `set_params_url'
+Started GET "/action_plans" for 172.23.0.1 at 2020-02-18 15:20:09 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#index as HTML
+Completed 404 Not Found in 13ms (ActiveRecord: 1.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find City without an ID):
+  
+app/controllers/action_plans_controller.rb:76:in `set_params_url'
+Started GET "/action_plans" for 172.23.0.1 at 2020-02-18 15:20:21 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#index as HTML
+Completed 404 Not Found in 13ms (ActiveRecord: 1.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find City without an ID):
+  
+app/controllers/action_plans_controller.rb:76:in `set_params_url'
+Started GET "/action_plans" for 172.23.0.1 at 2020-02-18 15:21:07 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#index as HTML
+Completed 404 Not Found in 11ms (ActiveRecord: 1.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find City without an ID):
+  
+app/controllers/action_plans_controller.rb:76:in `set_params_url'
+Started GET "/years/1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe" for 172.23.0.1 at 2020-02-18 15:22:02 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by YearsController#show as HTML
+  Parameters: {"id"=>"1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe"}
+  [1m[36mYear Load (0.4ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`slug` = '1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe' LIMIT 1[0m
+  ↳ app/controllers/years_controller.rb:67
+  Rendering years/show.html.erb within layouts/application
+  Rendered years/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 39ms (Views: 26.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/years" for 172.23.0.1 at 2020-02-18 15:22:05 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by YearsController#index as HTML
+  Rendering years/index.html.erb within layouts/application
+  [1m[36mYear Load (0.2ms)[0m  [1m[34mSELECT `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL[0m
+  ↳ app/views/years/index.html.erb:14
+  Rendered years/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 47ms (Views: 44.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/years/1582039177757674-212fb9ec-8532-4a29-8656-c969b55486c9" for 172.23.0.1 at 2020-02-18 15:22:06 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by YearsController#show as HTML
+  Parameters: {"id"=>"1582039177757674-212fb9ec-8532-4a29-8656-c969b55486c9"}
+  [1m[36mYear Load (0.2ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`slug` = '1582039177757674-212fb9ec-8532-4a29-8656-c969b55486c9' LIMIT 1[0m
+  ↳ app/controllers/years_controller.rb:67
+  Rendering years/show.html.erb within layouts/application
+  Rendered years/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 34ms (Views: 31.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/years" for 172.23.0.1 at 2020-02-18 15:22:07 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by YearsController#index as HTML
+  Rendering years/index.html.erb within layouts/application
+  [1m[36mYear Load (0.2ms)[0m  [1m[34mSELECT `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL[0m
+  ↳ app/views/years/index.html.erb:14
+  Rendered years/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 40ms (Views: 38.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cities" for 172.23.0.1 at 2020-02-18 15:22:11 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CitiesController#index as HTML
+  Rendering cities/index.html.erb within layouts/application
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL[0m
+  ↳ app/views/cities/index.html.erb:14
+  Rendered cities/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 51ms (Views: 48.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cities/1582039111478281-f1e31331-3d06-4e05-8202-50043fce8baf" for 172.23.0.1 at 2020-02-18 15:22:12 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1582039111478281-f1e31331-3d06-4e05-8202-50043fce8baf"}
+  [1m[36mCity Load (1.6ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL AND `cities`.`slug` = '1582039111478281-f1e31331-3d06-4e05-8202-50043fce8baf' LIMIT 1[0m
+  ↳ app/controllers/cities_controller.rb:67
+  Rendering cities/show.html.erb within layouts/application
+  Rendered cities/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 36ms (Views: 30.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/cities" for 172.23.0.1 at 2020-02-18 15:22:13 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CitiesController#index as HTML
+  Rendering cities/index.html.erb within layouts/application
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL[0m
+  ↳ app/views/cities/index.html.erb:14
+  Rendered cities/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 42ms (Views: 40.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/action_plans" for 172.23.0.1 at 2020-02-18 15:24:58 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#index as HTML
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find City without an ID):
+  
+app/controllers/action_plans_controller.rb:76:in `set_params_url'
+Started GET "/action_plans" for 172.23.0.1 at 2020-02-18 15:25:05 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#index as HTML
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL ORDER BY `cities`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:76
+  [1m[36mYear Load (0.4ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL ORDER BY `years`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:77
+  Rendering action_plans/index.html.erb within layouts/application
+  [1m[36mActionPlan Load (0.2ms)[0m  [1m[34mSELECT `action_plans`.* FROM `action_plans` WHERE `action_plans`.`deleted_at` IS NULL[0m
+  ↳ app/views/action_plans/index.html.erb:17
+  Rendered action_plans/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 82ms (Views: 38.4ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/action_plans/new" for 172.23.0.1 at 2020-02-18 15:25:06 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#new as HTML
+  [1m[36mCity Load (1.5ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL ORDER BY `cities`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:76
+  [1m[36mYear Load (0.2ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL ORDER BY `years`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:77
+  Rendering action_plans/new.html.erb within layouts/application
+  Rendered action_plans/_form.html.erb (4.8ms)
+  Rendered action_plans/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 62ms (Views: 45.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/action_plans/new" for 172.23.0.1 at 2020-02-18 15:32:14 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by ActionPlansController#new as HTML
+  Rendering action_plans/new.html.erb within layouts/application
+  Rendered action_plans/_form.html.erb (3.0ms)
+  Rendered action_plans/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 73ms (Views: 41.7ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/action_plans" for 172.23.0.1 at 2020-02-18 15:32:19 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RAmg7TD2Y59PU6Z77oKHnnsvhXhdnS2FGf5tNKOsq5WanT3/DY+G5gn0Q+gmmr2YLQwaJf6l+AoJYmuxC4JQwA==", "action_plan"=>{"city_id"=>"", "year_id"=>"", "code_action_plans"=>"A", "action_plan"=>"A"}, "commit"=>"Create Action plan"}
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL ORDER BY `cities`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:30
+  [1m[36mYear Load (0.2ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL ORDER BY `years`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[36mActionPlan Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `action_plans` WHERE `action_plans`.`id` IS NOT NULL AND `action_plans`.`slug` = '1582039939242853-0f7e1e5b-98c3-4604-9a4d-190f00d93d35' LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  Rendering action_plans/new.html.erb within layouts/application
+  Rendered action_plans/_form.html.erb (6.2ms)
+  Rendered action_plans/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 81ms (Views: 45.1ms | ActiveRecord: 4.1ms)
+
+
+Started POST "/action_plans" for 172.23.0.1 at 2020-02-18 15:34:55 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M33JPMJwkokduMOUsNKMa7JSBKvSWPgiHEcuSoCGH1zt6VQu/wl38FsfJgd4yrZt5HGb9nFgLa0M2yjPKKjkCQ==", "action_plan"=>{"city_id"=>"", "year_id"=>"", "code_action_plans"=>"A", "action_plan"=>"A"}, "commit"=>"Create Action plan"}
+Unpermitted parameters: :city_id, :year_id
+  [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL ORDER BY `cities`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:30
+  [1m[36mYear Load (0.1ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL ORDER BY `years`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[36mActionPlan Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `action_plans` WHERE `action_plans`.`id` IS NOT NULL AND `action_plans`.`slug` = '1582040096060363-3d8c5078-e32d-4efa-9ed4-48449918e824' LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  Rendering action_plans/new.html.erb within layouts/application
+  Rendered action_plans/_form.html.erb (3.4ms)
+  Rendered action_plans/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 89ms (Views: 39.0ms | ActiveRecord: 5.5ms)
+
+
+Started POST "/action_plans" for 172.23.0.1 at 2020-02-18 15:36:05 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9DKkaAVZnHcF3ROwGXhq2jaFkn4E6QQn6jNlBKtZLkIqpjl6OCB5DkN69iPRYFDcYKYNI6fR0aj6r2OBA3fVFw==", "action_plan"=>{"city_id"=>"", "year_id"=>"", "code_action_plans"=>"A", "action_plan"=>"A"}, "commit"=>"Create Action plan"}
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL ORDER BY `cities`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:30
+  [1m[36mYear Load (0.2ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL ORDER BY `years`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[36mActionPlan Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `action_plans` WHERE `action_plans`.`id` IS NOT NULL AND `action_plans`.`slug` = '1582040165871672-fbbc7678-d2c9-45df-b9bb-8c297dffdee6' LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  Rendering action_plans/new.html.erb within layouts/application
+  Rendered action_plans/_form.html.erb (3.8ms)
+  Rendered action_plans/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 91ms (Views: 37.5ms | ActiveRecord: 6.5ms)
+
+
+Started POST "/action_plans" for 172.23.0.1 at 2020-02-18 15:36:08 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aIBGXkFqvL7mDHJL8AUwPI/tojuESXXEW1G1lkL4XBy2FNtMfBNZx6Crl9g4HQo62c49ZidxoEtLzbMT6tanSQ==", "action_plan"=>{"code_action_plans"=>"A", "action_plan"=>"A"}, "commit"=>"Create Action plan"}
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL ORDER BY `cities`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:30
+  [1m[36mYear Load (0.2ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL ORDER BY `years`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[36mActionPlan Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `action_plans` WHERE `action_plans`.`id` IS NOT NULL AND `action_plans`.`slug` = '1582040168101055-40622da0-f6f9-42e1-982e-15d98d0bdb1e' LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  Rendering action_plans/new.html.erb within layouts/application
+  Rendered action_plans/_form.html.erb (2.7ms)
+  Rendered action_plans/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 44ms (Views: 34.2ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/action_plans" for 172.23.0.1 at 2020-02-18 15:36:47 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Pig3Tudzy9gbH91NrW6oV+1gQL0EZstqFXEsjY6oEePgvKpc2gouoV24ON5ldpJRu0Pf4KdeHuUF7SoIJobqtg==", "action_plan"=>{"code_action_plans"=>"A", "action_plan"=>"A"}, "commit"=>"Create Action plan"}
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL ORDER BY `cities`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:30
+  [1m[36mYear Load (0.2ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL ORDER BY `years`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[36mActionPlan Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `action_plans` WHERE `action_plans`.`id` IS NOT NULL AND `action_plans`.`slug` = '1582040207704342-0fbcfcc0-f4a0-4e9c-9fad-32411d779d59' LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[36mActionPlan Create (0.5ms)[0m  [1m[32mINSERT INTO `action_plans` (`city_id`, `year_id`, `code_action_plans`, `action_plan`, `created_at`, `updated_at`, `slug`) VALUES (1, 1, 'A', 'A', '2020-02-18 15:36:47', '2020-02-18 15:36:47', '1582040207704342-0fbcfcc0-f4a0-4e9c-9fad-32411d779d59')[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[35m (48.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+Redirected to http://localhost:3000/action_plans/1582040207704342-0fbcfcc0-f4a0-4e9c-9fad-32411d779d59
+Completed 302 Found in 101ms (ActiveRecord: 54.3ms)
+
+
+Started GET "/action_plans/1582040207704342-0fbcfcc0-f4a0-4e9c-9fad-32411d779d59" for 172.23.0.1 at 2020-02-18 15:36:47 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#show as HTML
+  Parameters: {"id"=>"1582040207704342-0fbcfcc0-f4a0-4e9c-9fad-32411d779d59"}
+  [1m[36mActionPlan Load (0.5ms)[0m  [1m[34mSELECT  `action_plans`.* FROM `action_plans` WHERE `action_plans`.`deleted_at` IS NULL AND `action_plans`.`slug` = '1582040207704342-0fbcfcc0-f4a0-4e9c-9fad-32411d779d59' LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:69
+  Rendering action_plans/show.html.erb within layouts/application
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL AND `cities`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/show.html.erb:5
+  [1m[36mYear Load (0.4ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/show.html.erb:10
+  Rendered action_plans/show.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 49ms (Views: 44.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/action_plans" for 172.23.0.1 at 2020-02-18 15:36:50 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#index as HTML
+  Rendering action_plans/index.html.erb within layouts/application
+  [1m[36mActionPlan Load (0.7ms)[0m  [1m[34mSELECT `action_plans`.* FROM `action_plans` WHERE `action_plans`.`deleted_at` IS NULL[0m
+  ↳ app/views/action_plans/index.html.erb:17
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL AND `cities`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:19
+  [1m[36mYear Load (0.3ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:20
+  Rendered action_plans/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 40ms (Views: 36.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/action_plans/new" for 172.23.0.1 at 2020-02-18 15:45:27 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by ActionPlansController#new as HTML
+  Rendering action_plans/new.html.erb within layouts/application
+  Rendered action_plans/_form.html.erb (2.7ms)
+  Rendered action_plans/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 65ms (Views: 46.5ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/action_plans" for 172.23.0.1 at 2020-02-18 15:45:36 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/IElWorYaPabS/BZhrXwKRIvf5m22o59S9dYP0LBh7En7wXNkM6DnIbHzW4tPFjj+RY8I5f2T5W5+uS7xBgaAw==", "action_plan"=>{"code_action_plans"=>"Gagal", "action_plan"=>"Nyata Dah"}, "commit"=>"Create Action plan"}
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL ORDER BY `cities`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:30
+  [1m[36mYear Load (0.1ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL ORDER BY `years`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[36mActionPlan Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `action_plans` WHERE `action_plans`.`id` IS NOT NULL AND `action_plans`.`slug` = '1582040736574877-c1aafb4e-d682-47d4-971b-bc5687735792' LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[36mActionPlan Create (0.5ms)[0m  [1m[32mINSERT INTO `action_plans` (`city_id`, `year_id`, `code_action_plans`, `action_plan`, `created_at`, `updated_at`, `slug`) VALUES (1, 1, 'Gagal', 'Nyata Dah', '2020-02-18 15:45:36', '2020-02-18 15:45:36', '1582040736574877-c1aafb4e-d682-47d4-971b-bc5687735792')[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[35m (129.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+Completed 500 Internal Server Error in 250ms (ActiveRecord: 180.6ms)
+
+
+  
+NoMethodError (undefined method `notulen=' for #<BFour:0x0000557c5532ea48>):
+  
+app/controllers/action_plans_controller.rb:34:in `block in create'
+app/controllers/action_plans_controller.rb:29:in `create'
+Started POST "/action_plans" for 172.23.0.1 at 2020-02-18 16:10:08 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by ActionPlansController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/IElWorYaPabS/BZhrXwKRIvf5m22o59S9dYP0LBh7En7wXNkM6DnIbHzW4tPFjj+RY8I5f2T5W5+uS7xBgaAw==", "action_plan"=>{"code_action_plans"=>"Gagal", "action_plan"=>"Nyata Dah"}, "commit"=>"Create Action plan"}
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL ORDER BY `cities`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:30
+  [1m[36mYear Load (0.2ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL ORDER BY `years`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:31
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[36mActionPlan Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `action_plans` WHERE `action_plans`.`id` IS NOT NULL AND `action_plans`.`slug` = '1582042208407490-8273ff9c-cb73-489d-b82c-ac0a4d870b9b' LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[36mActionPlan Create (0.5ms)[0m  [1m[32mINSERT INTO `action_plans` (`city_id`, `year_id`, `code_action_plans`, `action_plan`, `created_at`, `updated_at`, `slug`) VALUES (1, 1, 'Gagal', 'Nyata Dah', '2020-02-18 16:10:08', '2020-02-18 16:10:08', '1582042208407490-8273ff9c-cb73-489d-b82c-ac0a4d870b9b')[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[35m (69.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+Completed 500 Internal Server Error in 165ms (ActiveRecord: 77.6ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'code_action_plans' for BFour.):
+  
+app/controllers/action_plans_controller.rb:33:in `block in create'
+app/controllers/action_plans_controller.rb:29:in `create'
+Started POST "/action_plans" for 172.23.0.1 at 2020-02-18 16:11:34 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/IElWorYaPabS/BZhrXwKRIvf5m22o59S9dYP0LBh7En7wXNkM6DnIbHzW4tPFjj+RY8I5f2T5W5+uS7xBgaAw==", "action_plan"=>{"code_action_plans"=>"Gagal", "action_plan"=>"Nyata Dah"}, "commit"=>"Create Action plan"}
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL ORDER BY `cities`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:30
+  [1m[36mYear Load (0.2ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL ORDER BY `years`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:31
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[36mActionPlan Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `action_plans` WHERE `action_plans`.`id` IS NOT NULL AND `action_plans`.`slug` = '1582042294793607-81213cf8-7af5-45a4-ac65-8c5ab7a4e616' LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[36mActionPlan Create (0.4ms)[0m  [1m[32mINSERT INTO `action_plans` (`city_id`, `year_id`, `code_action_plans`, `action_plan`, `created_at`, `updated_at`, `slug`) VALUES (1, 1, 'Gagal', 'Nyata Dah', '2020-02-18 16:11:34', '2020-02-18 16:11:34', '1582042294793607-81213cf8-7af5-45a4-ac65-8c5ab7a4e616')[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[35m (73.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+Completed 400 Bad Request in 139ms (ActiveRecord: 79.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: b_four):
+  
+app/controllers/action_plans_controller.rb:93:in `b_four_params'
+app/controllers/action_plans_controller.rb:33:in `block in create'
+app/controllers/action_plans_controller.rb:29:in `create'
+Started POST "/action_plans" for 172.23.0.1 at 2020-02-18 16:11:58 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/IElWorYaPabS/BZhrXwKRIvf5m22o59S9dYP0LBh7En7wXNkM6DnIbHzW4tPFjj+RY8I5f2T5W5+uS7xBgaAw==", "action_plan"=>{"code_action_plans"=>"Gagal", "action_plan"=>"Nyata Dah"}, "commit"=>"Create Action plan"}
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL ORDER BY `cities`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:30
+  [1m[36mYear Load (0.2ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL ORDER BY `years`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[36mActionPlan Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `action_plans` WHERE `action_plans`.`id` IS NOT NULL AND `action_plans`.`slug` = '1582042318227385-c48d520e-7ced-4516-a40f-326d7fccae9d' LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[36mActionPlan Create (0.4ms)[0m  [1m[32mINSERT INTO `action_plans` (`city_id`, `year_id`, `code_action_plans`, `action_plan`, `created_at`, `updated_at`, `slug`) VALUES (1, 1, 'Gagal', 'Nyata Dah', '2020-02-18 16:11:58', '2020-02-18 16:11:58', '1582042318227385-c48d520e-7ced-4516-a40f-326d7fccae9d')[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[35m (56.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+Unpermitted parameters: :code_action_plans, :action_plan
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/action_plans_controller.rb:42
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/action_plans_controller.rb:42
+Completed 500 Internal Server Error in 154ms (ActiveRecord: 63.9ms)
+
+
+  
+NoMethodError (undefined method `slug' for #<BFour:0x00007f4d34f44f10>):
+  
+app/controllers/action_plans_controller.rb:42:in `block in create'
+app/controllers/action_plans_controller.rb:29:in `create'
+Started POST "/action_plans" for 172.23.0.1 at 2020-02-18 16:12:24 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/IElWorYaPabS/BZhrXwKRIvf5m22o59S9dYP0LBh7En7wXNkM6DnIbHzW4tPFjj+RY8I5f2T5W5+uS7xBgaAw==", "action_plan"=>{"code_action_plans"=>"Gagal", "action_plan"=>"Nyata Dah"}, "commit"=>"Create Action plan"}
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL ORDER BY `cities`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:30
+  [1m[36mYear Load (0.2ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL ORDER BY `years`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:31
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[36mActionPlan Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM `action_plans` WHERE `action_plans`.`id` IS NOT NULL AND `action_plans`.`slug` = '1582042344664615-29393240-8a04-41e0-8e2d-5c6d0030c54a' LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[36mActionPlan Create (0.5ms)[0m  [1m[32mINSERT INTO `action_plans` (`city_id`, `year_id`, `code_action_plans`, `action_plan`, `created_at`, `updated_at`, `slug`) VALUES (1, 1, 'Gagal', 'Nyata Dah', '2020-02-18 16:12:24', '2020-02-18 16:12:24', '1582042344664615-29393240-8a04-41e0-8e2d-5c6d0030c54a')[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[35m (86.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+Unpermitted parameters: :code_action_plans, :action_plan
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/action_plans_controller.rb:42
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/action_plans_controller.rb:42
+Completed 500 Internal Server Error in 224ms (ActiveRecord: 120.6ms)
+
+
+  
+NoMethodError (undefined method `slug' for #<BFour:0x00007f4d38b00720>):
+  
+app/controllers/action_plans_controller.rb:42:in `block in create'
+app/controllers/action_plans_controller.rb:29:in `create'
+Started POST "/action_plans" for 172.23.0.1 at 2020-02-18 16:13:32 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/IElWorYaPabS/BZhrXwKRIvf5m22o59S9dYP0LBh7En7wXNkM6DnIbHzW4tPFjj+RY8I5f2T5W5+uS7xBgaAw==", "action_plan"=>{"code_action_plans"=>"Gagal", "action_plan"=>"Nyata Dah"}, "commit"=>"Create Action plan"}
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL ORDER BY `cities`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:30
+  [1m[36mYear Load (0.3ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL ORDER BY `years`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:31
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[36mActionPlan Exists (5.0ms)[0m  [1m[34mSELECT  1 AS one FROM `action_plans` WHERE `action_plans`.`id` IS NOT NULL AND `action_plans`.`slug` = '1582042412830127-b8afb8d3-a542-438a-8f68-dc9b93a810eb' LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[36mActionPlan Create (1.6ms)[0m  [1m[32mINSERT INTO `action_plans` (`city_id`, `year_id`, `code_action_plans`, `action_plan`, `created_at`, `updated_at`, `slug`) VALUES (1, 1, 'Gagal', 'Nyata Dah', '2020-02-18 16:13:32', '2020-02-18 16:13:32', '1582042412830127-b8afb8d3-a542-438a-8f68-dc9b93a810eb')[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[35m (59.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+Unpermitted parameters: :code_action_plans, :action_plan
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/action_plans_controller.rb:42
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/action_plans_controller.rb:42
+Completed 500 Internal Server Error in 207ms (ActiveRecord: 80.5ms)
+
+
+  
+NoMethodError (undefined method `slug' for #<BFour:0x00007f4d3ffa5148>):
+  
+app/controllers/action_plans_controller.rb:42:in `block in create'
+app/controllers/action_plans_controller.rb:29:in `create'
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('2127749988788325090', 0)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:4
+Migrating to AddSlugToBFour (20200218161446)
+  [1m[35m (90.0ms)[0m  [1m[35mALTER TABLE `b_fours` ADD `slug` varchar(255)[0m
+  ↳ db/migrate/20200218161446_add_slug_to_b_four.rb:3
+  [1m[35m (210.4ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_b_fours_on_slug`  ON `b_fours` (`slug`) [0m
+  ↳ db/migrate/20200218161446_add_slug_to_b_four.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200218161446')[0m
+  ↳ bin/rails:4
+  [1m[35m (27.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddSlugToBEight (20200218161507)
+  [1m[35m (76.6ms)[0m  [1m[35mALTER TABLE `b_eights` ADD `slug` varchar(255)[0m
+  ↳ db/migrate/20200218161507_add_slug_to_b_eight.rb:3
+  [1m[35m (199.6ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_b_eights_on_slug`  ON `b_eights` (`slug`) [0m
+  ↳ db/migrate/20200218161507_add_slug_to_b_eight.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200218161507')[0m
+  ↳ bin/rails:4
+  [1m[35m (30.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddSlugToBTwelves (20200218161516)
+  [1m[35m (65.9ms)[0m  [1m[35mALTER TABLE `b_twelves` ADD `slug` varchar(255)[0m
+  ↳ db/migrate/20200218161516_add_slug_to_b_twelves.rb:3
+  [1m[35m (190.3ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_b_twelves_on_slug`  ON `b_twelves` (`slug`) [0m
+  ↳ db/migrate/20200218161516_add_slug_to_b_twelves.rb:4
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200218161516')[0m
+  ↳ bin/rails:4
+  [1m[35m (42.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('2127749988788325090')[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:4
+Started POST "/action_plans" for 172.23.0.1 at 2020-02-18 16:15:38 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by ActionPlansController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/IElWorYaPabS/BZhrXwKRIvf5m22o59S9dYP0LBh7En7wXNkM6DnIbHzW4tPFjj+RY8I5f2T5W5+uS7xBgaAw==", "action_plan"=>{"code_action_plans"=>"Gagal", "action_plan"=>"Nyata Dah"}, "commit"=>"Create Action plan"}
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL ORDER BY `cities`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:30
+  [1m[36mYear Load (0.1ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL ORDER BY `years`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[36mActionPlan Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `action_plans` WHERE `action_plans`.`id` IS NOT NULL AND `action_plans`.`slug` = '1582042538869136-a728b77f-b3ff-4d90-8101-754179b244c4' LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[36mActionPlan Create (0.5ms)[0m  [1m[32mINSERT INTO `action_plans` (`city_id`, `year_id`, `code_action_plans`, `action_plan`, `created_at`, `updated_at`, `slug`) VALUES (1, 1, 'Gagal', 'Nyata Dah', '2020-02-18 16:15:38', '2020-02-18 16:15:38', '1582042538869136-a728b77f-b3ff-4d90-8101-754179b244c4')[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[35m (78.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+Unpermitted parameters: :code_action_plans, :action_plan
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/action_plans_controller.rb:42
+  [1m[36mBFour Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `b_fours` WHERE `b_fours`.`id` IS NOT NULL AND `b_fours`.`slug` = '1582042539017972-3c1ff7ca-d453-4130-ba1c-4517e209bf3d' LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:42
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/action_plans_controller.rb:42
+Redirected to http://localhost:3000/action_plans/1582042538869136-a728b77f-b3ff-4d90-8101-754179b244c4
+Completed 302 Found in 207ms (ActiveRecord: 112.3ms)
+
+
+Started GET "/action_plans/1582042538869136-a728b77f-b3ff-4d90-8101-754179b244c4" for 172.23.0.1 at 2020-02-18 16:15:39 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#show as HTML
+  Parameters: {"id"=>"1582042538869136-a728b77f-b3ff-4d90-8101-754179b244c4"}
+  [1m[36mActionPlan Load (0.4ms)[0m  [1m[34mSELECT  `action_plans`.* FROM `action_plans` WHERE `action_plans`.`deleted_at` IS NULL AND `action_plans`.`slug` = '1582042538869136-a728b77f-b3ff-4d90-8101-754179b244c4' LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:83
+  [1m[36mBFour Load (0.4ms)[0m  [1m[34mSELECT  `b_fours`.* FROM `b_fours` WHERE `b_fours`.`deleted_at` IS NULL AND `b_fours`.`slug` = '1582042538869136-a728b77f-b3ff-4d90-8101-754179b244c4' LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:84
+Completed 404 Not Found in 5ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (can't find record with friendly id: "1582042538869136-a728b77f-b3ff-4d90-8101-754179b244c4"):
+  
+app/controllers/action_plans_controller.rb:84:in `set_action_plan'
+Started GET "/action_plans/1582042538869136-a728b77f-b3ff-4d90-8101-754179b244c4" for 172.23.0.1 at 2020-02-18 16:15:53 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#show as HTML
+  Parameters: {"id"=>"1582042538869136-a728b77f-b3ff-4d90-8101-754179b244c4"}
+  [1m[36mActionPlan Load (0.3ms)[0m  [1m[34mSELECT  `action_plans`.* FROM `action_plans` WHERE `action_plans`.`deleted_at` IS NULL AND `action_plans`.`slug` = '1582042538869136-a728b77f-b3ff-4d90-8101-754179b244c4' LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:83
+  Rendering action_plans/show.html.erb within layouts/application
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL AND `cities`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/show.html.erb:5
+  [1m[36mYear Load (0.2ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/show.html.erb:10
+  Rendered action_plans/show.html.erb within layouts/application (34.7ms)
+Completed 200 OK in 111ms (Views: 68.0ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/action_plans" for 172.23.0.1 at 2020-02-18 16:15:56 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#index as HTML
+  Rendering action_plans/index.html.erb within layouts/application
+  [1m[36mActionPlan Load (1.1ms)[0m  [1m[34mSELECT `action_plans`.* FROM `action_plans` WHERE `action_plans`.`deleted_at` IS NULL[0m
+  ↳ app/views/action_plans/index.html.erb:17
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL AND `cities`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:19
+  [1m[36mYear Load (0.2ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:20
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL AND `cities`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:19
+  [1m[36mCACHE Year Load (0.0ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:20
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL AND `cities`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:19
+  [1m[36mCACHE Year Load (0.0ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:20
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL AND `cities`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:19
+  [1m[36mCACHE Year Load (0.0ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:20
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL AND `cities`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:19
+  [1m[36mCACHE Year Load (0.0ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:20
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL AND `cities`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:19
+  [1m[36mCACHE Year Load (0.0ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:20
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL AND `cities`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:19
+  [1m[36mCACHE Year Load (0.0ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:20
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL AND `cities`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:19
+  [1m[36mCACHE Year Load (0.0ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:20
+  Rendered action_plans/index.html.erb within layouts/application (28.4ms)
+Completed 200 OK in 59ms (Views: 54.0ms | ActiveRecord: 1.8ms)
+
+

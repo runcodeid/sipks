@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_15_140949) do
+ActiveRecord::Schema.define(version: 2020_02_18_161516) do
 
   create_table "action_plans", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "city_id"
@@ -60,8 +60,10 @@ ActiveRecord::Schema.define(version: 2020_02_15_140949) do
     t.integer "foto_atau_materi_file_size"
     t.datetime "foto_atau_materi_updated_at"
     t.datetime "deleted_at"
+    t.string "slug"
     t.index ["action_plan_id"], name: "index_b_eights_on_action_plan_id"
     t.index ["deleted_at"], name: "index_b_eights_on_deleted_at"
+    t.index ["slug"], name: "index_b_eights_on_slug", unique: true
   end
 
   create_table "b_fours", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -97,8 +99,10 @@ ActiveRecord::Schema.define(version: 2020_02_15_140949) do
     t.integer "foto_atau_materi_file_size"
     t.datetime "foto_atau_materi_updated_at"
     t.datetime "deleted_at"
+    t.string "slug"
     t.index ["action_plan_id"], name: "index_b_fours_on_action_plan_id"
     t.index ["deleted_at"], name: "index_b_fours_on_deleted_at"
+    t.index ["slug"], name: "index_b_fours_on_slug", unique: true
   end
 
   create_table "b_twelves", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -134,8 +138,10 @@ ActiveRecord::Schema.define(version: 2020_02_15_140949) do
     t.integer "foto_atau_materi_file_size"
     t.datetime "foto_atau_materi_updated_at"
     t.datetime "deleted_at"
+    t.string "slug"
     t.index ["action_plan_id"], name: "index_b_twelves_on_action_plan_id"
     t.index ["deleted_at"], name: "index_b_twelves_on_deleted_at"
+    t.index ["slug"], name: "index_b_twelves_on_slug", unique: true
   end
 
   create_table "cities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
