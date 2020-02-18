@@ -773,3 +773,506 @@ Processing by Rails::InfoController#routes as */*
 Completed 200 OK in 6ms (Views: 1.2ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 192.168.112.1 at 2020-02-18 16:34:48 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.4.1) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.4.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT GET_LOCK('2127749988788325090', 0)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:4
+Migrating to AddSlugToBFour (20200218161446)
+  [1m[35m (42.7ms)[0m  [1m[35mALTER TABLE `b_fours` ADD `slug` varchar(255)[0m
+  ↳ db/migrate/20200218161446_add_slug_to_b_four.rb:3
+  [1m[35m (26.5ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_b_fours_on_slug`  ON `b_fours` (`slug`) [0m
+  ↳ db/migrate/20200218161446_add_slug_to_b_four.rb:4
+  [1m[35m (3.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200218161446')[0m
+  ↳ bin/rails:4
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddSlugToBEight (20200218161507)
+  [1m[35m (18.2ms)[0m  [1m[35mALTER TABLE `b_eights` ADD `slug` varchar(255)[0m
+  ↳ db/migrate/20200218161507_add_slug_to_b_eight.rb:3
+  [1m[35m (23.3ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_b_eights_on_slug`  ON `b_eights` (`slug`) [0m
+  ↳ db/migrate/20200218161507_add_slug_to_b_eight.rb:4
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (3.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200218161507')[0m
+  ↳ bin/rails:4
+  [1m[35m (9.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddSlugToBTwelves (20200218161516)
+  [1m[35m (29.5ms)[0m  [1m[35mALTER TABLE `b_twelves` ADD `slug` varchar(255)[0m
+  ↳ db/migrate/20200218161516_add_slug_to_b_twelves.rb:3
+  [1m[35m (28.6ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_b_twelves_on_slug`  ON `b_twelves` (`slug`) [0m
+  ↳ db/migrate/20200218161516_add_slug_to_b_twelves.rb:4
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (3.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200218161516')[0m
+  ↳ bin/rails:4
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (2.0ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ bin/rails:4
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT RELEASE_LOCK('2127749988788325090')[0m
+  ↳ bin/rails:4
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:4
+Started GET "/" for 192.168.112.1 at 2020-02-18 16:35:05 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-5.2.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-5.2.4.1/lib/rails/templates/rails/welcome/index.html.erb (2.7ms)
+Completed 200 OK in 16ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/action_plans" for 192.168.112.1 at 2020-02-18 16:35:12 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/action_plans"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/rails/info/routes?path=action" for 192.168.112.1 at 2020-02-18 16:35:18 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"action"}
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes?path=action" for 192.168.112.1 at 2020-02-18 16:35:18 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"action"}
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes?path=action" for 192.168.112.1 at 2020-02-18 16:35:25 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"action"}
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/years" for 192.168.112.1 at 2020-02-18 16:36:59 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by YearsController#index as HTML
+  Rendering years/index.html.erb within layouts/application
+  [1m[36mYear Load (2.8ms)[0m  [1m[34mSELECT `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL[0m
+  ↳ app/views/years/index.html.erb:14
+  Rendered years/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 13279ms (Views: 13229.9ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/years/new" for 192.168.112.1 at 2020-02-18 16:37:16 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by YearsController#show as HTML
+  Parameters: {"id"=>"new"}
+  [1m[36mYear Load (0.6ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`slug` = 'new' LIMIT 1[0m
+  ↳ app/controllers/years_controller.rb:67
+Completed 404 Not Found in 8ms (ActiveRecord: 1.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (can't find record with friendly id: "new"):
+  
+app/controllers/years_controller.rb:67:in `set_year'
+Started GET "/rails/info/routes?path=years_" for 192.168.112.1 at 2020-02-18 16:37:50 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"years_"}
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes?path=years_pa" for 192.168.112.1 at 2020-02-18 16:37:50 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"years_pa"}
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes?path=years_pat" for 192.168.112.1 at 2020-02-18 16:37:52 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"years_pat"}
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes?path=years_pa" for 192.168.112.1 at 2020-02-18 16:37:52 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"years_pa"}
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes?path=years_" for 192.168.112.1 at 2020-02-18 16:37:53 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"years_"}
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes?path=years_" for 192.168.112.1 at 2020-02-18 16:37:54 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"years_"}
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/years/new" for 192.168.112.1 at 2020-02-18 16:38:33 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by YearsController#show as HTML
+  Parameters: {"id"=>"new"}
+  [1m[36mYear Load (0.4ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`slug` = 'new' LIMIT 1[0m
+  ↳ app/controllers/years_controller.rb:67
+Completed 404 Not Found in 5ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (can't find record with friendly id: "new"):
+  
+app/controllers/years_controller.rb:67:in `set_year'
+Started GET "/years" for 192.168.112.1 at 2020-02-18 16:38:36 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by YearsController#index as HTML
+  Rendering years/index.html.erb within layouts/application
+  [1m[36mYear Load (0.3ms)[0m  [1m[34mSELECT `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL[0m
+  ↳ app/views/years/index.html.erb:14
+  Rendered years/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 403ms (Views: 377.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/years/new" for 192.168.112.1 at 2020-02-18 16:38:38 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by YearsController#show as HTML
+  Parameters: {"id"=>"new"}
+  [1m[36mYear Load (0.4ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`slug` = 'new' LIMIT 1[0m
+  ↳ app/controllers/years_controller.rb:67
+Completed 404 Not Found in 5ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (can't find record with friendly id: "new"):
+  
+app/controllers/years_controller.rb:67:in `set_year'
+Started GET "/years/new" for 192.168.112.1 at 2020-02-18 16:38:53 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by YearsController#show as HTML
+  Parameters: {"id"=>"new"}
+  [1m[36mYear Load (0.3ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`slug` = 'new' LIMIT 1[0m
+  ↳ app/controllers/years_controller.rb:67
+Completed 404 Not Found in 4ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (can't find record with friendly id: "new"):
+  
+app/controllers/years_controller.rb:67:in `set_year'
+Started GET "/years/new" for 192.168.112.1 at 2020-02-18 16:38:54 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by YearsController#show as HTML
+  Parameters: {"id"=>"new"}
+  [1m[36mYear Load (0.3ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`slug` = 'new' LIMIT 1[0m
+  ↳ app/controllers/years_controller.rb:67
+Completed 404 Not Found in 5ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (can't find record with friendly id: "new"):
+  
+app/controllers/years_controller.rb:67:in `set_year'
+Started GET "/years/new" for 192.168.112.1 at 2020-02-18 16:39:37 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by YearsController#show as HTML
+  Parameters: {"id"=>"new"}
+  [1m[36mYear Load (0.3ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`slug` = 'new' LIMIT 1[0m
+  ↳ app/controllers/years_controller.rb:67
+Completed 404 Not Found in 23ms (ActiveRecord: 2.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (can't find record with friendly id: "new"):
+  
+app/controllers/years_controller.rb:67:in `set_year'
+Started GET "/years/new" for 192.168.112.1 at 2020-02-18 16:39:51 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by YearsController#new as HTML
+  Rendering years/new.html.erb within layouts/application
+  Rendered years/_form.html.erb (104.7ms)
+  Rendered years/new.html.erb within layouts/application (127.7ms)
+Completed 200 OK in 617ms (Views: 571.9ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/years" for 192.168.112.1 at 2020-02-18 16:39:58 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by YearsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqF8qMC4PF3i9eFnXqvA1+KWeXIwYj273nPJ8I5tFvnkiLbC1ObV50KuCCRWW/fS7z82xNZRD7Dzn3XWw/mNdw==", "year"=>{"year"=>"2019"}, "commit"=>"Create Year"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/years_controller.rb:30
+  [1m[36mYear Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `years` WHERE `years`.`id` IS NOT NULL AND `years`.`slug` = '1582043998701366-2defedfb-b9c5-4cac-8e16-e098dc14c142' LIMIT 1[0m
+  ↳ app/controllers/years_controller.rb:30
+  [1m[36mYear Create (0.5ms)[0m  [1m[32mINSERT INTO `years` (`year`, `created_at`, `updated_at`, `slug`) VALUES ('2019', '2020-02-18 16:39:58', '2020-02-18 16:39:58', '1582043998701366-2defedfb-b9c5-4cac-8e16-e098dc14c142')[0m
+  ↳ app/controllers/years_controller.rb:30
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/years_controller.rb:30
+Redirected to http://localhost:3000/years/1582043998701366-2defedfb-b9c5-4cac-8e16-e098dc14c142
+Completed 302 Found in 123ms (ActiveRecord: 7.9ms)
+
+
+Started GET "/years/1582043998701366-2defedfb-b9c5-4cac-8e16-e098dc14c142" for 192.168.112.1 at 2020-02-18 16:39:58 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by YearsController#show as HTML
+  Parameters: {"id"=>"1582043998701366-2defedfb-b9c5-4cac-8e16-e098dc14c142"}
+  [1m[36mYear Load (1.6ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`slug` = '1582043998701366-2defedfb-b9c5-4cac-8e16-e098dc14c142' LIMIT 1[0m
+  ↳ app/controllers/years_controller.rb:67
+  Rendering years/show.html.erb within layouts/application
+  Rendered years/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 680ms (Views: 641.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/years" for 192.168.112.1 at 2020-02-18 16:40:01 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by YearsController#index as HTML
+  Rendering years/index.html.erb within layouts/application
+  [1m[36mYear Load (0.6ms)[0m  [1m[34mSELECT `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL[0m
+  ↳ app/views/years/index.html.erb:14
+  Rendered years/index.html.erb within layouts/application (22.3ms)
+Completed 500 Internal Server Error in 86ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"action_plans", :year_id=>#<Year id: 1, year: "2019", created_at: "2020-02-18 16:39:58", updated_at: "2020-02-18 16:39:58", slug: "1582043998701366-2defedfb-b9c5-4cac-8e16-e098dc14c...", deleted_at: nil>}, missing required keys: [:id]):
+    17:         <td><%= link_to 'Show', year %></td>
+    18:         <td><%= link_to 'Edit', edit_year_path(year) %></td>
+    19:         <td><%= link_to 'Destroy', year, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    20:         <td><%= link_to 'Rencana Aksi', year_action_plan_path(year)%></td>
+    21:       </tr>
+    22:     <% end %>
+    23:   </tbody>
+  
+app/views/years/index.html.erb:20:in `block in _app_views_years_index_html_erb__3694676384574831371_47355444947840'
+app/views/years/index.html.erb:14:in `_app_views_years_index_html_erb__3694676384574831371_47355444947840'
+Started GET "/rails/info/routes" for 192.168.112.1 at 2020-02-18 16:40:08 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::InfoController#routes as HTML
+  Rendering /usr/local/bundle/gems/railties-5.2.4.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /usr/local/bundle/gems/actionpack-5.2.4.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [88 times] (51.9ms)
+  Rendered /usr/local/bundle/gems/actionpack-5.2.4.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /usr/local/bundle/gems/railties-5.2.4.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (70.0ms)
+Completed 200 OK in 82ms (Views: 78.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/years" for 192.168.112.1 at 2020-02-18 16:40:20 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by YearsController#index as HTML
+  Rendering years/index.html.erb within layouts/application
+  [1m[36mYear Load (0.9ms)[0m  [1m[34mSELECT `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL[0m
+  ↳ app/views/years/index.html.erb:14
+  Rendered years/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 582ms (Views: 560.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/years/1582043998701366-2defedfb-b9c5-4cac-8e16-e098dc14c142/action_plans" for 192.168.112.1 at 2020-02-18 16:40:22 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#index as HTML
+  Parameters: {"year_id"=>"1582043998701366-2defedfb-b9c5-4cac-8e16-e098dc14c142"}
+  Rendering action_plans/index.html.erb within layouts/application
+  [1m[36mActionPlan Load (0.6ms)[0m  [1m[34mSELECT `action_plans`.* FROM `action_plans` WHERE `action_plans`.`deleted_at` IS NULL[0m
+  ↳ app/views/action_plans/index.html.erb:17
+  Rendered action_plans/index.html.erb within layouts/application (373.0ms)
+Completed 500 Internal Server Error in 445ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_action_plan_path' for #<#<Class:0x00007f1a5a716648>:0x00007f1a5a714b68>
+Did you mean?  new_year_action_plan_path
+               year_action_plans_path):
+    30: 
+    31: <br>
+    32: 
+    33: <%= link_to 'New Action Plan', new_action_plan_path %>
+  
+app/views/action_plans/index.html.erb:33:in `_app_views_action_plans_index_html_erb___280326855508711532_69875581630240'
+Started GET "/rails/info/routes" for 192.168.112.1 at 2020-02-18 16:40:55 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::InfoController#routes as HTML
+  Rendering /usr/local/bundle/gems/railties-5.2.4.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /usr/local/bundle/gems/actionpack-5.2.4.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [88 times] (22.0ms)
+  Rendered /usr/local/bundle/gems/actionpack-5.2.4.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /usr/local/bundle/gems/railties-5.2.4.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (36.5ms)
+Completed 200 OK in 43ms (Views: 40.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/years/1582043998701366-2defedfb-b9c5-4cac-8e16-e098dc14c142/action_plans" for 192.168.112.1 at 2020-02-18 16:42:09 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#index as HTML
+  Parameters: {"year_id"=>"1582043998701366-2defedfb-b9c5-4cac-8e16-e098dc14c142"}
+  Rendering action_plans/index.html.erb within layouts/application
+  [1m[36mActionPlan Load (0.3ms)[0m  [1m[34mSELECT `action_plans`.* FROM `action_plans` WHERE `action_plans`.`deleted_at` IS NULL[0m
+  ↳ app/views/action_plans/index.html.erb:17
+  Rendered action_plans/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 419ms (Views: 386.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/years/1582043998701366-2defedfb-b9c5-4cac-8e16-e098dc14c142/action_plans/new" for 192.168.112.1 at 2020-02-18 16:42:12 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#new as HTML
+  Parameters: {"year_id"=>"1582043998701366-2defedfb-b9c5-4cac-8e16-e098dc14c142"}
+  Rendering action_plans/new.html.erb within layouts/application
+  Rendered action_plans/_form.html.erb (0.8ms)
+  Rendered action_plans/new.html.erb within layouts/application (30.9ms)
+Completed 500 Internal Server Error in 124ms (ActiveRecord: 1.3ms)
+
+
+  
+SyntaxError (/sipks/app/views/action_plans/_form.html.erb:1: syntax error, unexpected ',', expecting ')'
+...form_for ([@year,@action_plan], local: true) do |form| @outp...
+...                              ^
+/sipks/app/views/action_plans/_form.html.erb:29: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/action_plans/_form.html.erb:1: syntax error, unexpected ',', expecting ')'
+app/views/action_plans/_form.html.erb:29: syntax error, unexpected keyword_ensure, expecting end-of-input
+app/views/action_plans/new.html.erb:3:in `_app_views_action_plans_new_html_erb__1536178894408663830_69875579488480'
+Started GET "/years/1582043998701366-2defedfb-b9c5-4cac-8e16-e098dc14c142/action_plans/new" for 192.168.112.1 at 2020-02-18 16:42:53 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#new as HTML
+  Parameters: {"year_id"=>"1582043998701366-2defedfb-b9c5-4cac-8e16-e098dc14c142"}
+  Rendering action_plans/new.html.erb within layouts/application
+  Rendered action_plans/_form.html.erb (722.5ms)
+  Rendered action_plans/new.html.erb within layouts/application (750.8ms)
+Completed 500 Internal Server Error in 854ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `action_plans_path' for #<#<Class:0x00007f1a5970b578>:0x00007f1a5aaa4530>
+Did you mean?  action_name):
+    1: <%= form_for ([@year,@action_plan]) do |form| %>
+    2:   <% if action_plan.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(action_plan.errors.count, "error") %> prohibited this action_plan from being saved:</h2>
+  
+app/views/action_plans/_form.html.erb:1:in `_app_views_action_plans__form_html_erb__1532750288913411930_69875583517440'
+app/views/action_plans/new.html.erb:3:in `_app_views_action_plans_new_html_erb__1536178894408663830_69875583493960'
+Started GET "/years/1582043998701366-2defedfb-b9c5-4cac-8e16-e098dc14c142/action_plans/new" for 192.168.112.1 at 2020-02-18 16:43:06 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#new as HTML
+  Parameters: {"year_id"=>"1582043998701366-2defedfb-b9c5-4cac-8e16-e098dc14c142"}
+  Rendering action_plans/new.html.erb within layouts/application
+  Rendered action_plans/_form.html.erb (199.9ms)
+  Rendered action_plans/new.html.erb within layouts/application (223.1ms)
+Completed 500 Internal Server Error in 312ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `action_plans_path' for #<#<Class:0x00007f1a5970b578>:0x00007f1a5977e168>
+Did you mean?  action_name):
+    1: <%= form_for ([@year,@action_plan]) do |form| %>
+    2:   <% if action_plan.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(action_plan.errors.count, "error") %> prohibited this action_plan from being saved:</h2>
+  
+app/views/action_plans/_form.html.erb:1:in `_app_views_action_plans__form_html_erb__1532750288913411930_69875573361800'
+app/views/action_plans/new.html.erb:3:in `_app_views_action_plans_new_html_erb__1536178894408663830_69875573454160'
+Started GET "/years/1582043998701366-2defedfb-b9c5-4cac-8e16-e098dc14c142/action_plans/new" for 192.168.112.1 at 2020-02-18 16:43:09 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#new as HTML
+  Parameters: {"year_id"=>"1582043998701366-2defedfb-b9c5-4cac-8e16-e098dc14c142"}
+  Rendering action_plans/new.html.erb within layouts/application
+  Rendered action_plans/_form.html.erb (316.8ms)
+  Rendered action_plans/new.html.erb within layouts/application (337.7ms)
+Completed 500 Internal Server Error in 410ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `action_plans_path' for #<#<Class:0x00007f1a5970b578>:0x00007f1a5a3978f0>
+Did you mean?  action_name):
+    1: <%= form_for ([@year,@action_plan]) do |form| %>
+    2:   <% if action_plan.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(action_plan.errors.count, "error") %> prohibited this action_plan from being saved:</h2>
+  
+app/views/action_plans/_form.html.erb:1:in `_app_views_action_plans__form_html_erb__1532750288913411930_69875579841960'
+app/views/action_plans/new.html.erb:3:in `_app_views_action_plans_new_html_erb__1536178894408663830_69875579724260'

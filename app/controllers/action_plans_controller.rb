@@ -38,7 +38,7 @@ class ActionPlansController < ApplicationController
         # @b_four.scan_document=nil
         # @b_four.scan_document_ttd=nil
         # @b_four.foto_atau_materi=nil
-        # @b_four.action_plan=@action_plan
+        @b_four.action_plan=@action_plan
         @b_four.save
 
         format.html { redirect_to @action_plan, notice: 'Action plan was successfully created.' }
@@ -95,9 +95,9 @@ class ActionPlansController < ApplicationController
     end
 
 
-    # def set_params_url
-    #   @city = City.first
-    #   @year = Year.first
-    # end
+    def set_params_url
+      # @city = City.friendly.find(params[:year_id])
+      @year = Year.friendly.find(params[:year_id])
+    end
 
 end
