@@ -5,10 +5,12 @@ Rails.application.routes.draw do
   resources :permissions
   devise_for :users
 
-  resources :action_plans do
-    resources :b_fours
-    resources :b_eights
-    resources :b_twelves
+  resources :years, only: [:show, :index] do
+    resources :action_plans do
+      resources :b_fours
+      resources :b_eights
+      resources :b_twelves
+    end
   end
 
   resources :cities
