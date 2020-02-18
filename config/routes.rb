@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'dashboard/user'
+  get 'dashboard/admin'
   resources :roles
   resources :permissions
   devise_for :users
