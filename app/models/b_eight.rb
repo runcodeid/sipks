@@ -54,4 +54,14 @@ class BEight < ApplicationRecord
   friendly_id :slug_candidates, use: :slugged
 
   acts_as_paranoid
+
+
+  has_attached_file :daftar_hadir,:foto_atau_materi,:foto_kegiatan,:materi,:notulen, :scan_document,:scan_document_ttd
+  validates_attachment :daftar_hadir, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
+  validates_attachment :foto_atau_materi, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
+  validates_attachment :foto_kegiatan, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
+  validates_attachment :materi, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
+  validates_attachment :notulen, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
+  validates_attachment :scan_document, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
+  validates_attachment :scan_document_ttd, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
 end
