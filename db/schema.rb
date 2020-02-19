@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_18_161516) do
+ActiveRecord::Schema.define(version: 2020_02_19_070224) do
 
   create_table "action_plans", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "city_id"
@@ -150,6 +150,10 @@ ActiveRecord::Schema.define(version: 2020_02_18_161516) do
     t.datetime "updated_at", null: false
     t.string "slug"
     t.datetime "deleted_at"
+    t.string "logo_city_file_name"
+    t.string "logo_city_content_type"
+    t.integer "logo_city_file_size"
+    t.datetime "logo_city_updated_at"
     t.index ["deleted_at"], name: "index_cities_on_deleted_at"
     t.index ["slug"], name: "index_cities_on_slug", unique: true
   end
