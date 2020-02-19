@@ -1304,3 +1304,408 @@ Processing by Rails::InfoController#routes as */*
 Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/m_year" for 172.23.0.1 at 2020-02-19 07:28:49 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (24.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (38.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/m_year"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/years" for 172.23.0.1 at 2020-02-19 07:28:50 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by YearsController#index as HTML
+  Rendering years/index.html.erb within layouts/application
+  [1m[36mYear Load (11.2ms)[0m  [1m[34mSELECT `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL[0m
+  ↳ app/views/years/index.html.erb:14
+  Rendered years/index.html.erb within layouts/application (46.0ms)
+Completed 200 OK in 966ms (Views: 911.5ms | ActiveRecord: 24.8ms)
+
+
+Started GET "/years/1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe/action_plans" for 172.23.0.1 at 2020-02-19 07:28:57 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#index as HTML
+  Parameters: {"year_id"=>"1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe"}
+  Rendering action_plans/index.html.erb within layouts/application
+  [1m[36mActionPlan Load (0.6ms)[0m  [1m[34mSELECT `action_plans`.* FROM `action_plans` WHERE `action_plans`.`deleted_at` IS NULL[0m
+  ↳ app/views/action_plans/index.html.erb:17
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL AND `cities`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:19
+  [1m[36mYear Load (0.5ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:20
+  Rendered action_plans/index.html.erb within layouts/application (202.6ms)
+Completed 500 Internal Server Error in 248ms (ActiveRecord: 31.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `action_plan_path' for #<#<Class:0x00007f07880e7068>:0x00007f07880e5588>):
+    20:         <td><%= action_plan.year %></td>
+    21:         <td><%= action_plan.code_action_plans %></td>
+    22:         <td><%= action_plan.action_plan %></td>
+    23:         <td><%= link_to 'Show', action_plan %></td>
+    24:         <td><%= link_to 'Edit', edit_action_plan_path(action_plan) %></td>
+    25:         <td><%= link_to 'Destroy', action_plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    26:       </tr>
+  
+app/views/action_plans/index.html.erb:23:in `block in _app_views_action_plans_index_html_erb___2473301568152809024_69835162074160'
+app/views/action_plans/index.html.erb:17:in `_app_views_action_plans_index_html_erb___2473301568152809024_69835162074160'
+Started GET "/years/1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe/action_plans" for 172.23.0.1 at 2020-02-19 07:40:53 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/sipks/app/controllers/action_plans_controller.rb:118: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/action_plans_controller.rb:118: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/years/1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe/action_plans" for 172.23.0.1 at 2020-02-19 07:41:46 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#index as HTML
+  Parameters: {"year_id"=>"1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe"}
+  [1m[36mYear Load (0.4ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`slug` = '1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe' LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:115
+  Rendering action_plans/index.html.erb within layouts/application
+  [1m[36mActionPlan Load (0.2ms)[0m  [1m[34mSELECT `action_plans`.* FROM `action_plans` WHERE `action_plans`.`deleted_at` IS NULL[0m
+  ↳ app/views/action_plans/index.html.erb:17
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL AND `cities`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:19
+  [1m[36mYear Load (0.2ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:20
+  Rendered action_plans/index.html.erb within layouts/application (273.2ms)
+Completed 500 Internal Server Error in 302ms (ActiveRecord: 5.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `action_plan_path' for #<#<Class:0x00007f07823c6ca8>:0x00007f07823c51a0>):
+    20:         <td><%= action_plan.year %></td>
+    21:         <td><%= action_plan.code_action_plans %></td>
+    22:         <td><%= action_plan.action_plan %></td>
+    23:         <td><%= link_to 'Show', action_plan %></td>
+    24:         <td><%= link_to 'Edit', edit_action_plan_path(action_plan) %></td>
+    25:         <td><%= link_to 'Destroy', action_plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    26:       </tr>
+  
+app/views/action_plans/index.html.erb:23:in `block in _app_views_action_plans_index_html_erb___2473301568152809024_69835113249360'
+app/views/action_plans/index.html.erb:17:in `_app_views_action_plans_index_html_erb___2473301568152809024_69835113249360'
+Started GET "/rails/info/routes" for 172.23.0.1 at 2020-02-19 07:44:23 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::InfoController#routes as HTML
+  Rendering /usr/local/bundle/gems/railties-5.2.4.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /usr/local/bundle/gems/actionpack-5.2.4.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [88 times] (25.1ms)
+  Rendered /usr/local/bundle/gems/actionpack-5.2.4.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /usr/local/bundle/gems/railties-5.2.4.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (35.8ms)
+Completed 200 OK in 84ms (Views: 48.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes?path=action" for 172.23.0.1 at 2020-02-19 07:44:28 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"action"}
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/years/1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe/action_plans" for 172.23.0.1 at 2020-02-19 07:46:01 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#index as HTML
+  Parameters: {"year_id"=>"1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe"}
+  [1m[36mYear Load (0.3ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`slug` = '1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe' LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:115
+  Rendering action_plans/index.html.erb within layouts/application
+  [1m[36mActionPlan Load (0.3ms)[0m  [1m[34mSELECT `action_plans`.* FROM `action_plans` WHERE `action_plans`.`deleted_at` IS NULL[0m
+  ↳ app/views/action_plans/index.html.erb:17
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL AND `cities`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:19
+  [1m[36mYear Load (0.2ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:20
+  Rendered action_plans/index.html.erb within layouts/application (178.6ms)
+Completed 500 Internal Server Error in 184ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `action_plan_path' for #<#<Class:0x00007f07823c6ca8>:0x00007f0782c05ba8>):
+    22:         <td><%= action_plan.action_plan %></td>
+    23:         <td><%= link_to 'Show', year_action_plan_path(@year,action_plan) %></td>
+    24:         <td><%= link_to 'Edit', edit_year_action_plan_path(@year,action_plan) %></td>
+    25:         <td><%= link_to 'Destroy', action_plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    26:       </tr>
+    27:     <% end %>
+    28:   </tbody>
+  
+app/views/action_plans/index.html.erb:25:in `block in _app_views_action_plans_index_html_erb___2473301568152809024_69835117572720'
+app/views/action_plans/index.html.erb:17:in `_app_views_action_plans_index_html_erb___2473301568152809024_69835117572720'
+Started GET "/years/1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe/action_plans" for 172.23.0.1 at 2020-02-19 07:46:33 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#index as HTML
+  Parameters: {"year_id"=>"1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe"}
+  [1m[36mYear Load (0.2ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`slug` = '1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe' LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:115
+  Rendering action_plans/index.html.erb within layouts/application
+  [1m[36mActionPlan Load (0.3ms)[0m  [1m[34mSELECT `action_plans`.* FROM `action_plans` WHERE `action_plans`.`deleted_at` IS NULL[0m
+  ↳ app/views/action_plans/index.html.erb:17
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL AND `cities`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:19
+  [1m[36mYear Load (0.6ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:20
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL AND `cities`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:19
+  [1m[36mCACHE Year Load (0.0ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:20
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL AND `cities`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:19
+  [1m[36mCACHE Year Load (0.0ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:20
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL AND `cities`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:19
+  [1m[36mCACHE Year Load (0.0ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:20
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL AND `cities`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:19
+  [1m[36mCACHE Year Load (0.0ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:20
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL AND `cities`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:19
+  [1m[36mCACHE Year Load (0.0ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:20
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL AND `cities`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:19
+  [1m[36mCACHE Year Load (0.0ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:20
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL AND `cities`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:19
+  [1m[36mCACHE Year Load (0.0ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:20
+  Rendered action_plans/index.html.erb within layouts/application (32.4ms)
+Completed 200 OK in 83ms (Views: 78.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/years/1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe/action_plans/new" for 172.23.0.1 at 2020-02-19 07:46:42 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#new as HTML
+  Parameters: {"year_id"=>"1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe"}
+  [1m[36mYear Load (1.3ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`slug` = '1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe' LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:115
+  Rendering action_plans/new.html.erb within layouts/application
+  Rendered action_plans/_form.html.erb (50.3ms)
+  Rendered action_plans/new.html.erb within layouts/application (183.6ms)
+Completed 500 Internal Server Error in 198ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `action_plans_path' for #<#<Class:0x00007f07823c6ca8>:0x00007f0781b75658>):
+    2: 
+    3: <%= render 'form', action_plan: @action_plan %>
+    4: 
+    5: <%= link_to 'Back', action_plans_path %>
+  
+app/views/action_plans/new.html.erb:5:in `_app_views_action_plans_new_html_erb__1874478328552984726_69835108888600'
+Started GET "/years/1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe/action_plans/new" for 172.23.0.1 at 2020-02-19 07:47:03 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#new as HTML
+  Parameters: {"year_id"=>"1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe"}
+  [1m[36mYear Load (0.2ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`slug` = '1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe' LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:115
+  Rendering action_plans/new.html.erb within layouts/application
+  Rendered action_plans/_form.html.erb (2.8ms)
+  Rendered action_plans/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 69ms (Views: 65.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/years/1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe/action_plans" for 172.23.0.1 at 2020-02-19 07:47:19 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s87rEq3nE/IdCcSc2QlcEpybZE3ID+juqhOwlA1JrQTpx74to/Efi9DPzUZ5NDMtHxn5QIpo9GFsISu3JfvU3w==", "action_plan"=>{"code_action_plans"=>"Coba1", "action_plan"=>"Tau Ah"}, "commit"=>"Create Action plan", "year_id"=>"1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe"}
+  [1m[36mYear Load (0.2ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`slug` = '1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe' LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:115
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL ORDER BY `cities`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:30
+  [1m[36mYear Load (0.5ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL ORDER BY `years`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[36mActionPlan Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `action_plans` WHERE `action_plans`.`id` IS NOT NULL AND `action_plans`.`slug` = '1582098439204406-240b6376-f2ee-46d2-8b1c-10290aea653c' LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[36mActionPlan Create (23.4ms)[0m  [1m[32mINSERT INTO `action_plans` (`city_id`, `year_id`, `code_action_plans`, `action_plan`, `created_at`, `updated_at`, `slug`) VALUES (1, 1, 'Coba1', 'Tau Ah', '2020-02-19 07:47:19', '2020-02-19 07:47:19', '1582098439204406-240b6376-f2ee-46d2-8b1c-10290aea653c')[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[35m (49.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+Completed 500 Internal Server Error in 222ms (ActiveRecord: 74.5ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 7, expected 1..2)):
+  
+app/models/b_four.rb:60:in `<class:BFour>'
+app/models/b_four.rb:51:in `<top (required)>'
+app/controllers/action_plans_controller.rb:33:in `block in create'
+app/controllers/action_plans_controller.rb:29:in `create'
+Started POST "/years/1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe/action_plans" for 172.23.0.1 at 2020-02-19 07:56:52 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by ActionPlansController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s87rEq3nE/IdCcSc2QlcEpybZE3ID+juqhOwlA1JrQTpx74to/Efi9DPzUZ5NDMtHxn5QIpo9GFsISu3JfvU3w==", "action_plan"=>{"code_action_plans"=>"Coba1", "action_plan"=>"Tau Ah"}, "commit"=>"Create Action plan", "year_id"=>"1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe"}
+  [1m[36mYear Load (0.6ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`slug` = '1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe' LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:107
+  [1m[36mCity Load (0.7ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL ORDER BY `cities`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:30
+  [1m[36mYear Load (0.2ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL ORDER BY `years`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[36mActionPlan Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM `action_plans` WHERE `action_plans`.`id` IS NOT NULL AND `action_plans`.`slug` = '1582099012413010-cee541ee-6cde-4768-8f49-8caf66192cd5' LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[36mActionPlan Create (0.5ms)[0m  [1m[32mINSERT INTO `action_plans` (`city_id`, `year_id`, `code_action_plans`, `action_plan`, `created_at`, `updated_at`, `slug`) VALUES (1, 1, 'Coba1', 'Tau Ah', '2020-02-19 07:56:52', '2020-02-19 07:56:52', '1582099012413010-cee541ee-6cde-4768-8f49-8caf66192cd5')[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[35m (70.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+Completed 500 Internal Server Error in 140ms (ActiveRecord: 80.8ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 7, expected 1..2)):
+  
+app/models/b_four.rb:60:in `<class:BFour>'
+app/models/b_four.rb:51:in `<top (required)>'
+app/controllers/action_plans_controller.rb:33:in `block in create'
+app/controllers/action_plans_controller.rb:29:in `create'
+Started GET "/years/1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe" for 172.23.0.1 at 2020-02-19 07:56:57 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by YearsController#show as HTML
+  Parameters: {"id"=>"1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe"}
+  [1m[36mYear Load (0.3ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`slug` = '1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe' LIMIT 1[0m
+  ↳ app/controllers/years_controller.rb:67
+  Rendering years/show.html.erb within layouts/application
+  Rendered years/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 86ms (Views: 53.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/years" for 172.23.0.1 at 2020-02-19 07:56:59 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by YearsController#index as HTML
+  Rendering years/index.html.erb within layouts/application
+  [1m[36mYear Load (0.3ms)[0m  [1m[34mSELECT `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL[0m
+  ↳ app/views/years/index.html.erb:14
+  Rendered years/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 62ms (Views: 60.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/years/1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe/action_plans" for 172.23.0.1 at 2020-02-19 07:57:01 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#index as HTML
+  Parameters: {"year_id"=>"1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe"}
+  [1m[36mYear Load (0.3ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`slug` = '1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe' LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:107
+  Rendering action_plans/index.html.erb within layouts/application
+  [1m[36mActionPlan Load (0.6ms)[0m  [1m[34mSELECT `action_plans`.* FROM `action_plans` WHERE `action_plans`.`deleted_at` IS NULL[0m
+  ↳ app/views/action_plans/index.html.erb:17
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL AND `cities`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:19
+  [1m[36mYear Load (0.2ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:20
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL AND `cities`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:19
+  [1m[36mCACHE Year Load (0.0ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:20
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL AND `cities`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:19
+  [1m[36mCACHE Year Load (0.0ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:20
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL AND `cities`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:19
+  [1m[36mCACHE Year Load (0.0ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:20
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL AND `cities`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:19
+  [1m[36mCACHE Year Load (0.0ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:20
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL AND `cities`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:19
+  [1m[36mCACHE Year Load (0.0ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:20
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL AND `cities`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:19
+  [1m[36mCACHE Year Load (0.0ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:20
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL AND `cities`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:19
+  [1m[36mCACHE Year Load (0.0ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:20
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL AND `cities`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:19
+  [1m[36mCACHE Year Load (0.0ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:20
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL AND `cities`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:19
+  [1m[36mCACHE Year Load (0.0ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/index.html.erb:20
+  Rendered action_plans/index.html.erb within layouts/application (44.0ms)
+Completed 200 OK in 110ms (Views: 101.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/years/1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe/action_plans/new" for 172.23.0.1 at 2020-02-19 07:57:04 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#new as HTML
+  Parameters: {"year_id"=>"1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe"}
+  [1m[36mYear Load (0.3ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`slug` = '1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe' LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:107
+  Rendering action_plans/new.html.erb within layouts/application
+  Rendered action_plans/_form.html.erb (4.5ms)
+  Rendered action_plans/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 60ms (Views: 56.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/years/1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe/action_plans" for 172.23.0.1 at 2020-02-19 07:57:14 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xnw1C8qnbBAWXWF9egJYo+TIx8t/IrzE9cKkIHEEcT5//wRbB2Ikefm9U3SImhueQneYMHErrK84gJvSjcPTeg==", "action_plan"=>{"code_action_plans"=>"111", "action_plan"=>"111"}, "commit"=>"Create Action plan", "year_id"=>"1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe"}
+  [1m[36mYear Load (0.3ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`slug` = '1582039170760835-27b5fa0a-3fb1-4353-8449-2b7cae2f31fe' LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:107
+  [1m[36mCity Load (0.7ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL ORDER BY `cities`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:30
+  [1m[36mYear Load (0.2ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL ORDER BY `years`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[36mActionPlan Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `action_plans` WHERE `action_plans`.`id` IS NOT NULL AND `action_plans`.`slug` = '1582099034334025-5ee8b7a1-f804-4387-86c5-3039a24c4a03' LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[36mActionPlan Create (0.4ms)[0m  [1m[32mINSERT INTO `action_plans` (`city_id`, `year_id`, `code_action_plans`, `action_plan`, `created_at`, `updated_at`, `slug`) VALUES (1, 1, '111', '111', '2020-02-19 07:57:14', '2020-02-19 07:57:14', '1582099034334025-5ee8b7a1-f804-4387-86c5-3039a24c4a03')[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+  [1m[35m (136.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/action_plans_controller.rb:32
+Completed 500 Internal Server Error in 156ms (ActiveRecord: 138.5ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 7, expected 1..2)):
+  
+app/models/b_four.rb:60:in `<class:BFour>'
+app/models/b_four.rb:51:in `<top (required)>'
+app/controllers/action_plans_controller.rb:33:in `block in create'
+app/controllers/action_plans_controller.rb:29:in `create'
