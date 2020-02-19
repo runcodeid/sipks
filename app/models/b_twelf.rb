@@ -65,4 +65,12 @@ class BTwelf < ApplicationRecord
   validates_attachment :notulen, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
   validates_attachment :scan_document, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
   validates_attachment :scan_document_ttd, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
+
+  validates_with AttachmentSizeValidator, attributes: :daftar_hadir, less_than: 500.kilobytes
+  validates_with AttachmentSizeValidator, attributes: :foto_atau_materi, less_than: 500.kilobytes
+  validates_with AttachmentSizeValidator, attributes: :foto_kegiatan, less_than: 500.kilobytes
+  validates_with AttachmentSizeValidator, attributes: :materi, less_than: 500.kilobytes
+  validates_with AttachmentSizeValidator, attributes: :notulen, less_than: 500.kilobytes
+  validates_with AttachmentSizeValidator, attributes: :scan_document, less_than: 500.kilobytes
+  validates_with AttachmentSizeValidator, attributes: :scan_document_ttd, less_than: 500.kilobytes
 end
