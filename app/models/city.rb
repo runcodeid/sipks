@@ -23,6 +23,7 @@ class City < ApplicationRecord
     extend FriendlyId
     friendly_id :slug_candidates, use: :slugged
 
+    validates :city, presence: true
 
     acts_as_paranoid
 end

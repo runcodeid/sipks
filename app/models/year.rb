@@ -19,6 +19,8 @@ class Year < ApplicationRecord
     has_many :action_plans
     extend FriendlyId
     friendly_id :slug_candidates, use: :slugged
+
+    validates :year, presence: true
     
     acts_as_paranoid
 
