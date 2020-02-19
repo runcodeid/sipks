@@ -20,9 +20,9 @@
         <td><%= action_plan.year %></td>
         <td><%= action_plan.code_action_plans %></td>
         <td><%= action_plan.action_plan %></td>
-        <td><%= link_to 'Show', action_plan %></td>
-        <td><%= link_to 'Edit', edit_action_plan_path(action_plan) %></td>
-        <td><%= link_to 'Destroy', action_plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', year_action_plan_path(@year,action_plan) %></td>
+        <td><%= link_to 'Edit', edit_year_action_plan_path(@year,action_plan) %></td>
+        <td><%= link_to 'Destroy', year_action_plan_path(@year,action_plan), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Action Plan', new_year_action_plan_path %>
+<%= link_to 'New Action Plan', new_year_action_plan_path(@year) %>

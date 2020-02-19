@@ -1,6 +1,6 @@
 class ActionPlansController < ApplicationController
   before_action :set_action_plan, only: [:show, :edit, :update, :destroy]
-  # before_action :set_params_url
+  before_action :set_params_url
   # GET /action_plans
   # GET /action_plans.json
   def index
@@ -30,16 +30,17 @@ class ActionPlansController < ApplicationController
       @action_plan.city=City.first
       @action_plan.year=Year.first
       if @action_plan.save
-        @b_four = BFour.new(b_four_params)
-        # @b_four.notulen=nil
-        # @b_four.daftar_hadir=nil
-        # @b_four.foto_kegiatan=nil
-        # @b_four.materi=nil
-        # @b_four.scan_document=nil
-        # @b_four.scan_document_ttd=nil
-        # @b_four.foto_atau_materi=nil
+        @b_four = BFour.new(b_jibun_params)
         @b_four.action_plan=@action_plan
         @b_four.save
+
+        @b_eight= BEight.new(b_jibun_params)
+        @b_eight.action_plan=@action_plan
+        @b_eight.save
+
+        @b_twelve = BTwelve.new(b_jibun_params)
+        @b_twelve.action_plan=@action_plan
+        @b_twelve.save
 
         format.html { redirect_to @action_plan, notice: 'Action plan was successfully created.' }
         format.json { render :show, status: :created, location: @action_plan }
@@ -78,22 +79,21 @@ class ActionPlansController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_action_plan
       @action_plan = ActionPlan.friendly.find(params[:id])
       # @b_four = BFour.friendly.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
+    # Only allow alist of trusted parameters through.
+    # Use callbacks to share common setup or constraints between actions.
     def action_plan_params
       params.require(:action_plan).permit(:city_id, :year_id, :code_action_plans, :action_plan)
 
     end
 
-    def b_four_params
+    def b_jibun_params
       params.require(:action_plan).permit(:notulen, :daftar_hadir, :foto_kegiatan, :materi, :scan_document, :scan_document_ttd, :foto_atau_materi)
     end
-
 
     def set_params_url
       # @city = City.friendly.find(params[:year_id])
