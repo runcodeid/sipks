@@ -55,22 +55,22 @@ class BFour < ApplicationRecord
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged
 
-  acts_as_paranoid
+  # acts_as_paranoid
 
-  has_attached_file :daftar_hadir,:foto_atau_materi,:foto_kegiatan,:materi,:notulen, :scan_document,:scan_document_ttd
-  validates_attachment :daftar_hadir, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
-  validates_attachment :foto_atau_materi, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
-  validates_attachment :foto_kegiatan, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
-  validates_attachment :materi, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
-  validates_attachment :notulen, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
-  validates_attachment :scan_document, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
-  validates_attachment :scan_document_ttd, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
+  # has_attached_file :daftar_hadir,:foto_atau_materi,:foto_kegiatan,:materi,:notulen, :scan_document,:scan_document_ttd
+  # validates_attachment :daftar_hadir, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
+  # validates_attachment :foto_atau_materi, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
+  # validates_attachment :foto_kegiatan, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
+  # validates_attachment :materi, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
+  # validates_attachment :notulen, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
+  # validates_attachment :scan_document, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
+  # validates_attachment :scan_document_ttd, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
 
-  validates_with AttachmentSizeValidator, attributes: :daftar_hadir, less_than: 500.kilobytes
-  validates_with AttachmentSizeValidator, attributes: :foto_atau_materi, less_than: 500.kilobytes
-  validates_with AttachmentSizeValidator, attributes: :foto_kegiatan, less_than: 500.kilobytes
-  validates_with AttachmentSizeValidator, attributes: :materi, less_than: 500.kilobytes
-  validates_with AttachmentSizeValidator, attributes: :notulen, less_than: 500.kilobytes
-  validates_with AttachmentSizeValidator, attributes: :scan_document, less_than: 500.kilobytes
-  validates_with AttachmentSizeValidator, attributes: :scan_document_ttd, less_than: 500.kilobytes
+  # validates_with AttachmentSizeValidator, attributes: :daftar_hadir, less_than: 500.kilobytes
+  # validates_with AttachmentSizeValidator, attributes: :foto_atau_materi, less_than: 500.kilobytes
+  # validates_with AttachmentSizeValidator, attributes: :foto_kegiatan, less_than: 500.kilobytes
+  # validates_with AttachmentSizeValidator, attributes: :materi, less_than: 500.kilobytes
+  # validates_with AttachmentSizeValidator, attributes: :notulen, less_than: 500.kilobytes
+  # validates_with AttachmentSizeValidator, attributes: :scan_document, less_than: 500.kilobytes
+  # validates_with AttachmentSizeValidator, attributes: :scan_document_ttd, less_than: 500.kilobytes
 end

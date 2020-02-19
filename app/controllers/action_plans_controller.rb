@@ -1,6 +1,10 @@
 class ActionPlansController < ApplicationController
   before_action :set_action_plan, only: [:show, :edit, :update, :destroy]
   before_action :set_params_url
+  before_action :set_b_four, only: [:show]
+  before_action :set_b_eight, only: [:show]
+  before_action :set_b_twelf, only: [:show]
+  
   # GET /action_plans
   # GET /action_plans.json
   def index
@@ -10,6 +14,7 @@ class ActionPlansController < ApplicationController
   # GET /action_plans/1
   # GET /action_plans/1.json
   def show
+   
   end
 
   # GET /action_plans/new
@@ -38,11 +43,11 @@ class ActionPlansController < ApplicationController
         @b_eight.action_plan=@action_plan
         @b_eight.save
 
-        @b_twelve = BTwelve.new(b_jibun_params)
-        @b_twelve.action_plan=@action_plan
-        @b_twelve.save
+        @b_twelf = BTwelf.new(b_jibun_params)
+        @b_twelf.action_plan=@action_plan
+        @b_twelf.save
 
-        format.html { redirect_to @action_plan, notice: 'Action plan was successfully created.' }
+        format.html { redirect_to year_action_plan_path(@year,@action_plan), notice: 'Action plan was successfully created.' }
         format.json { render :show, status: :created, location: @action_plan }
 
       else
@@ -99,5 +104,21 @@ class ActionPlansController < ApplicationController
       # @city = City.friendly.find(params[:year_id])
       @year = Year.friendly.find(params[:year_id])
     end
+
+    def set_b_four
+      @b_four = BFour.find_by action_plan: @action_plan
+    end
+
+    def set_b_eight
+      @b_eight = BEight.find_by action_plan: @action_plan
+    end
+
+    def set_b_twelf
+      @b_twelf = BTwelf.find_by action_plan: @action_plan
+   end
+
+
+
+
 
 end
