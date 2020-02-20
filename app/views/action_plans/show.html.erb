@@ -20,8 +20,8 @@
   <%= @action_plan.action_plan %>
 </p>
 
-<%= form_with(model: b_four, local: true) do |form| %>
-  <% if b_four.errors.any? %>
+<%= form_for([@year,@action_plan,@b_four]) do |form| %>
+  <% if @b_four.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(b_four.errors.count, "error") %> prohibited this b_four from being saved:</h2>
 
@@ -76,8 +76,8 @@
 <% end %>
 
 
-<%= form_with(model: b_eight, local: true) do |form| %>
-  <% if b_eight.errors.any? %>
+<%= form_for([@year,@action_plan,@b_eight]) do |form| %>
+  <% if @b_eight.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(b_eight.errors.count, "error") %> prohibited this b_eight from being saved:</h2>
 
@@ -130,8 +130,8 @@
   </div>
 <% end %>
 
-<%= form_with(model: b_twelf, local: true) do |form| %>
-  <% if b_twelf.errors.any? %>
+<%= form_for([@year,@action_plan,@b_twelf]) do |form| %>
+  <% if @b_twelf.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(b_twelf.errors.count, "error") %> prohibited this b_twelf from being saved:</h2>
 
@@ -185,5 +185,5 @@
 <% end %>
 
 
-<%= link_to 'Edit', edit_action_plan_path(@action_plan) %> |
-<%= link_to 'Back', action_plans_path %>
+<%= link_to 'Edit', edit_year_action_plan_path(@year,@action_plan) %> |
+<%= link_to 'Back', year_action_plans_path(@year) %>
