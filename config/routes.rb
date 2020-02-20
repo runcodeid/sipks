@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
   resources :permissions
   devise_for :users
+  resources :users
 
   resources :years, only: [:show, :index, :new, :create,:edit,:update,:destroy]
   
