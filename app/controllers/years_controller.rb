@@ -28,7 +28,7 @@ class YearsController < ApplicationController
 
     respond_to do |format|
       if @year.save
-        format.html { redirect_to @year, notice: 'Year was successfully created.' }
+        format.html { redirect_to dashboard_user_path(), notice: 'Year was successfully created.' }
         format.json { render :show, status: :created, location: @year }
       else
         format.html { render :new }
