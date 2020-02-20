@@ -12,6 +12,7 @@
 //
 // Gem
 //= require jquery3
+//= require rails_ujs_handler
 //= require rails-ujs
 //= require turbolinks
 //= require activestorage
