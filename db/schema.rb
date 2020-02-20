@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_19_070224) do
+ActiveRecord::Schema.define(version: 2020_02_20_163217) do
 
   create_table "action_plans", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "city_id"
@@ -173,6 +173,15 @@ ActiveRecord::Schema.define(version: 2020_02_19_070224) do
     t.index ["slug"], name: "index_permissions_on_slug", unique: true
   end
 
+  create_table "role_permissions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "permission_id"
+    t.bigint "role_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["permission_id"], name: "index_role_permissions_on_permission_id"
+    t.index ["role_id"], name: "index_role_permissions_on_role_id"
+  end
+
   create_table "roles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name_role"
     t.datetime "created_at", null: false
@@ -207,11 +216,14 @@ ActiveRecord::Schema.define(version: 2020_02_19_070224) do
     t.datetime "deleted_at"
     t.string "slug"
     t.bigint "city_id"
+    t.bigint "role_id"
+    t.string "name"
     t.index ["city_id"], name: "index_users_on_city_id"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["deleted_at"], name: "index_users_on_deleted_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["role_id"], name: "index_users_on_role_id"
     t.index ["slug"], name: "index_users_on_slug", unique: true
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
@@ -232,5 +244,8 @@ ActiveRecord::Schema.define(version: 2020_02_19_070224) do
   add_foreign_key "b_eights", "action_plans"
   add_foreign_key "b_fours", "action_plans"
   add_foreign_key "b_twelves", "action_plans"
+  add_foreign_key "role_permissions", "permissions"
+  add_foreign_key "role_permissions", "roles"
   add_foreign_key "users", "cities"
+  add_foreign_key "users", "roles"
 end

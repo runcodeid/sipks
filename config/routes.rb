@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
   get 'dashboard/user'
   get 'dashboard/admin'
-  resources :roles
+  resources :roles do
+    resources :role_permissions, :only => [:index, :create]
+  end
   resources :permissions
   devise_for :users
+  resources :users
 
   resources :years, only: [:show, :index, :new, :create,:edit,:update,:destroy]
   
