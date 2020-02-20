@@ -1,4 +1,4 @@
-<%= form_with(model: b_twelf, local: true) do |form| %>
+<%= form_for[@year,@action_plan,@b_twelf] do |form| %>
   <% if b_twelf.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(b_twelf.errors.count, "error") %> prohibited this b_twelf from being saved:</h2>

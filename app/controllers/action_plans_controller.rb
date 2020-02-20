@@ -14,7 +14,8 @@ class ActionPlansController < ApplicationController
   # GET /action_plans/1
   # GET /action_plans/1.json
   def show
-   
+    @action_plan.year = @year
+    @b_four.action_plan = @action_plan 
   end
 
   # GET /action_plans/new
@@ -33,7 +34,7 @@ class ActionPlansController < ApplicationController
 
     respond_to do |format|
       @action_plan.city=City.first
-      @action_plan.year=Year.first
+      @action_plan.year= @year
       if @action_plan.save
         @b_four = BFour.new(b_jibun_params)
         @b_four.action_plan=@action_plan
@@ -103,6 +104,7 @@ class ActionPlansController < ApplicationController
     def set_params_url
       # @city = City.friendly.find(params[:year_id])
       @year = Year.friendly.find(params[:year_id])
+
     end
 
     def set_b_four
