@@ -26,6 +26,7 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  city_id                :bigint
+#  role_id                :bigint
 #
 # Indexes
 #
@@ -34,6 +35,7 @@
 #  index_users_on_deleted_at            (deleted_at)
 #  index_users_on_email                 (email) UNIQUE
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
+#  index_users_on_role_id               (role_id)
 #  index_users_on_slug                  (slug) UNIQUE
 #  index_users_on_unlock_token          (unlock_token) UNIQUE
 #  index_users_on_username              (username) UNIQUE
@@ -41,6 +43,7 @@
 # Foreign Keys
 #
 #  fk_rails_...  (city_id => cities.id)
+#  fk_rails_...  (role_id => roles.id)
 #
 
 class User < ApplicationRecord
@@ -53,6 +56,9 @@ class User < ApplicationRecord
     friendly_id :slug_candidates, use: :slugged
     acts_as_paranoid
 
+
+    belongs_to :role
+
     validates :username, presence: :true, uniqueness: { case_sensitive: false }
     validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
     validate :validate_username
@@ -62,7 +68,6 @@ class User < ApplicationRecord
         errors.add(:username, :invalid)
       end
     end
-
 
     def self.find_for_database_authentication(warden_conditions)
       conditions = warden_conditions.dup

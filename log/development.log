@@ -1303,3 +1303,669 @@ Processing by Rails::InfoController#routes as */*
   Parameters: {"path"=>"year"}
 Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.0ms)
 
+Started GET "/" for 192.168.112.1 at 2020-02-20 15:54:37 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (11.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-5.2.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-5.2.4.1/lib/rails/templates/rails/welcome/index.html.erb (2.7ms)
+Completed 200 OK in 17ms (Views: 10.3ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:4
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT GET_LOCK('2127749988788325090', 0)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateRolePermissions (20200220160033)
+  [1m[35m (7.9ms)[0m  [1m[34mSELECT RELEASE_LOCK('2127749988788325090')[0m
+  ↳ bin/rails:4
+  [1m[35m (1.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:4
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT GET_LOCK('2127749988788325090', 0)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateRolePermissions (20200220160247)
+  [1m[35m (50.6ms)[0m  [1m[35mCREATE TABLE `role_permissions` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `permission_id` bigint, `role_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_role_permissions_on_permission_id`  (`permission_id`),  INDEX `index_role_permissions_on_role_id`  (`role_id`), CONSTRAINT `fk_rails_439e640a3f`
+FOREIGN KEY (`permission_id`)
+  REFERENCES `permissions` (`id`)
+, CONSTRAINT `fk_rails_60126080bd`
+FOREIGN KEY (`role_id`)
+  REFERENCES `roles` (`id`)
+)[0m
+  ↳ db/migrate/20200220160247_create_role_permissions.rb:3
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200220160247')[0m
+  ↳ bin/rails:4
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ bin/rails:4
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('2127749988788325090')[0m
+  ↳ bin/rails:4
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:4
+Started GET "/roles" for 192.168.112.1 at 2020-02-20 16:12:00 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by RolesController#index as HTML
+  Rendering roles/index.html.erb within layouts/application
+  [1m[36mRole Load (3.7ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`deleted_at` IS NULL[0m
+  ↳ app/views/roles/index.html.erb:14
+  Rendered roles/index.html.erb within layouts/application (14.6ms)
+Started GET "/roles" for 192.168.112.1 at 2020-02-20 16:13:07 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Completed 200 OK in 95778ms (Views: 95691.5ms | ActiveRecord: 5.3ms)
+
+
+Processing by RolesController#index as HTML
+  Rendering roles/index.html.erb within layouts/application
+  [1m[36mRole Load (0.4ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`deleted_at` IS NULL[0m
+  ↳ app/views/roles/index.html.erb:14
+  Rendered roles/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 1840ms (Views: 1798.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/roles/new" for 192.168.112.1 at 2020-02-20 16:19:16 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RolesController#new as HTML
+  Rendering roles/new.html.erb within layouts/application
+  Rendered roles/_form.html.erb (802.6ms)
+  Rendered roles/new.html.erb within layouts/application (827.5ms)
+Completed 200 OK in 2596ms (Views: 2560.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/roles" for 192.168.112.1 at 2020-02-20 16:19:29 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RolesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5QFLqxVtsOGQEKajh/DT8fC51a94In26fRXBZAquIiUV1hg4dm1LXs5pncq+FLAO6+DsD0olDvOWacZnWPM1nQ==", "role"=>{"name_role"=>"user"}, "commit"=>"Create Role"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/roles_controller.rb:30
+  [1m[36mRole Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM `roles` WHERE `roles`.`id` IS NOT NULL AND `roles`.`slug` = '1582215569189002-cf9619a9-0914-4c5c-b95f-b1644975851c' LIMIT 1[0m
+  ↳ app/controllers/roles_controller.rb:30
+  [1m[36mRole Create (1.0ms)[0m  [1m[32mINSERT INTO `roles` (`name_role`, `created_at`, `updated_at`, `slug`) VALUES ('user', '2020-02-20 16:19:29', '2020-02-20 16:19:29', '1582215569189002-cf9619a9-0914-4c5c-b95f-b1644975851c')[0m
+  ↳ app/controllers/roles_controller.rb:30
+  [1m[35m (8.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/roles_controller.rb:30
+Redirected to http://localhost:3000/roles/1582215569189002-cf9619a9-0914-4c5c-b95f-b1644975851c
+Completed 302 Found in 129ms (ActiveRecord: 9.9ms)
+
+
+Started GET "/roles/1582215569189002-cf9619a9-0914-4c5c-b95f-b1644975851c" for 192.168.112.1 at 2020-02-20 16:19:29 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RolesController#show as HTML
+  Parameters: {"id"=>"1582215569189002-cf9619a9-0914-4c5c-b95f-b1644975851c"}
+  [1m[36mRole Load (0.9ms)[0m  [1m[34mSELECT  `roles`.* FROM `roles` WHERE `roles`.`deleted_at` IS NULL AND `roles`.`id` = 1582215569189002 LIMIT 1[0m
+  ↳ app/controllers/roles_controller.rb:67
+Completed 404 Not Found in 7ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Role with 'id'=1582215569189002-cf9619a9-0914-4c5c-b95f-b1644975851c [WHERE `roles`.`deleted_at` IS NULL]):
+  
+app/controllers/roles_controller.rb:67:in `set_role'
+Started GET "/roles/1582215569189002-cf9619a9-0914-4c5c-b95f-b1644975851c" for 192.168.112.1 at 2020-02-20 16:19:56 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RolesController#show as HTML
+  Parameters: {"id"=>"1582215569189002-cf9619a9-0914-4c5c-b95f-b1644975851c"}
+  [1m[36mRole Load (0.8ms)[0m  [1m[34mSELECT  `roles`.* FROM `roles` WHERE `roles`.`deleted_at` IS NULL AND `roles`.`slug` = '1582215569189002-cf9619a9-0914-4c5c-b95f-b1644975851c' LIMIT 1[0m
+  ↳ app/controllers/roles_controller.rb:67
+  Rendering roles/show.html.erb within layouts/application
+  Rendered roles/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 1117ms (Views: 1068.8ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/roles" for 192.168.112.1 at 2020-02-20 16:20:00 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RolesController#index as HTML
+  Rendering roles/index.html.erb within layouts/application
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`deleted_at` IS NULL[0m
+  ↳ app/views/roles/index.html.erb:14
+  Rendered roles/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 1137ms (Views: 1114.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/roles" for 192.168.112.1 at 2020-02-20 16:21:01 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RolesController#index as HTML
+  Rendering roles/index.html.erb within layouts/application
+  [1m[36mRole Load (0.5ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`deleted_at` IS NULL[0m
+  ↳ app/views/roles/index.html.erb:14
+  Rendered roles/index.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 1288ms (Views: 1266.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/roles/1582215569189002-cf9619a9-0914-4c5c-b95f-b1644975851c/access_roles" for 192.168.112.1 at 2020-02-20 16:21:04 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (uninitialized constant AccessRolesController):
+  
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `block in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `rescue in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:58:in `load_missing_constant'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.4.1) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.4.1) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/roles/1582215569189002-cf9619a9-0914-4c5c-b95f-b1644975851c/access_roles" for 192.168.112.1 at 2020-02-20 16:21:15 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (uninitialized constant AccessRolesController):
+  
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `block in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `rescue in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:58:in `load_missing_constant'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.4.1) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.4.1) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/roles" for 192.168.112.1 at 2020-02-20 16:21:19 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RolesController#index as HTML
+  Rendering roles/index.html.erb within layouts/application
+  [1m[36mRole Load (0.4ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`deleted_at` IS NULL[0m
+  ↳ app/views/roles/index.html.erb:14
+  Rendered roles/index.html.erb within layouts/application (410.0ms)
+Completed 500 Internal Server Error in 464ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `role_permissions_path' for #<#<Class:0x00007f101ead4c80>:0x00007f101d04a3d8>):
+    17:         <td><%= link_to 'Show', role %></td>
+    18:         <td><%= link_to 'Edit', edit_role_path(role) %></td>
+    19:         <td><%= link_to 'Destroy', role, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    20:         <td><%= link_to 'Add Access', role_permissions_path(role) %></td>
+    21:       </tr>
+    22:     <% end %>
+    23:   </tbody>
+  
+app/views/roles/index.html.erb:20:in `block in _app_views_roles_index_html_erb___4443802405284996714_69853591525820'
+app/views/roles/index.html.erb:14:in `_app_views_roles_index_html_erb___4443802405284996714_69853591525820'
+Started GET "/rails/info/routes" for 192.168.112.1 at 2020-02-20 16:21:35 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::InfoController#routes as HTML
+  Rendering /usr/local/bundle/gems/railties-5.2.4.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /usr/local/bundle/gems/actionpack-5.2.4.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [90 times] (35.2ms)
+  Rendered /usr/local/bundle/gems/actionpack-5.2.4.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.9ms)
+  Rendered /usr/local/bundle/gems/railties-5.2.4.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (48.7ms)
+Completed 200 OK in 61ms (Views: 55.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes?path=role" for 192.168.112.1 at 2020-02-20 16:21:38 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"role"}
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes" for 192.168.112.1 at 2020-02-20 16:22:10 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::InfoController#routes as HTML
+  Rendering /usr/local/bundle/gems/railties-5.2.4.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /usr/local/bundle/gems/actionpack-5.2.4.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [90 times] (22.5ms)
+  Rendered /usr/local/bundle/gems/actionpack-5.2.4.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /usr/local/bundle/gems/railties-5.2.4.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (33.2ms)
+Completed 200 OK in 39ms (Views: 36.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes?path=role" for 192.168.112.1 at 2020-02-20 16:22:12 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"role"}
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes?path=role" for 192.168.112.1 at 2020-02-20 16:22:14 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"role"}
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/roles" for 192.168.112.1 at 2020-02-20 16:22:16 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RolesController#index as HTML
+  Rendering roles/index.html.erb within layouts/application
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`deleted_at` IS NULL[0m
+  ↳ app/views/roles/index.html.erb:14
+  Rendered roles/index.html.erb within layouts/application (186.5ms)
+Completed 500 Internal Server Error in 260ms (ActiveRecord: 2.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `role_permissions_path' for #<#<Class:0x00007f103ee3be30>:0x00007f103ee381b8>):
+    17:         <td><%= link_to 'Show', role %></td>
+    18:         <td><%= link_to 'Edit', edit_role_path(role) %></td>
+    19:         <td><%= link_to 'Destroy', role, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    20:         <td><%= link_to 'Add Access', role_permissions_path(role) %></td>
+    21:       </tr>
+    22:     <% end %>
+    23:   </tbody>
+  
+app/views/roles/index.html.erb:20:in `block in _app_views_roles_index_html_erb___4443802405284996714_69853875668340'
+app/views/roles/index.html.erb:14:in `_app_views_roles_index_html_erb___4443802405284996714_69853875668340'
+Started GET "/roles" for 192.168.112.1 at 2020-02-20 16:22:18 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RolesController#index as HTML
+  Rendering roles/index.html.erb within layouts/application
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`deleted_at` IS NULL[0m
+  ↳ app/views/roles/index.html.erb:14
+  Rendered roles/index.html.erb within layouts/application (476.5ms)
+Completed 500 Internal Server Error in 558ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `role_permissions_path' for #<#<Class:0x00007f103ee3be30>:0x00007f103c714500>):
+    17:         <td><%= link_to 'Show', role %></td>
+    18:         <td><%= link_to 'Edit', edit_role_path(role) %></td>
+    19:         <td><%= link_to 'Destroy', role, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    20:         <td><%= link_to 'Add Access', role_permissions_path(role) %></td>
+    21:       </tr>
+    22:     <% end %>
+    23:   </tbody>
+  
+app/views/roles/index.html.erb:20:in `block in _app_views_roles_index_html_erb___4443802405284996714_69853855172120'
+app/views/roles/index.html.erb:14:in `_app_views_roles_index_html_erb___4443802405284996714_69853855172120'
+Started GET "/roles/1582215569189002-cf9619a9-0914-4c5c-b95f-b1644975851c" for 192.168.112.1 at 2020-02-20 16:22:38 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RolesController#show as HTML
+  Parameters: {"id"=>"1582215569189002-cf9619a9-0914-4c5c-b95f-b1644975851c"}
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT  `roles`.* FROM `roles` WHERE `roles`.`deleted_at` IS NULL AND `roles`.`slug` = '1582215569189002-cf9619a9-0914-4c5c-b95f-b1644975851c' LIMIT 1[0m
+  ↳ app/controllers/roles_controller.rb:67
+  Rendering roles/show.html.erb within layouts/application
+  Rendered roles/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 1394ms (Views: 1362.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/roles" for 192.168.112.1 at 2020-02-20 16:22:41 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RolesController#index as HTML
+  Rendering roles/index.html.erb within layouts/application
+  [1m[36mRole Load (0.5ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`deleted_at` IS NULL[0m
+  ↳ app/views/roles/index.html.erb:14
+  Rendered roles/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 1058ms (Views: 1035.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/roles" for 192.168.112.1 at 2020-02-20 16:22:43 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RolesController#index as HTML
+  Rendering roles/index.html.erb within layouts/application
+  [1m[36mRole Load (0.7ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`deleted_at` IS NULL[0m
+  ↳ app/views/roles/index.html.erb:14
+  Rendered roles/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 1399ms (Views: 1371.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/roles/1582215569189002-cf9619a9-0914-4c5c-b95f-b1644975851c/role_permissions" for 192.168.112.1 at 2020-02-20 16:22:45 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RolePermissionsController#index as HTML
+  Parameters: {"role_id"=>"1582215569189002-cf9619a9-0914-4c5c-b95f-b1644975851c"}
+  Rendering role_permissions/index.html.erb within layouts/application
+  [1m[36mRolePermission Load (1.2ms)[0m  [1m[34mSELECT `role_permissions`.* FROM `role_permissions`[0m
+  ↳ app/views/role_permissions/index.html.erb:13
+  Rendered role_permissions/index.html.erb within layouts/application (418.9ms)
+Completed 500 Internal Server Error in 573ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_role_permission_path' for #<#<Class:0x00007f101ca4c990>:0x00007f101ca54870>):
+    22: 
+    23: <br>
+    24: 
+    25: <%= link_to 'New Role Permission', new_role_permission_path %>
+    26: 
+    27: 
+    28: <p id="notice"><%= notice %></p>
+  
+app/views/role_permissions/index.html.erb:25:in `_app_views_role_permissions_index_html_erb___3476758365927031873_69853588384640'
+Started GET "/roles/1582215569189002-cf9619a9-0914-4c5c-b95f-b1644975851c/role_permissions" for 192.168.112.1 at 2020-02-20 16:23:10 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RolePermissionsController#index as HTML
+  Parameters: {"role_id"=>"1582215569189002-cf9619a9-0914-4c5c-b95f-b1644975851c"}
+  Rendering role_permissions/index.html.erb within layouts/application
+  Rendered role_permissions/index.html.erb within layouts/application (22.9ms)
+Completed 500 Internal Server Error in 114ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    1: 
+    2: <p id="notice"><%= notice %></p>
+    3: <% if @role_permission.errors.any? %>
+    4:     <div id="error_explanation">
+    5:       <h2><%= pluralize(@role_permission.errors.count, "error") %> prohibited this role_permission from being saved:</h2>
+    6: 
+  
+app/views/role_permissions/index.html.erb:3:in `_app_views_role_permissions_index_html_erb___3476758365927031873_69853601251260'
+Started GET "/roles/1582215569189002-cf9619a9-0914-4c5c-b95f-b1644975851c/role_permissions" for 192.168.112.1 at 2020-02-20 16:23:56 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RolePermissionsController#index as HTML
+  Parameters: {"role_id"=>"1582215569189002-cf9619a9-0914-4c5c-b95f-b1644975851c"}
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT  `roles`.* FROM `roles` WHERE `roles`.`deleted_at` IS NULL AND `roles`.`slug` = '1582215569189002-cf9619a9-0914-4c5c-b95f-b1644975851c' LIMIT 1[0m
+  ↳ app/controllers/role_permissions_controller.rb:7
+  Rendering role_permissions/index.html.erb within layouts/application
+  Rendered role_permissions/index.html.erb within layouts/application (17.9ms)
+Completed 500 Internal Server Error in 130ms (ActiveRecord: 5.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<Role:0x000055aeee604238>):
+    12:     </div>
+    13:   <% end %>
+    14: <h1>Role Name</h1>
+    15: <p><%= @role.name %></p>
+    16: 
+    17: <%= form_for [@role,@role_permission] do |form| %>
+    18: 
+  
+app/views/role_permissions/index.html.erb:15:in `_app_views_role_permissions_index_html_erb___3476758365927031873_47104906747660'
+Started GET "/roles/1582215569189002-cf9619a9-0914-4c5c-b95f-b1644975851c/role_permissions" for 192.168.112.1 at 2020-02-20 16:24:09 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RolePermissionsController#index as HTML
+  Parameters: {"role_id"=>"1582215569189002-cf9619a9-0914-4c5c-b95f-b1644975851c"}
+  [1m[36mRole Load (0.5ms)[0m  [1m[34mSELECT  `roles`.* FROM `roles` WHERE `roles`.`deleted_at` IS NULL AND `roles`.`slug` = '1582215569189002-cf9619a9-0914-4c5c-b95f-b1644975851c' LIMIT 1[0m
+  ↳ app/controllers/role_permissions_controller.rb:7
+  Rendering role_permissions/index.html.erb within layouts/application
+  Rendered role_permissions/index.html.erb within layouts/application (19.2ms)
+Completed 500 Internal Server Error in 88ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<Role:0x000055aeef743828>):
+    12:     </div>
+    13:   <% end %>
+    14: <h1>Role Name</h1>
+    15: <p><%= @role.name %></p>
+    16: 
+    17: <%= form_for [@role,@role_permission] do |form| %>
+    18: 
+  
+app/views/role_permissions/index.html.erb:15:in `_app_views_role_permissions_index_html_erb___3476758365927031873_47104915068300'
+Started GET "/roles/1582215569189002-cf9619a9-0914-4c5c-b95f-b1644975851c/role_permissions" for 192.168.112.1 at 2020-02-20 16:24:26 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RolePermissionsController#index as HTML
+  Parameters: {"role_id"=>"1582215569189002-cf9619a9-0914-4c5c-b95f-b1644975851c"}
+  [1m[36mRole Load (1.3ms)[0m  [1m[34mSELECT  `roles`.* FROM `roles` WHERE `roles`.`deleted_at` IS NULL AND `roles`.`slug` = '1582215569189002-cf9619a9-0914-4c5c-b95f-b1644975851c' LIMIT 1[0m
+  ↳ app/controllers/role_permissions_controller.rb:7
+  Rendering role_permissions/index.html.erb within layouts/application
+  [1m[36mPermission Load (3.1ms)[0m  [1m[34mSELECT `permissions`.* FROM `permissions` WHERE `permissions`.`deleted_at` IS NULL GROUP BY `permissions`.`resource`[0m
+  ↳ app/views/role_permissions/index.html.erb:25
+  Rendered role_permissions/index.html.erb within layouts/application (375.1ms)
+Completed 200 OK in 1640ms (Views: 1611.0ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/permissions" for 192.168.112.1 at 2020-02-20 16:24:36 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PermissionsController#index as HTML
+  Rendering permissions/index.html.erb within layouts/application
+  [1m[36mPermission Load (0.9ms)[0m  [1m[34mSELECT `permissions`.* FROM `permissions` WHERE `permissions`.`deleted_at` IS NULL[0m
+  ↳ app/views/permissions/index.html.erb:19
+  Rendered permissions/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 1621ms (Views: 1590.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/permissions/new" for 192.168.112.1 at 2020-02-20 16:24:39 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PermissionsController#new as HTML
+  Rendering permissions/new.html.erb within layouts/application
+  Rendered permissions/_form.html.erb (11.2ms)
+  Rendered permissions/new.html.erb within layouts/application (41.8ms)
+Completed 200 OK in 1261ms (Views: 1226.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/rails/info/routes?path=citi" for 192.168.112.1 at 2020-02-20 16:25:22 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"citi"}
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/permissions" for 192.168.112.1 at 2020-02-20 16:25:28 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PermissionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ag+t/NehJe5AS5Lt8EREutzGyu/k/NP4fKs6NLQIs5kDf7JfrSPQ2M/LiRNf+pvC4o2kY8Ce0wa9YnyP0LW+Tg==", "permission"=>{"name"=>"City", "resource"=>"city", "action"=>"index", "description"=>"Lihat data kota dan kabupaten", "page"=>"1", "path"=>"cities_path"}, "commit"=>"Create Permission"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/permissions_controller.rb:30
+  [1m[36mPermission Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM `permissions` WHERE `permissions`.`id` IS NOT NULL AND `permissions`.`slug` = '1582215928181860-7025787e-05ce-4ec1-bcef-0fe1d3ce8cc2' LIMIT 1[0m
+  ↳ app/controllers/permissions_controller.rb:30
+  [1m[36mPermission Create (0.6ms)[0m  [1m[32mINSERT INTO `permissions` (`name`, `resource`, `action`, `description`, `page`, `path`, `created_at`, `updated_at`, `slug`) VALUES ('City', 'city', 'index', 'Lihat data kota dan kabupaten', TRUE, 'cities_path', '2020-02-20 16:25:28', '2020-02-20 16:25:28', '1582215928181860-7025787e-05ce-4ec1-bcef-0fe1d3ce8cc2')[0m
+  ↳ app/controllers/permissions_controller.rb:30
+  [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/permissions_controller.rb:30
+Redirected to http://localhost:3000/permissions/1582215928181860-7025787e-05ce-4ec1-bcef-0fe1d3ce8cc2
+Completed 302 Found in 26ms (ActiveRecord: 8.7ms)
+
+
+Started GET "/permissions/1582215928181860-7025787e-05ce-4ec1-bcef-0fe1d3ce8cc2" for 192.168.112.1 at 2020-02-20 16:25:28 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PermissionsController#show as HTML
+  Parameters: {"id"=>"1582215928181860-7025787e-05ce-4ec1-bcef-0fe1d3ce8cc2"}
+  [1m[36mPermission Load (0.9ms)[0m  [1m[34mSELECT  `permissions`.* FROM `permissions` WHERE `permissions`.`deleted_at` IS NULL AND `permissions`.`slug` = '1582215928181860-7025787e-05ce-4ec1-bcef-0fe1d3ce8cc2' LIMIT 1[0m
+  ↳ app/controllers/permissions_controller.rb:67
+  Rendering permissions/show.html.erb within layouts/application
+  Rendered permissions/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 1332ms (Views: 1304.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/permissions" for 192.168.112.1 at 2020-02-20 16:25:31 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PermissionsController#index as HTML
+  Rendering permissions/index.html.erb within layouts/application
+  [1m[36mPermission Load (0.8ms)[0m  [1m[34mSELECT `permissions`.* FROM `permissions` WHERE `permissions`.`deleted_at` IS NULL[0m
+  ↳ app/views/permissions/index.html.erb:19
+  Rendered permissions/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 1283ms (Views: 1262.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/roles" for 192.168.112.1 at 2020-02-20 16:25:37 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RolesController#index as HTML
+  Rendering roles/index.html.erb within layouts/application
+  [1m[36mRole Load (0.5ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`deleted_at` IS NULL[0m
+  ↳ app/views/roles/index.html.erb:14
+  Rendered roles/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 2509ms (Views: 2476.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/roles/1582215569189002-cf9619a9-0914-4c5c-b95f-b1644975851c/role_permissions" for 192.168.112.1 at 2020-02-20 16:25:42 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RolePermissionsController#index as HTML
+  Parameters: {"role_id"=>"1582215569189002-cf9619a9-0914-4c5c-b95f-b1644975851c"}
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT  `roles`.* FROM `roles` WHERE `roles`.`deleted_at` IS NULL AND `roles`.`slug` = '1582215569189002-cf9619a9-0914-4c5c-b95f-b1644975851c' LIMIT 1[0m
+  ↳ app/controllers/role_permissions_controller.rb:7
+  Rendering role_permissions/index.html.erb within layouts/application
+  [1m[36mPermission Load (1.4ms)[0m  [1m[34mSELECT `permissions`.* FROM `permissions` WHERE `permissions`.`deleted_at` IS NULL GROUP BY `permissions`.`resource`[0m
+  ↳ app/views/role_permissions/index.html.erb:25
+  [1m[36mPermission Load (0.7ms)[0m  [1m[34mSELECT `permissions`.* FROM `permissions` WHERE `permissions`.`deleted_at` IS NULL AND (resource = 'city')[0m
+  ↳ app/views/role_permissions/index.html.erb:36
+  Rendered role_permissions/index.html.erb within layouts/application (55.9ms)
+Completed 500 Internal Server Error in 140ms (ActiveRecord: 2.4ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::AccessRole):
+    35:         </tr>
+    36:         <% @permissions.where('resource = ?',resource_of.resource).each do |resource_of_permission| %>
+    37:           <tr>
+    38:             <% if AccessRole.check_status(@role.id,resource_of_permission.id) %>
+    39:               <td> <%= check_box("permissions", resource_of_permission.id, {checked: true}) %></td>
+    40:             <% else %>
+    41:               <td> <%= check_box("permissions", resource_of_permission.id, {checked: false}) %></td>
+  
+app/views/role_permissions/index.html.erb:38:in `block (3 levels) in _app_views_role_permissions_index_html_erb___3476758365927031873_69853597788480'
+app/views/role_permissions/index.html.erb:36:in `block (2 levels) in _app_views_role_permissions_index_html_erb___3476758365927031873_69853597788480'
+app/views/role_permissions/index.html.erb:25:in `block in _app_views_role_permissions_index_html_erb___3476758365927031873_69853597788480'
+app/views/role_permissions/index.html.erb:17:in `_app_views_role_permissions_index_html_erb___3476758365927031873_69853597788480'
+Started GET "/roles/1582215569189002-cf9619a9-0914-4c5c-b95f-b1644975851c/role_permissions" for 192.168.112.1 at 2020-02-20 16:26:16 +0000
+Cannot render console from 192.168.112.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RolePermissionsController#index as HTML
+  Parameters: {"role_id"=>"1582215569189002-cf9619a9-0914-4c5c-b95f-b1644975851c"}
+  [1m[36mRole Load (0.4ms)[0m  [1m[34mSELECT  `roles`.* FROM `roles` WHERE `roles`.`deleted_at` IS NULL AND `roles`.`slug` = '1582215569189002-cf9619a9-0914-4c5c-b95f-b1644975851c' LIMIT 1[0m
+  ↳ app/controllers/role_permissions_controller.rb:7
+  Rendering role_permissions/index.html.erb within layouts/application
+  [1m[36mPermission Load (0.4ms)[0m  [1m[34mSELECT `permissions`.* FROM `permissions` WHERE `permissions`.`deleted_at` IS NULL GROUP BY `permissions`.`resource`[0m
+  ↳ app/views/role_permissions/index.html.erb:25
+  [1m[36mPermission Load (0.5ms)[0m  [1m[34mSELECT `permissions`.* FROM `permissions` WHERE `permissions`.`deleted_at` IS NULL AND (resource = 'city')[0m
+  ↳ app/views/role_permissions/index.html.erb:36
+  [1m[36mRolePermission Load (1.3ms)[0m  [1m[34mSELECT  `role_permissions`.* FROM `role_permissions` WHERE (role_id = 1) AND (permission_id = 1) ORDER BY `role_permissions`.`id` ASC LIMIT 1[0m
+  ↳ app/models/role_permission.rb:28
+  Rendered role_permissions/index.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 1310ms (Views: 1269.6ms | ActiveRecord: 2.6ms)
+
+
+  [1m[35m (1.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:4
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT GET_LOCK('2127749988788325090', 0)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:4
+Migrating to AddRoleToUser (20200220162932)
+  [1m[35m (23.2ms)[0m  [1m[35mALTER TABLE `users` ADD `role_id` bigint[0m
+  ↳ db/migrate/20200220162932_add_role_to_user.rb:3
+  [1m[35m (25.7ms)[0m  [1m[35mCREATE  INDEX `index_users_on_role_id`  ON `users` (`role_id`) [0m
+  ↳ db/migrate/20200220162932_add_role_to_user.rb:3
+  [1m[35m (105.0ms)[0m  [1m[35mALTER TABLE `users` ADD CONSTRAINT `fk_rails_642f17018b`
+FOREIGN KEY (`role_id`)
+  REFERENCES `roles` (`id`)
+[0m
+  ↳ db/migrate/20200220162932_add_role_to_user.rb:3
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200220162932')[0m
+  ↳ bin/rails:4
+  [1m[35m (6.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ bin/rails:4
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('2127749988788325090')[0m
+  ↳ bin/rails:4
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:4

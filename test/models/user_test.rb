@@ -26,6 +26,7 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  city_id                :bigint
+#  role_id                :bigint
 #
 # Indexes
 #
@@ -34,6 +35,7 @@
 #  index_users_on_deleted_at            (deleted_at)
 #  index_users_on_email                 (email) UNIQUE
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
+#  index_users_on_role_id               (role_id)
 #  index_users_on_slug                  (slug) UNIQUE
 #  index_users_on_unlock_token          (unlock_token) UNIQUE
 #  index_users_on_username              (username) UNIQUE
@@ -41,6 +43,7 @@
 # Foreign Keys
 #
 #  fk_rails_...  (city_id => cities.id)
+#  fk_rails_...  (role_id => roles.id)
 #
 
 require 'test_helper'
