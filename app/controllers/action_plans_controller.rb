@@ -16,6 +16,7 @@ class ActionPlansController < ApplicationController
   def show
     @action_plan.year = @year
     @b_four.action_plan = @action_plan 
+    @b_eight.action_plan = @action_plan
   end
 
   # GET /action_plans/new

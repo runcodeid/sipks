@@ -133,38 +133,80 @@
 
   <div class="form-group"> 
     <%= form.label :daftar_hadir %>
-    <%= form.file_field :daftar_hadir, class: "form-control" %>
+    <% if @b_eight.daftar_hadir.exists? %>
+      <%= @b_eight.daftar_hadir.original_filename %>
+      <%= form.check_box :delete_daftar_hadir %>Delete File<br/>
+      <%= link_to "download",@b_eight.daftar_hadir.url(:original) %>
+    <% else %>
+      <%= form.file_field :daftar_hadir, class: "form-control" %>
+    <% end %>
   </div>
 
   <div class="form-group"> 
     <%= form.label :foto_atau_materi %>
+    <% if @b_eight.foto_atau_materi.exists? %>
+      <%= @b_eight.foto_atau_materi.original_filename %>
+      <%= form.check_box :delete_foto_atau_materi %>Delete File<br/>
+      <%= link_to "download",@b_eight.foto_atau_materi.url(:original) %>
+    <% else %>
     <%= form.file_field :foto_atau_materi, class: "form-control" %>
+    <% end %>
   </div>
 
 
   <div class="form-group"> 
     <%= form.label :foto_kegiatan %>
+    <% if @b_eight.foto_kegiatan.exists? %>
+      <%= @b_eight.foto_kegiatan.original_filename %>
+      <%= form.check_box :delete_foto_kegiatan %>Delete File<br/>
+      <%= link_to "download",@b_eight.foto_kegiatan.url(:original) %>
+    <% else %>
     <%= form.file_field :foto_kegiatan, class: "form-control" %>
+    <% end %>
   </div>
 
   <div class="form-group"> 
     <%= form.label :materi %>
+    <% if @b_eight.materi.exists? %>
+      <%= @b_eight.materi.original_filename %>
+      <%= form.check_box :delete_materi %>Delete File<br/>
+      <%= link_to "download",@b_eight.materi.url(:original) %>
+    <% else %>
     <%= form.file_field :materi, class: "form-control" %>
+    <% end %>
   </div>
 
   <div class="form-group"> 
     <%= form.label :notulen %>
+    <% if @b_eight.notulen.exists? %>
+      <%= @b_eight.notulen.original_filename %>
+      <%= form.check_box :delete_notulen %>Delete File<br/>
+      <%= link_to "download",@b_eight.notulen.url(:original) %>
+    <% else %>
     <%= form.file_field :notulen, class: "form-control" %>
+    <% end %>
   </div>
 
   <div class="form-group"> 
     <%= form.label :scan_document %>
+    <% if @b_eight.scan_document.exists? %>
+      <%= @b_eight.scan_document.original_filename %>
+      <%= form.check_box :delete_scan_document %>Delete File<br/>
+      <%= link_to "download",@b_eight.scan_document.url(:original) %>
+    <% else %>
     <%= form.file_field :scan_document, class: "form-control" %>
+    <% end %>
   </div>
 
   <div class="form-group"> 
     <%= form.label :scan_document_ttd %>
+    <% if @b_eight.scan_document_ttd.exists? %>
+      <%= @b_eight.scan_document_ttd.original_filename %>
+      <%= form.check_box :delete_scan_document_ttd %>Delete File<br/>
+      <%= link_to "download",@b_eight.scan_document_ttd.url(:original) %>
+    <% else %>
     <%= form.file_field :scan_document_ttd, class: "form-control" %>
+    <% end %>
   </div>
 
   <div class="actions">
