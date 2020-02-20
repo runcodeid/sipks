@@ -1,10 +1,10 @@
 class ActionPlansController < ApplicationController
   before_action :set_action_plan, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_param_url
   # GET /action_plans
   # GET /action_plans.json
   def index
-    @action_plans = ActionPlan.all
+    @action_plans = @year.action_plans.all
   end
 
   # GET /action_plans/1
@@ -64,11 +64,16 @@ class ActionPlansController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_action_plan
-      @action_plan = ActionPlan.find(params[:id])
+      @action_plan = ActionPlan.friendly.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def action_plan_params
       params.require(:action_plan).permit(:city_id, :year_id, :code_action_plans, :action_plan)
     end
+
+    def set_param_url
+      @year = Year.friendly.find(params[:year_id])
+    end
+
 end
