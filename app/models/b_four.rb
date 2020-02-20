@@ -55,22 +55,92 @@ class BFour < ApplicationRecord
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged
 
-  # acts_as_paranoid
+  acts_as_paranoid
 
-  # has_attached_file :daftar_hadir,:foto_atau_materi,:foto_kegiatan,:materi,:notulen, :scan_document,:scan_document_ttd
-  # validates_attachment :daftar_hadir, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
-  # validates_attachment :foto_atau_materi, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
-  # validates_attachment :foto_kegiatan, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
-  # validates_attachment :materi, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
-  # validates_attachment :notulen, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
-  # validates_attachment :scan_document, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
-  # validates_attachment :scan_document_ttd, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
+  before_validation { daftar_hadir.clear if @delete_daftar_hadir }
+  before_validation { foto_atau_materi.clear if @delete_foto_atau_materi }
+  before_validation { foto_kegiatan.clear if @delete_foto_kegiatan }
+  before_validation { materi.clear if @delete_materi }
+  before_validation { notulen.clear if @delete_notulen }
+  before_validation { scan_document.clear if @delete_scan_document }
+  before_validation { scan_document_ttd.clear if @delete_scan_document_ttd }
 
-  # validates_with AttachmentSizeValidator, attributes: :daftar_hadir, less_than: 500.kilobytes
-  # validates_with AttachmentSizeValidator, attributes: :foto_atau_materi, less_than: 500.kilobytes
-  # validates_with AttachmentSizeValidator, attributes: :foto_kegiatan, less_than: 500.kilobytes
-  # validates_with AttachmentSizeValidator, attributes: :materi, less_than: 500.kilobytes
-  # validates_with AttachmentSizeValidator, attributes: :notulen, less_than: 500.kilobytes
-  # validates_with AttachmentSizeValidator, attributes: :scan_document, less_than: 500.kilobytes
-  # validates_with AttachmentSizeValidator, attributes: :scan_document_ttd, less_than: 500.kilobytes
+  has_attached_file :daftar_hadir
+  has_attached_file :foto_atau_materi
+  has_attached_file :foto_kegiatan
+  has_attached_file :materi
+  has_attached_file :notulen
+  has_attached_file :scan_document
+  has_attached_file :scan_document_ttd
+  
+  validates_attachment :daftar_hadir, :content_type => { :content_type => %w(application/pdf) }
+  validates_attachment :foto_atau_materi, :content_type => { :content_type => %w(application/pdf) }
+  validates_attachment :foto_kegiatan, :content_type => { :content_type => %w(application/pdf) }
+  validates_attachment :materi, :content_type => { :content_type => %w(application/pdf) }
+  validates_attachment :notulen, :content_type => { :content_type => %w(application/pdf) }
+  validates_attachment :scan_document, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
+  validates_attachment :scan_document_ttd, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
+
+  validates_with AttachmentSizeValidator, attributes: :daftar_hadir, less_than: 5000.kilobytes
+  validates_with AttachmentSizeValidator, attributes: :foto_atau_materi, less_than: 5000.kilobytes
+  validates_with AttachmentSizeValidator, attributes: :foto_kegiatan, less_than: 5000.kilobytes
+  validates_with AttachmentSizeValidator, attributes: :materi, less_than: 5000.kilobytes
+  validates_with AttachmentSizeValidator, attributes: :notulen, less_than: 5000.kilobytes
+  validates_with AttachmentSizeValidator, attributes: :scan_document, less_than: 5000.kilobytes
+  validates_with AttachmentSizeValidator, attributes: :scan_document_ttd, less_than: 5000.kilobytes
+
+  def delete_daftar_hadir
+    @delete_daftar_hadir ||= false
+  end
+
+  def delete_daftar_hadir=(value)
+    @delete_daftar_hadir  = !value.to_i.zero?
+  end
+
+  def delete_foto_atau_materi
+    @delete_foto_atau_materi ||= false
+  end
+
+  def delete_foto_atau_materi=(value)
+    @delete_foto_atau_materi  = !value.to_i.zero?
+  end
+
+  def delete_foto_kegiatan
+    @delete_foto_kegiatan ||= false
+  end
+
+  def delete_foto_kegiatan=(value)
+    @delete_foto_kegiatan  = !value.to_i.zero?
+  end
+
+  def delete_materi
+    @delete_materi ||= false
+  end
+
+  def delete_materi=(value)
+    @delete_materi  = !value.to_i.zero?
+  end
+
+  def delete_notulen
+    @delete_notulen ||= false
+  end
+
+  def delete_notulen=(value)
+    @delete_notulen  = !value.to_i.zero?
+  end
+  
+  def delete_scan_document
+    @delete_scan_document ||= false
+  end
+
+  def delete_scan_document=(value)
+    @delete_scan_document  = !value.to_i.zero?
+  end
+  def delete_scan_document_ttd
+    @delete_scan_document_ttd ||= false
+  end
+
+  def delete_scan_document_ttd=(value)
+    @delete_scan_document_ttd  = !value.to_i.zero?
+  end
 end
