@@ -12,9 +12,9 @@ Rails.application.routes.draw do
   
   resources :years, only: [:show, :index] do
     resources :action_plans do
-      resources :b_fours
-      resources :b_eights
-      resources :b_twelves
+      resources :b_fours, only: [:update]
+      resources :b_eights, only: [:update]
+      resources :b_twelves, only: [:update]
     end
   end
 
