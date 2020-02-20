@@ -1,5 +1,6 @@
 class BTwelvesController < ApplicationController
   before_action :set_b_twelf, only: [:show, :edit, :update, :destroy]
+  before_action :set_params_url
 
   # GET /b_twelves
   # GET /b_twelves.json
@@ -42,7 +43,7 @@ class BTwelvesController < ApplicationController
   def update
     respond_to do |format|
       if @b_twelf.update(b_twelf_params)
-        format.html { redirect_to @b_twelf, notice: 'B twelf was successfully updated.' }
+        format.html { redirect_to year_action_plan_path(@year,@action_plan), notice: 'B twelf was successfully updated.' }
         format.json { render :show, status: :ok, location: @b_twelf }
       else
         format.html { render :edit }
@@ -64,11 +65,21 @@ class BTwelvesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_b_twelf
-      @b_twelf = BTwelf.find(params[:id])
+      @b_twelf = BTwelf.friendly.find(params[:id])
     end
+
+    def set_params_url
+      @action_plan = ActionPlan.friendly.find(params[:action_plan_id])
+      @year = Year.friendly.find(params[:year_id])
+      if params[:b_twelf].blank?
+        redirect_to year_action_plan_path(@year,@action_plan), notice: 'B four was failed update cause no file you attached.' 
+      end
+    end
+
 
     # Only allow a list of trusted parameters through.
     def b_twelf_params
-      params.require(:b_twelf).permit(:action_plan_id)
+      
+        params.require(:b_twelf).permit(:notulen, :daftar_hadir, :foto_kegiatan, :materi, :scan_document, :scan_document_ttd, :foto_atau_materi, :delete_daftar_hadir,:delete_notulen,:delete_foto_kegiatan, :delete_materi, :delete_scan_document, :delete_scan_document_ttd, :delete_foto_atau_materi)
     end
 end

@@ -6769,3 +6769,184 @@ Processing by ActionPlansController#show as HTML
 Completed 200 OK in 147ms (Views: 133.6ms | ActiveRecord: 2.1ms)
 
 
+Started GET "/years/1582165647455471-cc313209-f08f-4496-912d-f9d3b361bd90/action_plans/1582174174287410-afd52cd7-413e-47e0-8920-569a22c59bb7" for 172.23.0.1 at 2020-02-20 17:15:23 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by ActionPlansController#show as HTML
+  Parameters: {"year_id"=>"1582165647455471-cc313209-f08f-4496-912d-f9d3b361bd90", "id"=>"1582174174287410-afd52cd7-413e-47e0-8920-569a22c59bb7"}
+  [1m[36mActionPlan Load (0.2ms)[0m  [1m[34mSELECT  `action_plans`.* FROM `action_plans` WHERE `action_plans`.`deleted_at` IS NULL AND `action_plans`.`slug` = '1582174174287410-afd52cd7-413e-47e0-8920-569a22c59bb7' LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:91
+  [1m[36mYear Load (0.2ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`slug` = '1582165647455471-cc313209-f08f-4496-912d-f9d3b361bd90' LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:108
+  [1m[36mBFour Load (0.3ms)[0m  [1m[34mSELECT  `b_fours`.* FROM `b_fours` WHERE `b_fours`.`deleted_at` IS NULL AND `b_fours`.`action_plan_id` = 24 LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:113
+  [1m[36mBEight Load (0.4ms)[0m  [1m[34mSELECT  `b_eights`.* FROM `b_eights` WHERE `b_eights`.`deleted_at` IS NULL AND `b_eights`.`action_plan_id` = 24 LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:117
+  [1m[36mBTwelf Load (0.6ms)[0m  [1m[34mSELECT  `b_twelves`.* FROM `b_twelves` WHERE `b_twelves`.`deleted_at` IS NULL AND `b_twelves`.`action_plan_id` = 24 LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:121
+  Rendering action_plans/show.html.erb within layouts/application
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL AND `cities`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/show.html.erb:5
+  Rendered action_plans/show.html.erb within layouts/application (77.7ms)
+Completed 200 OK in 1194ms (Views: 918.9ms | ActiveRecord: 12.5ms)
+
+
+Started PATCH "/years/1582165647455471-cc313209-f08f-4496-912d-f9d3b361bd90/action_plans/1582174174287410-afd52cd7-413e-47e0-8920-569a22c59bb7/b_twelves/1582174174537625-b1781cdf-c801-4d0f-8318-c519c81967ed" for 172.23.0.1 at 2020-02-20 17:16:06 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BTwelvesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3Xmd+CUxvhF+YiA2mCceyAmJGVbtfIXWugnC0uyyl1dlgjZ+lYzWK5gEhkjiSOnGaDG1O+/p+cSK/Yt1e+ZVYw==", "b_twelf"=>{"daftar_hadir"=>#<ActionDispatch::Http::UploadedFile:0x000055d95be32788 @tempfile=#<Tempfile:/tmp/RackMultipart20200220-1-1i77owy.pdf>, @original_filename="Manajemen_Proyek.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"b_twelf[daftar_hadir]\"; filename=\"Manajemen_Proyek.pdf\"\r\nContent-Type: application/pdf\r\n">, "foto_atau_materi"=>#<ActionDispatch::Http::UploadedFile:0x000055d95be325a8 @tempfile=#<Tempfile:/tmp/RackMultipart20200220-1-1318wts.pdf>, @original_filename="Manajemen_Proyek.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"b_twelf[foto_atau_materi]\"; filename=\"Manajemen_Proyek.pdf\"\r\nContent-Type: application/pdf\r\n">, "foto_kegiatan"=>#<ActionDispatch::Http::UploadedFile:0x000055d95be323c8 @tempfile=#<Tempfile:/tmp/RackMultipart20200220-1-af8tdr.pdf>, @original_filename="Manajemen_Proyek.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"b_twelf[foto_kegiatan]\"; filename=\"Manajemen_Proyek.pdf\"\r\nContent-Type: application/pdf\r\n">, "materi"=>#<ActionDispatch::Http::UploadedFile:0x000055d95be321c0 @tempfile=#<Tempfile:/tmp/RackMultipart20200220-1-4cqulu.pdf>, @original_filename="Manajemen_Proyek.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"b_twelf[materi]\"; filename=\"Manajemen_Proyek.pdf\"\r\nContent-Type: application/pdf\r\n">, "notulen"=>#<ActionDispatch::Http::UploadedFile:0x000055d95be31fe0 @tempfile=#<Tempfile:/tmp/RackMultipart20200220-1-19dybv7.pdf>, @original_filename="Manajemen_Proyek.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"b_twelf[notulen]\"; filename=\"Manajemen_Proyek.pdf\"\r\nContent-Type: application/pdf\r\n">, "scan_document"=>#<ActionDispatch::Http::UploadedFile:0x000055d95be31d88 @tempfile=#<Tempfile:/tmp/RackMultipart20200220-1-19u6e38.pdf>, @original_filename="Manajemen_Proyek.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"b_twelf[scan_document]\"; filename=\"Manajemen_Proyek.pdf\"\r\nContent-Type: application/pdf\r\n">, "scan_document_ttd"=>#<ActionDispatch::Http::UploadedFile:0x000055d95be31b08 @tempfile=#<Tempfile:/tmp/RackMultipart20200220-1-18adyw5.pdf>, @original_filename="Manajemen_Proyek.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"b_twelf[scan_document_ttd]\"; filename=\"Manajemen_Proyek.pdf\"\r\nContent-Type: application/pdf\r\n">}, "commit"=>"Update B twelf", "year_id"=>"1582165647455471-cc313209-f08f-4496-912d-f9d3b361bd90", "action_plan_id"=>"1582174174287410-afd52cd7-413e-47e0-8920-569a22c59bb7", "id"=>"1582174174537625-b1781cdf-c801-4d0f-8318-c519c81967ed"}
+  [1m[36mBTwelf Load (0.6ms)[0m  [1m[34mSELECT  `b_twelves`.* FROM `b_twelves` WHERE `b_twelves`.`deleted_at` IS NULL AND `b_twelves`.`slug` = '1582174174537625-b1781cdf-c801-4d0f-8318-c519c81967ed' LIMIT 1[0m
+  ↳ app/controllers/b_twelves_controller.rb:68
+  [1m[36mActionPlan Load (0.2ms)[0m  [1m[34mSELECT  `action_plans`.* FROM `action_plans` WHERE `action_plans`.`deleted_at` IS NULL AND `action_plans`.`slug` = '1582174174287410-afd52cd7-413e-47e0-8920-569a22c59bb7' LIMIT 1[0m
+  ↳ app/controllers/b_twelves_controller.rb:72
+  [1m[36mYear Load (0.2ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`slug` = '1582165647455471-cc313209-f08f-4496-912d-f9d3b361bd90' LIMIT 1[0m
+  ↳ app/controllers/b_twelves_controller.rb:73
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/b_twelves_controller.rb:45
+[paperclip] Trying to link /tmp/RackMultipart20200220-1-19dybv7.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-1n66nku.pdf
+[paperclip] Trying to link /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-1n66nku.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-1cvfby7.pdf
+Command :: file -b --mime '/tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-1cvfby7.pdf'
+[paperclip] Trying to link /tmp/RackMultipart20200220-1-1i77owy.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-s79fut.pdf
+[paperclip] Trying to link /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-s79fut.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-1637oer.pdf
+Command :: file -b --mime '/tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-1637oer.pdf'
+[paperclip] Trying to link /tmp/RackMultipart20200220-1-af8tdr.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-1joad2t.pdf
+[paperclip] Trying to link /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-1joad2t.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-ao1436.pdf
+Command :: file -b --mime '/tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-ao1436.pdf'
+[paperclip] Trying to link /tmp/RackMultipart20200220-1-4cqulu.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-10cob9n.pdf
+[paperclip] Trying to link /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-10cob9n.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-2sacf0.pdf
+Command :: file -b --mime '/tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-2sacf0.pdf'
+[paperclip] Trying to link /tmp/RackMultipart20200220-1-19u6e38.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-xbdzzp.pdf
+[paperclip] Trying to link /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-xbdzzp.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-5m0hz0.pdf
+Command :: file -b --mime '/tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-5m0hz0.pdf'
+[paperclip] Trying to link /tmp/RackMultipart20200220-1-18adyw5.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-ct87r0.pdf
+[paperclip] Trying to link /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-ct87r0.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-yq15y7.pdf
+Command :: file -b --mime '/tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-yq15y7.pdf'
+[paperclip] Trying to link /tmp/RackMultipart20200220-1-1318wts.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-1cva13v.pdf
+[paperclip] Trying to link /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-1cva13v.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-huioqi.pdf
+Command :: file -b --mime '/tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-huioqi.pdf'
+  [1m[36mActionPlan Load (0.3ms)[0m  [1m[34mSELECT  `action_plans`.* FROM `action_plans` WHERE `action_plans`.`deleted_at` IS NULL AND `action_plans`.`id` = 24 LIMIT 1[0m
+  ↳ app/controllers/b_twelves_controller.rb:45
+[paperclip] Trying to link /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-s79fut.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-10llnu.pdf
+Command :: file -b --mime '/tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-10llnu.pdf'
+[paperclip] Trying to link /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-1cva13v.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-1cyoxjv.pdf
+Command :: file -b --mime '/tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-1cyoxjv.pdf'
+[paperclip] Trying to link /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-1joad2t.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-10p602z.pdf
+Command :: file -b --mime '/tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-10p602z.pdf'
+[paperclip] Trying to link /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-10cob9n.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-slrmtk.pdf
+Command :: file -b --mime '/tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-slrmtk.pdf'
+[paperclip] Trying to link /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-1n66nku.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-1ilobk7.pdf
+Command :: file -b --mime '/tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-1ilobk7.pdf'
+[paperclip] Trying to link /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-xbdzzp.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-12givuh.pdf
+Command :: file -b --mime '/tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-12givuh.pdf'
+[paperclip] Trying to link /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-ct87r0.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-h3mzjg.pdf
+Command :: file -b --mime '/tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-h3mzjg.pdf'
+  [1m[36mBTwelf Update (0.5ms)[0m  [1m[33mUPDATE `b_twelves` SET `notulen_file_name` = 'Manajemen_Proyek.pdf', `notulen_content_type` = 'application/pdf', `notulen_file_size` = 3388517, `notulen_updated_at` = '2020-02-20 17:16:06', `daftar_hadir_file_name` = 'Manajemen_Proyek.pdf', `daftar_hadir_content_type` = 'application/pdf', `daftar_hadir_file_size` = 3388517, `daftar_hadir_updated_at` = '2020-02-20 17:16:06', `foto_kegiatan_file_name` = 'Manajemen_Proyek.pdf', `foto_kegiatan_content_type` = 'application/pdf', `foto_kegiatan_file_size` = 3388517, `foto_kegiatan_updated_at` = '2020-02-20 17:16:06', `materi_file_name` = 'Manajemen_Proyek.pdf', `materi_content_type` = 'application/pdf', `materi_file_size` = 3388517, `materi_updated_at` = '2020-02-20 17:16:06', `scan_document_file_name` = 'Manajemen_Proyek.pdf', `scan_document_content_type` = 'application/pdf', `scan_document_file_size` = 3388517, `scan_document_updated_at` = '2020-02-20 17:16:06', `scan_document_ttd_file_name` = 'Manajemen_Proyek.pdf', `scan_document_ttd_content_type` = 'application/pdf', `scan_document_ttd_file_size` = 3388517, `scan_document_ttd_updated_at` = '2020-02-20 17:16:06', `foto_atau_materi_file_name` = 'Manajemen_Proyek.pdf', `foto_atau_materi_content_type` = 'application/pdf', `foto_atau_materi_file_size` = 3388517, `foto_atau_materi_updated_at` = '2020-02-20 17:16:06', `updated_at` = '2020-02-20 17:16:06' WHERE `b_twelves`.`id` = 4[0m
+  ↳ app/controllers/b_twelves_controller.rb:45
+  [1m[35m (30.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/b_twelves_controller.rb:45
+Redirected to http://localhost:3000/years/1582165647455471-cc313209-f08f-4496-912d-f9d3b361bd90/action_plans/1582174174287410-afd52cd7-413e-47e0-8920-569a22c59bb7
+Completed 302 Found in 373ms (ActiveRecord: 32.0ms)
+
+
+Started GET "/years/1582165647455471-cc313209-f08f-4496-912d-f9d3b361bd90/action_plans/1582174174287410-afd52cd7-413e-47e0-8920-569a22c59bb7" for 172.23.0.1 at 2020-02-20 17:16:07 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#show as HTML
+  Parameters: {"year_id"=>"1582165647455471-cc313209-f08f-4496-912d-f9d3b361bd90", "id"=>"1582174174287410-afd52cd7-413e-47e0-8920-569a22c59bb7"}
+  [1m[36mActionPlan Load (0.2ms)[0m  [1m[34mSELECT  `action_plans`.* FROM `action_plans` WHERE `action_plans`.`deleted_at` IS NULL AND `action_plans`.`slug` = '1582174174287410-afd52cd7-413e-47e0-8920-569a22c59bb7' LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:91
+  [1m[36mYear Load (0.2ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`slug` = '1582165647455471-cc313209-f08f-4496-912d-f9d3b361bd90' LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:108
+  [1m[36mBFour Load (0.2ms)[0m  [1m[34mSELECT  `b_fours`.* FROM `b_fours` WHERE `b_fours`.`deleted_at` IS NULL AND `b_fours`.`action_plan_id` = 24 LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:113
+  [1m[36mBEight Load (0.2ms)[0m  [1m[34mSELECT  `b_eights`.* FROM `b_eights` WHERE `b_eights`.`deleted_at` IS NULL AND `b_eights`.`action_plan_id` = 24 LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:117
+  [1m[36mBTwelf Load (0.6ms)[0m  [1m[34mSELECT  `b_twelves`.* FROM `b_twelves` WHERE `b_twelves`.`deleted_at` IS NULL AND `b_twelves`.`action_plan_id` = 24 LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:121
+  Rendering action_plans/show.html.erb within layouts/application
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL AND `cities`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/show.html.erb:5
+  Rendered action_plans/show.html.erb within layouts/application (31.0ms)
+Completed 200 OK in 123ms (Views: 112.7ms | ActiveRecord: 1.6ms)
+
+
+Started PATCH "/years/1582165647455471-cc313209-f08f-4496-912d-f9d3b361bd90/action_plans/1582174174287410-afd52cd7-413e-47e0-8920-569a22c59bb7/b_fours/1582174174377799-0f9df805-84c3-4276-9739-f88e4aa1013e" for 172.23.0.1 at 2020-02-20 17:16:50 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BFoursController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dFWliB7Ifvee8KR7oeCcXdmRlfpvCNnIWsfURvX94HrMrg4OrnUWzXiWAgXbj2tTuCk5l22dpdpqM53hYqkiTg==", "b_four"=>{"daftar_hadir"=>#<ActionDispatch::Http::UploadedFile:0x000055d95c19e700 @tempfile=#<Tempfile:/tmp/RackMultipart20200220-1-1ly4umv.pdf>, @original_filename="Manajemen_Proyek.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"b_four[daftar_hadir]\"; filename=\"Manajemen_Proyek.pdf\"\r\nContent-Type: application/pdf\r\n">, "foto_atau_materi"=>#<ActionDispatch::Http::UploadedFile:0x000055d95c19e5c0 @tempfile=#<Tempfile:/tmp/RackMultipart20200220-1-1uq9c02.pdf>, @original_filename="Manajemen_Proyek.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"b_four[foto_atau_materi]\"; filename=\"Manajemen_Proyek.pdf\"\r\nContent-Type: application/pdf\r\n">, "foto_kegiatan"=>#<ActionDispatch::Http::UploadedFile:0x000055d95c19e4f8 @tempfile=#<Tempfile:/tmp/RackMultipart20200220-1-1qmwmva.pdf>, @original_filename="Manajemen_Proyek.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"b_four[foto_kegiatan]\"; filename=\"Manajemen_Proyek.pdf\"\r\nContent-Type: application/pdf\r\n">, "materi"=>#<ActionDispatch::Http::UploadedFile:0x000055d95c19e340 @tempfile=#<Tempfile:/tmp/RackMultipart20200220-1-1etwqdl.pdf>, @original_filename="Manajemen_Proyek.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"b_four[materi]\"; filename=\"Manajemen_Proyek.pdf\"\r\nContent-Type: application/pdf\r\n">, "notulen"=>#<ActionDispatch::Http::UploadedFile:0x000055d95c19e200 @tempfile=#<Tempfile:/tmp/RackMultipart20200220-1-1cy8tyz.pdf>, @original_filename="Manajemen_Proyek.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"b_four[notulen]\"; filename=\"Manajemen_Proyek.pdf\"\r\nContent-Type: application/pdf\r\n">, "scan_document"=>#<ActionDispatch::Http::UploadedFile:0x000055d95c19e138 @tempfile=#<Tempfile:/tmp/RackMultipart20200220-1-8ggwer.pdf>, @original_filename="Manajemen_Proyek.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"b_four[scan_document]\"; filename=\"Manajemen_Proyek.pdf\"\r\nContent-Type: application/pdf\r\n">, "scan_document_ttd"=>#<ActionDispatch::Http::UploadedFile:0x000055d95c19dff8 @tempfile=#<Tempfile:/tmp/RackMultipart20200220-1-oh0uru.pdf>, @original_filename="Manajemen_Proyek.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"b_four[scan_document_ttd]\"; filename=\"Manajemen_Proyek.pdf\"\r\nContent-Type: application/pdf\r\n">}, "commit"=>"Update B four", "year_id"=>"1582165647455471-cc313209-f08f-4496-912d-f9d3b361bd90", "action_plan_id"=>"1582174174287410-afd52cd7-413e-47e0-8920-569a22c59bb7", "id"=>"1582174174377799-0f9df805-84c3-4276-9739-f88e4aa1013e"}
+  [1m[36mBFour Load (0.6ms)[0m  [1m[34mSELECT  `b_fours`.* FROM `b_fours` WHERE `b_fours`.`deleted_at` IS NULL AND `b_fours`.`slug` = '1582174174377799-0f9df805-84c3-4276-9739-f88e4aa1013e' LIMIT 1[0m
+  ↳ app/controllers/b_fours_controller.rb:68
+  [1m[36mActionPlan Load (0.2ms)[0m  [1m[34mSELECT  `action_plans`.* FROM `action_plans` WHERE `action_plans`.`deleted_at` IS NULL AND `action_plans`.`slug` = '1582174174287410-afd52cd7-413e-47e0-8920-569a22c59bb7' LIMIT 1[0m
+  ↳ app/controllers/b_fours_controller.rb:72
+  [1m[36mYear Load (0.2ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`slug` = '1582165647455471-cc313209-f08f-4496-912d-f9d3b361bd90' LIMIT 1[0m
+  ↳ app/controllers/b_fours_controller.rb:73
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/b_fours_controller.rb:45
+[paperclip] Trying to link /tmp/RackMultipart20200220-1-1cy8tyz.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-wksf2y.pdf
+[paperclip] Trying to link /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-wksf2y.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-528ky6.pdf
+Command :: file -b --mime '/tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-528ky6.pdf'
+[paperclip] Trying to link /tmp/RackMultipart20200220-1-1ly4umv.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-4ak5r0.pdf
+[paperclip] Trying to link /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-4ak5r0.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-1b39aql.pdf
+Command :: file -b --mime '/tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-1b39aql.pdf'
+[paperclip] Trying to link /tmp/RackMultipart20200220-1-1qmwmva.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-l8zjf4.pdf
+[paperclip] Trying to link /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-l8zjf4.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-67jh8l.pdf
+Command :: file -b --mime '/tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-67jh8l.pdf'
+[paperclip] Trying to link /tmp/RackMultipart20200220-1-1etwqdl.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-19fd6kd.pdf
+[paperclip] Trying to link /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-19fd6kd.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-1ehcdc2.pdf
+Command :: file -b --mime '/tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-1ehcdc2.pdf'
+[paperclip] Trying to link /tmp/RackMultipart20200220-1-8ggwer.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-b2dgwc.pdf
+[paperclip] Trying to link /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-b2dgwc.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-15vzny1.pdf
+Command :: file -b --mime '/tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-15vzny1.pdf'
+[paperclip] Trying to link /tmp/RackMultipart20200220-1-oh0uru.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-1uso3ee.pdf
+[paperclip] Trying to link /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-1uso3ee.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-1yugl9m.pdf
+Command :: file -b --mime '/tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-1yugl9m.pdf'
+[paperclip] Trying to link /tmp/RackMultipart20200220-1-1uq9c02.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-fy7qvd.pdf
+[paperclip] Trying to link /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-fy7qvd.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-10l95rf.pdf
+Command :: file -b --mime '/tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-10l95rf.pdf'
+  [1m[36mActionPlan Load (0.3ms)[0m  [1m[34mSELECT  `action_plans`.* FROM `action_plans` WHERE `action_plans`.`deleted_at` IS NULL AND `action_plans`.`id` = 24 LIMIT 1[0m
+  ↳ app/controllers/b_fours_controller.rb:45
+[paperclip] Trying to link /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-4ak5r0.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-1bl5jtb.pdf
+Command :: file -b --mime '/tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-1bl5jtb.pdf'
+[paperclip] Trying to link /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-fy7qvd.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-1c1m7ot.pdf
+Command :: file -b --mime '/tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-1c1m7ot.pdf'
+[paperclip] Trying to link /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-l8zjf4.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-mekmdm.pdf
+Command :: file -b --mime '/tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-mekmdm.pdf'
+[paperclip] Trying to link /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-19fd6kd.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-18ulcjn.pdf
+Command :: file -b --mime '/tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-18ulcjn.pdf'
+[paperclip] Trying to link /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-wksf2y.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-v59ewc.pdf
+Command :: file -b --mime '/tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-v59ewc.pdf'
+[paperclip] Trying to link /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-b2dgwc.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-mkc784.pdf
+Command :: file -b --mime '/tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-mkc784.pdf'
+[paperclip] Trying to link /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-1uso3ee.pdf to /tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-vez7vj.pdf
+Command :: file -b --mime '/tmp/f896e0792000d67840eb5d1d98154ddd20200220-1-vez7vj.pdf'
+  [1m[36mBFour Update (1.2ms)[0m  [1m[33mUPDATE `b_fours` SET `notulen_file_name` = 'Manajemen_Proyek.pdf', `notulen_updated_at` = '2020-02-20 17:16:50', `daftar_hadir_file_name` = 'Manajemen_Proyek.pdf', `daftar_hadir_updated_at` = '2020-02-20 17:16:50', `foto_kegiatan_file_name` = 'Manajemen_Proyek.pdf', `foto_kegiatan_updated_at` = '2020-02-20 17:16:50', `materi_file_name` = 'Manajemen_Proyek.pdf', `materi_updated_at` = '2020-02-20 17:16:51', `scan_document_file_name` = 'Manajemen_Proyek.pdf', `scan_document_updated_at` = '2020-02-20 17:16:51', `scan_document_ttd_file_name` = 'Manajemen_Proyek.pdf', `scan_document_ttd_updated_at` = '2020-02-20 17:16:51', `foto_atau_materi_file_name` = 'Manajemen_Proyek.pdf', `foto_atau_materi_updated_at` = '2020-02-20 17:16:51', `updated_at` = '2020-02-20 17:16:51' WHERE `b_fours`.`id` = 11[0m
+  ↳ app/controllers/b_fours_controller.rb:45
+  [1m[35m (36.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/b_fours_controller.rb:45
+Redirected to http://localhost:3000/years/1582165647455471-cc313209-f08f-4496-912d-f9d3b361bd90/action_plans/1582174174287410-afd52cd7-413e-47e0-8920-569a22c59bb7
+Completed 302 Found in 366ms (ActiveRecord: 39.2ms)
+
+
+Started GET "/years/1582165647455471-cc313209-f08f-4496-912d-f9d3b361bd90/action_plans/1582174174287410-afd52cd7-413e-47e0-8920-569a22c59bb7" for 172.23.0.1 at 2020-02-20 17:16:51 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActionPlansController#show as HTML
+  Parameters: {"year_id"=>"1582165647455471-cc313209-f08f-4496-912d-f9d3b361bd90", "id"=>"1582174174287410-afd52cd7-413e-47e0-8920-569a22c59bb7"}
+  [1m[36mActionPlan Load (0.6ms)[0m  [1m[34mSELECT  `action_plans`.* FROM `action_plans` WHERE `action_plans`.`deleted_at` IS NULL AND `action_plans`.`slug` = '1582174174287410-afd52cd7-413e-47e0-8920-569a22c59bb7' LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:91
+  [1m[36mYear Load (0.2ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`deleted_at` IS NULL AND `years`.`slug` = '1582165647455471-cc313209-f08f-4496-912d-f9d3b361bd90' LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:108
+  [1m[36mBFour Load (0.7ms)[0m  [1m[34mSELECT  `b_fours`.* FROM `b_fours` WHERE `b_fours`.`deleted_at` IS NULL AND `b_fours`.`action_plan_id` = 24 LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:113
+  [1m[36mBEight Load (0.3ms)[0m  [1m[34mSELECT  `b_eights`.* FROM `b_eights` WHERE `b_eights`.`deleted_at` IS NULL AND `b_eights`.`action_plan_id` = 24 LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:117
+  [1m[36mBTwelf Load (0.2ms)[0m  [1m[34mSELECT  `b_twelves`.* FROM `b_twelves` WHERE `b_twelves`.`deleted_at` IS NULL AND `b_twelves`.`action_plan_id` = 24 LIMIT 1[0m
+  ↳ app/controllers/action_plans_controller.rb:121
+  Rendering action_plans/show.html.erb within layouts/application
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`deleted_at` IS NULL AND `cities`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/action_plans/show.html.erb:5
+  Rendered action_plans/show.html.erb within layouts/application (33.8ms)
+Completed 200 OK in 146ms (Views: 131.5ms | ActiveRecord: 2.2ms)
+
+
