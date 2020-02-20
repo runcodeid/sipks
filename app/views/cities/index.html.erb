@@ -1,48 +1,74 @@
 <% content_for :isi_content do %>
-<p id="notice"><%= notice %></p>
-
-<h1>Cities</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>City</th>
-      <th>Logo</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @cities.each do |city| %>
-      <tr>
-        <td><%= city.city %></td>
-        <td><%= image_tag city.logo_city.url(:thumb) %></td>
-        <td><%= link_to 'Show', city %></td>
-        <td><%= link_to 'Edit', edit_city_path(city) %></td>
-        <td><%= link_to 'Destroy', city, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New City', new_city_path %>
+<% content_for :header_button do %>
+  <%= link_to 'Tambah', '',class: "btn btn-sm btn-neutral", "data-toggle": "modal", "data-target": "#modal-new-city" %>
+<% end %>
+<div class="row">
 <% @cities.each do |city| %>
-  <div class="row">
-    <div class="col-3">
+    <div class="col-lg-4">
       <div class="card">
         <div class="card-body">
-          <%= image_tag city.logo_city.url(:thumb), class: "rounded-circle img-center img-fluid shadow shadow-lg--hover" %>
-          <div class="pt-4 text-center">
-            <h5 class="h3 title">
-              <span class="d-block mb-1"><%= city.city %></span>
-            </h5>
+          <div class="row align-items-center">
+            <div class="col-auto">
+              <% if (city.logo_city.url(:thumb) != '/images/thumb/missing.png')%>
+                <%= image_tag city.logo_city.url(:thumb), style: "max-width: 100px; max-height: 100px" %>
+              <% else %>
+                <%= image_tag 'img/no_image.png', style: "max-width: 100px; max-height: 100px" %>
+              <% end %>
+            </div>
+            <div class="col ml--2">
+              <h5 class="h3 title">
+                <span class="d-block mb-1"><%= city.city %></span>
+              </h5>
+            </div>
+            <div class="col-auto">
+              <button type="button" class="btn btn-sm btn-neutral mr-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-ellipsis-h"></i>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right" style="">
+                <%= link_to 'Ubah', '', class: "dropdown-item", data: {toggle: "modal", target: "#modal-edit-city-#{city.slug}"} %>
+                <%= link_to 'Hapus', city, class:"dropdown-item", method: :delete, data: { confirm: 'Are you sure?' } %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<% end %>
+</div>
+
+<div class="modal fade modal-new" id="modal-new-city" tabindex="-1" role="dialog" aria-labeledby="modal-new-city" aria-hidden="true">
+  <div class="modal-dialog modal- modal-dialog-centered modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-body p-0">
+        <div class="card bg-secondary border-0 mb-0">
+          <div class="card-body px-lg-5 py-lg-5">
+            <div class="text-center text-muted mb-4">Kabupaten/Kota</div>
+            <%= render partial: 'form', locals: {city: City.new} %>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
+
+<% @cities.each do |city| %>
+<div class="modal fade modal-edit" id="modal-edit-city-<%=city.slug%>" tabindex="-1" role="dialog" aria-labeledby="modal-edit-city-<%=city.slug%>" aria-hidden="true">
+  <div class="modal-dialog modal- modal-dialog-centered modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-body p-0">
+        <div class="card bg-secondary border-0 mb-0">
+          <div class="card-body px-lg-5 py-lg-5">
+            <div class="text-center text-muted mb-4">Kabupaten/Kota</div>
+            <%= render partial: 'form', locals: {city: city} %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <% end %>
+<% end %>
+<% if notice %>
+  <div class="notifikasi" data-notifikasi="<%= notice %>"></div>
 <% end %>
 <%= render partial: 'layouts/body' %>

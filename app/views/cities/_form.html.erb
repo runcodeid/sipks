@@ -1,4 +1,4 @@
-<%= form_with(model: city, local: true) do |form| %>
+<%= form_with(model: city, local: true, role: "form")do |form| %>
   <% if city.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(city.errors.count, "error") %> prohibited this city from being saved:</h2>
@@ -11,17 +11,31 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :city %>
-    <%= form.text_field :city %>
-  </div>
+  <% if city.slug %>
+    <div class="form-group mb-3">
+      <%= form.text_field :city, id: "city-#{city.slug}",class: "form-control", placeholder: 'Nama Kabupaten/Kota', autocomplete: "off" %>
+    </div>
 
-  <div class="form-group"> 
-    <%= form.label :logo_city %>
-    <%= form.file_field :logo_city, class: "form-control" %>
-  </div>
+    <div class="form-group">
+      <div class="custom-file">
+        <%= form.file_field :logo_city, id: "logo-city-#{city.slug}", class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
+        <label class="custom-file-label" for="logo-city-<%=city.slug%>">Unggah Logo</label>
+      </div>
+    </div>
+  <% else %>
+    <div class="form-group mb-3">
+      <%= form.text_field :city, class: "form-control", placeholder: 'Nama Kabupaten/Kota', autocomplete: "off" %>
+    </div>
 
-  <div class="actions">
-    <%= form.submit %>
+    <div class="form-group">
+      <div class="custom-file">
+        <%= form.file_field :logo_city, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
+        <label class="custom-file-label" for="logo-city-<%=city.slug%>">Unggah Logo</label>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="text-center">
+    <%= form.submit 'Simpan', class: "btn btn-neutral my-4" %>
   </div>
 <% end %>
