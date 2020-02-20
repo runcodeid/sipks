@@ -1,4 +1,4 @@
-<%= form_with(model: b_eight, local: true) do |form| %>
+<%= form_for[@year,@action_plan,@b_eight] do |form| %>
   <% if b_eight.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(b_eight.errors.count, "error") %> prohibited this b_eight from being saved:</h2>
@@ -15,7 +15,42 @@
     <%= form.label :action_plan_id %>
     <%= form.text_field :action_plan_id %>
   </div>
+ <div class="form-group"> 
+    <%= form.label :daftar_hadir %>
+    <%= form.file_field :daftar_hadir, class: "form-control" %>
+  </div>
 
+  <div class="form-group"> 
+    <%= form.label :foto_atau_materi %>
+    <%= form.file_field :foto_atau_materi, class: "form-control" %>
+  </div>
+
+
+  <div class="form-group"> 
+    <%= form.label :foto_kegiatan %>
+    <%= form.file_field :foto_kegiatan, class: "form-control" %>
+  </div>
+
+  <div class="form-group"> 
+    <%= form.label :materi %>
+    <%= form.file_field :materi, class: "form-control" %>
+  </div>
+
+  <div class="form-group"> 
+    <%= form.label :notulen %>
+    <%= form.file_field :notulen, class: "form-control" %>
+  </div>
+
+  <div class="form-group"> 
+    <%= form.label :scan_document %>
+    <%= form.file_field :scan_document, class: "form-control" %>
+  </div>
+
+  <div class="form-group"> 
+    <%= form.label :scan_document_ttd %>
+    <%= form.file_field :scan_document_ttd, class: "form-control" %>
+  </div>
+  
   <div class="actions">
     <%= form.submit %>
   </div>
