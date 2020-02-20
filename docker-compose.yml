@@ -30,6 +30,8 @@ services:
     environment:
       MYSQL_USERNAME: "root"
       PMA_HOST: mysql
+    depends_on:
+      - mysql
 
   web:
     build: 

@@ -32,6 +32,7 @@
 #  scan_document_ttd_file_size    :integer
 #  scan_document_ttd_updated_at   :datetime
 #  scan_document_updated_at       :datetime
+#  slug                           :string(255)
 #  created_at                     :datetime         not null
 #  updated_at                     :datetime         not null
 #  action_plan_id                 :bigint
@@ -40,6 +41,7 @@
 #
 #  index_b_fours_on_action_plan_id  (action_plan_id)
 #  index_b_fours_on_deleted_at      (deleted_at)
+#  index_b_fours_on_slug            (slug) UNIQUE
 #
 # Foreign Keys
 #

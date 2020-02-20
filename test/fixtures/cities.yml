@@ -2,12 +2,16 @@
 #
 # Table name: cities
 #
-#  id         :bigint           not null, primary key
-#  city       :string(255)
-#  deleted_at :datetime
-#  slug       :string(255)
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id                     :bigint           not null, primary key
+#  city                   :string(255)
+#  deleted_at             :datetime
+#  logo_city_content_type :string(255)
+#  logo_city_file_name    :string(255)
+#  logo_city_file_size    :integer
+#  logo_city_updated_at   :datetime
+#  slug                   :string(255)
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
 #
 # Indexes
 #

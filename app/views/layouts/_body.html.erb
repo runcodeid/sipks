@@ -1,0 +1,13 @@
+<body>
+  <%= render partial: 'layouts/sidenav' %>
+  <!--Main Content-->
+  <div class="main-content" id="panel">
+    <%= render partial: 'layouts/topnav' %>
+    <%= render partial: 'layouts/header' %>
+    <div class="container-fluid mt--6">
+      <%= yield :isi_content %>
+      <%= render partial: 'layouts/footer' %>
+    </div>
+  </div>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</body>

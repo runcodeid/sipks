@@ -28,4 +28,11 @@ class Permission < ApplicationRecord
 
 
   acts_as_paranoid
+
+
+  #relasi antar table
+  has_many :role_permissions
+  #relasi untuk akses table ke permission tanpa harus menggunakan access_roles
+  has_many :roles, through: :role_permissions
+  #========================
 end

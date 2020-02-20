@@ -71,3 +71,4 @@ gem 'devise'
 gem "paperclip", "~> 6.0.0"
 gem "friendly_id"
 gem "paranoia"
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'

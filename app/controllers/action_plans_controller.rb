@@ -1,15 +1,23 @@
 class ActionPlansController < ApplicationController
   before_action :set_action_plan, only: [:show, :edit, :update, :destroy]
-  before_action :set_param_url
+  before_action :set_params_url
+  before_action :set_b_four, only: [:show]
+  before_action :set_b_eight, only: [:show]
+  before_action :set_b_twelf, only: [:show]
+  
   # GET /action_plans
   # GET /action_plans.json
   def index
-    @action_plans = @year.action_plans.all
+    @action_plans =ActionPlan.all
   end
 
   # GET /action_plans/1
   # GET /action_plans/1.json
   def show
+    @action_plan.year = @year
+    @b_four.action_plan = @action_plan 
+    @b_eight.action_plan = @action_plan
+    @b_twelf.action_plan = @action_plan
   end
 
   # GET /action_plans/new
@@ -27,14 +35,31 @@ class ActionPlansController < ApplicationController
     @action_plan = ActionPlan.new(action_plan_params)
 
     respond_to do |format|
+      @action_plan.city=City.first
+      @action_plan.year= @year
       if @action_plan.save
-        format.html { redirect_to @action_plan, notice: 'Action plan was successfully created.' }
+        @b_four = BFour.new(b_jibun_params)
+        @b_four.action_plan=@action_plan
+        @b_four.save
+
+        @b_eight= BEight.new(b_jibun_params)
+        @b_eight.action_plan=@action_plan
+        @b_eight.save
+
+        @b_twelf = BTwelf.new(b_jibun_params)
+        @b_twelf.action_plan=@action_plan
+        @b_twelf.save
+
+        format.html { redirect_to year_action_plan_path(@year,@action_plan), notice: 'Action plan was successfully created.' }
         format.json { render :show, status: :created, location: @action_plan }
+
       else
         format.html { render :new }
         format.json { render json: @action_plan.errors, status: :unprocessable_entity }
       end
     end
+
+    
   end
 
   # PATCH/PUT /action_plans/1
@@ -62,18 +87,41 @@ class ActionPlansController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_action_plan
       @action_plan = ActionPlan.friendly.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
+    # Only allow alist of trusted parameters through.
+    # Use callbacks to share common setup or constraints between actions.
     def action_plan_params
       params.require(:action_plan).permit(:city_id, :year_id, :code_action_plans, :action_plan)
+
     end
 
-    def set_param_url
-      @year = Year.friendly.find(params[:year_id])
+    def b_jibun_params
+      params.require(:action_plan).permit(:notulen, :daftar_hadir, :foto_kegiatan, :materi, :scan_document, :scan_document_ttd, :foto_atau_materi)
     end
+
+    def set_params_url
+      # @city = City.friendly.find(params[:year_id])
+      @year = Year.friendly.find(params[:year_id])
+
+    end
+
+    def set_b_four
+      @b_four = BFour.find_by action_plan: @action_plan
+    end
+
+    def set_b_eight
+      @b_eight = BEight.find_by action_plan: @action_plan
+    end
+
+    def set_b_twelf
+      @b_twelf = BTwelf.find_by action_plan: @action_plan
+   end
+
+
+
+
 
 end

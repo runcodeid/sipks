@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_15_140949) do
+ActiveRecord::Schema.define(version: 2020_02_20_163217) do
 
   create_table "action_plans", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "city_id"
@@ -60,8 +60,10 @@ ActiveRecord::Schema.define(version: 2020_02_15_140949) do
     t.integer "foto_atau_materi_file_size"
     t.datetime "foto_atau_materi_updated_at"
     t.datetime "deleted_at"
+    t.string "slug"
     t.index ["action_plan_id"], name: "index_b_eights_on_action_plan_id"
     t.index ["deleted_at"], name: "index_b_eights_on_deleted_at"
+    t.index ["slug"], name: "index_b_eights_on_slug", unique: true
   end
 
   create_table "b_fours", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -97,8 +99,10 @@ ActiveRecord::Schema.define(version: 2020_02_15_140949) do
     t.integer "foto_atau_materi_file_size"
     t.datetime "foto_atau_materi_updated_at"
     t.datetime "deleted_at"
+    t.string "slug"
     t.index ["action_plan_id"], name: "index_b_fours_on_action_plan_id"
     t.index ["deleted_at"], name: "index_b_fours_on_deleted_at"
+    t.index ["slug"], name: "index_b_fours_on_slug", unique: true
   end
 
   create_table "b_twelves", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -134,8 +138,10 @@ ActiveRecord::Schema.define(version: 2020_02_15_140949) do
     t.integer "foto_atau_materi_file_size"
     t.datetime "foto_atau_materi_updated_at"
     t.datetime "deleted_at"
+    t.string "slug"
     t.index ["action_plan_id"], name: "index_b_twelves_on_action_plan_id"
     t.index ["deleted_at"], name: "index_b_twelves_on_deleted_at"
+    t.index ["slug"], name: "index_b_twelves_on_slug", unique: true
   end
 
   create_table "cities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -144,6 +150,10 @@ ActiveRecord::Schema.define(version: 2020_02_15_140949) do
     t.datetime "updated_at", null: false
     t.string "slug"
     t.datetime "deleted_at"
+    t.string "logo_city_file_name"
+    t.string "logo_city_content_type"
+    t.integer "logo_city_file_size"
+    t.datetime "logo_city_updated_at"
     t.index ["deleted_at"], name: "index_cities_on_deleted_at"
     t.index ["slug"], name: "index_cities_on_slug", unique: true
   end
@@ -161,6 +171,15 @@ ActiveRecord::Schema.define(version: 2020_02_15_140949) do
     t.string "slug"
     t.index ["deleted_at"], name: "index_permissions_on_deleted_at"
     t.index ["slug"], name: "index_permissions_on_slug", unique: true
+  end
+
+  create_table "role_permissions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "permission_id"
+    t.bigint "role_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["permission_id"], name: "index_role_permissions_on_permission_id"
+    t.index ["role_id"], name: "index_role_permissions_on_role_id"
   end
 
   create_table "roles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -197,11 +216,14 @@ ActiveRecord::Schema.define(version: 2020_02_15_140949) do
     t.datetime "deleted_at"
     t.string "slug"
     t.bigint "city_id"
+    t.bigint "role_id"
+    t.string "name"
     t.index ["city_id"], name: "index_users_on_city_id"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["deleted_at"], name: "index_users_on_deleted_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["role_id"], name: "index_users_on_role_id"
     t.index ["slug"], name: "index_users_on_slug", unique: true
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
@@ -222,5 +244,8 @@ ActiveRecord::Schema.define(version: 2020_02_15_140949) do
   add_foreign_key "b_eights", "action_plans"
   add_foreign_key "b_fours", "action_plans"
   add_foreign_key "b_twelves", "action_plans"
+  add_foreign_key "role_permissions", "permissions"
+  add_foreign_key "role_permissions", "roles"
   add_foreign_key "users", "cities"
+  add_foreign_key "users", "roles"
 end

@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>Name role</th>
-      <th colspan="3"></th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
@@ -17,6 +17,7 @@
         <td><%= link_to 'Show', role %></td>
         <td><%= link_to 'Edit', edit_role_path(role) %></td>
         <td><%= link_to 'Destroy', role, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Add Access', role_role_permissions_path(role) %></td>
       </tr>
     <% end %>
   </tbody>
