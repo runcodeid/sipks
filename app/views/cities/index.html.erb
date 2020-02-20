@@ -1,3 +1,4 @@
+<% content_for :isi_content do %>
 <p id="notice"><%= notice %></p>
 
 <h1>Cities</h1>
@@ -27,3 +28,21 @@
 <br>
 
 <%= link_to 'New City', new_city_path %>
+<% @cities.each do |city| %>
+  <div class="row">
+    <div class="col-3">
+      <div class="card">
+        <div class="card-body">
+          <%= image_tag city.logo_city.url(:thumb), class: "rounded-circle img-center img-fluid shadow shadow-lg--hover" %>
+          <div class="pt-4 text-center">
+            <h5 class="h3 title">
+              <span class="d-block mb-1"><%= city.city %></span>
+            </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+<% end %>
+<%= render partial: 'layouts/body' %>
