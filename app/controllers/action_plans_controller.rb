@@ -89,7 +89,6 @@ class ActionPlansController < ApplicationController
   private
     def set_action_plan
       @action_plan = ActionPlan.friendly.find(params[:id])
-      # @b_four = BFour.friendly.find(params[:id])
     end
 
     # Only allow alist of trusted parameters through.
