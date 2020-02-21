@@ -1,5 +1,6 @@
-<%= form_with(model: city, local: true, role: "form")do |form| %>
+<%= form_with(model: city, remote: true, role: "form")do |form| %>
   <% if city.errors.any? %>
+
     <div id="error_explanation">
       <h2><%= pluralize(city.errors.count, "error") %> prohibited this city from being saved:</h2>
 
@@ -13,7 +14,7 @@
 
   <% if city.slug %>
     <div class="form-group mb-3">
-      <%= form.text_field :city, id: "city-#{city.slug}",class: "form-control", placeholder: 'Nama Kabupaten/Kota', autocomplete: "off" %>
+      <%= form.text_field :city, id: "city-#{city.slug}",class: "form-control", placeholder: 'Nama Kabupaten/Kota', autocomplete: "off", required: true %>
     </div>
 
     <div class="form-group">
@@ -24,7 +25,7 @@
     </div>
   <% else %>
     <div class="form-group mb-3">
-      <%= form.text_field :city, class: "form-control", placeholder: 'Nama Kabupaten/Kota', autocomplete: "off" %>
+      <%= form.text_field :city, class: "form-control", placeholder: 'Nama Kabupaten/Kota', autocomplete: "off", required: true %>
     </div>
 
     <div class="form-group">

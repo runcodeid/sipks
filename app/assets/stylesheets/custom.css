@@ -6,13 +6,25 @@
     color: #9D1C2D !important;
 }
 
+a {
+  color: #9D1C2D;
+}
+/* line 13, /sipks/vendor/assets/stylesheets/argon/bootstrap/mixins/_hover.scss */
+a:hover {
+  color: #D6263D;
+}
+
+.text-primary {
+    color: #9D1C2D !important;
+}
+
 .focused .form-control {
   border-color: #9D1C2D !important;
 }
 
 .custom-file-input {
   opacity: 0 !important;
-  width: 60% !important;
+  width: 100% !important;
   margin: 8px !important;
 }
 
