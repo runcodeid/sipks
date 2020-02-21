@@ -18,6 +18,22 @@ a:hover {
     color: #9D1C2D !important;
 }
 
+.btn-primary {
+    background-color: #9D1C2D;
+    border-color: #9D1C2D;
+}
+
+.btn-primary:hover {
+    background-color: #9D1C2D;
+    border-color: #9D1C2D;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
+  color: #fff;
+  background-color: #D6263D;
+  border-color: #9D1C2D;
+}
+
 .focused .form-control {
   border-color: #9D1C2D !important;
 }

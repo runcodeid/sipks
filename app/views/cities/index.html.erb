@@ -1,7 +1,7 @@
-<% content_for :isi_content do %>
 <% content_for :header_button do %>
   <%= link_to 'Tambah', '',class: "btn btn-sm btn-neutral", "data-toggle": "modal", "data-target": "#modal-new-city" %>
 <% end %>
+<% content_for :isi_content do %>
 <div class="row">
 <% @cities.each do |city| %>
     <div class="col-xl-4">

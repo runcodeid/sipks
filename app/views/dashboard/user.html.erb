@@ -1,20 +1,43 @@
-<h1>Dashboard#user</h1>
-<p>Find me in app/views/dashboard/user.html.erb</p>
+<% content_for :header_button do %>
+  <%= link_to 'Tambah Tahun', '#modal-new-year',class: "btn btn-sm btn-neutral", "data-toggle": "modal" %>
+<% end %>
+<% content_for :isi_content do %>
+<div class="row">
+  <% @years.each do |year| %>
+    <div class="col-xl-3">
+      <div class="card">
+        <div class="card-body">
+          <div class="row align-items-center">
+            <div class="col ml--2">
+              <h5 class="h2 title">
+                <span class="d-block mb--1"><%= year.year %></span>
+                <small><%= year.action_plans.count %> Rencana Aksi</small>
+              </h5>
+            </div>
+            <div class="col-auto">
+              <%= link_to 'Lihat', year_action_plans_path(year), class: "btn btn-sm btn-primary" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
 
-<% @years.each do |year| %>
-    <table>
-    <thead>
-        <tr>
-        <th>Tahun</th> 
-            <td><%= year.year %>
-        <th>Action plan</th>
-            <td><%= year.action_plans.count %></td>
-            <td><%= link_to 'Lihat', year_action_plans_path(year) %></td>
-        <th colspan="3"></th>
-        </tr>
-    </thead>
-    </table>
+<div class="modal fade modal-new" id="modal-new-year" tabindex="-1" role="dialog" aria-labeledby="modal-new-year" aria-hidden="true">
+  <div class="modal-dialog modal- modal-dialog-centered modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-body p-0">
+        <div class="card bg-secondary border-0 mb-0">
+          <div class="card-body px-lg-5 py-lg-5">
+            <div class="text-center text-muted mb-4">Tahun</div>
+            <%= render partial: 'years/form', locals: {year: Year.new} %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <% end %>
-
-<%= link_to 'Tahun Baru', new_year_path() %>
+<%= render partial: 'layouts/body' %>
