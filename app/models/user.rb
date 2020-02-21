@@ -58,6 +58,11 @@ class User < ApplicationRecord
     friendly_id :slug_candidates, use: :slugged
     acts_as_paranoid
 
+    attr_writer :login
+
+    def login
+      @login || self.username || self.email
+    end
 
     belongs_to :role
 

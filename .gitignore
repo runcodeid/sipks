@@ -33,7 +33,7 @@
 /config/master.key
 
 # Ignore Database
-/config/database.yml
+# /config/database.yml
 
 /config/local_env.yml
 /config/google_cloud.json
