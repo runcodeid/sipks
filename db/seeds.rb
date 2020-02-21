@@ -203,5 +203,10 @@ permissions =[
         description: 'Delete data Pengguna', #gasan penjelasan aja
         page: false, #ini akan bisa di akses di menu atau tidak
         path: 'user_path' #path di rails route
-    },
+    }
 ]
+
+ permissions.each do |permission|
+      add_permissions= Permission.create(permission)
+      p permission
+ end
