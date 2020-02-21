@@ -8,7 +8,7 @@ class ActionPlansController < ApplicationController
   # GET /action_plans
   # GET /action_plans.json
   def index
-    @action_plans =ActionPlan.all
+    @action_plans =@year.action_plans.all
   end
 
   # GET /action_plans/1
