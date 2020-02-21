@@ -28,7 +28,7 @@ permissions =[
         resource: 'year', #nama file di model harus sama
         action: 'edit', #nama function di controller
         description: 'Update data tahun', #gasan penjelasan aja
-        page: true, #ini akan bisa di akses di menu atau tidak
+        page: false, #ini akan bisa di akses di menu atau tidak
         path: 'edit_year_path' #path di rails route
     },
     {
@@ -61,7 +61,7 @@ permissions =[
         resource: 'action_plan', #nama file di model harus sama
         action: 'edit', #nama function di controller
         description: 'Update data Action Plan', #gasan penjelasan aja
-        page: true, #ini akan bisa di akses di menu atau tidak
+        page: false, #ini akan bisa di akses di menu atau tidak
         path: 'edit_year_action_plan_path' #path di rails route
     },
     {
@@ -94,7 +94,7 @@ permissions =[
         resource: 'city', #nama file di model harus sama
         action: 'edit', #nama function di controller
         description: 'Update data Kota', #gasan penjelasan aja
-        page: true, #ini akan bisa di akses di menu atau tidak
+        page: false, #ini akan bisa di akses di menu atau tidak
         path: 'edit_city_path' #path di rails route
     },
     {
@@ -127,7 +127,7 @@ permissions =[
         resource: 'permission', #nama file di model harus sama
         action: 'edit', #nama function di controller
         description: 'Update data permission', #gasan penjelasan aja
-        page: true, #ini akan bisa di akses di menu atau tidak
+        page: false, #ini akan bisa di akses di menu atau tidak
         path: 'edit_permission_path' #path di rails route
     },
     {
@@ -160,7 +160,7 @@ permissions =[
         resource: 'role', #nama file di model harus sama
         action: 'edit', #nama function di controller
         description: 'Update data role', #gasan penjelasan aja
-        page: true, #ini akan bisa di akses di menu atau tidak
+        page: false, #ini akan bisa di akses di menu atau tidak
         path: 'edit_role_path' #path di rails route
     },
     {
@@ -193,7 +193,7 @@ permissions =[
         resource: 'user', #nama file di model harus sama
         action: 'edit', #nama function di controller
         description: 'Update data Pengguna', #gasan penjelasan aja
-        page: true, #ini akan bisa di akses di menu atau tidak
+        page: false, #ini akan bisa di akses di menu atau tidak
         path: 'edit_user_path' #path di rails route
     },
     {
