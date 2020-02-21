@@ -1,9 +1,20 @@
 <% content_for :header do %>
+  <% content_for :breadcrumb do %>
+  <h6 class="h2 text-white d-inline-block mb-0">Kabupaten/Kota</h6>
+  <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+    <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+      <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+      <li class="breadcrumb-item"><a href="#">Master</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Kabupaten/Kota</li>
+    </ol>
+  </nav>
+  <% end %>
+  <% content_for :header_button do %>
+    <%= link_to 'Tambah', '',class: "btn btn-sm btn-neutral", "data-toggle": "modal", "data-target": "#modal-new-city" %>
+  <% end %>
   <%= render partial: 'layouts/header_all'%>
 <% end %>
-<% content_for :header_button do %>
-  <%= link_to 'Tambah', '',class: "btn btn-sm btn-neutral", "data-toggle": "modal", "data-target": "#modal-new-city" %>
-<% end %>
+
 <% content_for :isi_content do %>
 <div class="row">
 <% @cities.each do |city| %>

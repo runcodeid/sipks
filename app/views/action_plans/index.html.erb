@@ -1,12 +1,21 @@
 <% content_for :header do%>
-  <div class="header bg-primary pb-5">
+  <div class="header bg-primary pb-6">
     <div class="container-fluid">
       <div class="header-body">
         <div class="row align-items-center py-4">
           <div class="col-lg-6 col-7">
+            <h6 class="h2 text-white d-inline-block mb-0"><%= @year.year %></h6>
+            <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+              <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+                <li class="breadcrumb-item"><a href="#">Rencana Aksi</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><%= @year.year %></li>
+              </ol>
+            </nav>
           </div>
           <div class="col-lg-6 col-5 text-right">
             <%# yield :header_button %>
+            <%= link_to 'Tambah', '#modal-new-actionplan', class: "btn btn-sm btn-neutral", data: {toggle: "modal"} %>
           </div>
         </div>
       </div>
@@ -17,60 +26,34 @@
 <div class="row">
   <div class="col-xl">
     <div class="card bg-white">
-      <div class="card-header">
-        <div class="row align-items-center">
-          <div class="col">
-            <h2 class="mb-0">Rencana Aksi Tahun <%= @year.year %></h2>
-          </div>
-          <div class="col text-right">
-            <%= link_to 'Tambah', '#modal-new-actionplan', class: "btn btn-sm btn-primary", data: {toggle: "modal"} %>
-          </div>
-        </div>
-      </div>
-      <div class="card-body p-0">
+      <div class="card-body px-0 py-1">
         <ul class="list-group list-group-flush list">
         <% @action_plans.each.with_index do |action_plan, index| %>
-          <% if index.even? %>
-            <li class="bg-lighter list-group-item px-4">
-              <div class="row align-items-center">
-                <div class="col">
-                  <small><%= action_plan.code_action_plans %></small>
-                  <h4 class="mb-0">
-                    <%= action_plan.action_plan %>
-                  </h4>
-                </div>
-                <div class="col-auto">
+          <li class="list-group-item px-4">
+            <div class="row align-items-center">
+              <div class="col">
+                <small><%= action_plan.code_action_plans %></small>
+                <h4 class="mb-0">
+                  <%= action_plan.action_plan %>
+                </h4>
+              </div>
+              <div class="col-auto">
+                <% if index.even? %>
                   <button type="button" class="btn btn-sm btn-neutral mr-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-ellipsis-h"></i>
                   </button>
-                  <div class="dropdown-menu dropdown-menu-right" style="">
-                    <%= link_to 'Ubah', '', class: "dropdown-item", data: {toggle: "modal", target: "#modal-edit-actionplan-#{action_plan.slug}"} %>
-                    <%= link_to 'Hapus', year_action_plan_path(@year,action_plan), class:"dropdown-item", method: :delete, data: { confirm: 'Anda Yakin?' } %>
-                  </div>
-                </div>
-              </div>
-            </li>
-          <% else %>
-            <li class="list-group-item px-4">
-              <div class="row align-items-center">
-                <div class="col">
-                  <small><%= action_plan.code_action_plans %></small>
-                  <h4 class="mb-0">
-                    <%= action_plan.action_plan %>
-                  </h4>
-                </div>
-                <div class="col-auto">
+                <% else %>
                   <button type="button" class="btn btn-sm btn-primary mr-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-ellipsis-h"></i>
                   </button>
-                  <div class="dropdown-menu dropdown-menu-right" style="">
-                    <%= link_to 'Ubah', '', class: "dropdown-item", data: {toggle: "modal", target: "#modal-edit-city-#{action_plan.slug}"} %>
-                    <%= link_to 'Hapus', year_action_plan_path(@year,action_plan), class:"dropdown-item", method: :delete, data: { confirm: 'Anda Yakin?' } %>
-                  </div>
+                <% end %>
+                <div class="dropdown-menu dropdown-menu-right" style="">
+                  <%= link_to 'Ubah', '', class: "dropdown-item", data: {toggle: "modal", target: "#modal-edit-actionplan-#{action_plan.slug}"} %>
+                  <%= link_to 'Hapus', year_action_plan_path(@year,action_plan), class:"dropdown-item", method: :delete, data: { confirm: 'Anda Yakin?' } %>
                 </div>
               </div>
-            </li>
-          <% end %>
+            </div>
+          </li>
         <% end %>
         </ul>
       </div>
