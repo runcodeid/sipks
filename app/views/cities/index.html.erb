@@ -1,3 +1,6 @@
+<% content_for :header do %>
+  <%= render partial: 'layouts/header_all'%>
+<% end %>
 <% content_for :header_button do %>
   <%= link_to 'Tambah', '',class: "btn btn-sm btn-neutral", "data-toggle": "modal", "data-target": "#modal-new-city" %>
 <% end %>
