@@ -1,6 +1,10 @@
 class ApplicationController < ActionController::Base
     before_action :configure_permitted_parameters, if: :devise_controller?
 
+
+    include Pundit
+    protect_from_forgery
+
     attr_writer :login
 
     def login
