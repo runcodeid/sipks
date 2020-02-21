@@ -15,6 +15,7 @@
 #  last_sign_in_at        :datetime
 #  last_sign_in_ip        :string(255)
 #  locked_at              :datetime
+#  name                   :string(255)
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string(255)
@@ -26,6 +27,7 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  city_id                :bigint
+#  role_id                :bigint
 #
 # Indexes
 #
@@ -34,6 +36,7 @@
 #  index_users_on_deleted_at            (deleted_at)
 #  index_users_on_email                 (email) UNIQUE
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
+#  index_users_on_role_id               (role_id)
 #  index_users_on_slug                  (slug) UNIQUE
 #  index_users_on_unlock_token          (unlock_token) UNIQUE
 #  index_users_on_username              (username) UNIQUE
@@ -41,17 +44,27 @@
 # Foreign Keys
 #
 #  fk_rails_...  (city_id => cities.id)
+#  fk_rails_...  (role_id => roles.id)
 #
 
 class User < ApplicationRecord
     # Include default devise modules. Others available are:
     # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-    devise :database_authenticatable, :registerable,
-          :recoverable, :rememberable, :validatable, authentication_keys: [:login]
+    devise :database_authenticatable, 
+          #:registerable,
+          :recoverable, :lockable, :timeoutable, :rememberable, :validatable, authentication_keys: [:login]
     
     extend FriendlyId
     friendly_id :slug_candidates, use: :slugged
     acts_as_paranoid
+
+    attr_writer :login
+
+    def login
+      @login || self.username || self.email
+    end
+
+    belongs_to :role
 
     validates :username, presence: :true, uniqueness: { case_sensitive: false }
     validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
@@ -62,7 +75,6 @@ class User < ApplicationRecord
         errors.add(:username, :invalid)
       end
     end
-
 
     def self.find_for_database_authentication(warden_conditions)
       conditions = warden_conditions.dup

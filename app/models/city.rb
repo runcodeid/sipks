@@ -30,18 +30,18 @@ class City < ApplicationRecord
     Paperclip.interpolates :slug do |attachment, style|
         attachment.instance.slug
     end
-    
 
-    has_attached_file :logo_city, styles: { 
-            medium: "100x500>", 
-            thumb: "30x150>",
+
+    has_attached_file :logo_city, styles: {
+            medium: "100x500>",
+            thumb: "100x500>",
             hash_secret: "runcodeindonesia",
             url: "/system/:class/:attachment/:slug/:style/:hash.:extension",
             path: ":rails_root/public/system/:class/:attachment/:slug/:style/:hash.:extension"
         }, default_url: "/images/:style/missing.png"
     validates_attachment_content_type :logo_city, content_type: /\Aimage\/.*\z/
 
-    validates :city, presence: true
+    validates :city, presence: {message: 'Nama Kabupaten/Kota Tidak Boleh Kosong'}
 
     acts_as_paranoid
 end

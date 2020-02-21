@@ -1,3 +1,58 @@
 .bg-primary {
     background-color: #9D1C2D !important;
 }
+
+.btn-neutral {
+    color: #9D1C2D !important;
+}
+
+a {
+  color: #9D1C2D;
+}
+/* line 13, /sipks/vendor/assets/stylesheets/argon/bootstrap/mixins/_hover.scss */
+a:hover {
+  color: #D6263D;
+}
+
+.text-primary {
+    color: #9D1C2D !important;
+}
+
+.btn-primary {
+    background-color: #9D1C2D;
+    border-color: #9D1C2D;
+}
+
+.btn-primary:hover {
+    background-color: #9D1C2D;
+    border-color: #9D1C2D;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
+  color: #fff;
+  background-color: #D6263D;
+  border-color: #9D1C2D;
+}
+
+.focused .form-control {
+  border-color: #9D1C2D !important;
+}
+
+.custom-file-input {
+  opacity: 0 !important;
+  width: 100% !important;
+  margin: 8px !important;
+}
+
+.custom-file-input:lang(en) ~ .custom-file-label::after {
+  content: "Pilih";
+}
+
+.custom-file-label{
+  font-size: 0.875rem;
+}
+
+.custom-file-input:focus ~ .custom-file-label {
+  border-color: #9D1C2D !important;
+  box-shadow: 0 3px 9px rgba(50, 50, 9, 0), 3px 4px 8px rgba(94, 114, 228, 0.1);
+}
