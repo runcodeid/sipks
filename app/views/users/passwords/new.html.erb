@@ -1,16 +1,68 @@
-<h2>Forgot your password?</h2>
+<!-- <h2>Forgot your password?</h2>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<%# <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %> %>
+  <%# <%= render "devise/shared/error_messages", resource: resource %> %>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%# <%= f.label :email %><br /> %>
+    <%# <%= f.email_field :email, autofocus: true, autocomplete: "email" %> %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
+    <%# <%= f.submit "Send me reset password instructions" %> %>
   </div>
-<% end %>
+<%# <% end %> %>
 
-<%= render "users/shared/links" %>
+<%# <%= render "users/shared/links" %> --> %>
+
+<body class="bg-default g-sidenav-hidden">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <!-- Navbar -->
+  <!-- Main content -->
+  <div class="main-content">
+    <!-- Header -->
+      <div class="separator separator-bottom separator-skew zindex-100">
+        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <polygon class="fill-default" points="2560 0 2560 100 0 100"></polygon>
+        </svg>
+      </div>
+    </div>
+    <!-- Page content -->
+    <div class="container mt--8 pb-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-5 col-md-7">
+          <div class="card bg-secondary border-0 mb-0">
+
+            <div class="card-body px-lg-5 py-lg-5">
+              <div class="text-center text-muted mb-4">
+                <h2> Forgot Your Password? </h2>
+              </div>
+              <form role="form">
+                <label for="example-text-input" class="form-control-label">EMAIL</label>
+                <div class="form-group mb-3">
+                  <div class="input-group input-group-merge input-group-alternative">
+                    <div class="input-group-prepend ">
+                      <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Email" type="email" required>
+                  </div>
+                </div>
+                <div class="actions text-center">
+                  <button type="submit" class="btn btn-primary btn-sm">Send me reset password instructions</button>
+                </div>
+                <%= render "users/shared/links" %>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <script src="../../assets/js/argon.min.js?v=1.2.0"></script>
+    <!-- Demo JS - remove this in your project -->
+    <script src="../../assets/js/demo.min.js"></script>
+
+
+  <iframe name="_hjRemoteVarsFrame" title="_hjRemoteVarsFrame" id="_hjRemoteVarsFrame" src="https://vars.hotjar.com/box-469cf41adb11dc78be68c1ae7f9457a4.html" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe></body> -->
