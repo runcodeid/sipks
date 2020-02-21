@@ -206,6 +206,7 @@
 #     }
 # ]
 
+# puts "Create Permissions"
 #  permissions.each do |permission|
 #       add_permissions= Permission.create(permission)
 #       p permission
@@ -213,6 +214,8 @@
 
 #  roles=[{name_role: "Superadmin"},{name_role: "Admin"}]
 
+
+#  puts "Create Role"
 #  roles.each do |role|
 #         add_roles=Role.create(role)
 #  end
@@ -220,6 +223,7 @@
 # roles = Role.all
 # permissions = Permission.all
 
+# puts "Create Role Permissions"
 # roles.each do |role|
 #     permissions.each do |permission|
 #         role_permission = RolePermission.new
@@ -228,3 +232,31 @@
 #         role_permission.save
 #     end
 # end
+
+# puts "Create City"
+
+
+# city= "Kota Banjarmasin"
+
+# image_path = "#{Rails.root}/db/kota_banjarmasin.png"
+# image_file = File.new(image_path)
+
+# add_city = City.create(
+#     city: city,
+#     logo_city: image_file
+# )
+
+puts "Create User"
+
+city=City.first
+role=Role.first
+
+add_user = User.create(
+        city_id: city.id,
+        role_id: role.id,
+        username: "superadmin",
+        email: "runcode.id@gmail.com",
+        name: "Superadmin",
+        password: "@runcode.id2019"
+    )
+

@@ -3,6 +3,15 @@
 <% end %>
 <% content_for :isi_content do %>
 <div class="row">
+<% if user_signed_in? %>
+  <li>
+  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Login', new_user_session_path) %>  
+  </li>
+<% end %>
 <% @cities.each do |city| %>
     <div class="col-xl-4">
       <div class="card">
