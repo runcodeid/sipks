@@ -5,20 +5,24 @@ class YearsController < ApplicationController
   # GET /years.json
   def index
     @years = Year.all
+    authorize @years
   end
 
   # GET /years/1
   # GET /years/1.json
   def show
+    authorize @year
   end
 
   # GET /years/new
   def new
     @year = Year.new
+    authorize @year
   end
 
   # GET /years/1/edit
   def edit
+    authorize @year
   end
 
   # POST /years
@@ -54,6 +58,7 @@ class YearsController < ApplicationController
   # DELETE /years/1
   # DELETE /years/1.json
   def destroy
+    authorize @year
     @year.destroy
     respond_to do |format|
       format.html { redirect_to years_url, notice: 'Year was successfully destroyed.' }
