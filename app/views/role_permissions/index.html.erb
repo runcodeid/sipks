@@ -1,3 +1,26 @@
+<% content_for :header do %>
+<div class="header bg-primary pb-6">
+  <div class="container-fluid">
+    <div class="header-body">
+      <div class="row align-items-center py-4">
+        <div class="col-lg-6 col-7">
+          <h6 class="h2 text-white d-inline-block mb-0">Roles</h6>
+          <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+              <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+              <li class="breadcrumb-item"><a href="#">Roles</a></li>
+              <li class="breadcrumb-item active" aria-current="page"><%=@role.name_role %></li>
+            </ol>
+          </nav>
+        </div>
+        <div class="col-lg-6 col-5 text-right">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+
 <% content_for :isi_content do %>
   <p id="notice"><%= notice %></p>
     <% if @role_permission.errors.any? %>
@@ -11,7 +34,6 @@
       </div>
     <% end %>
 
-      <p><%= 'Roles '+@role.name_role %></p>
       <%= form_for [@role,@role_permission] do |form| %>
         <% @permissions.group(:resource).each do |resource_of| %>
           <div class='row'>
