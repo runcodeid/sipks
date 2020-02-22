@@ -60,3 +60,24 @@ $(".datepicker-group").datepicker({
   todayHighlight: true,
   autoclose: true
 });
+
+$('.custom-toggle.role_permission input[type="checkbox"]').on('change', function(){
+    var url = $(this).closest('form').attr('action');
+    var isChecked = ($(this).is(':checked')) ? 1 : 0;
+    var dataPost = {}
+    $('.custom-toggle.role_permission input[type="checkbox"]').each(function(value){
+      var objName = $(this).attr('name')
+      dataPost[objName] = $(this).is(':checked') ? 1 : 0;
+    });
+    $.ajax({
+      url: url,
+      method: 'post',
+      data: dataPost,
+      success: function(data){
+        console.log(data);
+      },
+      error: function(error){
+        console.log(error.resposeText);
+      }
+    });
+});

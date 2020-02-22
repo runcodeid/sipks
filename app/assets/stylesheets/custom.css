@@ -60,7 +60,24 @@ a:hover {
 .sign-in-logo{
   width: 70px;
   height: 70px;
-  
-.table-primary, .table-primary>td, .table-primary>th {
+}
+
+.table-primary, .table-primary>td, .table-primary>th{
     background-color: #EDD5D8;
+}
+
+.custom-toggle input:checked + .custom-toggle-slider:after{
+  color: #9D1C2D !important;
+}
+
+.custom-toggle input:checked + .custom-toggle-slider {
+  border: 1px solid #9D1C2D !important;
+}
+
+.custom-toggle input:checked + .custom-toggle-slider:before {
+  background: #9D1C2D !important;
+}
+
+.custom-toggle input:checked + .custom-toggle-slider:after {
+  color: #9D1C2D !important;
 }
