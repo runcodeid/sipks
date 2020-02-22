@@ -1,11 +1,14 @@
 class ApplicationController < ActionController::Base
     before_action :configure_permitted_parameters, if: :devise_controller?
 
+    before_action :authenticate_user!
 
     include Pundit
     protect_from_forgery
 
     attr_writer :login
+
+    $city_param_url=nil 
 
     def login
         @login || self.username || self.email

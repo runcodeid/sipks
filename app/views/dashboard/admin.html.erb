@@ -1,2 +1,5 @@
 <h1>Dashboard#admin</h1>
 <p>Find me in app/views/dashboard/admin.html.erb</p>
+<% @cities.each do |city| %>
+    <%= link_to city.city, city_years_path(city) %>
+<% end %>

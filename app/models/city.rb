@@ -33,8 +33,8 @@ class City < ApplicationRecord
 
 
     has_attached_file :logo_city, styles: {
-            medium: "100x500>",
-            thumb: "100x500>",
+            medium: "500x500>",
+            thumb: "500x500>",
             hash_secret: "runcodeindonesia",
             url: "/system/:class/:attachment/:slug/:style/:hash.:extension",
             path: ":rails_root/public/system/:class/:attachment/:slug/:style/:hash.:extension"

@@ -7,8 +7,17 @@ class ActionPlansController < ApplicationController
   
   # GET /action_plans
   # GET /action_plans.json
+
+
   def index
-    @action_plans =@year.action_plans.all
+
+    if params[:city_id].nil?
+      @action_plans =@year.action_plans.where('city_id = ?',current_user.city.id).all
+    else
+      @action_plans =@year.action_plans.where('city_id = ?',City.friendly.find(params[:city_id])).all
+    end
+
+    authorize @action_plans
   end
 
   # GET /action_plans/1
@@ -18,15 +27,19 @@ class ActionPlansController < ApplicationController
     @b_four.action_plan = @action_plan 
     @b_eight.action_plan = @action_plan
     @b_twelf.action_plan = @action_plan
+    authorize @action_plan
+
   end
 
   # GET /action_plans/new
   def new
     @action_plan = ActionPlan.new
+    authorize @action_plan
   end
 
   # GET /action_plans/1/edit
   def edit
+    authorize @action_plan
   end
 
   # POST /action_plans
@@ -35,7 +48,8 @@ class ActionPlansController < ApplicationController
     @action_plan = ActionPlan.new(action_plan_params)
 
     respond_to do |format|
-      @action_plan.city=City.first
+
+      @action_plan.city= current_user.city
       @action_plan.year= @year
       if @action_plan.save
         @b_four = BFour.new(b_jibun_params)
@@ -79,6 +93,7 @@ class ActionPlansController < ApplicationController
   # DELETE /action_plans/1
   # DELETE /action_plans/1.json
   def destroy
+    authorize @action_plan
     @action_plan.destroy
     respond_to do |format|
       format.html { redirect_to action_plans_url, notice: 'Action plan was successfully destroyed.' }

@@ -1,8 +1,31 @@
-<% content_for :header_button do %>
-  <%= link_to 'Tambah', '',class: "btn btn-sm btn-neutral", "data-toggle": "modal", "data-target": "#modal-new-city" %>
+<% content_for :header do %>
+  <% content_for :breadcrumb do %>
+  <h6 class="h2 text-white d-inline-block mb-0">Kabupaten/Kota</h6>
+  <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+    <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+      <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+      <li class="breadcrumb-item"><a href="#">Master</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Kabupaten/Kota</li>
+    </ol>
+  </nav>
+  <% end %>
+  <% content_for :header_button do %>
+    <%= link_to 'Tambah', '',class: "btn btn-sm btn-neutral", "data-toggle": "modal", "data-target": "#modal-new-city" %>
+  <% end %>
+  <%= render partial: 'layouts/header_all'%>
 <% end %>
+
 <% content_for :isi_content do %>
 <div class="row">
+<% if user_signed_in? %>
+  <li>
+  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Login', new_user_session_path) %>
+  </li>
+<% end %>
 <% @cities.each do |city| %>
     <div class="col-xl-4">
       <div class="card">
@@ -42,7 +65,7 @@
       <div class="modal-body p-0">
         <div class="card bg-secondary border-0 mb-0">
           <div class="card-body px-lg-5 py-lg-5">
-            <div class="text-center text-muted mb-4">Kabupaten/Kota</div>
+            <div class="h3 text-center text-muted mb-4">Kabupaten/Kota</div>
             <%= render partial: 'form', locals: {city: City.new} %>
           </div>
         </div>
@@ -58,7 +81,7 @@
       <div class="modal-body p-0">
         <div class="card bg-secondary border-0 mb-0">
           <div class="card-body px-lg-5 py-lg-5">
-            <div class="text-center text-muted mb-4">Kabupaten/Kota</div>
+            <div class="h3 text-center text-muted mb-4">Kabupaten/Kota</div>
             <%= render partial: 'form', locals: {city: city} %>
           </div>
         </div>

@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# permissions =[
+permissions =[
 #     {
 #         name: 'Manajemen Tahun', #Penamaan gasan permission nya
 #         resource: 'year', #nama file di model harus sama
@@ -64,6 +64,14 @@
 #         page: false, #ini akan bisa di akses di menu atau tidak
 #         path: 'edit_year_action_plan_path' #path di rails route
 #     },
+     {
+        name: 'Show Action Plan', #Penamaan gasan permission nya
+        resource: 'action_plan', #nama file di model harus sama
+        action: 'show', #nama function di controller
+        description: 'Show data Action Plan', #gasan penjelasan aja
+        page: false, #ini akan bisa di akses di menu atau tidak
+        path: 'year_action_plan_path' #path di rails route
+    },
 #     {
 #         name: 'Buang Action Plan', #Penamaan gasan permission nya
 #         resource: 'action_plan', #nama file di model harus sama
@@ -204,27 +212,59 @@
 #         page: false, #ini akan bisa di akses di menu atau tidak
 #         path: 'user_path' #path di rails route
 #     }
-# ]
+]
 
-#  permissions.each do |permission|
-#       add_permissions= Permission.create(permission)
-#       p permission
-#  end
+puts "Create Permissions"
+ permissions.each do |permission|
+      add_permissions= Permission.create(permission)
+      p permission
+ end
 
-#  roles=[{name_role: "Superadmin"},{name_role: "Admin"}]
+ roles=[{name_role: "Superadmin"},{name_role: "Admin"}]
 
+
+#  puts "Create Role"
 #  roles.each do |role|
 #         add_roles=Role.create(role)
 #  end
 
-# roles = Role.all
-# permissions = Permission.all
+roles = Role.all
+permissions = Permission.all
 
-# roles.each do |role|
-#     permissions.each do |permission|
-#         role_permission = RolePermission.new
-#         role_permission.role=role
-#         role_permission.permission=permission
-#         role_permission.save
-#     end
-# end
+puts "Create Role Permissions"
+roles.each do |role|
+    permissions.each do |permission|
+        role_permission = RolePermission.new
+        role_permission.role=role
+        role_permission.permission=permission
+        role_permission.save
+    end
+end
+
+# puts "Create City"
+
+
+# city= "Kota Banjarmasin"
+
+# image_path = "#{Rails.root}/db/kota_banjarmasin.png"
+# image_file = File.new(image_path)
+
+# add_city = City.create(
+#     city: city,
+#     logo_city: image_file
+# )
+
+puts "Create User"
+
+city=City.first
+role=Role.first
+
+add_user = User.create(
+        city_id: city.id,
+        role_id: role.id,
+        username: "superadmin",
+        email: "runcode.id@gmail.com",
+        name: "Superadmin",
+        password: "@runcode.id2019"
+    )
+

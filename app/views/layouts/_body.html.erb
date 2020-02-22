@@ -4,7 +4,11 @@
   <div class="main-content" id="panel">
     <%= render partial: 'layouts/topnav' %>
     <%= render partial: 'layouts/header' %>
-    <div class="container-fluid mt-5">
+    <% if (controller_name == 'action_plans' || controller_name == 'roles' || controller_name== 'role_permissions') %>
+      <div class="container-fluid mt--6">
+    <% else %>
+      <div class="container-fluid mt-4">
+    <% end %>
       <%= yield :isi_content %>
       <%= render partial: 'layouts/footer' %>
     </div>

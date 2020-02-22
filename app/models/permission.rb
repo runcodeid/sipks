@@ -35,4 +35,10 @@ class Permission < ApplicationRecord
   #relasi untuk akses table ke permission tanpa harus menggunakan access_roles
   has_many :roles, through: :role_permissions
   #========================
+
+
+  def self.check_resource_and_action(resource,action)
+    self.where('resource = ?',resource).where('action = ?',action).first
+  end
+  
 end

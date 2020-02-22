@@ -1,24 +1,9 @@
-# README
+cek file di db/seeds.rb
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+uncomment perintah dari baris 9 sampai 261
 
-Things you may want to cover:
+jalankan perintah reset data dlu jika perlu
+rails db:reset
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+jika tidak mereset data jalankan perintah
+rails db:seed

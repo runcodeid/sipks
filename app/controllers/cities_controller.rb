@@ -5,20 +5,24 @@ class CitiesController < ApplicationController
   # GET /cities.json
   def index
     @cities = City.all
+    authorize @cities
   end
 
   # GET /cities/1
   # GET /cities/1.json
   def show
+    authorize @city
   end
 
   # GET /cities/new
   def new
     @city = City.new
+    authorize @city
   end
 
   # GET /cities/1/edit
   def edit
+    authorize @city
   end
 
   # POST /cities
@@ -27,7 +31,7 @@ class CitiesController < ApplicationController
     @city = City.new(city_params)
     respond_to do |format|
       if @city.save
-        format.html { redirect_to cities_path, notice: 'City was successfully created.' }
+        format.html { redirect_to cities_path, notice: 'Berhasil Menambahkan Kabupaten/Kota.' }
         format.json { render :show, status: :created, location: @city }
       else
         # format.html { redirect_to cities_path }
@@ -42,7 +46,7 @@ class CitiesController < ApplicationController
   def update
     respond_to do |format|
       if @city.update(city_params)
-        format.html { redirect_to cities_path, notice: 'City was successfully updated.' }
+        format.html { redirect_to cities_path, notice: 'Berhasil Mengubah Kabupaten/Kota.' }
         format.json { render :show, status: :ok, location: @city }
       else
         # format.html { render :edit }
@@ -55,6 +59,7 @@ class CitiesController < ApplicationController
   # DELETE /cities/1
   # DELETE /cities/1.json
   def destroy
+    authorize @city
     @city.logo_city.destroy
     @city.destroy
     respond_to do |format|

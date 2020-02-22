@@ -1,5 +1,18 @@
-<% content_for :header_button do %>
-  <%= link_to 'Tambah Tahun', '#modal-new-year',class: "btn btn-sm btn-neutral", "data-toggle": "modal" %>
+<% content_for :header do %>
+  <% content_for :breadcrumb do %>
+  <h6 class="h2 text-white d-inline-block mb-0">User</h6>
+  <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+    <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+      <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+      <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+      <li class="breadcrumb-item active" aria-current="page">User</li>
+    </ol>
+  </nav>
+  <% end %>
+  <% content_for :header_button do %>
+    <%= link_to 'Tambah Tahun', '#modal-new-year',class: "btn btn-sm btn-neutral", "data-toggle": "modal" %>
+  <% end %>
+  <%= render partial: 'layouts/header_all' %>
 <% end %>
 <% content_for :isi_content do %>
 <div class="row">
@@ -39,5 +52,8 @@
   </div>
 </div>
 
+<% end %>
+<% if notice %>
+  <div class="notifikasi" data-notifikasi="<%= notice %>"></div>
 <% end %>
 <%= render partial: 'layouts/body' %>

@@ -1,12 +1,27 @@
 Rails.application.routes.draw do
   get 'dashboard/user'
   get 'dashboard/admin'
+
   resources :roles do
-    resources :role_permissions, :only => [:index, :create]
+    resources :role_permissions
   end
-  resources :permissions
+
+  # resources :permissions
+
   devise_for :users
-  resources :users
+  devise_scope :user do
+    authenticated :user do
+      root 'dashboard#admin'
+    end
+  
+    unauthenticated do
+      root 'devise/sessions#new'
+    end
+    # root to: "devise/sessions#new"
+  end
+  scope "/management" do
+    resources :users
+  end
 
   resources :years, only: [:show, :index, :new, :create,:edit,:update,:destroy]
   
@@ -18,6 +33,15 @@ Rails.application.routes.draw do
     end
   end
 
+
+
   resources :cities
+
+  resources :cities, only: [:show, :index] do
+    resources :years, only: [:show, :index]do
+      resources :action_plans, only: [:show, :index]
+    end
+  end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
