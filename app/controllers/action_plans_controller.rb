@@ -8,7 +8,6 @@ class ActionPlansController < ApplicationController
   # GET /action_plans
   # GET /action_plans.json
 
-  helper Admin::MyHelper
 
   def index
     @action_plans =@year.action_plans.all
