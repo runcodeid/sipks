@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   get 'dashboard/admin'
 
   resources :roles do
-    resources :role_permissions, :only => [:index, :create]
+    resources :role_permissions
   end
 
-  resources :permissions
+  # resources :permissions
 
   devise_for :users
   devise_scope :user do
@@ -36,5 +36,12 @@ Rails.application.routes.draw do
 
 
   resources :cities
+
+  resources :cities, only: [:show, :index] do
+    resources :years, only: [:show, :index]do
+      resources :action_plans, only: [:show, :index]
+    end
+  end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

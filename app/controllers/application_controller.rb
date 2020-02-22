@@ -8,6 +8,8 @@ class ApplicationController < ActionController::Base
 
     attr_writer :login
 
+    $city_param_url=nil 
+
     def login
         @login || self.username || self.email
     end

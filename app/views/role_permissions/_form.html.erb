@@ -1,17 +1,42 @@
-<%= form_with(model: role_permission, local: true) do |form| %>
-  <% if role_permission.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(role_permission.errors.count, "error") %> prohibited this role_permission from being saved:</h2>
 
-      <ul>
-      <% role_permission.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_for [@role,@role_permission] do |form| %>
 
   <div class="actions">
     <%= form.submit %>
   </div>
+
+  <table>
+    <tbody>
+      <% @permissions.group(:resource).each do |resource_of| %>
+        <tr>
+          <th colspan="7" style="text-align:left"> Resource : <%= resource_of.resource %></th>
+        </tr>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Action</th>
+          <th>Page</th>
+          <th>Description</th>
+        </tr>
+        <% @permissions.where('resource = ?',resource_of.resource).each do |resource_of_permission| %>
+          <tr>
+            <% if RolePermission.check_status(@role.id,resource_of_permission.id) %>
+              <td> <%= check_box("permissions", resource_of_permission.id, {checked: true}) %></td>
+            <% else %>
+              <td> <%= check_box("permissions", resource_of_permission.id, {checked: false}) %></td>
+            <% end %>  
+            <td><%= resource_of_permission.name %></td>
+            <td><%= resource_of_permission.action %></td>
+            <td><%= resource_of_permission.page %></td>
+            <td><%= resource_of_permission.description %></td>
+          </tr>
+        <% end %>
+
+            
+          
+
+      <% end %>
+    </tbody>
+  </table>
+
 <% end %>

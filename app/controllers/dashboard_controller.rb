@@ -4,5 +4,6 @@ class DashboardController < ApplicationController
   end
 
   def admin
+    @cities = City.all
   end
 end
