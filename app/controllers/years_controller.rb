@@ -5,20 +5,24 @@ class YearsController < ApplicationController
   # GET /years.json
   def index
     @years = Year.all
+    authorize @years
   end
 
   # GET /years/1
   # GET /years/1.json
   def show
+    authorize @year
   end
 
   # GET /years/new
   def new
     @year = Year.new
+    authorize @year
   end
 
   # GET /years/1/edit
   def edit
+    authorize @year
   end
 
   # POST /years
@@ -28,7 +32,7 @@ class YearsController < ApplicationController
 
     respond_to do |format|
       if @year.save
-        format.html { redirect_to dashboard_user_path(), notice: 'Year was successfully created.' }
+        format.html { redirect_to dashboard_user_path(), notice: 'Berhasil Menambahkan Tahun.' }
         format.json { render :show, status: :created, location: @year }
       else
         format.html { render :new }
@@ -42,7 +46,7 @@ class YearsController < ApplicationController
   def update
     respond_to do |format|
       if @year.update(year_params)
-        format.html { redirect_to @year, notice: 'Year was successfully updated.' }
+        format.html { redirect_to @year, notice: 'Berhasil Mengubah Tahun.' }
         format.json { render :show, status: :ok, location: @year }
       else
         format.html { render :edit }
@@ -54,6 +58,7 @@ class YearsController < ApplicationController
   # DELETE /years/1
   # DELETE /years/1.json
   def destroy
+    authorize @year
     @year.destroy
     respond_to do |format|
       format.html { redirect_to years_url, notice: 'Year was successfully destroyed.' }

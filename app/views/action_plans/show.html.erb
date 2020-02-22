@@ -70,7 +70,11 @@
                   </div>
                   <div>
                     <div class="custom-control custom-checkbox custom-checkbox-danger">
-                      <%= form.check_box :delete_daftar_hadir, class: "custom-control-input" %>
+                      <% if (mode_view(@year.year,"04","b04")) %>
+                        <%= form.check_box :delete_daftar_hadir, class: "custom-control-input" %>
+                      <% else %>
+                        <%= form.check_box :delete_daftar_hadir, class: "custom-control-input",disabled: true %>
+                      <% end %>
                       <label class="custom-control-label" for="b_four_delete_daftar_hadir"></label>
                     </div>
                   </div>
@@ -80,10 +84,14 @@
           <% else %>
             <div class="form-group mb-0">
               <%= form.label :daftar_hadir, for: "b_four_daftar_hadir", class: "form-control-label" %>
-              <div class="custom-file">
-                <%= form.file_field :daftar_hadir, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
-                <label for="b_four_daftar_hadir" class="custom-file-label">Pdf</label>
-              </div>
+              <% if (mode_view(@year.year,"04","b04")) %>
+                <div class="custom-file">
+                  <%= form.file_field :daftar_hadir, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
+                  <label for="b_four_daftar_hadir" class="custom-file-label">Pdf</label>
+                </div>
+              <% else %>
+                Kosong
+              <% end %>
             </div>
           <% end %>
 
@@ -97,7 +105,11 @@
                   </div>
                   <div>
                     <div class="custom-control custom-checkbox custom-checkbox-danger">
-                      <%= form.check_box :delete_foto_atau_materi, class: "custom-control-input" %>
+                      <% if (mode_view(@year.year,"04","b04")) %>
+                        <%= form.check_box :delete_foto_atau_materi, class: "custom-control-input" %>
+                      <% else %>
+                        <%= form.check_box :delete_foto_atau_materi, class: "custom-control-input",disabled: true %>
+                      <% end %>
                       <label class="custom-control-label" for="b_four_delete_foto_atau_materi"></label>
                     </div>
                   </div>
@@ -107,10 +119,14 @@
           <% else %>
             <div class="form-group mb-0">
               <%= form.label :foto_atau_materi, for: "b_four_foto_atau_materi", class: "form-control-label" %>
-              <div class="custom-file">
-                <%= form.file_field :foto_atau_materi, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
-                <label for="b_four_foto_atau_materi" class="custom-file-label">Pdf</label>
-              </div>
+              <% if (mode_view(@year.year,"04","b04")) %>
+                <div class="custom-file">
+                  <%= form.file_field :foto_atau_materi, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
+                  <label for="b_four_foto_atau_materi" class="custom-file-label">Pdf</label>
+                </div>
+              <% else %>
+                Kosong
+              <% end %>
             </div>
           <% end %>
 
@@ -124,7 +140,11 @@
                   </div>
                   <div>
                     <div class="custom-control custom-checkbox custom-checkbox-danger">
-                      <%= form.check_box :delete_foto_kegiatan, class: "custom-control-input" %>
+                      <% if (mode_view(@year.year,"04","b04")) %>
+                        <%= form.check_box :delete_foto_kegiatan, class: "custom-control-input" %>
+                      <% else %>
+                        <%= form.check_box :delete_foto_kegiatan, class: "custom-control-input",disabled: true %>
+                      <% end %>
                       <label class="custom-control-label" for="b_four_delete_foto_kegiatan"></label>
                     </div>
                   </div>
@@ -134,10 +154,14 @@
           <% else %>
             <div class="form-group mb-0">
               <%= form.label :foto_kegiatan, for: "b_four_foto_kegiatan", class: "form-control-label" %>
-              <div class="custom-file">
-                <%= form.file_field :foto_kegiatan, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
-                <label for="b_four_foto_kegiatan" class="custom-file-label">Pdf</label>
-              </div>
+              <% if (mode_view(@year.year,"04","b04")) %>
+                <div class="custom-file">
+                  <%= form.file_field :foto_kegiatan, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
+                  <label for="b_four_foto_kegiatan" class="custom-file-label">Pdf</label>
+                </div>
+              <% else %>
+                Kosong
+              <% end %>
             </div>
           <% end %>
 
@@ -151,7 +175,11 @@
                   </div>
                   <div>
                     <div class="custom-control custom-checkbox custom-checkbox-danger">
-                      <%= form.check_box :delete_materi, class: "custom-control-input" %>
+                      <% if (mode_view(@year.year,"04","b04")) %>
+                        <%= form.check_box :delete_materi, class: "custom-control-input" %>
+                      <% else %>
+                        <%= form.check_box :delete_materi, class: "custom-control-input",disabled: true %>
+                      <% end %>
                       <label class="custom-control-label" for="b_four_delete_materi"></label>
                     </div>
                   </div>
@@ -161,10 +189,14 @@
           <% else %>
             <div class="form-group mb-0">
               <%= form.label :materi, for: "b_four_materi", class: "form-control-label" %>
-              <div class="custom-file">
-                <%= form.file_field :materi, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
-                <label for="b_four_materi" class="custom-file-label">Pdf</label>
-              </div>
+              <% if (mode_view(@year.year,"04","b04")) %>
+                <div class="custom-file">
+                  <%= form.file_field :materi, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
+                  <label for="b_four_materi" class="custom-file-label">Pdf</label>
+                </div>
+              <% else %>
+                Kosong
+              <% end %>
             </div>
           <% end %>
 
@@ -178,7 +210,11 @@
                   </div>
                   <div>
                     <div class="custom-control custom-checkbox custom-checkbox-danger">
-                      <%= form.check_box :delete_notulen, class: "custom-control-input" %>
+                      <% if (mode_view(@year.year,"04","b04")) %>
+                        <%= form.check_box :delete_notulen, class: "custom-control-input" %>
+                      <% else %>
+                        <%= form.check_box :delete_notulen, class: "custom-control-input",disabled: true %>
+                      <% end %>
                       <label class="custom-control-label" for="b_four_delete_notulen"></label>
                     </div>
                   </div>
@@ -188,10 +224,14 @@
           <% else %>
             <div class="form-group mb-0">
               <%= form.label :notulen, for: "b_four_notulen", class: "form-control-label" %>
-              <div class="custom-file">
-                <%= form.file_field :notulen, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en"%>
-                <label for="b_four_notulen" class="custom-file-label">Pdf</label>
-              </div>
+              <% if (mode_view(@year.year,"04","b04")) %>
+                <div class="custom-file">
+                  <%= form.file_field :notulen, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
+                  <label for="b_four_notulen" class="custom-file-label">Pdf</label>
+                </div>
+              <% else %>
+                Kosong
+              <% end %>
             </div>
           <% end %>
 
@@ -206,7 +246,11 @@
                     </div>
                     <div>
                       <div class="custom-control custom-checkbox custom-checkbox-danger">
+                        <% if (mode_view(@year.year,"04","b04")) %>
                         <%= form.check_box :delete_scan_document, class: "custom-control-input" %>
+                        <% else %>
+                          <%= form.check_box :delete_scan_document, class: "custom-control-input",disabled: true %>
+                        <% end %>
                         <label class="custom-control-label" for="b_four_delete_scan_document"></label>
                       </div>
                     </div>
@@ -216,10 +260,14 @@
             <% else %>
               <div class="form-group mb-0">
                 <%= form.label :scan_document, for: "b_four_scan_document", class: "form-control-label" %>
+                <% if (mode_view(@year.year,"04","b04")) %>
                 <div class="custom-file">
-                  <%= form.file_field :scan_document, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en"%>
+                  <%= form.file_field :scan_document, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
                   <label for="b_four_scan_document" class="custom-file-label">Pdf</label>
                 </div>
+                <% else %>
+                  Kosong
+                <% end %>
               </div>
             <% end %>
 
@@ -234,7 +282,11 @@
                     </div>
                     <div>
                       <div class="custom-control custom-checkbox custom-checkbox-danger">
+                        <% if (mode_view(@year.year,"04","b04")) %>
                         <%= form.check_box :delete_scan_document_ttd, class: "custom-control-input" %>
+                        <% else %>
+                          <%= form.check_box :delete_scan_document_ttd, class: "custom-control-input",disabled: true %>
+                        <% end %>
                         <label class="custom-control-label" for="b_four_delete_scan_document_ttd"></label>
                       </div>
                     </div>
@@ -244,16 +296,24 @@
             <% else %>
               <div class="form-group">
                 <%= form.label :scan_document_ttd, for: "b_four_scan_document_ttd", class: "form-control-label" %>
+                <% if (mode_view(@year.year,"04","b04")) %>
                 <div class="custom-file">
-                  <%= form.file_field :scan_document_ttd, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en"%>
+                  <%= form.file_field :scan_document_ttd, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
                   <label for="b_four_scan_document_ttd" class="custom-file-label">Pdf</label>
                 </div>
+                <% else %>
+                  Kosong
+                <% end %>
+              
               </div>
             <% end %>
 
-          <div class="text-center">
+          <% if (mode_view(@year.year,"04","b04")) %>
+            <div class="text-center">
             <%= form.submit 'Simpan', class: "btn btn-neutral"%>
-          </div>
+            </div>
+          <% end %>
+          
         <% end %>
       </div>
     </div>
@@ -287,7 +347,11 @@
                   </div>
                   <div>
                     <div class="custom-control custom-checkbox custom-checkbox-danger">
-                      <%= form.check_box :delete_daftar_hadir, class: "custom-control-input" %>
+                      <% if (mode_view(@year.year,"08","b08")) %>
+                        <%= form.check_box :delete_daftar_hadir, class: "custom-control-input" %>
+                      <% else %>
+                        <%= form.check_box :delete_daftar_hadir, class: "custom-control-input",disabled: true %>
+                      <% end %>
                       <label class="custom-control-label" for="b_eight_delete_daftar_hadir"></label>
                     </div>
                   </div>
@@ -297,10 +361,14 @@
           <% else %>
             <div class="form-group mb-0">
               <%= form.label :daftar_hadir, for: "b_eight_daftar_hadir", class: "form-control-label" %>
-              <div class="custom-file">
-                <%= form.file_field :daftar_hadir, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
-                <label for="b_eight_daftar_hadir" class="custom-file-label">Pdf</label>
-              </div>
+              <% if (mode_view(@year.year,"08","b08")) %>
+                <div class="custom-file">
+                  <%= form.file_field :daftar_hadir, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
+                  <label for="b_eight_daftar_hadir" class="custom-file-label">Pdf</label>
+                </div>
+              <% else %>
+                Kosong
+              <% end %>
             </div>
           <% end %>
 
@@ -314,7 +382,11 @@
                   </div>
                   <div>
                     <div class="custom-control custom-checkbox custom-checkbox-danger">
-                      <%= form.check_box :delete_foto_atau_materi, class: "custom-control-input" %>
+                      <% if (mode_view(@year.year,"08","b08")) %>
+                        <%= form.check_box :delete_foto_atau_materi, class: "custom-control-input" %>
+                      <% else %>
+                        <%= form.check_box :delete_foto_atau_materi, class: "custom-control-input",disabled: true %>
+                      <% end %>
                       <label class="custom-control-label" for="b_eight_delete_foto_atau_materi"></label>
                     </div>
                   </div>
@@ -324,10 +396,14 @@
           <% else %>
             <div class="form-group mb-0">
               <%= form.label :foto_atau_materi, for: "b_eight_foto_atau_materi", class: "form-control-label" %>
-              <div class="custom-file">
-                <%= form.file_field :foto_atau_materi, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
-                <label for="b_eight_foto_atau_materi" class="custom-file-label">Pdf</label>
-              </div>
+              <% if (mode_view(@year.year,"08","b08")) %>
+                <div class="custom-file">
+                  <%= form.file_field :foto_atau_materi, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
+                  <label for="b_eight_foto_atau_materi" class="custom-file-label">Pdf</label>
+                </div>
+              <% else %>
+                Kosong
+              <% end %>
             </div>
           <% end %>
 
@@ -342,7 +418,11 @@
                   </div>
                   <div>
                     <div class="custom-control custom-checkbox custom-checkbox-danger">
-                      <%= form.check_box :delete_foto_kegiatan, class: "custom-control-input" %>
+                      <% if (mode_view(@year.year,"08","b08")) %>
+                        <%= form.check_box :delete_foto_kegiatan, class: "custom-control-input" %>
+                      <% else %>
+                        <%= form.check_box :delete_foto_kegiatan, class: "custom-control-input",disabled: true %>
+                      <% end %>
                       <label class="custom-control-label" for="b_eight_delete_foto_kegiatan"></label>
                     </div>
                   </div>
@@ -352,10 +432,14 @@
           <% else %>
           <div class="form-group mb-0">
             <%= form.label :foto_kegiatan, for: "b_eight_foto_kegiatan", class: "form-control-label" %>
-            <div class="custom-file">
-              <%= form.file_field :foto_kegiatan, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
-              <label for="b_eight_foto_kegiatan" class="custom-file-label">Pdf</label>
-            </div>
+            <% if (mode_view(@year.year,"08","b08")) %>
+              <div class="custom-file">
+                <%= form.file_field :foto_kegiatan, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
+                <label for="b_eight_foto_kegiatan" class="custom-file-label">Pdf</label>
+              </div>
+            <% else %>
+              Kosong
+            <% end %>
           </div>
           <% end %>
 
@@ -369,7 +453,11 @@
                   </div>
                   <div>
                     <div class="custom-control custom-checkbox custom-checkbox-danger">
-                      <%= form.check_box :delete_materi, class: "custom-control-input" %>
+                      <% if (mode_view(@year.year,"08","b08")) %>
+                        <%= form.check_box :delete_materi, class: "custom-control-input" %>
+                      <% else %>
+                        <%= form.check_box :delete_materi, class: "custom-control-input",disabled: true %>
+                      <% end %>
                       <label class="custom-control-label" for="b_eight_delete_materi"></label>
                     </div>
                   </div>
@@ -379,10 +467,14 @@
           <% else %>
             <div class="form-group mb-0">
               <%= form.label :materi, for: "b_eight_materi", class: "form-control-label" %>
-              <div class="custom-file">
-                <%= form.file_field :materi, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
-                <label for="b_eight_materi" class="custom-file-label">Pdf</label>
-              </div>
+              <% if (mode_view(@year.year,"08","b08")) %>
+                <div class="custom-file">
+                  <%= form.file_field :materi, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
+                  <label for="b_eight_materi" class="custom-file-label">Pdf</label>
+                </div>
+              <% else %>
+                Kosong
+              <% end %>
             </div>
           <% end %>
 
@@ -396,7 +488,11 @@
                   </div>
                   <div>
                     <div class="custom-control custom-checkbox custom-checkbox-danger">
-                      <%= form.check_box :delete_notulen, class: "custom-control-input" %>
+                      <% if (mode_view(@year.year,"08","b08")) %>
+                        <%= form.check_box :delete_notulen, class: "custom-control-input" %>
+                      <% else %>
+                        <%= form.check_box :delete_notulen, class: "custom-control-input",disabled: true %>
+                      <% end %>
                       <label class="custom-control-label" for="b_eight_delete_notulen"></label>
                     </div>
                   </div>
@@ -406,10 +502,14 @@
           <% else %>
             <div class="form-group mb-0">
               <%= form.label :notulen, for: "b_eight_notulen", class: "form-control-label" %>
-              <div class="custom-file">
-                <%= form.file_field :notulen, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en"%>
-                <label for="b_eight_notulen" class="custom-file-label">Pdf</label>
-              </div>
+              <% if (mode_view(@year.year,"08","b08")) %>
+                <div class="custom-file">
+                  <%= form.file_field :notulen, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
+                  <label for="b_eight_notulen" class="custom-file-label">Pdf</label>
+                </div>
+              <% else %>
+                Kosong
+              <% end %>
             </div>
           <% end %>
 
@@ -423,7 +523,11 @@
                   </div>
                   <div>
                     <div class="custom-control custom-checkbox custom-checkbox-danger">
-                      <%= form.check_box :delete_scan_document, class: "custom-control-input" %>
+                      <% if (mode_view(@year.year,"08","b08")) %>
+                        <%= form.check_box :delete_scan_document, class: "custom-control-input" %>
+                      <% else %>
+                        <%= form.check_box :delete_scan_document, class: "custom-control-input",disabled: true %>
+                      <% end %>
                       <label class="custom-control-label" for="b_eight_delete_scan_document"></label>
                     </div>
                   </div>
@@ -433,10 +537,14 @@
           <% else %>
           <div class="form-group mb-0">
             <%= form.label :scan_document, for: "b_eight_scan_document", class: "form-control-label" %>
-            <div class="custom-file">
-              <%= form.file_field :scan_document, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en"%>
-              <label for="b_eight_scan_document" class="custom-file-label">Pdf</label>
-            </div>
+            <% if (mode_view(@year.year,"08","b08")) %>
+              <div class="custom-file">
+                <%= form.file_field :scan_document, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
+                <label for="b_eight_scan_document" class="custom-file-label">Pdf</label>
+              </div>
+            <% else %>
+              Kosong
+            <% end %>
           </div>
           <% end %>
 
@@ -450,7 +558,11 @@
                   </div>
                   <div>
                     <div class="custom-control custom-checkbox custom-checkbox-danger">
-                      <%= form.check_box :delete_scan_document_ttd, class: "custom-control-input" %>
+                      <% if (mode_view(@year.year,"08","b08")) %>
+                        <%= form.check_box :delete_scan_document_ttd, class: "custom-control-input" %>
+                      <% else %>
+                        <%= form.check_box :delete_scan_document_ttd, class: "custom-control-input",disabled: true %>
+                      <% end %>
                       <label class="custom-control-label" for="b_eight_delete_scan_document_ttd"></label>
                     </div>
                   </div>
@@ -460,16 +572,22 @@
           <% else %>
           <div class="form-group">
             <%= form.label :scan_document_ttd, for: "b_eight_scan_document_ttd", class: "form-control-label" %>
-            <div class="custom-file">
-              <%= form.file_field :scan_document_ttd, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en"%>
-              <label for="b_eight_scan_document_ttd" class="custom-file-label">Pdf</label>
-            </div>
+            <% if (mode_view(@year.year,"08","b08")) %>
+              <div class="custom-file">
+                <%= form.file_field :scan_document_ttd, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
+                <label for="b_eight_scan_document_ttd" class="custom-file-label">Pdf</label>
+              </div>
+            <% else %>
+              Kosong
+            <% end %>
           </div>
           <% end %>
 
-          <div class="text-center">
-            <%= form.submit 'Simpan', class: "btn btn-neutral"%>
-          </div>
+          <% if (mode_view(@year.year,"08","b08")) %>
+            <div class="text-center">
+              <%= form.submit 'Simpan', class: "btn btn-neutral"%>
+            </div>
+          <% end %>
         <% end %>
       </div>
     </div>
@@ -503,7 +621,11 @@
                   </div>
                   <div>
                     <div class="custom-control custom-checkbox custom-checkbox-danger">
-                      <%= form.check_box :delete_daftar_hadir, class: "custom-control-input" %>
+                      <% if (mode_view(@year.year,"12","b12")) %>
+                        <%= form.check_box :delete_daftar_hadir, class: "custom-control-input" %>
+                      <% else %>
+                        <%= form.check_box :delete_daftar_hadir, class: "custom-control-input",disabled: true %>
+                      <% end %>
                       <label class="custom-control-label" for="b_twelf_delete_daftar_hadir"></label>
                     </div>
                   </div>
@@ -513,10 +635,14 @@
           <% else %>
             <div class="form-group mb-0">
               <%= form.label :daftar_hadir, for: "b_twelf_daftar_hadir", class: "form-control-label" %>
-              <div class="custom-file">
-                <%= form.file_field :daftar_hadir, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
-                <label for="b_twelf_daftar_hadir" class="custom-file-label">Pdf</label>
-              </div>
+              <% if (mode_view(@year.year,"12","b12")) %>
+                <div class="custom-file">
+                  <%= form.file_field :daftar_hadir, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
+                  <label for="b_twelf_daftar_hadir" class="custom-file-label">Pdf</label>
+                </div>
+              <% else %>
+                Kosong
+              <% end %>
             </div>
           <% end %>
 
@@ -530,7 +656,11 @@
                   </div>
                   <div>
                     <div class="custom-control custom-checkbox custom-checkbox-danger">
-                      <%= form.check_box :delete_foto_atau_materi, class: "custom-control-input" %>
+                      <% if (mode_view(@year.year,"12","b12")) %>
+                        <%= form.check_box :delete_foto_atau_materi, class: "custom-control-input" %>
+                      <% else %>
+                        <%= form.check_box :delete_foto_atau_materi, class: "custom-control-input",disabled: true %>
+                      <% end %>
                       <label class="custom-control-label" for="b_twelf_delete_foto_atau_materi"></label>
                     </div>
                   </div>
@@ -540,10 +670,14 @@
           <% else %>
             <div class="form-group mb-0">
               <%= form.label :foto_atau_materi, for: "b_twelf_foto_atau_materi", class: "form-control-label" %>
-              <div class="custom-file">
-                <%= form.file_field :foto_atau_materi, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
-                <label for="b_twelf_foto_atau_materi" class="custom-file-label">Pdf</label>
-              </div>
+              <% if (mode_view(@year.year,"12","b12")) %>
+                <div class="custom-file">
+                  <%= form.file_field :foto_atau_materi, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
+                  <label for="b_twelf_foto_atau_materi" class="custom-file-label">Pdf</label>
+                </div>
+              <% else %>
+                Kosong
+              <% end %>
             </div>
           <% end %>
 
@@ -557,7 +691,11 @@
                   </div>
                   <div>
                     <div class="custom-control custom-checkbox custom-checkbox-danger">
-                      <%= form.check_box :delete_foto_kegiatan, class: "custom-control-input" %>
+                      <% if (mode_view(@year.year,"12","b12")) %>
+                        <%= form.check_box :delete_foto_kegiatan, class: "custom-control-input" %>
+                      <% else %>
+                        <%= form.check_box :delete_foto_kegiatan, class: "custom-control-input",disabled: true %>
+                      <% end %>
                       <label class="custom-control-label" for="b_twelf_delete_foto_kegiatan"></label>
                     </div>
                   </div>
@@ -567,10 +705,14 @@
           <% else %>
             <div class="form-group mb-0">
               <%= form.label :foto_kegiatan, for: "b_twelf_foto_kegiatan", class: "form-control-label" %>
-              <div class="custom-file">
-                <%= form.file_field :foto_kegiatan, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
-                <label for="b_twelf_foto_kegiatan" class="custom-file-label">Pdf</label>
-              </div>
+              <% if (mode_view(@year.year,"12","b12")) %>
+                <div class="custom-file">
+                  <%= form.file_field :foto_kegiatan, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
+                  <label for="b_twelf_foto_kegiatan" class="custom-file-label">Pdf</label>
+                </div>
+              <% else %>
+                Kosong
+              <% end %>
             </div>
           <% end %>
 
@@ -584,7 +726,11 @@
                   </div>
                   <div>
                     <div class="custom-control custom-checkbox custom-checkbox-danger">
-                      <%= form.check_box :delete_materi, class: "custom-control-input" %>
+                      <% if (mode_view(@year.year,"12","b12")) %>
+                        <%= form.check_box :delete_materi, class: "custom-control-input" %>
+                      <% else %>
+                        <%= form.check_box :delete_materi, class: "custom-control-input",disabled: true %>
+                      <% end %>
                       <label class="custom-control-label" for="b_twelf_delete_materi"></label>
                     </div>
                   </div>
@@ -594,10 +740,14 @@
           <% else %>
             <div class="form-group mb-0">
               <%= form.label :materi, for: "b_twelf_materi", class: "form-control-label" %>
-              <div class="custom-file">
-                <%= form.file_field :materi, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
-                <label for="b_twelf_materi" class="custom-file-label">Pdf</label>
-              </div>
+              <% if (mode_view(@year.year,"12","b12")) %>
+                <div class="custom-file">
+                  <%= form.file_field :materi, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
+                  <label for="b_twelf_materi" class="custom-file-label">Pdf</label>
+                </div>
+              <% else %>
+                Kosong
+              <% end %>
             </div>
           <% end %>
 
@@ -611,7 +761,11 @@
                   </div>
                   <div>
                     <div class="custom-control custom-checkbox custom-checkbox-danger">
-                      <%= form.check_box :delete_notulen, class: "custom-control-input" %>
+                      <% if (mode_view(@year.year,"12","b12")) %>
+                        <%= form.check_box :delete_notulen, class: "custom-control-input" %>
+                      <% else %>
+                        <%= form.check_box :delete_notulen, class: "custom-control-input",disabled: true %>
+                      <% end %>
                       <label class="custom-control-label" for="b_twelf_delete_notulen"></label>
                     </div>
                   </div>
@@ -621,10 +775,14 @@
           <% else %>
           <div class="form-group mb-0">
             <%= form.label :notulen, for: "b_twelf_notulen", class: "form-control-label" %>
-            <div class="custom-file">
-              <%= form.file_field :notulen, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en"%>
-              <label for="b_twelf_notulen" class="custom-file-label">Pdf</label>
-            </div>
+            <% if (mode_view(@year.year,"12","b12")) %>
+              <div class="custom-file">
+                <%= form.file_field :notulen, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
+                <label for="b_twelf_notulen" class="custom-file-label">Pdf</label>
+              </div>
+            <% else %>
+              Kosong
+            <% end %>
           </div>
           <% end %>
 
@@ -638,7 +796,11 @@
                   </div>
                   <div>
                     <div class="custom-control custom-checkbox custom-checkbox-danger">
-                      <%= form.check_box :delete_scan_document, class: "custom-control-input" %>
+                      <% if (mode_view(@year.year,"12","b12")) %>
+                        <%= form.check_box :delete_scan_document, class: "custom-control-input" %>
+                      <% else %>
+                        <%= form.check_box :delete_scan_document, class: "custom-control-input",disabled: true %>
+                      <% end %>
                       <label class="custom-control-label" for="b_twelf_delete_scan_document"></label>
                     </div>
                   </div>
@@ -648,10 +810,14 @@
           <% else %>
             <div class="form-group mb-0">
               <%= form.label :scan_document, for: "b_twelf_scan_document", class: "form-control-label" %>
+              <% if (mode_view(@year.year,"12","b12")) %>
               <div class="custom-file">
-                <%= form.file_field :scan_document, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en"%>
+                <%= form.file_field :scan_document, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
                 <label for="b_twelf_scan_document" class="custom-file-label">Pdf</label>
               </div>
+            <% else %>
+              Kosong
+            <% end %>
             </div>
           <% end %>
 
@@ -665,7 +831,11 @@
                   </div>
                   <div>
                     <div class="custom-control custom-checkbox custom-checkbox-danger">
-                      <%= form.check_box :delete_scan_document_ttd, class: "custom-control-input" %>
+                      <% if (mode_view(@year.year,"12","b12")) %>
+                        <%= form.check_box :delete_scan_document_ttd, class: "custom-control-input" %>
+                      <% else %>
+                        <%= form.check_box :delete_scan_document_ttd, class: "custom-control-input",disabled: true %>
+                      <% end %>
                       <label class="custom-control-label" for="b_twelf_delete_scan_document_ttd"></label>
                     </div>
                   </div>
@@ -675,16 +845,22 @@
           <% else %>
             <div class="form-group">
               <%= form.label :scan_document_ttd, for: "b_twelf_scan_document_ttd", class: "form-control-label" %>
-              <div class="custom-file">
-                <%= form.file_field :scan_document_ttd, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en"%>
-                <label for="b_twelf_scan_document_ttd" class="custom-file-label">Pdf</label>
-              </div>
+              <% if (mode_view(@year.year,"12","b12")) %>
+                <div class="custom-file">
+                  <%= form.file_field :scan_document_ttd, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
+                  <label for="b_twelf_scan_document_ttd" class="custom-file-label">Pdf</label>
+                </div>
+              <% else %>
+                Kosong
+              <% end %>
             </div>
           <% end %>
 
-          <div class="text-center">
-            <%= form.submit 'Simpan', class: "btn btn-neutral"%>
-          </div>
+          <% if (mode_view(@year.year,"12","b12")) %>
+            <div class="text-center">
+              <%= form.submit 'Simpan', class: "btn btn-neutral"%>
+            </div>
+          <% end %>
         <% end %>
       </div>
     </div>

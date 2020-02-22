@@ -5,7 +5,8 @@ var handleConfirm = function(link){
 }
 //User click confirm button
 var allowAction = function(link){
-  if (link.target.getAttribute("data-confirm") == undefined){
+  var dataAttr = (link.target.getAttribute("data-confirm")) ? link.target.getAttribute("data-confirm") : link.target.parentNode.getAttribute("data-confirm");
+  if (dataAttr == undefined){
     return true;
   }
   showConfirmationDialog(link);
@@ -13,7 +14,7 @@ var allowAction = function(link){
 }
 //Display the confirmation dialog
 var showConfirmationDialog = function(link){
-  var message = link.target.getAttribute("data-confirm");
+  var message = (link.target.getAttribute("data-confirm")) ? link.target.getAttribute("data-confirm") : link.target.parentNode.getAttribute("data-confirm");
   swal({
     title: message,
     type: 'warning',
@@ -25,8 +26,9 @@ var showConfirmationDialog = function(link){
     cancelButtonClass: 'btn btn-secondary'
   }).then((result) => {
     if (result.value) {
-      link.target.removeAttribute("data-confirm");
-      link.target.click();
+      var linkSelect = (link.target.getAttribute("data-confirm")) ? link.target : link.target.parentNode;
+      linkSelect.removeAttribute("data-confirm");
+      linkSelect.click();
     }
   });
 }

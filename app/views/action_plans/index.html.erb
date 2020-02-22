@@ -15,7 +15,9 @@
           </div>
           <div class="col-lg-6 col-5 text-right">
             <%# yield :header_button %>
-            <%= link_to 'Tambah', '#modal-new-actionplan', class: "btn btn-sm btn-neutral", data: {toggle: "modal"} %>
+            <% if (mode_view(@year.year,"01",nil)) %>
+              <%= link_to 'Tambah', '#modal-new-actionplan', class: "btn btn-sm btn-neutral", data: {toggle: "modal"} %>
+            <% end %>
           </div>
         </div>
       </div>

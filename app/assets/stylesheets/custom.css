@@ -60,4 +60,7 @@ a:hover {
 .sign-in-logo{
   width: 70px;
   height: 70px;
+  
+.table-primary, .table-primary>td, .table-primary>th {
+    background-color: #EDD5D8;
 }
