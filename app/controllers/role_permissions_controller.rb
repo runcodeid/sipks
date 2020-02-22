@@ -28,17 +28,32 @@ class RolePermissionsController < ApplicationController
   # POST /role_permissions
   # POST /role_permissions.json
   def create
-    @role_permission = RolePermission.new(role_permission_params)
 
-    respond_to do |format|
-      if @role_permission.save
-        format.html { redirect_to @role_permission, notice: 'Role permission was successfully created.' }
-        format.json { render :show, status: :created, location: @role_permission }
-      else
-        format.html { render :new }
-        format.json { render json: @role_permission.errors, status: :unprocessable_entity }
+
+    permissions=params[:permissions]
+    role= Role.friendly.find(params[:role_id])
+    deleteoldrole = RolePermission.destroy_oldrole(role)
+
+    statussave=false
+
+    permissions.each do |value|
+      if value[1]=="1"
+        permission = Permission.friendly.find(value[0])
+
+        
+
+        if !(RolePermission.check_status(role,permission))
+          @access_role= RolePermission.new
+          @access_role.role=role
+          @access_role.permission=permission
+          @access_role.save
+        end
+
       end
     end
+    
+    redirect_to role_role_permissions_path(role), notice: 'Access role berhasil tertambah.'
+
   end
 
   # PATCH/PUT /role_permissions/1

@@ -1,26 +1,26 @@
-class CityPolicy < ApplicationPolicy
+class UserPolicy < ApplicationPolicy
     def index?
-        check_access("city","index")
+        check_access("user","index")
     end
 
     def create?
-        check_access("city","create")
+        check_access("user","create")
     end
 
     def new?
-        check_access("city","new")
+        check_access("user","new")
     end
 
     def show?
-        check_access("city","show")
+        check_access("user","show")
     end
 
     def update?
-        check_access("city","update")
+        check_access("user","update")
     end
 
     def destroy?
-        check_access("city","destroy")
+        check_access("user","destroy")
     end
 
     private

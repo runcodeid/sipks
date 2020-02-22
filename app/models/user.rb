@@ -65,6 +65,7 @@ class User < ApplicationRecord
     end
 
     belongs_to :role
+    belongs_to :city
 
     validates :username, presence: :true, uniqueness: { case_sensitive: false }
     validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true

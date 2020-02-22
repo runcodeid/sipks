@@ -10,7 +10,13 @@ class ActionPlansController < ApplicationController
 
 
   def index
-    @action_plans =@year.action_plans.all
+
+    if params[:city_id].nil?
+      @action_plans =@year.action_plans.where('city_id = ?',current_user.city.id).all
+    else
+      @action_plans =@year.action_plans.where('city_id = ?',City.friendly.find(params[:city_id])).all
+    end
+
     authorize @action_plans
   end
 
@@ -42,7 +48,8 @@ class ActionPlansController < ApplicationController
     @action_plan = ActionPlan.new(action_plan_params)
 
     respond_to do |format|
-      @action_plan.city=City.first
+
+      @action_plan.city= current_user.city
       @action_plan.year= @year
       if @action_plan.save
         @b_four = BFour.new(b_jibun_params)

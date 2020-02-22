@@ -14,10 +14,16 @@
     <% @years.each do |year| %>
       <tr>
         <td><%= year.year %></td>
-        <td><%= link_to 'Show', year %></td>
-        <td><%= link_to 'Edit', edit_year_path(year) %></td>
-        <td><%= link_to 'Destroy', year, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Rencana Aksi', year_action_plans_path(year)%></td>
+        <% year.city_param_url = @city_param_url.id %>
+        <% p year.city_param_url %>
+        <% p "*" * 200 %>
+        <% if params[:city_id].nil? %>
+          <td><%= link_to 'Show', year %></td>
+          <td><%= link_to 'Edit', edit_year_path(year) %></td>
+          <td><%= link_to 'Destroy', year, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% else %>
+          <td><%= link_to 'Rencana Aksi', year_action_plans_path(year)%></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

@@ -20,6 +20,8 @@ class Year < ApplicationRecord
     extend FriendlyId
     friendly_id :slug_candidates, use: :slugged
 
+    attribute :city_param_url, :integer
+
     validates :year, presence: true
     
     acts_as_paranoid

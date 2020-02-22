@@ -5,6 +5,10 @@ class YearsController < ApplicationController
   # GET /years.json
   def index
     @years = Year.all
+    if params[:city_id] != nil
+      @city_param_url = City.friendly.find(params[:city_id])
+    end
+
     authorize @years
   end
 
