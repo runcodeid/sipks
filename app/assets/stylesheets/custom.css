@@ -38,10 +38,6 @@ a:hover {
   border-color: #9D1C2D !important;
 }
 
-.focused .input-group-text {
-  border-color: #9D1C2D;
-}
-
 .custom-file-input {
   opacity: 0 !important;
   width: 100% !important;
@@ -59,4 +55,9 @@ a:hover {
 .custom-file-input:focus ~ .custom-file-label {
   border-color: #9D1C2D !important;
   box-shadow: 0 3px 9px rgba(50, 50, 9, 0), 3px 4px 8px rgba(94, 114, 228, 0.1);
+}
+
+.sign-in-logo{
+  width: 70px;
+  height: 70px;
 }
