@@ -22,7 +22,7 @@ module ActionPlansHelper
 
     def is_form date_start,date_end,date_now
         if ((date_now >= date_start) && (date_now <= date_end))
-            false
+            true
         else
             false
         end
