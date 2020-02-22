@@ -114,3 +114,11 @@ input:-webkit-autofill:focus{
 .bg-login{
   background-color: #EEF0F3;
 }
+
+.navbar-vertical .navbar-nav .nav-link[data-toggle="collapse"][aria-expanded="true"]:after {
+    color: #9D1C2D;
+}
+
+.navbar-vertical.navbar-expand-xs .navbar-nav > .nav-item > .nav-link.active {
+    background: #F6EAEB;
+}
