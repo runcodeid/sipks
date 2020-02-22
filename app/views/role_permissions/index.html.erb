@@ -51,7 +51,7 @@
                           <th>Action</th>
                           <th>Page</th>
                           <th>Description</th>
-                          <th></th>
+                          <th>Active</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -60,15 +60,10 @@
                         <tr>
                           <td><%= resource_of_permission.name %></td>
                           <td><%= resource_of_permission.action %></td>
-                          <td><%= resource_of_permission.page %></td>
+                          <td><%= resource_of_permission.page ? 'Ya' : 'Tidak' %></td>
                           <td><%= resource_of_permission.description %></td>
                           <td>
-                            <% if RolePermission.check_status(@role.id,resource_of_permission.id) %>
-                              <%= check_box("permissions", resource_of_permission.id, {checked: true}) %>
-                            <% else %>
-                              <%= check_box("permissions", resource_of_permission.id, {checked: false}) %>
-                            <% end %>
-                            <label class="custom-toggle role_permission">
+                            <label class="custom-toggle role_permission" >
                                 <% if RolePermission.check_status(@role.id,resource_of_permission.id) %>
                                   <%= check_box("permissions", resource_of_permission.id, {checked: true}) %>
                                 <% else %>
@@ -87,9 +82,6 @@
             </div>
           </div>
           <% end %>
-        <div class="text-center">
-          <%= form.submit %>
-        </div>
       <% end %>
 <% end %>
 

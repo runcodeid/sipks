@@ -40,7 +40,7 @@ class RolePermissionsController < ApplicationController
       if value[1]=="1"
         permission = Permission.friendly.find(value[0])
 
-        
+
 
         if !(RolePermission.check_status(role,permission))
           @access_role= RolePermission.new
@@ -51,8 +51,8 @@ class RolePermissionsController < ApplicationController
 
       end
     end
-    
-    redirect_to role_role_permissions_path(role), notice: 'Hak Akses was successfully updated.'
+
+    # redirect_to role_role_permissions_path(role), notice: 'Hak Akses was successfully updated.'
 
   end
 
