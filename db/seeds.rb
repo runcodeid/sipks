@@ -64,14 +64,14 @@ permissions =[
 #         page: false, #ini akan bisa di akses di menu atau tidak
 #         path: 'edit_year_action_plan_path' #path di rails route
 #     },
-     {
-        name: 'Show Action Plan', #Penamaan gasan permission nya
-        resource: 'action_plan', #nama file di model harus sama
-        action: 'show', #nama function di controller
-        description: 'Show data Action Plan', #gasan penjelasan aja
-        page: false, #ini akan bisa di akses di menu atau tidak
-        path: 'year_action_plan_path' #path di rails route
-    },
+    # {
+    #     name: 'Show Action Plan', #Penamaan gasan permission nya
+    #     resource: 'action_plan', #nama file di model harus sama
+    #     action: 'show', #nama function di controller
+    #     description: 'Show data Action Plan', #gasan penjelasan aja
+    #     page: false, #ini akan bisa di akses di menu atau tidak
+    #     path: 'year_action_plan_path' #path di rails route
+    # },
 #     {
 #         name: 'Buang Action Plan', #Penamaan gasan permission nya
 #         resource: 'action_plan', #nama file di model harus sama
@@ -212,6 +212,23 @@ permissions =[
 #         page: false, #ini akan bisa di akses di menu atau tidak
 #         path: 'user_path' #path di rails route
 #     }
+
+    {
+        name: 'Dashboard Admin', #Penamaan gasan permission nya
+        resource: 'dashboard', #nama file di model harus sama
+        action: 'admin', #nama function di controller
+        description: 'Dashboard Admin', #gasan penjelasan aja
+        page: true, #ini akan bisa di akses di menu atau tidak
+        path: 'dashboard_admin_path' #path di rails route
+    },
+    {
+        name: 'Dashboard User', #Penamaan gasan permission nya
+        resource: 'dashboard', #nama file di model harus sama
+        action: 'user', #nama function di controller
+        description: 'Dashboard User', #gasan penjelasan aja
+        page: true, #ini akan bisa di akses di menu atau tidak
+        path: 'dashboard_user_path' #path di rails route
+    },
 ]
 
 puts "Create Permissions"

@@ -3,3 +3,8 @@
 <% @cities.each do |city| %>
     <%= link_to city.city, city_years_path(city) %>
 <% end %>
+<% if user_signed_in? %>
+  <li>
+  <%= link_to('Logout', destroy_user_session_path) %>        
+  </li>
+<% end %>

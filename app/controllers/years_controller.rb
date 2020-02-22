@@ -36,7 +36,7 @@ class YearsController < ApplicationController
 
     respond_to do |format|
       if @year.save
-        format.html { redirect_to dashboard_user_path(), notice: 'Berhasil Menambahkan Tahun.' }
+        format.html { redirect_to dashboard_admin_path, notice: 'Berhasil Menambahkan Tahun.' }
         format.json { render :show, status: :created, location: @year }
       else
         format.html { render :new }
