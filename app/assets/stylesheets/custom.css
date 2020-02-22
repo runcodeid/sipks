@@ -38,6 +38,10 @@ a:hover {
   border-color: #9D1C2D !important;
 }
 
+.focused .input-group-text {
+  border-color: #9D1C2D;
+}
+
 .custom-file-input {
   opacity: 0 !important;
   width: 100% !important;

@@ -19,11 +19,11 @@
 <div class="row">
 <% if user_signed_in? %>
   <li>
-  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
+  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
   </li>
 <% else %>
   <li>
-  <%= link_to('Login', new_user_session_path) %>  
+  <%= link_to('Login', new_user_session_path) %>
   </li>
 <% end %>
 <% @cities.each do |city| %>
@@ -65,7 +65,7 @@
       <div class="modal-body p-0">
         <div class="card bg-secondary border-0 mb-0">
           <div class="card-body px-lg-5 py-lg-5">
-            <div class="text-center text-muted mb-4">Kabupaten/Kota</div>
+            <div class="h3 text-center text-muted mb-4">Kabupaten/Kota</div>
             <%= render partial: 'form', locals: {city: City.new} %>
           </div>
         </div>
@@ -81,7 +81,7 @@
       <div class="modal-body p-0">
         <div class="card bg-secondary border-0 mb-0">
           <div class="card-body px-lg-5 py-lg-5">
-            <div class="text-center text-muted mb-4">Kabupaten/Kota</div>
+            <div class="h3 text-center text-muted mb-4">Kabupaten/Kota</div>
             <%= render partial: 'form', locals: {city: city} %>
           </div>
         </div>
