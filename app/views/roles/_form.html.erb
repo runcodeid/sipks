@@ -1,4 +1,4 @@
-<%= form_with(model: role, local: true) do |form| %>
+<%= form_with(model: role, local: true, role: "form") do |form| %>
   <% if role.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(role.errors.count, "error") %> prohibited this role from being saved:</h2>
@@ -11,12 +11,11 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name_role %>
-    <%= form.text_field :name_role %>
+  <div class="form-group">
+    <%= form.text_field :name_role, id: "#{ role.slug ? ('role-'+role.slug) : :name_role}",class: "form-control", placeholder: 'Nama Role', autocomplete: "off", required: true %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="text-center">
+    <%= form.submit 'Simpan', class: "btn btn-neutral" %>
   </div>
 <% end %>

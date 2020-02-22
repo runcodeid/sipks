@@ -31,12 +31,12 @@
     <div class="form-group">
       <div class="custom-file">
         <%= form.file_field :logo_city, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
-        <label class="custom-file-label" for="logo-city-<%=city.slug%>">Unggah Logo</label>
+        <label class="custom-file-label" for="logo-city">Unggah Logo</label>
       </div>
     </div>
   <% end %>
 
   <div class="text-center">
-    <%= form.submit 'Simpan', class: "btn btn-neutral my-4" %>
+    <%= form.submit 'Simpan', class: "btn btn-neutral my-3" %>
   </div>
 <% end %>

@@ -27,7 +27,7 @@ class CitiesController < ApplicationController
     @city = City.new(city_params)
     respond_to do |format|
       if @city.save
-        format.html { redirect_to cities_path, notice: 'City was successfully created.' }
+        format.html { redirect_to cities_path, notice: 'Berhasil Menambahkan Kabupaten/Kota.' }
         format.json { render :show, status: :created, location: @city }
       else
         # format.html { redirect_to cities_path }
@@ -42,7 +42,7 @@ class CitiesController < ApplicationController
   def update
     respond_to do |format|
       if @city.update(city_params)
-        format.html { redirect_to cities_path, notice: 'City was successfully updated.' }
+        format.html { redirect_to cities_path, notice: 'Berhasil Mengubah Kabupaten/Kota.' }
         format.json { render :show, status: :ok, location: @city }
       else
         # format.html { render :edit }

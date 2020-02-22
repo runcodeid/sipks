@@ -53,3 +53,10 @@ Array.prototype.forEach.call( inputs, function( input )
 			label.innerHTML = labelVal;
 	});
 });
+
+$(".datepicker-group").datepicker({
+  format: "yyyy",
+  minViewMode: 2,
+  todayHighlight: true,
+  autoclose: true
+});

@@ -28,7 +28,7 @@ class YearsController < ApplicationController
 
     respond_to do |format|
       if @year.save
-        format.html { redirect_to dashboard_user_path(), notice: 'Year was successfully created.' }
+        format.html { redirect_to dashboard_user_path(), notice: 'Berhasil Menambahkan Tahun.' }
         format.json { render :show, status: :created, location: @year }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class YearsController < ApplicationController
   def update
     respond_to do |format|
       if @year.update(year_params)
-        format.html { redirect_to @year, notice: 'Year was successfully updated.' }
+        format.html { redirect_to @year, notice: 'Berhasil Mengubah Tahun.' }
         format.json { render :show, status: :ok, location: @year }
       else
         format.html { render :edit }

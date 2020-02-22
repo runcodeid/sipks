@@ -1,4 +1,4 @@
-<%= form_for ([@year,@action_plan]) do |form| %>
+<%= form_for ([year,action_plan]), remote: true, role: "form" do |form| %>
   <% if action_plan.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(action_plan.errors.count, "error") %> prohibited this action_plan from being saved:</h2>
@@ -11,17 +11,25 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :code_action_plans %>
-    <%= form.text_field :code_action_plans %>
-  </div>
+  <% if action_plan.slug %>
+    <div class="form-group mb-3">
+      <%= form.text_field :code_action_plans, id: "kode-#{action_plan.slug}" ,class: "form-control", placeholder: 'Kode Rencana Aksi', autocomplete: "off", required: true %>
+    </div>
 
-  <div class="field">
-    <%= form.label :action_plan %>
-    <%= form.text_field :action_plan %>
-  </div>
+    <div class="form-group">
+      <%= form.text_field :action_plan, id:"action-plan-#{action_plan.slug}", class: "form-control", placeholder: 'Nama Rencana Aksi', autocomplete: "off", required: true %>
+    </div>
+  <% else %>
+    <div class="form-group mb-3">
+      <%= form.text_field :code_action_plans, class: "form-control", placeholder: 'Kode Rencana Aksi', autocomplete: "off", required: true %>
+    </div>
 
-  <div class="actions">
-    <%= form.submit %>
+    <div class="form-group">
+      <%= form.text_field :action_plan, class: "form-control", placeholder: 'Nama Rencana Aksi', autocomplete: "off", required: true %>
+    </div>
+  <% end %>
+
+  <div class="text-center">
+    <%= form.submit 'Simpan', class: "btn btn-neutral my-3" %>
   </div>
 <% end %>

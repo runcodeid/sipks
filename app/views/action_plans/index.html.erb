@@ -1,34 +1,97 @@
-<p id="notice"><%= notice %></p>
+<% content_for :header do%>
+  <div class="header bg-primary pb-6">
+    <div class="container-fluid">
+      <div class="header-body">
+        <div class="row align-items-center py-4">
+          <div class="col-lg-6 col-7">
+            <h6 class="h2 text-white d-inline-block mb-0"><%= @year.year %></h6>
+            <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+              <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+                <li class="breadcrumb-item"><a href="#">Rencana Aksi</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><%= @year.year %></li>
+              </ol>
+            </nav>
+          </div>
+          <div class="col-lg-6 col-5 text-right">
+            <%# yield :header_button %>
+            <%= link_to 'Tambah', '#modal-new-actionplan', class: "btn btn-sm btn-neutral", data: {toggle: "modal"} %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+<% content_for :isi_content do %>
+<div class="row">
+  <div class="col-xl">
+    <div class="card bg-white">
+      <div class="card-body px-0 py-1">
+        <ul class="list-group list-group-flush list">
+        <% @action_plans.each.with_index do |action_plan, index| %>
+          <li class="list-group-item px-4">
+            <div class="row align-items-center">
+              <div class="col">
+                <small><%= action_plan.code_action_plans %></small>
+                <h4 class="mb-0">
+                  <%= action_plan.action_plan %>
+                </h4>
+              </div>
+              <div class="col-auto">
+                <% if index.even? %>
+                  <button type="button" class="btn btn-sm btn-neutral mr-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-ellipsis-h"></i>
+                  </button>
+                <% else %>
+                  <button type="button" class="btn btn-sm btn-primary mr-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-ellipsis-h"></i>
+                  </button>
+                <% end %>
+                <div class="dropdown-menu dropdown-menu-right" style="">
+                  <%= link_to 'Lihat', year_action_plan_path(@year,action_plan), class:"dropdown-item" %>
+                  <%= link_to 'Ubah', '', class: "dropdown-item", data: {toggle: "modal", target: "#modal-edit-actionplan-#{action_plan.slug}"} %>
+                  <%= link_to 'Hapus', year_action_plan_path(@year,action_plan), class:"dropdown-item", method: :delete, data: { confirm: 'Anda Yakin?' } %>
+                </div>
+              </div>
+            </div>
+          </li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
-<h1>Action Plans</h1>
+<div class="modal fade modal-new" id="modal-new-actionplan" tabindex="-1" role="dialog" aria-labeledby="modal-new-actionplan" aria-hidden="true">
+  <div class="modal-dialog modal- modal-dialog-centered modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-body p-0">
+        <div class="card bg-secondary border-0 mb-0">
+          <div class="card-body px-lg-5 py-lg-5">
+            <div class="text-center text-muted mb-4">Rencana Aksi</div>
+            <%= render partial: 'form', locals: {year: @year, action_plan: ActionPlan.new} %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>City</th>
-      <th>Year</th>
-      <th>Code action plans</th>
-      <th>Action plan</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @action_plans.each do |action_plan| %>
-      <tr>
-        <td><%= action_plan.city %></td>
-        <td><%= action_plan.year %></td>
-        <td><%= action_plan.code_action_plans %></td>
-        <td><%= action_plan.action_plan %></td>
-        <td><%= link_to 'Show', year_action_plan_path(@year,action_plan) %></td>
-        <td><%= link_to 'Edit', edit_year_action_plan_path(@year,action_plan) %></td>
-        <td><%= link_to 'Destroy', year_action_plan_path(@year,action_plan), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Action Plan', new_year_action_plan_path(@year) %>
-<%= link_to 'Back', dashboard_user_path() %>
+<% @action_plans.each do |action_plan| %>
+<div class="modal fade modal-edit" id="modal-edit-actionplan-<%=action_plan.slug%>" tabindex="-1" role="dialog" aria-labeledby="modal-edit-actionplan-<%=action_plan.slug%>" aria-hidden="true">
+  <div class="modal-dialog modal- modal-dialog-centered modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-body p-0">
+        <div class="card bg-secondary border-0 mb-0">
+          <div class="card-body px-lg-5 py-lg-5">
+            <div class="text-center text-muted mb-4">Rencana Aksi</div>
+            <%= render partial: 'form', locals: {year: @year, action_plan: action_plan} %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+<% end %>
+<%= render partial: 'layouts/body' %>
