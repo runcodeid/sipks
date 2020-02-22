@@ -1,4 +1,4 @@
-<%= form_with(model: year, local: true) do |form| %>
+<%= form_with(model: year, local: true, role: "form") do |form| %>
   <% if year.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(year.errors.count, "error") %> prohibited this year from being saved:</h2>
@@ -11,9 +11,14 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :year %>
-    <%= form.text_field :year %>
+  <div class="form-group">
+    <%= form.label :year, class: "form-control-label", for: "year_year" %>
+    <div class="input-group">
+      <div class="input-group-prepend">
+          <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+      </div>
+      <%= form.text_field :year, id: "datepicker-group", class: "form-control datepicker", placeholder: "Pilih Tanggal", autocomplete: "off" %>
+    </div>
   </div>
 
   <div class="actions">
