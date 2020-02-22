@@ -38,10 +38,6 @@ a:hover {
   border-color: #9D1C2D !important;
 }
 
-.focused .input-group-text {
-  border-color: #9D1C2D;
-}
-
 .custom-file-input {
   opacity: 0 !important;
   width: 100% !important;
@@ -61,6 +57,27 @@ a:hover {
   box-shadow: 0 3px 9px rgba(50, 50, 9, 0), 3px 4px 8px rgba(94, 114, 228, 0.1);
 }
 
-.table-primary, .table-primary>td, .table-primary>th {
+.sign-in-logo{
+  width: 70px;
+  height: 70px;
+}
+
+.table-primary, .table-primary>td, .table-primary>th{
     background-color: #EDD5D8;
+}
+
+.custom-toggle input:checked + .custom-toggle-slider:after{
+  color: #9D1C2D !important;
+}
+
+.custom-toggle input:checked + .custom-toggle-slider {
+  border: 1px solid #9D1C2D !important;
+}
+
+.custom-toggle input:checked + .custom-toggle-slider:before {
+  background: #9D1C2D !important;
+}
+
+.custom-toggle input:checked + .custom-toggle-slider:after {
+  color: #9D1C2D !important;
 }
