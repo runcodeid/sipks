@@ -54,7 +54,9 @@ Array.prototype.forEach.call( inputs, function( input )
 	});
 });
 
-$(".input-group input.datepicker").datepicker({
+$(".datepicker-group").datepicker({
   format: "yyyy",
-  minViewMode: 2
+  minViewMode: 2,
+  todayHighlight: true,
+  autoclose: true
 });

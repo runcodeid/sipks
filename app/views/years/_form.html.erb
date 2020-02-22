@@ -10,18 +10,16 @@
       </ul>
     </div>
   <% end %>
-
   <div class="form-group">
-    <%= form.label :year, class: "form-control-label", for: "year_year" %>
     <div class="input-group">
       <div class="input-group-prepend">
           <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
       </div>
-      <%= form.text_field :year, id: "datepicker-group", class: "form-control datepicker", placeholder: "Pilih Tanggal", autocomplete: "off" %>
+      <%= form.text_field :year, class: "form-control datepicker-group", placeholder: "Pilih Tahun", autocomplete: "off" %>
     </div>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="text-center">
+    <%= form.submit 'Simpan', class: "btn btn-neutral" %>
   </div>
 <% end %>
