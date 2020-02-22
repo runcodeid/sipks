@@ -52,7 +52,7 @@ class RolePermissionsController < ApplicationController
       end
     end
     
-    redirect_to role_role_permissions_path(role), notice: 'Access role berhasil tertambah.'
+    redirect_to role_role_permissions_path(role), notice: 'Hak Akses was successfully added.'
 
   end
 
