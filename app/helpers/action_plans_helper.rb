@@ -1,10 +1,10 @@
 module ActionPlansHelper
-    def mode_view year,month,year_month_now,resource
+    def mode_view year,month,resource
 
         date_start= Date.new(year.to_i,month.to_i)
         date_end = Date.new(year.to_i,month.to_i,-1)
 
-        date_now = year_month_now
+        date_now = Date.today
 
         case resource
         when "b04"

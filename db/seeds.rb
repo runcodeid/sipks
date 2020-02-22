@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# permissions =[
+permissions =[
 #     {
 #         name: 'Manajemen Tahun', #Penamaan gasan permission nya
 #         resource: 'year', #nama file di model harus sama
@@ -64,6 +64,14 @@
 #         page: false, #ini akan bisa di akses di menu atau tidak
 #         path: 'edit_year_action_plan_path' #path di rails route
 #     },
+     {
+        name: 'Show Action Plan', #Penamaan gasan permission nya
+        resource: 'action_plan', #nama file di model harus sama
+        action: 'show', #nama function di controller
+        description: 'Show data Action Plan', #gasan penjelasan aja
+        page: false, #ini akan bisa di akses di menu atau tidak
+        path: 'year_action_plan_path' #path di rails route
+    },
 #     {
 #         name: 'Buang Action Plan', #Penamaan gasan permission nya
 #         resource: 'action_plan', #nama file di model harus sama
@@ -204,15 +212,15 @@
 #         page: false, #ini akan bisa di akses di menu atau tidak
 #         path: 'user_path' #path di rails route
 #     }
-# ]
+]
 
-# puts "Create Permissions"
-#  permissions.each do |permission|
-#       add_permissions= Permission.create(permission)
-#       p permission
-#  end
+puts "Create Permissions"
+ permissions.each do |permission|
+      add_permissions= Permission.create(permission)
+      p permission
+ end
 
-#  roles=[{name_role: "Superadmin"},{name_role: "Admin"}]
+ roles=[{name_role: "Superadmin"},{name_role: "Admin"}]
 
 
 #  puts "Create Role"
@@ -220,18 +228,18 @@
 #         add_roles=Role.create(role)
 #  end
 
-# roles = Role.all
-# permissions = Permission.all
+roles = Role.all
+permissions = Permission.all
 
-# puts "Create Role Permissions"
-# roles.each do |role|
-#     permissions.each do |permission|
-#         role_permission = RolePermission.new
-#         role_permission.role=role
-#         role_permission.permission=permission
-#         role_permission.save
-#     end
-# end
+puts "Create Role Permissions"
+roles.each do |role|
+    permissions.each do |permission|
+        role_permission = RolePermission.new
+        role_permission.role=role
+        role_permission.permission=permission
+        role_permission.save
+    end
+end
 
 # puts "Create City"
 
