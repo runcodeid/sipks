@@ -5,20 +5,24 @@ class CitiesController < ApplicationController
   # GET /cities.json
   def index
     @cities = City.all
+    authorize @cities
   end
 
   # GET /cities/1
   # GET /cities/1.json
   def show
+    authorize @city
   end
 
   # GET /cities/new
   def new
     @city = City.new
+    authorize @city
   end
 
   # GET /cities/1/edit
   def edit
+    authorize @city
   end
 
   # POST /cities
@@ -55,6 +59,7 @@ class CitiesController < ApplicationController
   # DELETE /cities/1
   # DELETE /cities/1.json
   def destroy
+    authorize @city
     @city.logo_city.destroy
     @city.destroy
     respond_to do |format|

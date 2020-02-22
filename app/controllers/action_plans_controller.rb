@@ -11,6 +11,7 @@ class ActionPlansController < ApplicationController
 
   def index
     @action_plans =@year.action_plans.all
+    authorize @action_plans
   end
 
   # GET /action_plans/1
@@ -20,15 +21,19 @@ class ActionPlansController < ApplicationController
     @b_four.action_plan = @action_plan 
     @b_eight.action_plan = @action_plan
     @b_twelf.action_plan = @action_plan
+    authorize @action_plan
+
   end
 
   # GET /action_plans/new
   def new
     @action_plan = ActionPlan.new
+    authorize @action_plan
   end
 
   # GET /action_plans/1/edit
   def edit
+    authorize @action_plan
   end
 
   # POST /action_plans
@@ -81,6 +86,7 @@ class ActionPlansController < ApplicationController
   # DELETE /action_plans/1
   # DELETE /action_plans/1.json
   def destroy
+    authorize @action_plan
     @action_plan.destroy
     respond_to do |format|
       format.html { redirect_to action_plans_url, notice: 'Action plan was successfully destroyed.' }
