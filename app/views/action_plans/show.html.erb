@@ -1,314 +1,697 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>City:</strong>
-  <%= @action_plan.city %>
-</p>
-
-<p>
-  <strong>Year:</strong>
-  <%= @action_plan.year %>
-</p>
-
-<p>
-  <strong>Code action plans:</strong>
-  <%= @action_plan.code_action_plans %>
-</p>
-
-<p>
-  <strong>Action plan:</strong>
-  <%= @action_plan.action_plan %>
-</p>
-
-<%= form_for([@year,@action_plan,@b_four]) do |form| %>
-  <% if @b_four.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(b_four.errors.count, "error") %> prohibited this b_four from being saved:</h2>
-
-      <ul>
-      <% b_four.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<% content_for :header do%>
+  <div class="header bg-primary pb-6">
+    <div class="container-fluid">
+      <div class="header-body">
+        <div class="row align-items-center py-4">
+          <div class="col-lg-6 col-7">
+            <h6 class="h2 text-white d-inline-block mb-0"><%= @action_plan.code_action_plans %></h6>
+            <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+              <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+                <li class="breadcrumb-item"><a href="#">Rencana Aksi</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><%= @action_plan.code_action_plans %></li>
+              </ol>
+            </nav>
+          </div>
+          <div class="col-lg-6 col-5 text-right">
+            <%# yield :header_button %>
+            <%= link_to 'Kembali', year_action_plans_path(@year), class: "btn btn-sm btn-neutral" %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xl">
+            <div class="card bg-white">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col">
+                    <h3 class="mb-0"><%= @action_plan.action_plan %></h3>
+                  </div>
+                  <div class="col text-right">
+                    <h3 class="mb-0"><%= @action_plan.city.city %> - <%= @action_plan.year.year %></h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-  <% end %>
-
-  <div class="form-group"> 
-    <%= form.label :daftar_hadir %>
-    <% if @b_four.daftar_hadir.exists? %>
-      <%= @b_four.daftar_hadir.original_filename %>
-      <%= form.check_box :delete_daftar_hadir %>Delete File<br/>
-      <%= link_to "download",@b_four.daftar_hadir.url(:original) %>
-    <% else %>
-      <%= form.file_field :daftar_hadir, class: "form-control" %>
-    <% end %>
-  </div>
-
-  <div class="form-group"> 
-    <%= form.label :foto_atau_materi %>
-    <% if @b_four.foto_atau_materi.exists? %>
-      <%= @b_four.foto_atau_materi.original_filename %>
-      <%= form.check_box :delete_foto_atau_materi %>Delete File<br/>
-      <%= link_to "download",@b_four.foto_atau_materi.url(:original) %>
-    <% else %>
-    <%= form.file_field :foto_atau_materi, class: "form-control" %>
-    <% end %>
-  </div>
-
-
-  <div class="form-group"> 
-    <%= form.label :foto_kegiatan %>
-    <% if @b_four.foto_kegiatan.exists? %>
-      <%= @b_four.foto_kegiatan.original_filename %>
-      <%= form.check_box :delete_foto_kegiatan %>Delete File<br/>
-      <%= link_to "download",@b_four.foto_kegiatan.url(:original) %>
-    <% else %>
-    <%= form.file_field :foto_kegiatan, class: "form-control" %>
-    <% end %>
-  </div>
-
-  <div class="form-group"> 
-    <%= form.label :materi %>
-    <% if @b_four.materi.exists? %>
-      <%= @b_four.materi.original_filename %>
-      <%= form.check_box :delete_materi %>Delete File<br/>
-      <%= link_to "download",@b_four.materi.url(:original) %>
-    <% else %>
-    <%= form.file_field :materi, class: "form-control" %>
-    <% end %>
-  </div>
-
-  <div class="form-group"> 
-    <%= form.label :notulen %>
-    <% if @b_four.notulen.exists? %>
-      <%= @b_four.notulen.original_filename %>
-      <%= form.check_box :delete_notulen %>Delete File<br/>
-      <%= link_to "download",@b_four.notulen.url(:original) %>
-    <% else %>
-    <%= form.file_field :notulen, class: "form-control" %>
-    <% end %>
-  </div>
-
-  <div class="form-group"> 
-    <%= form.label :scan_document %>
-    <% if @b_four.scan_document.exists? %>
-      <%= @b_four.scan_document.original_filename %>
-      <%= form.check_box :delete_scan_document %>Delete File<br/>
-      <%= link_to "download",@b_four.scan_document.url(:original) %>
-    <% else %>
-    <%= form.file_field :scan_document, class: "form-control" %>
-    <% end %>
-  </div>
-
-  <div class="form-group"> 
-    <%= form.label :scan_document_ttd %>
-    <% if @b_four.scan_document_ttd.exists? %>
-      <%= @b_four.scan_document_ttd.original_filename %>
-      <%= form.check_box :delete_scan_document_ttd %>Delete File<br/>
-      <%= link_to "download",@b_four.scan_document_ttd.url(:original) %>
-    <% else %>
-    <%= form.file_field :scan_document_ttd, class: "form-control" %>
-    <% end %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
   </div>
 <% end %>
 
+<% content_for :isi_content do %>
 
-<%= form_for([@year,@action_plan,@b_eight]) do |form| %>
-  <% if @b_eight.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(b_eight.errors.count, "error") %> prohibited this b_eight from being saved:</h2>
+<div class="row mb-4">
+  <div class="col-xl-4">
+    <div class="card bg-white border-0 mb-0">
+      <div class="card-header bg-transparent text-center">
+        <h4 class="text-uppercase ls-1 text-dark py-1 mb-0">B-04</h4>
+      </div>
+      <div class="card-body px-lg-5 py-lg-5">
+        <%= form_for([@year,@action_plan,@b_four]) do |form| %>
+          <% if @b_four.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(b_four.errors.count, "error") %> prohibited this b_four from being saved:</h2>
 
-      <ul>
-      <% b_eight.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+              <ul>
+              <% b_four.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <% if @b_four.daftar_hadir.exists? %>
+            <ul class="list-group list-group-flush" data-toggle="checklist">
+              <li class="checklist-entry list-group-item flex-column align-items-start px-0">
+                <div class="checklist-item checklist-item-danger checklist-item-checked">
+                  <div class="checklist-info">
+                    <h5 class="checklist-title mb-0">Daftar Hadir</h5>
+                    <small><%= link_to "download", @b_four.daftar_hadir.url(:original) %></small>
+                  </div>
+                  <div>
+                    <div class="custom-control custom-checkbox custom-checkbox-danger">
+                      <%= form.check_box :delete_daftar_hadir, class: "custom-control-input" %>
+                      <label class="custom-control-label" for="b_four_delete_daftar_hadir"></label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          <% else %>
+            <div class="form-group mb-0">
+              <%= form.label :daftar_hadir, for: "b_four_daftar_hadir", class: "form-control-label" %>
+              <div class="custom-file">
+                <%= form.file_field :daftar_hadir, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
+                <label for="b_four_daftar_hadir" class="custom-file-label">Pdf</label>
+              </div>
+            </div>
+          <% end %>
+
+          <% if @b_four.foto_atau_materi.exists? %>
+            <ul class="list-group list-group-flush" data-toggle="checklist">
+              <li class="checklist-entry list-group-item flex-column align-items-start px-0">
+                <div class="checklist-item checklist-item-danger checklist-item-checked">
+                  <div class="checklist-info">
+                    <h5 class="checklist-title mb-0">Foto Atau Materi</h5>
+                    <small><%= link_to "download",@b_four.foto_atau_materi.url(:original) %></small>
+                  </div>
+                  <div>
+                    <div class="custom-control custom-checkbox custom-checkbox-danger">
+                      <%= form.check_box :delete_foto_atau_materi, class: "custom-control-input" %>
+                      <label class="custom-control-label" for="b_four_delete_foto_atau_materi"></label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          <% else %>
+            <div class="form-group mb-0">
+              <%= form.label :foto_atau_materi, for: "b_four_foto_atau_materi", class: "form-control-label" %>
+              <div class="custom-file">
+                <%= form.file_field :foto_atau_materi, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
+                <label for="b_four_foto_atau_materi" class="custom-file-label">Pdf</label>
+              </div>
+            </div>
+          <% end %>
+
+          <% if @b_four.foto_kegiatan.exists? %>
+            <ul class="list-group list-group-flush" data-toggle="checklist">
+              <li class="checklist-entry list-group-item flex-column align-items-start px-0">
+                <div class="checklist-item checklist-item-danger checklist-item-checked">
+                  <div class="checklist-info">
+                    <h5 class="checklist-title mb-0">Foto Kegiatan</h5>
+                    <small><%= link_to "download",@b_four.foto_kegiatan.url(:original) %></small>
+                  </div>
+                  <div>
+                    <div class="custom-control custom-checkbox custom-checkbox-danger">
+                      <%= form.check_box :delete_foto_kegiatan, class: "custom-control-input" %>
+                      <label class="custom-control-label" for="b_four_delete_foto_kegiatan"></label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          <% else %>
+            <div class="form-group mb-0">
+              <%= form.label :foto_kegiatan, for: "b_four_foto_kegiatan", class: "form-control-label" %>
+              <div class="custom-file">
+                <%= form.file_field :foto_kegiatan, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
+                <label for="b_four_foto_kegiatan" class="custom-file-label">Pdf</label>
+              </div>
+            </div>
+          <% end %>
+
+          <% if @b_four.materi.exists? %>
+            <ul class="list-group list-group-flush" data-toggle="checklist">
+              <li class="checklist-entry list-group-item flex-column align-items-start px-0">
+                <div class="checklist-item checklist-item-danger checklist-item-checked">
+                  <div class="checklist-info">
+                    <h5 class="checklist-title mb-0">Materi</h5>
+                    <small><%= link_to "download",@b_four.materi.url(:original) %></small>
+                  </div>
+                  <div>
+                    <div class="custom-control custom-checkbox custom-checkbox-danger">
+                      <%= form.check_box :delete_materi, class: "custom-control-input" %>
+                      <label class="custom-control-label" for="b_four_delete_materi"></label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          <% else %>
+            <div class="form-group mb-0">
+              <%= form.label :materi, for: "b_four_materi", class: "form-control-label" %>
+              <div class="custom-file">
+                <%= form.file_field :materi, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
+                <label for="b_four_materi" class="custom-file-label">Pdf</label>
+              </div>
+            </div>
+          <% end %>
+
+          <% if @b_four.notulen.exists? %>
+            <ul class="list-group list-group-flush" data-toggle="checklist">
+              <li class="checklist-entry list-group-item flex-column align-items-start px-0">
+                <div class="checklist-item checklist-item-danger checklist-item-checked">
+                  <div class="checklist-info">
+                    <h5 class="checklist-title mb-0">Notulen</h5>
+                    <small><%= link_to "download",@b_four.notulen.url(:original) %></small>
+                  </div>
+                  <div>
+                    <div class="custom-control custom-checkbox custom-checkbox-danger">
+                      <%= form.check_box :delete_notulen, class: "custom-control-input" %>
+                      <label class="custom-control-label" for="b_four_delete_notulen"></label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          <% else %>
+            <div class="form-group mb-0">
+              <%= form.label :notulen, for: "b_four_notulen", class: "form-control-label" %>
+              <div class="custom-file">
+                <%= form.file_field :notulen, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en"%>
+                <label for="b_four_notulen" class="custom-file-label">Pdf</label>
+              </div>
+            </div>
+          <% end %>
+
+
+            <% if @b_four.scan_document.exists? %>
+              <ul class="list-group list-group-flush" data-toggle="checklist">
+                <li class="checklist-entry list-group-item flex-column align-items-start px-0">
+                  <div class="checklist-item checklist-item-danger checklist-item-checked">
+                    <div class="checklist-info">
+                      <h5 class="checklist-title mb-0">Scan Dokumen</h5>
+                      <small><%= link_to "download",@b_four.scan_document.url(:original) %></small>
+                    </div>
+                    <div>
+                      <div class="custom-control custom-checkbox custom-checkbox-danger">
+                        <%= form.check_box :delete_scan_document, class: "custom-control-input" %>
+                        <label class="custom-control-label" for="b_four_delete_scan_document"></label>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            <% else %>
+              <div class="form-group mb-0">
+                <%= form.label :scan_document, for: "b_four_scan_document", class: "form-control-label" %>
+                <div class="custom-file">
+                  <%= form.file_field :scan_document, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en"%>
+                  <label for="b_four_scan_document" class="custom-file-label">Pdf</label>
+                </div>
+              </div>
+            <% end %>
+
+
+            <% if @b_four.scan_document_ttd.exists? %>
+              <ul class="list-group list-group-flush mb-4" data-toggle="checklist">
+                <li class="checklist-entry list-group-item flex-column align-items-start px-0 mb-2">
+                  <div class="checklist-item checklist-item-danger checklist-item-checked">
+                    <div class="checklist-info">
+                      <h5 class="checklist-title mb-0">Scan Dokumen TTD</h5>
+                      <small><%= link_to "download",@b_four.scan_document_ttd.url(:original) %></small>
+                    </div>
+                    <div>
+                      <div class="custom-control custom-checkbox custom-checkbox-danger">
+                        <%= form.check_box :delete_scan_document_ttd, class: "custom-control-input" %>
+                        <label class="custom-control-label" for="b_four_delete_scan_document_ttd"></label>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            <% else %>
+              <div class="form-group">
+                <%= form.label :scan_document_ttd, for: "b_four_scan_document_ttd", class: "form-control-label" %>
+                <div class="custom-file">
+                  <%= form.file_field :scan_document_ttd, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en"%>
+                  <label for="b_four_scan_document_ttd" class="custom-file-label">Pdf</label>
+                </div>
+              </div>
+            <% end %>
+
+          <div class="text-center">
+            <%= form.submit 'Simpan', class: "btn btn-neutral"%>
+          </div>
+        <% end %>
+      </div>
     </div>
-  <% end %>
-
-  <div class="form-group"> 
-    <%= form.label :daftar_hadir %>
-    <% if @b_eight.daftar_hadir.exists? %>
-      <%= @b_eight.daftar_hadir.original_filename %>
-      <%= form.check_box :delete_daftar_hadir %>Delete File<br/>
-      <%= link_to "download",@b_eight.daftar_hadir.url(:original) %>
-    <% else %>
-      <%= form.file_field :daftar_hadir, class: "form-control" %>
-    <% end %>
   </div>
+  <div class="col-xl-4">
+    <div class="card bg-white border-0 mb-0">
+      <div class="card-header bg-transparent text-center">
+        <h4 class="text-uppercase ls-1 text-dark py-1 mb-0">B-08</h4>
+      </div>
+      <div class="card-body px-lg-5 py-lg-5">
+        <%= form_for([@year,@action_plan,@b_eight]) do |form| %>
+          <% if @b_eight.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(b_eight.errors.count, "error") %> prohibited this b_eight from being saved:</h2>
 
-  <div class="form-group"> 
-    <%= form.label :foto_atau_materi %>
-    <% if @b_eight.foto_atau_materi.exists? %>
-      <%= @b_eight.foto_atau_materi.original_filename %>
-      <%= form.check_box :delete_foto_atau_materi %>Delete File<br/>
-      <%= link_to "download",@b_eight.foto_atau_materi.url(:original) %>
-    <% else %>
-    <%= form.file_field :foto_atau_materi, class: "form-control" %>
-    <% end %>
-  </div>
+              <ul>
+              <% b_eight.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <% if @b_eight.daftar_hadir.exists? %>
+            <ul class="list-group list-group-flush" data-toggle="checklist">
+              <li class="checklist-entry list-group-item flex-column align-items-start px-0">
+                <div class="checklist-item checklist-item-danger checklist-item-checked">
+                  <div class="checklist-info">
+                    <h5 class="checklist-title mb-0">Daftar Hadir</h5>
+                    <small><%= link_to "download",@b_eight.daftar_hadir.url(:original) %></small>
+                  </div>
+                  <div>
+                    <div class="custom-control custom-checkbox custom-checkbox-danger">
+                      <%= form.check_box :delete_daftar_hadir, class: "custom-control-input" %>
+                      <label class="custom-control-label" for="b_eight_delete_daftar_hadir"></label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          <% else %>
+            <div class="form-group mb-0">
+              <%= form.label :daftar_hadir, for: "b_eight_daftar_hadir", class: "form-control-label" %>
+              <div class="custom-file">
+                <%= form.file_field :daftar_hadir, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
+                <label for="b_eight_daftar_hadir" class="custom-file-label">Pdf</label>
+              </div>
+            </div>
+          <% end %>
+
+          <% if @b_eight.foto_atau_materi.exists? %>
+            <ul class="list-group list-group-flush" data-toggle="checklist">
+              <li class="checklist-entry list-group-item flex-column align-items-start px-0">
+                <div class="checklist-item checklist-item-danger checklist-item-checked">
+                  <div class="checklist-info">
+                    <h5 class="checklist-title mb-0">Foto atau Materi</h5>
+                    <small><%= link_to "download",@b_eight.foto_atau_materi.url(:original) %></small>
+                  </div>
+                  <div>
+                    <div class="custom-control custom-checkbox custom-checkbox-danger">
+                      <%= form.check_box :delete_foto_atau_materi, class: "custom-control-input" %>
+                      <label class="custom-control-label" for="b_eight_delete_foto_atau_materi"></label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          <% else %>
+            <div class="form-group mb-0">
+              <%= form.label :foto_atau_materi, for: "b_eight_foto_atau_materi", class: "form-control-label" %>
+              <div class="custom-file">
+                <%= form.file_field :foto_atau_materi, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
+                <label for="b_eight_foto_atau_materi" class="custom-file-label">Pdf</label>
+              </div>
+            </div>
+          <% end %>
 
 
-  <div class="form-group"> 
-    <%= form.label :foto_kegiatan %>
-    <% if @b_eight.foto_kegiatan.exists? %>
-      <%= @b_eight.foto_kegiatan.original_filename %>
-      <%= form.check_box :delete_foto_kegiatan %>Delete File<br/>
-      <%= link_to "download",@b_eight.foto_kegiatan.url(:original) %>
-    <% else %>
-    <%= form.file_field :foto_kegiatan, class: "form-control" %>
-    <% end %>
-  </div>
+          <% if @b_eight.foto_kegiatan.exists? %>
+            <ul class="list-group list-group-flush" data-toggle="checklist">
+              <li class="checklist-entry list-group-item flex-column align-items-start px-0">
+                <div class="checklist-item checklist-item-danger checklist-item-checked">
+                  <div class="checklist-info">
+                    <h5 class="checklist-title mb-0">Foto Kegiatan</h5>
+                    <small><%= link_to "download",@b_eight.foto_kegiatan.url(:original) %></small>
+                  </div>
+                  <div>
+                    <div class="custom-control custom-checkbox custom-checkbox-danger">
+                      <%= form.check_box :delete_foto_kegiatan, class: "custom-control-input" %>
+                      <label class="custom-control-label" for="b_eight_delete_foto_kegiatan"></label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          <% else %>
+          <div class="form-group mb-0">
+            <%= form.label :foto_kegiatan, for: "b_eight_foto_kegiatan", class: "form-control-label" %>
+            <div class="custom-file">
+              <%= form.file_field :foto_kegiatan, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
+              <label for="b_eight_foto_kegiatan" class="custom-file-label">Pdf</label>
+            </div>
+          </div>
+          <% end %>
 
-  <div class="form-group"> 
-    <%= form.label :materi %>
-    <% if @b_eight.materi.exists? %>
-      <%= @b_eight.materi.original_filename %>
-      <%= form.check_box :delete_materi %>Delete File<br/>
-      <%= link_to "download",@b_eight.materi.url(:original) %>
-    <% else %>
-    <%= form.file_field :materi, class: "form-control" %>
-    <% end %>
-  </div>
+          <% if @b_eight.materi.exists? %>
+            <ul class="list-group list-group-flush" data-toggle="checklist">
+              <li class="checklist-entry list-group-item flex-column align-items-start px-0">
+                <div class="checklist-item checklist-item-danger checklist-item-checked">
+                  <div class="checklist-info">
+                    <h5 class="checklist-title mb-0">Materi</h5>
+                    <small><%= link_to "download",@b_eight.materi.url(:original) %></small>
+                  </div>
+                  <div>
+                    <div class="custom-control custom-checkbox custom-checkbox-danger">
+                      <%= form.check_box :delete_materi, class: "custom-control-input" %>
+                      <label class="custom-control-label" for="b_eight_delete_materi"></label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          <% else %>
+            <div class="form-group mb-0">
+              <%= form.label :materi, for: "b_eight_materi", class: "form-control-label" %>
+              <div class="custom-file">
+                <%= form.file_field :materi, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
+                <label for="b_eight_materi" class="custom-file-label">Pdf</label>
+              </div>
+            </div>
+          <% end %>
 
-  <div class="form-group"> 
-    <%= form.label :notulen %>
-    <% if @b_eight.notulen.exists? %>
-      <%= @b_eight.notulen.original_filename %>
-      <%= form.check_box :delete_notulen %>Delete File<br/>
-      <%= link_to "download",@b_eight.notulen.url(:original) %>
-    <% else %>
-    <%= form.file_field :notulen, class: "form-control" %>
-    <% end %>
-  </div>
+          <% if @b_eight.notulen.exists? %>
+            <ul class="list-group list-group-flush" data-toggle="checklist">
+              <li class="checklist-entry list-group-item flex-column align-items-start px-0">
+                <div class="checklist-item checklist-item-danger checklist-item-checked">
+                  <div class="checklist-info">
+                    <h5 class="checklist-title mb-0">Notulen</h5>
+                    <small><%= link_to "download",@b_eight.notulen.url(:original) %></small>
+                  </div>
+                  <div>
+                    <div class="custom-control custom-checkbox custom-checkbox-danger">
+                      <%= form.check_box :delete_notulen, class: "custom-control-input" %>
+                      <label class="custom-control-label" for="b_eight_delete_notulen"></label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          <% else %>
+            <div class="form-group mb-0">
+              <%= form.label :notulen, for: "b_eight_notulen", class: "form-control-label" %>
+              <div class="custom-file">
+                <%= form.file_field :notulen, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en"%>
+                <label for="b_eight_notulen" class="custom-file-label">Pdf</label>
+              </div>
+            </div>
+          <% end %>
 
-  <div class="form-group"> 
-    <%= form.label :scan_document %>
-    <% if @b_eight.scan_document.exists? %>
-      <%= @b_eight.scan_document.original_filename %>
-      <%= form.check_box :delete_scan_document %>Delete File<br/>
-      <%= link_to "download",@b_eight.scan_document.url(:original) %>
-    <% else %>
-    <%= form.file_field :scan_document, class: "form-control" %>
-    <% end %>
-  </div>
+          <% if @b_eight.scan_document.exists? %>
+            <ul class="list-group list-group-flush" data-toggle="checklist">
+              <li class="checklist-entry list-group-item flex-column align-items-start px-0">
+                <div class="checklist-item checklist-item-danger checklist-item-checked">
+                  <div class="checklist-info">
+                    <h5 class="checklist-title mb-0">Scan Dokumen</h5>
+                    <small><%= link_to "download",@b_eight.scan_document.url(:original) %></small>
+                  </div>
+                  <div>
+                    <div class="custom-control custom-checkbox custom-checkbox-danger">
+                      <%= form.check_box :delete_scan_document, class: "custom-control-input" %>
+                      <label class="custom-control-label" for="b_eight_delete_scan_document"></label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          <% else %>
+          <div class="form-group mb-0">
+            <%= form.label :scan_document, for: "b_eight_scan_document", class: "form-control-label" %>
+            <div class="custom-file">
+              <%= form.file_field :scan_document, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en"%>
+              <label for="b_eight_scan_document" class="custom-file-label">Pdf</label>
+            </div>
+          </div>
+          <% end %>
 
-  <div class="form-group"> 
-    <%= form.label :scan_document_ttd %>
-    <% if @b_eight.scan_document_ttd.exists? %>
-      <%= @b_eight.scan_document_ttd.original_filename %>
-      <%= form.check_box :delete_scan_document_ttd %>Delete File<br/>
-      <%= link_to "download",@b_eight.scan_document_ttd.url(:original) %>
-    <% else %>
-    <%= form.file_field :scan_document_ttd, class: "form-control" %>
-    <% end %>
-  </div>
+          <% if @b_eight.scan_document_ttd.exists? %>
+            <ul class="list-group list-group-flush mb-4" data-toggle="checklist">
+              <li class="checklist-entry list-group-item flex-column align-items-start px-0 mb-2">
+                <div class="checklist-item checklist-item-danger checklist-item-checked">
+                  <div class="checklist-info">
+                    <h5 class="checklist-title mb-0">Scan Dokumen TTD</h5>
+                    <small><%= link_to "download",@b_eight.scan_document_ttd.url(:original) %></small>
+                  </div>
+                  <div>
+                    <div class="custom-control custom-checkbox custom-checkbox-danger">
+                      <%= form.check_box :delete_scan_document_ttd, class: "custom-control-input" %>
+                      <label class="custom-control-label" for="b_eight_delete_scan_document_ttd"></label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          <% else %>
+          <div class="form-group">
+            <%= form.label :scan_document_ttd, for: "b_eight_scan_document_ttd", class: "form-control-label" %>
+            <div class="custom-file">
+              <%= form.file_field :scan_document_ttd, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en"%>
+              <label for="b_eight_scan_document_ttd" class="custom-file-label">Pdf</label>
+            </div>
+          </div>
+          <% end %>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
-
-<%= form_for([@year,@action_plan,@b_twelf]) do |form| %>
-  <% if @b_twelf.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(b_twelf.errors.count, "error") %> prohibited this b_twelf from being saved:</h2>
-
-      <ul>
-      <% b_twelf.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+          <div class="text-center">
+            <%= form.submit 'Simpan', class: "btn btn-neutral"%>
+          </div>
+        <% end %>
+      </div>
     </div>
-  <% end %>
-
-<div class="form-group"> 
-    <%= form.label :daftar_hadir %>
-    <% if @b_twelf.daftar_hadir.exists? %>
-      <%= @b_twelf.daftar_hadir.original_filename %>
-      <%= form.check_box :delete_daftar_hadir %>Delete File<br/>
-      <%= link_to "download",@b_twelf.daftar_hadir.url(:original) %>
-    <% else %>
-      <%= form.file_field :daftar_hadir, class: "form-control" %>
-    <% end %>
   </div>
+  <div class="col-xl-4">
+    <div class="card bg-white border-0 mb-0">
+      <div class="card-header bg-transparent text-center">
+        <h4 class="text-uppercase ls-1 text-dark py-1 mb-0">B-12</h4>
+      </div>
+      <div class="card-body px-lg-5 py-lg-5">
+        <%= form_for([@year,@action_plan,@b_twelf]) do |form| %>
+          <% if @b_twelf.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(b_twelf.errors.count, "error") %> prohibited this b_twelf from being saved:</h2>
 
-  <div class="form-group"> 
-    <%= form.label :foto_atau_materi %>
-    <% if @b_twelf.foto_atau_materi.exists? %>
-      <%= @b_twelf.foto_atau_materi.original_filename %>
-      <%= form.check_box :delete_foto_atau_materi %>Delete File<br/>
-      <%= link_to "download",@b_twelf.foto_atau_materi.url(:original) %>
-    <% else %>
-    <%= form.file_field :foto_atau_materi, class: "form-control" %>
-    <% end %>
-  </div>
+              <ul>
+              <% b_twelf.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
 
-  <div class="form-group"> 
-    <%= form.label :foto_kegiatan %>
-    <% if @b_twelf.foto_kegiatan.exists? %>
-      <%= @b_twelf.foto_kegiatan.original_filename %>
-      <%= form.check_box :delete_foto_kegiatan %>Delete File<br/>
-      <%= link_to "download",@b_twelf.foto_kegiatan.url(:original) %>
-    <% else %>
-    <%= form.file_field :foto_kegiatan, class: "form-control" %>
-    <% end %>
-  </div>
+          <% if @b_twelf.daftar_hadir.exists? %>
+            <ul class="list-group list-group-flush" data-toggle="checklist">
+              <li class="checklist-entry list-group-item flex-column align-items-start px-0">
+                <div class="checklist-item checklist-item-danger checklist-item-checked">
+                  <div class="checklist-info">
+                    <h5 class="checklist-title mb-0">Daftar Hadir</h5>
+                    <small><%= link_to "download",@b_twelf.daftar_hadir.url(:original) %></small>
+                  </div>
+                  <div>
+                    <div class="custom-control custom-checkbox custom-checkbox-danger">
+                      <%= form.check_box :delete_daftar_hadir, class: "custom-control-input" %>
+                      <label class="custom-control-label" for="b_twelf_delete_daftar_hadir"></label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          <% else %>
+            <div class="form-group mb-0">
+              <%= form.label :daftar_hadir, for: "b_twelf_daftar_hadir", class: "form-control-label" %>
+              <div class="custom-file">
+                <%= form.file_field :daftar_hadir, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
+                <label for="b_twelf_daftar_hadir" class="custom-file-label">Pdf</label>
+              </div>
+            </div>
+          <% end %>
 
-  <div class="form-group"> 
-    <%= form.label :materi %>
-    <% if @b_twelf.materi.exists? %>
-      <%= @b_twelf.materi.original_filename %>
-      <%= form.check_box :delete_materi %>Delete File<br/>
-      <%= link_to "download",@b_twelf.materi.url(:original) %>
-    <% else %>
-    <%= form.file_field :materi, class: "form-control" %>
-    <% end %>
-  </div>
+          <% if @b_twelf.foto_atau_materi.exists? %>
+            <ul class="list-group list-group-flush" data-toggle="checklist">
+              <li class="checklist-entry list-group-item flex-column align-items-start px-0">
+                <div class="checklist-item checklist-item-danger checklist-item-checked">
+                  <div class="checklist-info">
+                    <h5 class="checklist-title mb-0">Foto atau Materi</h5>
+                    <small><%= link_to "download",@b_twelf.foto_atau_materi.url(:original) %></small>
+                  </div>
+                  <div>
+                    <div class="custom-control custom-checkbox custom-checkbox-danger">
+                      <%= form.check_box :delete_foto_atau_materi, class: "custom-control-input" %>
+                      <label class="custom-control-label" for="b_twelf_delete_foto_atau_materi"></label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          <% else %>
+            <div class="form-group mb-0">
+              <%= form.label :foto_atau_materi, for: "b_twelf_foto_atau_materi", class: "form-control-label" %>
+              <div class="custom-file">
+                <%= form.file_field :foto_atau_materi, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
+                <label for="b_twelf_foto_atau_materi" class="custom-file-label">Pdf</label>
+              </div>
+            </div>
+          <% end %>
 
-  <div class="form-group"> 
-    <%= form.label :notulen %>
-    <% if @b_twelf.notulen.exists? %>
-      <%= @b_twelf.notulen.original_filename %>
-      <%= form.check_box :delete_notulen %>Delete File<br/>
-      <%= link_to "download",@b_twelf.notulen.url(:original) %>
-    <% else %>
-    <%= form.file_field :notulen, class: "form-control" %>
-    <% end %>
-  </div>
+          <% if @b_twelf.foto_kegiatan.exists? %>
+            <ul class="list-group list-group-flush" data-toggle="checklist">
+              <li class="checklist-entry list-group-item flex-column align-items-start px-0">
+                <div class="checklist-item checklist-item-danger checklist-item-checked">
+                  <div class="checklist-info">
+                    <h5 class="checklist-title mb-0">Foto Kegiatan</h5>
+                    <small><%= link_to "download",@b_twelf.foto_kegiatan.url(:original) %></small>
+                  </div>
+                  <div>
+                    <div class="custom-control custom-checkbox custom-checkbox-danger">
+                      <%= form.check_box :delete_foto_kegiatan, class: "custom-control-input" %>
+                      <label class="custom-control-label" for="b_twelf_delete_foto_kegiatan"></label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          <% else %>
+            <div class="form-group mb-0">
+              <%= form.label :foto_kegiatan, for: "b_twelf_foto_kegiatan", class: "form-control-label" %>
+              <div class="custom-file">
+                <%= form.file_field :foto_kegiatan, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
+                <label for="b_twelf_foto_kegiatan" class="custom-file-label">Pdf</label>
+              </div>
+            </div>
+          <% end %>
 
-  <div class="form-group"> 
-    <%= form.label :scan_document %>
-    <% if @b_twelf.scan_document.exists? %>
-      <%= @b_twelf.scan_document.original_filename %>
-      <%= form.check_box :delete_scan_document %>Delete File<br/>
-      <%= link_to "download",@b_twelf.scan_document.url(:original) %>
-    <% else %>
-    <%= form.file_field :scan_document, class: "form-control" %>
-    <% end %>
-  </div>
+          <% if @b_twelf.materi.exists? %>
+            <ul class="list-group list-group-flush" data-toggle="checklist">
+              <li class="checklist-entry list-group-item flex-column align-items-start px-0">
+                <div class="checklist-item checklist-item-danger checklist-item-checked">
+                  <div class="checklist-info">
+                    <h5 class="checklist-title mb-0">Materi</h5>
+                    <small><%= link_to "download",@b_twelf.materi.url(:original) %></small>
+                  </div>
+                  <div>
+                    <div class="custom-control custom-checkbox custom-checkbox-danger">
+                      <%= form.check_box :delete_materi, class: "custom-control-input" %>
+                      <label class="custom-control-label" for="b_twelf_delete_materi"></label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          <% else %>
+            <div class="form-group mb-0">
+              <%= form.label :materi, for: "b_twelf_materi", class: "form-control-label" %>
+              <div class="custom-file">
+                <%= form.file_field :materi, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
+                <label for="b_twelf_materi" class="custom-file-label">Pdf</label>
+              </div>
+            </div>
+          <% end %>
 
-  <div class="form-group"> 
-    <%= form.label :scan_document_ttd %>
-    <% if @b_twelf.scan_document_ttd.exists? %>
-      <%= @b_twelf.scan_document_ttd.original_filename %>
-      <%= form.check_box :delete_scan_document_ttd %>Delete File<br/>
-      <%= link_to "download",@b_twelf.scan_document_ttd.url(:original) %>
-    <% else %>
-    <%= form.file_field :scan_document_ttd, class: "form-control" %>
-    <% end %>
-  </div>
+          <% if @b_twelf.notulen.exists? %>
+            <ul class="list-group list-group-flush" data-toggle="checklist">
+              <li class="checklist-entry list-group-item flex-column align-items-start px-0">
+                <div class="checklist-item checklist-item-danger checklist-item-checked">
+                  <div class="checklist-info">
+                    <h5 class="checklist-title mb-0">Notulen</h5>
+                    <small><%= link_to "download",@b_twelf.notulen.url(:original) %></small>
+                  </div>
+                  <div>
+                    <div class="custom-control custom-checkbox custom-checkbox-danger">
+                      <%= form.check_box :delete_notulen, class: "custom-control-input" %>
+                      <label class="custom-control-label" for="b_twelf_delete_notulen"></label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          <% else %>
+          <div class="form-group mb-0">
+            <%= form.label :notulen, for: "b_twelf_notulen", class: "form-control-label" %>
+            <div class="custom-file">
+              <%= form.file_field :notulen, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en"%>
+              <label for="b_twelf_notulen" class="custom-file-label">Pdf</label>
+            </div>
+          </div>
+          <% end %>
 
-  <div class="actions">
-    <%= form.submit %>
+          <% if @b_twelf.scan_document.exists? %>
+            <ul class="list-group list-group-flush" data-toggle="checklist">
+              <li class="checklist-entry list-group-item flex-column align-items-start px-0">
+                <div class="checklist-item checklist-item-danger checklist-item-checked">
+                  <div class="checklist-info">
+                    <h5 class="checklist-title mb-0">Scan Dokumen</h5>
+                    <small><%= link_to "download",@b_twelf.scan_document.url(:original) %></small>
+                  </div>
+                  <div>
+                    <div class="custom-control custom-checkbox custom-checkbox-danger">
+                      <%= form.check_box :delete_scan_document, class: "custom-control-input" %>
+                      <label class="custom-control-label" for="b_twelf_delete_scan_document"></label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          <% else %>
+            <div class="form-group mb-0">
+              <%= form.label :scan_document, for: "b_twelf_scan_document", class: "form-control-label" %>
+              <div class="custom-file">
+                <%= form.file_field :scan_document, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en"%>
+                <label for="b_twelf_scan_document" class="custom-file-label">Pdf</label>
+              </div>
+            </div>
+          <% end %>
+
+          <% if @b_twelf.scan_document_ttd.exists? %>
+            <ul class="list-group list-group-flush mb-4" data-toggle="checklist">
+              <li class="checklist-entry list-group-item flex-column align-items-start px-0 mb-2">
+                <div class="checklist-item checklist-item-danger checklist-item-checked">
+                  <div class="checklist-info">
+                    <h5 class="checklist-title mb-0">Scan Dokumen TTD</h5>
+                    <small><%= link_to "download",@b_twelf.scan_document_ttd.url(:original) %></small>
+                  </div>
+                  <div>
+                    <div class="custom-control custom-checkbox custom-checkbox-danger">
+                      <%= form.check_box :delete_scan_document_ttd, class: "custom-control-input" %>
+                      <label class="custom-control-label" for="b_twelf_delete_scan_document_ttd"></label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          <% else %>
+            <div class="form-group">
+              <%= form.label :scan_document_ttd, for: "b_twelf_scan_document_ttd", class: "form-control-label" %>
+              <div class="custom-file">
+                <%= form.file_field :scan_document_ttd, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en"%>
+                <label for="b_twelf_scan_document_ttd" class="custom-file-label">Pdf</label>
+              </div>
+            </div>
+          <% end %>
+
+          <div class="text-center">
+            <%= form.submit 'Simpan', class: "btn btn-neutral"%>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
+</div>
 <% end %>
-
-
-<%= link_to 'Edit', edit_year_action_plan_path(@year,@action_plan) %> |
-<%= link_to 'Back', year_action_plans_path(@year) %>
+<% if notice %>
+  <div class="notifikasi" data-notifikasi="<%= notice %>"></div>
+<% end %>
+<%= render partial: 'layouts/body' %>
