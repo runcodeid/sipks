@@ -1,52 +1,37 @@
-
-<body class="bg-default g-sidenav-hidden">
-  <!-- Google Tag Manager (noscript) -->
+<body class="bg-light">
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-  <!-- Navbar -->
-  <!-- Main content -->
   <div class="main-content">
-    <!-- Header -->
-      <!-- <a href="/users/sign_in">SIGN IN</a> -->
-      <div class="separator separator-bottom separator-skew zindex-100">
-        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
-          <polygon class="fill-default" points="2560 0 2560 100 0 100"></polygon>
-        </svg>
-      </div>
     </div>
-    <!-- Page content -->
-    <div class="container mt--8 pb-5">
+    <div class="container px-5">
       <div class="row justify-content-center">
         <div class="col-lg-5 col-md-7">
 
-          <div class="card bg-secondary border-0 mb-0">
+          <div class="bg-light border-0 mb-0">
             <div class="card-body px-lg-5 py-lg-5">
               <div class="text-center text-muted mb-4">
+                <%= image_tag ('/assets/img/brand/blue.png'), class: "sign-in-logo" %>
                 <h2> SIGN IN </h2>
               </div>
               <form role="form">
                 <div class="form-group mb-3">
-                  <label for="example-text-input" class="form-control-label">EMAIL</label>
                   <div class="input-group input-group-merge input-group-alternative">
-
                     <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                      <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
                     </div>
-
-                    <input class="form-control" placeholder="Email" type="email" required>
+                    <%= f.text_field :email, class: 'form-control', placeholder:'Username/Email', autofocus: true, autocomplete: "email",required:true %>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="example-text-input" class="form-control-label">PASSWORD</label>
                   <div class="input-group input-group-merge input-group-alternative">
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Password" type="password" required>
+                    <%= f.text_field :password, autocomplete: "current-password", class:'form-control', placeholder:'Password', required:true%>
                   </div>
                 </div>
                 <div class="custom-control custom-control-alternative custom-checkbox">
-                  <input class="custom-control-input" id=" customCheckLogin" type="checkbox">
+                  <%= f.check_box :remember_me, class:"custom-control-input", id:" customCheckLogin", type:"checkbox" %>
                   <label class="custom-control-label" for=" customCheckLogin">
                     <span class="text-muted">Remember me</span>
                   </label>
@@ -55,11 +40,37 @@
                   <button type="submit" class="btn btn-primary my-4">SIGN IN</button>
                 </div>
               </form>
-              <%= render "users/shared/links" %>
             </div>
           </div>
-
         </div>
       </div>
     </div>
+<% end %>
+<footer class="py-5" id="footer-main">
+  <div class="container">
+    <div class="row align-items-center justify-content-xl-between">
+      <div class="col-xl-6">
+        <div class="copyright text-center text-xl-left text-muted">
+          © 2020 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Creative Tim</a>
+        </div>
+      </div>
+      <div class="col-xl-6">
+        <ul class="nav nav-footer justify-content-center justify-content-xl-end">
+          <li class="nav-item">
+            <a href="https://www.creative-tim.com" class="nav-link" target="_blank">Creative Tim</a>
+          </li>
+          <li class="nav-item">
+            <a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="http://blog.creative-tim.com" class="nav-link" target="_blank">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a href="https://www.creative-tim.com/license" class="nav-link" target="_blank">License</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
 </body>
