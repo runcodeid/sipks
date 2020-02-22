@@ -31,10 +31,24 @@
             <div class="collapse show" id="navbar-dashboards">
               <ul class="nav nav-sm flex-column">
                 <li class="nav-item">
+
+                  <% if policy(:dashboard).user? %>
+                    <%= link_to "Dashboard", dashboard_user_path %>
+                  <% end %>
+                  
                   <a href="../../pages/dashboards/dashboard.html" class="nav-link">
                     <span class="sidenav-mini-icon"> D </span>
                     <span class="sidenav-normal"> Dashboard </span>
                   </a>
+                </li>
+                <li class="nav-item">
+                  <a href="../../pages/dashboards/alternative.html" class="nav-link">
+                    <span class="sidenav-mini-icon"> A </span>
+                    <span class="sidenav-normal"> Alternative </span>
+                  </a>
+                  <% if policy(:dashboard).admin? %>
+                    <%= link_to "Dashboard Rencana Aksi", dashboard_admin_path %>
+                  <% end %>
                 </li>
                 <li class="nav-item">
                   <a href="../../pages/dashboards/alternative.html" class="nav-link">
