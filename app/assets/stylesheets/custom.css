@@ -58,6 +58,10 @@ a:hover {
 }
 
 .sign-in-logo{
+<<<<<<< HEAD
+  height: 70px;
+  weight: 70px;
+=======
   width: 70px;
   height: 70px;
 }
@@ -80,4 +84,5 @@ a:hover {
 
 .custom-toggle input:checked + .custom-toggle-slider:after {
   color: #9D1C2D !important;
+>>>>>>> master
 }
