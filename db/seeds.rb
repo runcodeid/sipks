@@ -146,7 +146,7 @@ permissions =[
 #         page: false, #ini akan bisa di akses di menu atau tidak
 #         path: 'permission_path' #path di rails route
 #     },
-    
+
 #     {
 #         name: 'Manajemen Role', #Penamaan gasan permission nya
 #         resource: 'role', #nama file di model harus sama
@@ -231,13 +231,13 @@ permissions =[
     },
 ]
 
-puts "Create Permissions"
- permissions.each do |permission|
-      add_permissions= Permission.create(permission)
-      p permission
- end
-
- roles=[{name_role: "Superadmin"},{name_role: "Admin"}]
+# puts "Create Permissions"
+#  permissions.each do |permission|
+#       add_permissions= Permission.create(permission)
+#       p permission
+#  end
+#
+#  roles=[{name_role: "Superadmin"},{name_role: "Admin"}]
 
 
 #  puts "Create Role"
@@ -245,18 +245,18 @@ puts "Create Permissions"
 #         add_roles=Role.create(role)
 #  end
 
-roles = Role.all
-permissions = Permission.all
-
-puts "Create Role Permissions"
-roles.each do |role|
-    permissions.each do |permission|
-        role_permission = RolePermission.new
-        role_permission.role=role
-        role_permission.permission=permission
-        role_permission.save
-    end
-end
+# roles = Role.all
+# permissions = Permission.all
+#
+# puts "Create Role Permissions"
+# roles.each do |role|
+#     permissions.each do |permission|
+#         role_permission = RolePermission.new
+#         role_permission.role=role
+#         role_permission.permission=permission
+#         role_permission.save
+#     end
+# end
 
 # puts "Create City"
 
@@ -278,10 +278,9 @@ role=Role.first
 
 add_user = User.create(
         city_id: city.id,
-        role_id: role.id,
-        username: "superadmin",
-        email: "runcode.id@gmail.com",
-        name: "Superadmin",
-        password: "@runcode.id2019"
+        role_id: 2,
+        username: "runcode",
+        email: "runcode.id2@gmail.com",
+        name: "runcode",
+        password: "@runcode.id"
     )
-

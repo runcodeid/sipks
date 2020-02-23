@@ -137,3 +137,7 @@ $('.custom-toggle.role_permission input[type="checkbox"]').on('change', function
       }
     });
 });
+
+$('select2[data-toggle="select"]').select2({
+  placeholder: 'A'
+})
