@@ -17,7 +17,7 @@
 
 <% content_for :isi_content do %>
 <div class="row">
-<% @years.each do |year| %>
+<% @years.sort{|a,b|b.year<=>a.year}.each do |year| %>
     <div class="col-xl-4">
       <div class="card">
         <div class="card-body">
