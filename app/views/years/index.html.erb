@@ -1,34 +1,91 @@
-<p id="notice"><%= notice %></p>
+<% content_for :header do %>
+  <% content_for :breadcrumb do %>
+  <h6 class="h2 text-white d-inline-block mb-0">Years</h6>
+  <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+    <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+      <li class="breadcrumb-item"><a href="#"><i class="ni ni-ungroup"></i></a></li>
+      <li class="breadcrumb-item"><a href="#">Master</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Years</li>
+    </ol>
+  </nav>
+  <% end %>
+  <% content_for :header_button do %>
+    <%= link_to 'Tambah', '',class: "btn btn-sm btn-neutral", "data-toggle": "modal", "data-target": "#modal-new-year" %>
+  <% end %>
+  <%= render partial: 'layouts/header_all'%>
+<% end %>
 
-<h1>Years</h1>
+<% content_for :isi_content do %>
+<div class="row">
+<% @years.each do |year| %>
+    <div class="col-xl-4">
+      <div class="card">
+        <div class="card-body">
+          <div class="row align-items-center">
+            <div class="col-auto">
 
-<table>
-  <thead>
-    <tr>
-      <th>Year</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+            </div>
+            <div class="col ml--2">
+              <h5 class="h3 title">
+                <span class="d-block mb-1"><%= year.year %></span>
+              </h5>
+            </div>
+            <div class="col-auto">
+              <button type="button" class="btn btn-sm btn-neutral mr-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-ellipsis-h"></i>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right" style="">
+                <% p year.city_param_url %>
+                <% p "*" * 200 %>
+                <% if params[:city_id].nil? %>
+                  <%= link_to 'Lihat', year,class:"dropdown-item" %>
+                  <%= link_to 'Ubah', '', class: "dropdown-item", data: {toggle: "modal", target: "#modal-edit-year-#{year.slug}"} %>
+                  <%= link_to 'Hapus', year, class:"dropdown-item", method: :delete, data: { confirm: 'Anda Yakin?' } %>
+                <% else %>
+                  <%= link_to 'Rencana Aksi', year_action_plans_path(year)%>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
 
-  <tbody>
-    <% @years.each do |year| %>
-      <tr>
-        <td><%= year.year %></td>
-        <%# year.city_param_url = @city_param_url.id %>
-        <% p year.city_param_url %>
-        <% p "*" * 200 %>
-        <% if params[:city_id].nil? %>
-          <td><%= link_to 'Show', year %></td>
-          <td><%= link_to 'Edit', edit_year_path(year) %></td>
-          <td><%= link_to 'Destroy', year, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% else %>
-          <td><%= link_to 'Rencana Aksi', year_action_plans_path(year)%></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="modal fade modal-new" id="modal-new-year" tabindex="-1" role="dialog" aria-labeledby="modal-new-year" aria-hidden="true">
+  <div class="modal-dialog modal- modal-dialog-centered modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-body p-0">
+        <div class="card bg-secondary border-0 mb-0">
+          <div class="card-body px-lg-5 py-lg-5">
+            <div class="h3 text-center text-muted mb-4">Years</div>
+            <%= render partial: 'form', locals: {year: Year.new} %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<br>
-
-<%= link_to 'New Year', new_year_path %>
+<% @years.each do |year| %>
+<div class="modal fade modal-edit" id="modal-edit-year-<%=year.slug%>" tabindex="-1" role="dialog" aria-labeledby="modal-edit-year-<%=year.slug%>" aria-hidden="true">
+  <div class="modal-dialog modal- modal-dialog-centered modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-body p-0">
+        <div class="card bg-secondary border-0 mb-0">
+          <div class="card-body px-lg-5 py-lg-5">
+            <div class="h3 text-center text-muted mb-4">Years</div>
+            <%= render partial: 'form', locals: {year: year} %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+<% end %>
+<% if notice %>
+  <div class="notifikasi" data-notifikasi="<%= notice %>"></div>
+<% end %>
+<%= render partial: 'layouts/body' %>
