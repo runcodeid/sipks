@@ -49,6 +49,15 @@
                     <span class="sidenav-mini-icon"> A </span>
                     <span class="sidenav-normal"> Alternative </span>
                   </a>
+                  <% if policy(:dashboard).admin? %>
+                    <%= link_to "Dashboard Rencana Aksi", dashboard_admin_path %>
+                  <% end %>
+                </li>
+                <li class="nav-item">
+                  <a href="../../pages/dashboards/alternative.html" class="nav-link">
+                    <span class="sidenav-mini-icon"> A </span>
+                    <span class="sidenav-normal"> Alternative </span>
+                  </a>
                 </li>
               </ul>
             </div>
