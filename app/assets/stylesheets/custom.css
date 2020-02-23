@@ -58,8 +58,8 @@ a:hover {
 }
 
 .sign-in-logo{
-  height: 70px;
-  weight: 70px;
+  height: 150px;
+  weight: 150px;
 }
 
 .table-primary, .table-primary>td, .table-primary>th{
@@ -80,5 +80,45 @@ a:hover {
 
 .custom-toggle input:checked + .custom-toggle-slider:after {
   color: #9D1C2D !important;
->>>>>>> master
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus{
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset !important;
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+  color: #fff;
+  border-color: #9D1C2D;
+  background-color: #9D1C2D;
+}
+
+.custom-control-input:focus:not(:checked) ~ .custom-control-label::before {
+  border-color: #9D1C2D;
+}
+
+.custom-control-input:not(:disabled):active ~ .custom-control-label::before {
+  color: #fff;
+  background-color: #9D1C2D;
+  border-color: #9D1C2D;
+}
+
+.footer-login{
+  position: fixed;
+  max-height: 100vh;
+  bottom: 0;
+  width: 100%;
+}
+
+.bg-login{
+  background-color: #EEF0F3;
+}
+
+.navbar-vertical .navbar-nav .nav-link[data-toggle="collapse"][aria-expanded="true"]:after {
+    color: #9D1C2D;
+}
+
+.navbar-vertical.navbar-expand-xs .navbar-nav > .nav-item > .nav-link.active {
+    background: #F6EAEB;
 }
