@@ -112,7 +112,7 @@ input:-webkit-autofill:focus{
 }
 
 .bg-login{
-  background-color: #EEF0F3;
+  background-color: #A53040;
 }
 
 .navbar-vertical .navbar-nav .nav-link[data-toggle="collapse"][aria-expanded="true"]:after {
@@ -121,4 +121,13 @@ input:-webkit-autofill:focus{
 
 .navbar-vertical.navbar-expand-xs .navbar-nav > .nav-item > .nav-link.active {
     background: #F6EAEB;
+}
+
+.bg-thead-light{
+  background-color: #f6f9fc;
+}
+
+.table .no-border th {
+    border-top-color: unset !important;
+    border-top: 0 !important;
 }
