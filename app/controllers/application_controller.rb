@@ -13,6 +13,21 @@ class ApplicationController < ActionController::Base
     def login
         @login || self.username || self.email
     end
+
+    # rescue_from Pundit::NotAuthorizedError do |exception|
+    #     render_error_page(status: 403, render: 'public/403')
+    # end    
+
+    rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+
+    private
+
+    def user_not_authorized
+        # flash[:alert] = "You are not authorized to perform this action."
+        # redirect_to(request.referrer || root_path)
+        render file: "#{Rails.root}/public/403.html", layout: false, status: 403
+    end
+
     protected
 
     def configure_permitted_parameters
