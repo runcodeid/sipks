@@ -1,17 +1,18 @@
-<body class="bg-light">
+<body class="bg-white">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="main-content">
     </div>
-    <div class="container px-5">
+    <div class="container px-5 py-8">
       <div class="row justify-content-center">
         <div class="col-lg-5 col-md-7">
-
-          <div class="bg-light border-0 mb-0">
+          <div class="card bg-login border-0 mb-0">
             <div class="card-body px-lg-5 py-lg-5">
-              <div class="text-center text-muted mb-4">
+              <div class="text-center mb-3">
                 <%= image_tag ('/assets/img/brand/logo-kalsel.png'), class: "sign-in-logo" %>
-                <h2> SIGN IN </h2>
+              </div>
+              <div class="text-center text-muted mb-4">
+                <h2 class="text-white">SISTEM INFORMASI PENANGANAN KONFLIK SOSIAL</h2>
               </div>
               <form role="form">
                 <div class="form-group mb-3">
@@ -33,11 +34,11 @@
                 <div class="custom-control custom-control-alternative custom-checkbox">
                   <%= f.check_box :remember_me, class:"custom-control-input", id:" customCheckLogin", type:"checkbox" %>
                   <label class="custom-control-label" for=" customCheckLogin">
-                    <span class="text-muted">Remember me</span>
+                    <span class="text-white text-muted">Remember me</span>
                   </label>
                 </div>
                 <div class="text-center actions">
-                  <%= f.submit 'SIGN IN', class: "btn btn-primary my-4" %>
+                  <%= f.submit 'SIGN IN', class: "btn btn-neutral my-4" %>
                 </div>
               </form>
             </div>
@@ -46,7 +47,7 @@
       </div>
     </div>
 <% end %>
-<footer class="py-5" id="footer-main">
+<footer class="py-5 footer-login" id="footer-main">
   <div class="container">
     <div class="row align-items-center justify-content-xl-between">
       <div class="col-xl-6">

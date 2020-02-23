@@ -4,7 +4,7 @@
   <div class="main-content" id="panel">
     <%= render partial: 'layouts/topnav' %>
     <%= render partial: 'layouts/header' %>
-    <% if (controller_name == 'action_plans' || controller_name == 'roles' || controller_name== 'role_permissions') %>
+    <% if (controller_name == 'action_plans' || controller_name == 'roles' || controller_name== 'role_permissions' || controller_name=='users') %>
       <div class="container-fluid mt--6">
     <% else %>
       <div class="container-fluid mt-4">
