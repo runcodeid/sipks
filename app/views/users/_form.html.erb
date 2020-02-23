@@ -12,23 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
+    <%= form.text_field :email, class:"form-control",placeholder:"Email"%>
   </div>
 
   <div class="field">
-    <%= form.label :username %>
-    <%= form.text_field :username %>
+
+    <%= form.text_field :username, class:"form-control", placeholder:"Username" %>
   </div>
 
   <div class="field">
     <%= form.label :city_id %><br/>
-    <%= form.select :city_id ,City.all.collect{|u| [u.city, u.id]} %>
+    <%= form.select(:city_id ,City.all.collect{|u| [u.city, u.id]},{}, class:"form-control", 'data-toggle':'select')%>
   </div>
 
   <div class="field">
     <%= form.label :role_id %><br/>
-    <%= form.select :role_id ,Role.all.collect{|u| [u.name_role, u.id]} %>
+    <%= form.select :role_id ,Role.all.collect{|u| [u.name_role, u.id]},{}, class:"form-control" %>
   </div>
 
   <div class="field">
