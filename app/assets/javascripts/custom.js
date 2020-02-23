@@ -137,8 +137,7 @@ $('.custom-toggle.role_permission input[type="checkbox"]').on('change', function
       }
     });
 });
-$(document).ready(function(){
-  $('select[data-toggle="select"]').select2({
-    width : "100%";
-  });
-});
+
+$('select2[data-toggle="select"]').select2({
+  placeholder: 'A'
+})
