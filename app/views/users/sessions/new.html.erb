@@ -8,11 +8,14 @@
         <div class="col-lg-5 col-md-7">
           <div class="card bg-login border-0 mb-0">
             <div class="card-body px-lg-5 py-lg-5">
+              <div class="text-center text-muted mb-3">
+                <h2 class="text-white">SISTEM INFORMASI PENANGANAN KONFLIK SOSIAL</h2>
+              </div>
               <div class="text-center mb-3">
                 <%= image_tag ('/assets/img/brand/logo-kalsel.png'), class: "sign-in-logo" %>
               </div>
               <div class="text-center text-muted mb-4">
-                <h2 class="text-white">SISTEM INFORMASI PENANGANAN KONFLIK SOSIAL</h2>
+                <h2 class="text-white">BAKESBANGPOL</br>KALIMANTAN SELATAN</h2>
               </div>
               <form role="form">
                 <div class="form-group mb-3">
@@ -31,7 +34,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                     </div>
-                    <%= f.password_field :password, id:"password_login", autocomplete: "current-password", class:'form-control', placeholder:'Password', required:true%>
+                    <%= f.password_field :password, id: "password_login", autocomplete: "current-password", class:'form-control', placeholder:'Password', required:true%>
                     <div class="invalid-feedback">
                       Password Salah!
                     </div>
@@ -53,8 +56,12 @@
       </div>
     </div>
 <% end %>
-<% if flash.alert %>
-  <div class="sessions-notification" data-notifikasi="<%=flash.alert%>"></div>
+<% flash.each do |type, msg| %>
+  <% if type == "notice" %>
+    <div class="sessions-notification" data-notifikasi="<%=flash.notice%>" data-type="notice"></div>
+  <% elsif type == "alert" %>
+    <div class="sessions-notification" data-notifikasi="<%=flash.alert%>" data-type="alert"></div>
+  <% end %>>
 <% end %>
 <footer class="py-5 footer-login" id="footer-main">
   <div class="container">

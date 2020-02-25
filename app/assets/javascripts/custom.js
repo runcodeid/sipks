@@ -34,6 +34,7 @@ $('div.notifikasi').show(function(){
 
 $('div.sessions-notification').show(function(){
   notifMessage = $(this).data('notifikasi');
+  notifType = ( $(this).data('type') == 'alert')? 'danger' : 'success';
   $.notify({
       icon: "ni ni-bell-55",
       title: notifMessage,
@@ -41,7 +42,7 @@ $('div.sessions-notification').show(function(){
       url: ""
   }, {
       element: "body",
-      type: "danger",
+      type: notifType,
       allow_dismiss: true,
       placement: {
           from: "top",
