@@ -276,13 +276,13 @@ permissions =[
     },
 ]
 
-# puts "Create Permissions"
-#  permissions.each do |permission|
-#       add_permissions= Permission.create(permission)
-#       p permission
-#  end
-#
-#  roles=[{name_role: "Superadmin"},{name_role: "Admin"}]
+puts "Create Permissions"
+ permissions.each do |permission|
+      add_permissions= Permission.create(permission)
+      p permission
+ end
+
+ roles=[{name_role: "Superadmin"},{name_role: "Admin"}]
 
 
  puts "Create Role"
@@ -290,18 +290,18 @@ permissions =[
         add_roles=Role.create(role)
  end
 
-# roles = Role.all
-# permissions = Permission.all
-#
-# puts "Create Role Permissions"
-# roles.each do |role|
-#     permissions.each do |permission|
-#         role_permission = RolePermission.new
-#         role_permission.role=role
-#         role_permission.permission=permission
-#         role_permission.save
-#     end
-# end
+roles = Role.all
+permissions = Permission.all
+
+puts "Create Role Permissions"
+roles.each do |role|
+    permissions.each do |permission|
+        role_permission = RolePermission.new
+        role_permission.role=role
+        role_permission.permission=permission
+        role_permission.save
+    end
+end
 
 puts "Create City"
 
@@ -323,9 +323,9 @@ role=Role.first
 
 add_user = User.create(
         city_id: city.id,
-        role_id: 2,
+        role_id: role.id,
         username: "runcode",
-        email: "runcode.id2@gmail.com",
+        email: "runcode.id@gmail.com",
         name: "runcode",
         password: "@runcode.id"
     )
