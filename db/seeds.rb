@@ -43,7 +43,7 @@ permissions =[
     {
         name: 'Buang Tahun', #Penamaan gasan permission nya
         resource: 'year', #nama file di model harus sama
-        action: 'delete', #nama function di controller
+        action: 'destroy', #nama function di controller
         description: 'Delete data tahun', #gasan penjelasan aja
         page: false, #ini akan bisa di akses di menu atau tidak
         path: 'year_path' #path di rails route
@@ -84,7 +84,7 @@ permissions =[
     {
         name: 'Buang Action Plan', #Penamaan gasan permission nya
         resource: 'action_plan', #nama file di model harus sama
-        action: 'delete', #nama function di controller
+        action: 'destroy', #nama function di controller
         description: 'Delete data Action Plan', #gasan penjelasan aja
         page: false, #ini akan bisa di akses di menu atau tidak
         path: 'year_action_plan_path' #path di rails route
@@ -126,7 +126,7 @@ permissions =[
     {
         name: 'Buang Kota', #Penamaan gasan permission nya
         resource: 'city', #nama file di model harus sama
-        action: 'delete', #nama function di controller
+        action: 'destroy', #nama function di controller
         description: 'Delete data kota', #gasan penjelasan aja
         page: false, #ini akan bisa di akses di menu atau tidak
         path: 'city_path' #path di rails route
@@ -168,7 +168,7 @@ permissions =[
     {
         name: 'Buang Permission', #Penamaan gasan permission nya
         resource: 'permission', #nama file di model harus sama
-        action: 'delete', #nama function di controller
+        action: 'destroy', #nama function di controller
         description: 'Delete data permission', #gasan penjelasan aja
         page: false, #ini akan bisa di akses di menu atau tidak
         path: 'permission_path' #path di rails route
@@ -210,7 +210,7 @@ permissions =[
     {
         name: 'Buang Role', #Penamaan gasan permission nya
         resource: 'role', #nama file di model harus sama
-        action: 'delete', #nama function di controller
+        action: 'destroy', #nama function di controller
         description: 'Delete data Role', #gasan penjelasan aja
         page: false, #ini akan bisa di akses di menu atau tidak
         path: 'role_path' #path di rails route
@@ -252,7 +252,7 @@ permissions =[
     {
         name: 'Buang User', #Penamaan gasan permission nya
         resource: 'user', #nama file di model harus sama
-        action: 'delete', #nama function di controller
+        action: 'destroy', #nama function di controller
         description: 'Delete data Pengguna', #gasan penjelasan aja
         page: false, #ini akan bisa di akses di menu atau tidak
         path: 'user_path' #path di rails route
