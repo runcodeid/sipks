@@ -20,7 +20,10 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
                     </div>
-                    <%= f.text_field :login, class: 'form-control', placeholder:'Username/Email', autofocus: true, autocomplete: "email",required:true %>
+                    <%= f.text_field :login, id: "username_login",class: 'form-control', placeholder:'Username/Email', autofocus: true, autocomplete: "email",required:true %>
+                    <div class="invalid-feedback">
+                      Username/Email Salah!
+                    </div>
                   </div>
                 </div>
                 <div class="form-group">
@@ -28,7 +31,10 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                     </div>
-                    <%= f.password_field :password, autocomplete: "current-password", class:'form-control', placeholder:'Password', required:true%>
+                    <%= f.password_field :password, id:"password_login", autocomplete: "current-password", class:'form-control', placeholder:'Password', required:true%>
+                    <div class="invalid-feedback">
+                      Password Salah!
+                    </div>
                   </div>
                 </div>
                 <div class="custom-control custom-control-alternative custom-checkbox">
@@ -46,6 +52,9 @@
         </div>
       </div>
     </div>
+<% end %>
+<% if flash.alert %>
+  <div class="sessions-notification" data-notifikasi="<%=flash.alert%>"></div>
 <% end %>
 <footer class="py-5 footer-login" id="footer-main">
   <div class="container">
@@ -74,4 +83,5 @@
     </div>
   </div>
 </footer>
+<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </body>

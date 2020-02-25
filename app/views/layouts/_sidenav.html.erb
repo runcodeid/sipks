@@ -31,7 +31,7 @@
             <div class="collapse <% if (controller_name == 'dashboard') %>show<% end %>" id="navbar-dashboards">
               <ul class="nav nav-sm flex-column">
                   <li class="nav-item">
-                    <% if (current_user.role_id == 1) %>
+                    <% if policy(:dashboard).admin? %>
                       <%=link_to dashboard_admin_path, class: 'nav-link' do %>
                         <span class="sidenav-mini-icon"> D </span>
                         <span class="sidenav-normal"> Dashboard </span>
@@ -44,21 +44,15 @@
                     <% end %>
 
                   </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                   <a href="../../pages/dashboards/alternative.html" class="nav-link">
                     <span class="sidenav-mini-icon"> A </span>
                     <span class="sidenav-normal"> Alternative </span>
-                  </a>
-                  <% if policy(:dashboard).admin? %>
-                    <%= link_to "Dashboard Rencana Aksi", dashboard_admin_path %>
-                  <% end %>
-                </li>
-                <li class="nav-item">
-                  <a href="../../pages/dashboards/alternative.html" class="nav-link">
-                    <span class="sidenav-mini-icon"> A </span>
-                    <span class="sidenav-normal"> Alternative </span>
-                  </a>
-                </li>
+                  </a> -->
+                  <%# if policy(:dashboard).admin? %>
+                    <%# link_to "Dashboard Rencana Aksi", dashboard_admin_path %>
+                  <%# end %>
+                <!-- </li> -->
               </ul>
             </div>
           </li>
