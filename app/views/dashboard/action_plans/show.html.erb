@@ -9,14 +9,14 @@
               <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                 <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
                 <li class="breadcrumb-item"><a href="#">Rencana Aksi</a></li>
-                <li class="breadcrumb-item"><a href="<%=year_action_plans_path(@year)%>"><%=@year.year%></a></li>
+                <li class="breadcrumb-item"><a href="<%=dashboard_city_year_action_plans_path(@city,@year)%>"><%=@year.year%></a></li>
                 <li class="breadcrumb-item active" aria-current="page"><%= @action_plan.code_action_plans %></li>
               </ol>
             </nav>
           </div>
           <div class="col-lg-6 col-5 text-right">
             <%# yield :header_button %>
-            <%= link_to 'Kembali', year_action_plans_path(@year), class: "btn btn-sm btn-neutral" %>
+            <%= link_to 'Kembali', dashboard_city_year_action_plans_path(@city,@year), class: "btn btn-sm btn-neutral" %>
           </div>
         </div>
         <div class="row">
@@ -49,7 +49,7 @@
         <h4 class="text-uppercase ls-1 text-dark py-1 mb-0">B-04</h4>
       </div>
       <div class="card-body px-lg-5 py-lg-5">
-        <%= form_for([@year,@action_plan,@b_four]) do |form| %>
+        <%= form_for (@b_four) ,url: dashboard_city_year_action_plan_b_four_path(@city,@year,@action_plan,@b_four), method: :patch do |form| %>
           <% if @b_four.errors.any? %>
             <div id="error_explanation">
               <h2><%= pluralize(b_four.errors.count, "error") %> prohibited this b_four from being saved:</h2>
@@ -385,7 +385,7 @@
         <h4 class="text-uppercase ls-1 text-dark py-1 mb-0">B-08</h4>
       </div>
       <div class="card-body px-lg-5 py-lg-5">
-        <%= form_for([@year,@action_plan,@b_eight]) do |form| %>
+        <%= form_for (@b_eight),url: dashboard_city_year_action_plan_b_eight_path(@city,@year,@action_plan,@b_eight), method: :patch do |form| %>
           <% if @b_eight.errors.any? %>
             <div id="error_explanation">
               <h2><%= pluralize(b_eight.errors.count, "error") %> prohibited this b_eight from being saved:</h2>
@@ -721,7 +721,7 @@
         <h4 class="text-uppercase ls-1 text-dark py-1 mb-0">B-12</h4>
       </div>
       <div class="card-body px-lg-5 py-lg-5">
-        <%= form_for([@year,@action_plan,@b_twelf]) do |form| %>
+        <%= form_for (@b_twelf),url: dashboard_city_year_action_plan_b_twelf_path(@city,@year,@action_plan,@b_twelf), method: :patch do |form| %>
           <% if @b_twelf.errors.any? %>
             <div id="error_explanation">
               <h2><%= pluralize(b_twelf.errors.count, "error") %> prohibited this b_twelf from being saved:</h2>

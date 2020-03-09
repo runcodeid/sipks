@@ -1,4 +1,4 @@
-class ActionPlansController < ApplicationController
+class Dashboard::ActionPlansController < ApplicationController
   before_action :set_action_plan, only: [:show, :edit, :update, :destroy]
   before_action :set_params_url
   before_action :set_b_four, only: [:show]
@@ -10,11 +10,13 @@ class ActionPlansController < ApplicationController
 
 
   def index
-
+    
+    @action_plan = ActionPlan.new
     if params[:city_id].nil?
-      @action_plans =@year.action_plans.where('city_id = ?',current_user.city.id).all
+      @action_plans =@year.action_plans.where('city_id = ?',current_user.city.id)
     else
-      @action_plans =@year.action_plans.where('city_id = ?',City.friendly.find(params[:city_id])).all
+      @action_plans =@year.action_plans.where('city_id = ?',City.friendly.find(params[:city_id]))
+
     end
 
     authorize @action_plans
@@ -23,10 +25,8 @@ class ActionPlansController < ApplicationController
   # GET /action_plans/1
   # GET /action_plans/1.json
   def show
-    @action_plan.year = @year
-    @b_four.action_plan = @action_plan 
-    @b_eight.action_plan = @action_plan
-    @b_twelf.action_plan = @action_plan
+    @b_four = BFour.find_by action_plan: @action_plan
+
     authorize @action_plan
 
   end
@@ -64,7 +64,7 @@ class ActionPlansController < ApplicationController
         @b_twelf.action_plan=@action_plan
         @b_twelf.save
 
-        format.html { redirect_to year_action_plan_path(@year,@action_plan), notice: 'Action plan was successfully created.' }
+        format.html { redirect_to dashboard_city_year_action_plan_path(@city,@year,@action_plan), notice: 'Action plan was successfully created.' }
         format.json { render :show, status: :created, location: @action_plan }
 
       else
@@ -96,7 +96,7 @@ class ActionPlansController < ApplicationController
     authorize @action_plan
     @action_plan.destroy
     respond_to do |format|
-      format.html { redirect_to action_plans_url, notice: 'Action plan was successfully destroyed.' }
+      format.html { redirect_to dashboard_city_year_action_plans_path(@city,@year), notice: 'Action plan was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -109,7 +109,7 @@ class ActionPlansController < ApplicationController
     # Only allow alist of trusted parameters through.
     # Use callbacks to share common setup or constraints between actions.
     def action_plan_params
-      params.require(:action_plan).permit(:city_id, :year_id, :code_action_plans, :action_plan)
+      params.require(:action_plan).permit(:city_id, :year_id, :code_action_plans, :action_plan, :responsible, :description)
 
     end
 
@@ -118,7 +118,7 @@ class ActionPlansController < ApplicationController
     end
 
     def set_params_url
-      # @city = City.friendly.find(params[:year_id])
+      @city = City.friendly.find(params[:city_id])
       @year = Year.friendly.find(params[:year_id])
 
     end

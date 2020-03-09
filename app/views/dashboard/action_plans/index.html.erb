@@ -25,6 +25,8 @@
   </div>
 <% end %>
 <% content_for :isi_content do %>
+
+<% if (mode_view(@year.year,"01",nil)) %>
 <div class="row">
   <div class="col-xl">
     <div class="card bg-white">
@@ -50,9 +52,9 @@
                   </button>
                 <% end %>
                 <div class="dropdown-menu dropdown-menu-right" style="">
-                  <%= link_to 'Lihat', year_action_plan_path(@year,action_plan), class:"dropdown-item" %>
+                  <%= link_to 'Lihat', dashboard_city_year_action_plan_path(@city,@year,action_plan), class:"dropdown-item" %>
                   <%= link_to 'Ubah', '', class: "dropdown-item", data: {toggle: "modal", target: "#modal-edit-actionplan-#{action_plan.slug}"} %>
-                  <%= link_to 'Hapus', year_action_plan_path(@year,action_plan), class:"dropdown-item", method: :delete, data: { confirm: 'Anda Yakin?' } %>
+                  <%= link_to 'Hapus', dashboard_city_year_action_plan_path(@city,@year,action_plan), class:"dropdown-item", method: :delete, data: { confirm: 'Anda Yakin?' } %>
                 </div>
               </div>
             </div>
@@ -95,5 +97,8 @@
   </div>
 </div>
 <% end %>
+
+<% end %>
+
 <% end %>
 <%= render partial: 'layouts/body' %>

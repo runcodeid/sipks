@@ -1,4 +1,4 @@
-class BTwelvesController < ApplicationController
+class Dashboard::BTwelvesController < ApplicationController
   before_action :set_b_twelf, only: [:show, :edit, :update, :destroy]
   before_action :set_params_url
 

@@ -1,4 +1,4 @@
-class BEightsController < ApplicationController
+class Dashboard::BEightsController < ApplicationController
   before_action :set_b_eight, only: [:show, :edit, :update, :destroy]
   before_action :set_params_url
   # GET /b_eights

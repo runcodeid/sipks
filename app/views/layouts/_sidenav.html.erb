@@ -31,13 +31,8 @@
             <div class="collapse <% if (controller_name == 'dashboard') %>show<% end %>" id="navbar-dashboards">
               <ul class="nav nav-sm flex-column">
                   <li class="nav-item">
-                    <% if policy(:dashboard).admin? %>
-                      <%=link_to dashboard_admin_path, class: 'nav-link' do %>
-                        <span class="sidenav-mini-icon"> D </span>
-                        <span class="sidenav-normal"> Dashboard </span>
-                      <% end %>
-                    <% else %>
-                      <%= link_to dashboard_user_path, class: 'nav-link' do %>
+                    <% if policy(:dashboard_city).index? %>
+                      <%=link_to dashboard_cities_path, class: 'nav-link' do %>
                         <span class="sidenav-mini-icon"> D </span>
                         <span class="sidenav-normal"> Dashboard </span>
                       <% end %>

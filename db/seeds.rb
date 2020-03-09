@@ -259,20 +259,20 @@ permissions =[
     },
 
     {
-        name: 'Dashboard Admin', #Penamaan gasan permission nya
-        resource: 'dashboard', #nama file di model harus sama
-        action: 'admin', #nama function di controller
-        description: 'Dashboard Admin', #gasan penjelasan aja
+        name: 'Dashboard City', #Penamaan gasan permission nya
+        resource: 'dashboard_city', #nama file di model harus sama
+        action: 'index', #nama function di controller
+        description: 'Dashboard City', #gasan penjelasan aja
         page: true, #ini akan bisa di akses di menu atau tidak
-        path: 'dashboard_admin_path' #path di rails route
+        path: 'dashboard_cities_path' #path di rails route
     },
     {
-        name: 'Dashboard User', #Penamaan gasan permission nya
-        resource: 'dashboard', #nama file di model harus sama
-        action: 'user', #nama function di controller
-        description: 'Dashboard User', #gasan penjelasan aja
+        name: 'Dashboard Year', #Penamaan gasan permission nya
+        resource: 'dashboard_year', #nama file di model harus sama
+        action: 'index', #nama function di controller
+        description: 'Dashboard Years', #gasan penjelasan aja
         page: true, #ini akan bisa di akses di menu atau tidak
-        path: 'dashboard_user_path' #path di rails route
+        path: 'dashboard_city_years_path' #path di rails route
     },
 ]
 

@@ -26,7 +26,7 @@ module ActionPlansHelper
         if ((date_now >= date_start) && (date_now <= date_end))
             true
         else
-            false
+            true #false
         end
     end
 end

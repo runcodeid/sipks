@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_20_163217) do
+ActiveRecord::Schema.define(version: 2020_03_09_164054) do
 
   create_table "action_plans", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "city_id"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 2020_02_20_163217) do
     t.datetime "updated_at", null: false
     t.string "slug"
     t.datetime "deleted_at"
+    t.text "description"
+    t.text "responsible"
     t.index ["city_id"], name: "index_action_plans_on_city_id"
     t.index ["deleted_at"], name: "index_action_plans_on_deleted_at"
     t.index ["slug"], name: "index_action_plans_on_slug", unique: true
@@ -154,6 +156,17 @@ ActiveRecord::Schema.define(version: 2020_02_20_163217) do
     t.string "logo_city_content_type"
     t.integer "logo_city_file_size"
     t.datetime "logo_city_updated_at"
+    t.string "mayor"
+    t.string "vice_mayor"
+    t.string "area"
+    t.string "population"
+    t.string "sub_district"
+    t.string "village"
+    t.string "head_of_kesbangpol"
+    t.string "head_division"
+    t.text "address"
+    t.string "telp"
+    t.string "email"
     t.index ["deleted_at"], name: "index_cities_on_deleted_at"
     t.index ["slug"], name: "index_cities_on_slug", unique: true
   end

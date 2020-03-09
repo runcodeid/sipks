@@ -1,0 +1,17 @@
+<%= form_with(model: dashboard_year, local: true) do |form| %>
+  <% if dashboard_year.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(dashboard_year.errors.count, "error") %> prohibited this dashboard_year from being saved:</h2>
+
+      <ul>
+      <% dashboard_year.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

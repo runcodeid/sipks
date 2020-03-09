@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+Detail city andaki luas wilayah
+<br/>
+<%= @dashboard_city.city%>
+
+<h1>Years</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tahun</th>
+      <th>Banyak RA</th>
+      <th>Tools</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dashboard_years.each do |dashboard_year| %>
+      <tr>
+        <td><%= dashboard_year.year %></td>
+        <td><%= dashboard_year.action_plans.where('city_id = ?', @dashboard_city.id).count %></td>
+        <td><%= link_to 'Show', dashboard_city_year_action_plans_path(@dashboard_city,dashboard_year) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

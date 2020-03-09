@@ -1,0 +1,55 @@
+<% content_for :header do %>
+  <% content_for :breadcrumb do %>
+  <h6 class="h2 text-white d-inline-block mb-0">Dashboard</h6>
+  <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+    <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+      <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+      <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+    </ol>
+  </nav>
+  <% end %>
+  <% content_for :header_button do %>
+  <% end %>
+  <%= render partial: 'layouts/header_all'%>
+<% end %>
+
+<% content_for :isi_content do %>
+<div class="row">
+<% @dashboard_cities.each do |city| %>
+    <div class="col-xl-4">
+      <div class="card">
+        <div class="card-body">
+          <div class="row align-items-center">
+            <div class="col-auto">
+              <% if (city.logo_city.url(:thumb) != '/images/thumb/missing.png')%>
+                <%= image_tag city.logo_city.url(:thumb), style: "width: 48px; height: 48px" %>
+              <% else %>
+                <%= image_tag 'img/no_image.png', style: "width: 48px; height: 48px" %>
+              <% end %>
+            </div>
+            <div class="col ml--2">
+              <h5 class="h3 title">
+                <span class="d-block mb-1"><%= link_to city.city, dashboard_city_path(city) %></span>
+              </h5>
+            </div>
+            <!-- <div class="col-auto">
+              <button type="button" class="btn btn-sm btn-neutral mr-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-ellipsis-h"></i>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right" style="">
+                <%# link_to 'Ubah', '', class: "dropdown-item", data: {toggle: "modal", target: "#modal-edit-city-#{city.slug}"} %>
+                <%# link_to 'Hapus', city, class:"dropdown-item", method: :delete, data: { confirm: 'Anda Yakin?' } %>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+<% end %>
+</div>
+<% end %>
+<% if notice %>
+  <div class="notifikasi" data-notifikasi="<%= notice %>"></div>
+<% end %>
+<%= render partial: 'layouts/body' %>

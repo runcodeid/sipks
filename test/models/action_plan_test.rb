@@ -6,6 +6,8 @@
 #  action_plan       :string(255)
 #  code_action_plans :string(255)
 #  deleted_at        :datetime
+#  description       :text(65535)
+#  responsible       :text(65535)
 #  slug              :string(255)
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null

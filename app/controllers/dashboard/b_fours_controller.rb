@@ -1,4 +1,4 @@
-class BFoursController < ApplicationController
+class Dashboard::BFoursController < ApplicationController
   before_action :set_b_four, only: [:show, :edit, :update, :destroy]
   before_action :set_params_url
 
@@ -43,10 +43,10 @@ class BFoursController < ApplicationController
   def update
     respond_to do |format|
       if @b_four.update(b_four_params)
-        format.html { redirect_to year_action_plan_path(@year,@action_plan), notice: 'B four was successfully updated.' }
+        format.html { redirect_to dashboard_city_year_action_plan_path(@city,@year,@action_plan), notice: 'B four was successfully updated.' }
         format.json { render :show, status: :ok, location: @b_four }
       else
-        format.html { redirect_to year_action_plan_path(@year,@action_plan), notice: @b_four.errors.full_messages }
+        format.html { redirect_to dashboard_city_year_action_plan_path(@city,@year,@action_plan), notice: @b_four.errors.full_messages }
         format.json { render json: @b_four.errors, status: :unprocessable_entity }
       end
     end
@@ -70,9 +70,10 @@ class BFoursController < ApplicationController
 
     def set_params_url
       @action_plan = ActionPlan.friendly.find(params[:action_plan_id])
+      @city=City.friendly.find(params[:city_id])
       @year = Year.friendly.find(params[:year_id])
       if params[:b_four].blank?
-        redirect_to year_action_plan_path(@year,@action_plan), notice: 'B four was failed update cause no file you attached.' 
+        redirect_to dashboard_city_year_action_plan_path(@city,@year,@action_plan), notice: 'B four was failed update cause no file you attached.' 
       end
     end
 
