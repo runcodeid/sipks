@@ -11,7 +11,7 @@ class DashboardController < ApplicationController
   def admin
     @cities = City.all
 
-    if policy(:dashboard).admin?
+    if policy(:dashboard).superadmin?
     else
       redirect_to dashboard_user_path
     end
