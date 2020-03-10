@@ -30,11 +30,14 @@
 <div class="row">
   <div class="col-xl">
     <div class="card bg-white">
+      <div class="card-header">
+        <h5 class="h3 mb-0">Daftar Rencana Aksi <%=@city.city%></h5>
+      </div>
       <div class="card-body px-0 py-1">
         <ul class="list-group list-group-flush list">
         <% @action_plans.each.with_index do |action_plan, index| %>
           <li class="list-group-item px-4">
-            <div class="row align-items-center">
+            <div class="row align-items-center pb-3">
               <div class="col">
                 <small><%= action_plan.code_action_plans %></small>
                 <h4 class="mb-0">
@@ -52,9 +55,65 @@
                   </button>
                 <% end %>
                 <div class="dropdown-menu dropdown-menu-right" style="">
-                  <%= link_to 'Lihat', dashboard_city_year_action_plan_path(@city,@year,action_plan), class:"dropdown-item" %>
-                  <%= link_to 'Ubah', '', class: "dropdown-item", data: {toggle: "modal", target: "#modal-edit-actionplan-#{action_plan.slug}"} %>
+                  <a class="dropdown-item" data-toggle="collapse" href="#collapse-ra-<%= action_plan.slug %>" role="button" aria-expanded="false" aria-controls="collapse-ra-<%= action_plan.slug %>">
+                    Lihat Detail
+                  </a>
+                  <%= link_to 'Unggah Dokumen', dashboard_city_year_action_plan_path(@city,@year,action_plan), class:"dropdown-item" %>
+                  <%= link_to 'Ubah Nama', '', class: "dropdown-item", data: {toggle: "modal", target: "#modal-edit-actionplan-#{action_plan.slug}"} %>
                   <%= link_to 'Hapus', dashboard_city_year_action_plan_path(@city,@year,action_plan), class:"dropdown-item", method: :delete, data: { confirm: 'Anda Yakin?' } %>
+                </div>
+              </div>
+            </div>
+
+            <div class="collapse" id="collapse-ra-<%= action_plan.slug %>">
+              <div class="card bg-white mb-0">
+                <div class="table-responsive">
+                  <table class="table align-items-center table-flush">
+                    <thead class="thead-neutral">
+                      <tr>
+                        <th class="bg-transparent"></th>
+                        <th class="text-center" scope="col">Daftar Hadir</th>
+                        <th class="text-center" scope="col">Foto Materi</th>
+                        <th class="text-center" scope="col">Foto Kegiatan</th>
+                        <th class="text-center" scope="col">Materi</th>
+                        <th class="text-center" scope="col">Notulen</th>
+                        <th class="text-center" scope="col">Scan Dokumen</th>
+                        <th class="text-center" scope="col">Scan TTD</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th class="text-muted bg-transparent" style="width:67px;" scope="row">B-04</th>
+                        <td class="text-center"><i class="fa fa-check text-success"></i></td>
+                        <td class="text-center"><i class="fa fa-times text-danger"></i></td>
+                        <td class="text-center"><i class="fa fa-check text-success"></i></td>
+                        <td class="text-center"><i class="fa fa-check text-success"></i></td>
+                        <td class="text-center"><i class="fa fa-check text-success"></i></td>
+                        <td class="text-center"><i class="fa fa-times text-danger"></i></td>
+                        <td class="text-center"><i class="fa fa-times text-danger"></i></td>
+                      </tr>
+                      <tr>
+                        <th class="text-muted bg-transparent" style="width:67px;" scope="row">B-08</th>
+                        <td class="text-center"><i class="fa fa-times text-danger"></i></td>
+                        <td class="text-center"><i class="fa fa-check text-success"></i></td>
+                        <td class="text-center"><i class="fa fa-times text-danger"></i></td>
+                        <td class="text-center"><i class="fa fa-check text-success"></i></td>
+                        <td class="text-center"><i class="fa fa-check text-success"></i></td>
+                        <td class="text-center"><i class="fa fa-times text-danger"></i></td>
+                        <td class="text-center"><i class="fa fa-check text-success"></i></td>
+                      </tr>
+                      <tr>
+                        <th class="text-muted bg-transparent" style="width:67px;" scope="row">B-12</th>
+                        <td class="text-center"><i class="fa fa-check text-success"></i></td>
+                        <td class="text-center"><i class="fa fa-check text-success"></i></td>
+                        <td class="text-center"><i class="fa fa-check text-success"></i></td>
+                        <td class="text-center"><i class="fa fa-check text-success"></i></td>
+                        <td class="text-center"><i class="fa fa-times text-danger"></i></td>
+                        <td class="text-center"><i class="fa fa-times text-danger"></i></td>
+                        <td class="text-center"><i class="fa fa-check text-success"></i></td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
