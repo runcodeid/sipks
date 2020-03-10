@@ -19,28 +19,33 @@
     <div class="form-group">
       <%= form.text_field :action_plan, id:"action-plan-#{action_plan.slug}", class: "form-control", placeholder: 'Nama Rencana Aksi', autocomplete: "off", required: true %>
     </div>
+
+    <div class="form-group mb-3">
+      <%= form.text_area :responsible, id:"description-#{action_plan.slug}", class: "form-control", placeholder: 'Penanggung Jawab', autocomplete: "off", required: true %>
+    </div>
+
+    <div class="form-group">
+      <%= form.text_area :description, id:"description-#{action_plan.slug}", class: "form-control", placeholder: 'Deskripsi', autocomplete: "off", required: true %>
+    </div>
   <% else %>
     <div class="form-group mb-3">
       <%= form.text_field :code_action_plans, class: "form-control", placeholder: 'Kode Rencana Aksi', autocomplete: "off", required: true %>
     </div>
 
-    <div class="form-group">
+    <div class="form-group mb-3">
       <%= form.text_field :action_plan, class: "form-control", placeholder: 'Nama Rencana Aksi', autocomplete: "off", required: true %>
     </div>
 
-
-    <div class="form-group">
-      <%= form.text_field :description, class: "form-control", placeholder: 'Nama Rencana Aksi', autocomplete: "off", required: true %>
+    <div class="form-group mb-3">
+      <%= form.text_area :responsible, class: "form-control", placeholder: 'Penanggung Jawab', autocomplete: "off", required: true %>
     </div>
 
     <div class="form-group">
-      <%= form.text_field :responsible, class: "form-control", placeholder: 'Nama Rencana Aksi', autocomplete: "off", required: true %>
+      <%= form.text_area :description, class: "form-control", placeholder: 'Deskripsi', autocomplete: "off", required: true %>
     </div>
-
-
   <% end %>
 
   <div class="text-center">
-    <%= form.submit 'Simpan', class: "btn btn-neutral my-3" %>
+    <%= form.submit 'Simpan', class: "btn btn-primary my-3" %>
   </div>
 <% end %>

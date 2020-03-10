@@ -22,13 +22,22 @@
         <div class="row">
           <div class="col-xl">
             <div class="card bg-white">
-              <div class="card-body">
+              <div class="card-header bg-transparent">
                 <div class="row align-items-center">
                   <div class="col">
                     <h3 class="mb-0"><%= @action_plan.action_plan %></h3>
                   </div>
                   <div class="col text-right">
                     <h3 class="mb-0"><%= @action_plan.city.city %> - <%= @action_plan.year.year %></h3>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body pt-3">
+                <div class="row align-items-center">
+                  <div class="col">
+                    <h4 class="mb-0">Penanggung Jawab : <%= @action_plan.responsible %></h4>
+                    <h4 class="mb-0">Deskripsi : </h4>
+                    <p class="mb-0 text-justify"><%= @action_plan.description %></p>
                   </div>
                 </div>
               </div>
@@ -371,7 +380,7 @@
 
           <% if (mode_view(@year.year,"04","b04")) %>
             <div class="text-center">
-            <%= form.submit 'Simpan', class: "btn btn-neutral"%>
+            <%= form.submit 'Simpan', class: "btn btn-primary"%>
             </div>
           <% end %>
 
@@ -708,7 +717,7 @@
 
           <% if (mode_view(@year.year,"08","b08")) %>
             <div class="text-center">
-              <%= form.submit 'Simpan', class: "btn btn-neutral"%>
+              <%= form.submit 'Simpan', class: "btn btn-primary"%>
             </div>
           <% end %>
         <% end %>
@@ -1044,7 +1053,7 @@
 
           <% if (mode_view(@year.year,"12","b12")) %>
             <div class="text-center">
-              <%= form.submit 'Simpan', class: "btn btn-neutral"%>
+              <%= form.submit 'Simpan', class: "btn btn-primary"%>
             </div>
           <% end %>
         <% end %>
