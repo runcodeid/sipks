@@ -55,11 +55,11 @@
                   </button>
                 <% end %>
                 <div class="dropdown-menu dropdown-menu-right" style="">
-                  <a class="dropdown-item" data-toggle="collapse" href="#collapse-ra-<%= action_plan.slug %>" role="button" aria-expanded="false" aria-controls="collapse-ra-<%= action_plan.slug %>">
+                  <a class="btn-ra-detail dropdown-item" data-toggle="collapse" href="#collapse-ra-<%= action_plan.slug %>" role="button" aria-expanded="false" aria-controls="collapse-ra-<%= action_plan.slug %>">
                     Lihat Detail
                   </a>
                   <%= link_to 'Unggah Dokumen', dashboard_city_year_action_plan_path(@city,@year,action_plan), class:"dropdown-item" %>
-                  <%= link_to 'Ubah Nama', '', class: "dropdown-item", data: {toggle: "modal", target: "#modal-edit-actionplan-#{action_plan.slug}"} %>
+                  <%= link_to 'Ubah', '', class: "dropdown-item", data: {toggle: "modal", target: "#modal-edit-actionplan-#{action_plan.slug}"} %>
                   <%= link_to 'Hapus', dashboard_city_year_action_plan_path(@city,@year,action_plan), class:"dropdown-item", method: :delete, data: { confirm: 'Anda Yakin?' } %>
                 </div>
               </div>

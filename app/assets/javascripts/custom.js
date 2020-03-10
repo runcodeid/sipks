@@ -176,3 +176,10 @@ $('.custom-toggle.role_permission input[type="checkbox"]').on('change', function
 $('select2[data-toggle="select"]').select2({
   placeholder: 'A'
 })
+
+$('.btn-ra-detail').on('click', function(){
+  var target = $(this)[0].hash;
+  $(this).text(
+    ($(target).hasClass('show') ? 'Lihat Detail' : 'Sembunyikan Detail')
+  );
+});

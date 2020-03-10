@@ -13,34 +13,42 @@
 
   <% if action_plan.slug %>
     <div class="form-group mb-3">
+      <label class="form-control-label" for="kode-<%= action_plan.slug %>">Kode Rencana Aksi</label>
       <%= form.text_field :code_action_plans, id: "kode-#{action_plan.slug}" ,class: "form-control", placeholder: 'Kode Rencana Aksi', autocomplete: "off", required: true %>
     </div>
 
     <div class="form-group">
+      <label class="form-control-label" for="action-plan-<%= action_plan.slug %>">Nama Rencana Aksi</label>
       <%= form.text_field :action_plan, id:"action-plan-#{action_plan.slug}", class: "form-control", placeholder: 'Nama Rencana Aksi', autocomplete: "off", required: true %>
     </div>
 
     <div class="form-group mb-3">
-      <%= form.text_area :responsible, id:"description-#{action_plan.slug}", class: "form-control", placeholder: 'Penanggung Jawab', autocomplete: "off", required: true %>
+      <label class="form-control-label" for="responsible-<%= action_plan.slug %>">Penanggung Jawab</label>
+      <%= form.text_area :responsible, id:"responsible-#{action_plan.slug}", class: "form-control", placeholder: 'Penanggung Jawab', autocomplete: "off", required: true %>
     </div>
 
     <div class="form-group">
+      <label class="form-control-label" for="kode-<%= action_plan.slug %>">Deskripsi</label>
       <%= form.text_area :description, id:"description-#{action_plan.slug}", class: "form-control", placeholder: 'Deskripsi', autocomplete: "off", required: true %>
     </div>
   <% else %>
     <div class="form-group mb-3">
+      <label class="form-control-label" for="action_plan_code_action_plans">Kode Rencana Aksi</label>
       <%= form.text_field :code_action_plans, class: "form-control", placeholder: 'Kode Rencana Aksi', autocomplete: "off", required: true %>
     </div>
 
     <div class="form-group mb-3">
+      <label class="form-control-label" for="action_plan_action_plans">Nama Rencana Aksi</label>
       <%= form.text_field :action_plan, class: "form-control", placeholder: 'Nama Rencana Aksi', autocomplete: "off", required: true %>
     </div>
 
     <div class="form-group mb-3">
+      <label class="form-control-label" for="action_plan_responsible">Penanggung Jawab</label>
       <%= form.text_area :responsible, class: "form-control", placeholder: 'Penanggung Jawab', autocomplete: "off", required: true %>
     </div>
 
     <div class="form-group">
+      <label class="form-control-label" for="action_plan_description">Deskripsi</label>
       <%= form.text_area :description, class: "form-control", placeholder: 'Deskripsi', autocomplete: "off", required: true %>
     </div>
   <% end %>

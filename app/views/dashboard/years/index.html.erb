@@ -1,6 +1,6 @@
 <%# <p id="notice"><%= notice %></p> %>
 <% content_for :header do %>
-  <div class="header bg-primary pb-4">
+  <div class="header bg-primary pb-7">
 
     <% content_for :breadcrumb do %>
 
@@ -13,7 +13,7 @@
 <% end %>
 
 <% content_for :isi_content do %>
-<div class="row mt--6">
+<div class="row mt--8">
   <div class="col-xl">
     <div class="card">
       <div class="card-header border-0">
@@ -25,7 +25,7 @@
               <%= image_tag 'img/no_image.png', style: "width: 130px; height: 130px" %>
             <% end %>
           </div>
-          <div class="col">
+          <div class="col pl-4">
             <div class="row">
               <h2 class="mb-0"><%= @city_param_url.city %></h2>
             </div>
