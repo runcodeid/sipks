@@ -148,3 +148,8 @@ input:-webkit-autofill:focus{
 .table-th-light th{
   border-top: 0 !important;
 }
+
+.dashboard-logo-city{
+  height:200px;
+  width: 200px;
+}
