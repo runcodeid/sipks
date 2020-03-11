@@ -28,13 +28,28 @@
         <%= form.text_field :vice_mayor, id: "vice_mayor-#{city.slug}",class: "form-control", placeholder: 'Wakil Bupati/Walikota', autocomplete: "off", required: true %>
       </div>
       <div class="form-group mb-3">
-        <label class="form-control-label" for="area-<%= city.slug %>">Luas Wilayah</label>
+        <label class="form-control-label" for="area-<%= city.slug %>">Luas Wilayah km <sup>2</sup></label>
         <%= form.text_field :area, id: "area-#{city.slug}",class: "form-control", placeholder: 'Luas Wilayah', autocomplete: "off", required: true %>
       </div>
       <div class="form-group mb-3">
         <label class="form-control-label" for="population-<%= city.slug %>">Jumlah Penduduk</label>
         <%= form.text_field :population, id: "population-#{city.slug}",class: "form-control", placeholder: 'Jumlah Penduduk', autocomplete: "off", required: true %>
       </div>
+
+    </div>
+    <div class="col">
+      <!-- <div class="form-group mb-3">
+        <label class="form-control-label" for="head_of_kesbangpol-<%= city.slug %>">Kepala Kesbangpol</label>
+        <%# <%= form.text_field :head_of_kesbangpol, id: "head_of_kesbangpol-#{city.slug}",class: "form-control", placeholder: 'Kepala Kesbangpol', autocomplete: "off", required: true %> %>
+      </div>
+      <div class="form-group mb-3">
+        <label class="form-control-label" for="head_division-<%= city.slug %>">Kepala Bagian</label>
+        <%# <%= form.text_field :head_divion, id: "head_division-#{city.slug}",class: "form-control", placeholder: 'Kepala Bagian', autocomplete: "off", required: true %> %>
+      </div>
+      <div class="form-group mb-3">
+        <label class="form-control-label" for="address-<%= city.slug %>">Alamat</label>
+        <%# <%= form.text_area :address, id: "address-#{city.slug}",class: "form-control", placeholder: 'Alamat', autocomplete: "off", required: true, rows: "4", resize: "none" %> %>
+      </div> -->
       <div class="form-group mb-3">
         <label class="form-control-label" for="sub_district-<%= city.slug %>">Jumlah Kecamatan</label>
         <%= form.text_field :sub_district, id: "sub_district-#{city.slug}",class: "form-control", placeholder: 'Jumlah Kecamatan', autocomplete: "off", required: true %>
@@ -42,20 +57,6 @@
       <div class="form-group mb-3">
         <label class="form-control-label" for="village-<%= city.slug %>">Jumlah Kelurahan/Desa</label>
         <%= form.text_field :village, id: "village-#{city.slug}",class: "form-control", placeholder: 'Jumlah Kelurahan/Desa', autocomplete: "off", required: true %>
-      </div>
-    </div>
-    <div class="col">
-      <div class="form-group mb-3">
-        <label class="form-control-label" for="head_of_kesbangpol-<%= city.slug %>">Kepala Kesbangpol</label>
-        <%= form.text_field :head_of_kesbangpol, id: "head_of_kesbangpol-#{city.slug}",class: "form-control", placeholder: 'Kepala Kesbangpol', autocomplete: "off", required: true %>
-      </div>
-      <div class="form-group mb-3">
-        <label class="form-control-label" for="head_division-<%= city.slug %>">Kepala Bagian</label>
-        <%= form.text_field :head_divion, id: "head_division-#{city.slug}",class: "form-control", placeholder: 'Kepala Bagian', autocomplete: "off", required: true %>
-      </div>
-      <div class="form-group mb-3">
-        <label class="form-control-label" for="address-<%= city.slug %>">Alamat</label>
-        <%= form.text_area :address, id: "address-#{city.slug}",class: "form-control", placeholder: 'Alamat', autocomplete: "off", required: true, rows: "4", resize: "none" %>
       </div>
       <div class="form-group mb-3">
         <label class="form-control-label" for="telp-<%= city.slug %>">Nomor Telepon</label>
@@ -90,13 +91,28 @@
         <%= form.text_field :vice_mayor, class: "form-control", placeholder: 'Wakil Bupati/Walikota', autocomplete: "off", required: true %>
       </div>
       <div class="form-group mb-3">
-        <%= label(:city, :area, "Luas Wilayah", class: 'form-control-label') %>
+        <%= label(:city, :area, "Luas Wilayah km", class: 'form-control-label') %> <label><sup>2</sup></label>
         <%= form.text_field :area, class: "form-control", placeholder: 'Luas Wilayah', autocomplete: "off", required: true %>
       </div>
       <div class="form-group mb-3">
         <%= label(:city, :population, "Jumlah Penduduk", class: 'form-control-label') %>
         <%= form.text_field :population, class: "form-control", placeholder: 'Jumlah Penduduk', autocomplete: "off", required: true %>
       </div>
+
+    </div>
+    <div class="col">
+      <!-- <div class="form-group mb-3">
+        <%# <%= label(:city, :head_of_kesbangpol, "Kepala Kesbangpol", class: 'form-control-label') %> %>
+        <%# <%= form.text_field :head_of_kesbangpol, class: "form-control", placeholder: 'Kepala Kesbangpol', autocomplete: "off", required: true %> %>
+      </div>
+      <div class="form-group mb-3">
+        <%# <%= label(:city, :head_division, "Kepala Bagian", class: 'form-control-label') %> %>
+        <%# <%= form.text_field :head_division, class: "form-control", placeholder: 'Kepala Bagian', autocomplete: "off", required: true %> %>
+      </div>
+      <div class="form-group mb-3">
+        <%# <%= label(:city, :address, "Alamat", class: 'form-control-label') %> %>
+        <%# <%= form.text_area :address, class: "form-control", placeholder: 'Alamat', autocomplete: "off", required: true, rows: "4", resize: "none" %> %>
+      </div> -->
       <div class="form-group mb-3">
         <%= label(:city, :sub_district, "Jumlah Kecamatan", class: 'form-control-label') %>
         <%= form.text_field :sub_district, class: "form-control", placeholder: 'Jumlah Kecamatan', autocomplete: "off", required: true %>
@@ -104,20 +120,6 @@
       <div class="form-group mb-3">
         <%= label(:city, :vicevillage_mayor, "Jumlah Kelurahan/Desa", class: 'form-control-label') %>
         <%= form.text_field :village, class: "form-control", placeholder: 'Jumlah Kelurahan/Desa', autocomplete: "off", required: true %>
-      </div>
-    </div>
-    <div class="col">
-      <div class="form-group mb-3">
-        <%= label(:city, :head_of_kesbangpol, "Kepala Kesbangpol", class: 'form-control-label') %>
-        <%= form.text_field :head_of_kesbangpol, class: "form-control", placeholder: 'Kepala Kesbangpol', autocomplete: "off", required: true %>
-      </div>
-      <div class="form-group mb-3">
-        <%= label(:city, :head_division, "Kepala Bagian", class: 'form-control-label') %>
-        <%= form.text_field :head_division, class: "form-control", placeholder: 'Kepala Bagian', autocomplete: "off", required: true %>
-      </div>
-      <div class="form-group mb-3">
-        <%= label(:city, :address, "Alamat", class: 'form-control-label') %>
-        <%= form.text_area :address, class: "form-control", placeholder: 'Alamat', autocomplete: "off", required: true, rows: "4", resize: "none" %>
       </div>
       <div class="form-group mb-3">
         <%= label(:city, :telp, "Nomor Telepon", class: 'form-control-label') %>
