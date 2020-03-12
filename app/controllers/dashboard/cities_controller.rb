@@ -5,7 +5,7 @@ class Dashboard::CitiesController < ApplicationController
   # GET /dashboard/cities.json
   def index
     if policy(:dashboard_city).index?
-      # redirect_to dashboard_city_years_path(current_user.city.slug)
+
     else
       p "=" * 100
       redirect_to dashboard_city_years_path(current_user.city.slug)
@@ -81,6 +81,6 @@ class Dashboard::CitiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def dashboard_city_params
-      params.require(:dashboard_city).permit(:city,:logo_city)
+      params.require(:dashboard_city).permit(:mayor,:population,:sub_district,:telp,:vice_mayor,:village,:email)
     end
 end
