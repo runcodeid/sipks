@@ -13,30 +13,138 @@
   <% end %>
 
   <% if city.slug %>
-    <div class="form-group mb-3">
-      <%= form.text_field :city, id: "city-#{city.slug}",class: "form-control", placeholder: 'Nama Kabupaten/Kota', autocomplete: "off", required: true %>
-    </div>
+  <div class="row">
+    <div class="col">
+      <div class="form-group mb-3">
+        <label class="form-control-label" for="city-<%= city.slug %>">Nama Kabupaten/Kota</label>
+        <%= form.text_field :city, id: "city-#{city.slug}",class: "form-control", placeholder: 'Nama Kabupaten/Kota', autocomplete: "off", required: true %>
+      </div>
+      <div class="form-group mb-3">
+        <label class="form-control-label" for="mayor-<%= city.slug %>">Bupati/Walikota</label>
+        <%= form.text_field :mayor, id: "mayor-#{city.slug}",class: "form-control", placeholder: 'Bupati/Walikota', autocomplete: "off", required: true %>
+      </div>
+      <div class="form-group mb-3">
+        <label class="form-control-label" for="vice_mayor-<%= city.slug %>">Wakil Bupati/Walikota</label>
+        <%= form.text_field :vice_mayor, id: "vice_mayor-#{city.slug}",class: "form-control", placeholder: 'Wakil Bupati/Walikota', autocomplete: "off", required: true %>
+      </div>
+      <div class="form-group mb-3">
+        <label class="form-control-label" for="area-<%= city.slug %>">Luas Wilayah km <sup>2</sup></label>
+        <%= form.text_field :area, id: "area-#{city.slug}",class: "form-control", placeholder: 'Luas Wilayah', autocomplete: "off", required: true %>
+      </div>
+      <div class="form-group mb-3">
+        <label class="form-control-label" for="population-<%= city.slug %>">Jumlah Penduduk</label>
+        <%= form.text_field :population, id: "population-#{city.slug}",class: "form-control", placeholder: 'Jumlah Penduduk', autocomplete: "off", required: true %>
+      </div>
 
-    <div class="form-group">
-      <div class="custom-file">
-        <%= form.file_field :logo_city, id: "logo-city-#{city.slug}", class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
-        <label class="custom-file-label" for="logo-city-<%=city.slug%>">Unggah Logo</label>
+    </div>
+    <div class="col">
+      <!-- <div class="form-group mb-3">
+        <label class="form-control-label" for="head_of_kesbangpol-<%= city.slug %>">Kepala Kesbangpol</label>
+        <%# <%= form.text_field :head_of_kesbangpol, id: "head_of_kesbangpol-#{city.slug}",class: "form-control", placeholder: 'Kepala Kesbangpol', autocomplete: "off", required: true %> %>
+      </div>
+      <div class="form-group mb-3">
+        <label class="form-control-label" for="head_division-<%= city.slug %>">Kepala Bagian</label>
+        <%# <%= form.text_field :head_divion, id: "head_division-#{city.slug}",class: "form-control", placeholder: 'Kepala Bagian', autocomplete: "off", required: true %> %>
+      </div>
+      <div class="form-group mb-3">
+        <label class="form-control-label" for="address-<%= city.slug %>">Alamat</label>
+        <%# <%= form.text_area :address, id: "address-#{city.slug}",class: "form-control", placeholder: 'Alamat', autocomplete: "off", required: true, rows: "4", resize: "none" %> %>
+      </div> -->
+      <div class="form-group mb-3">
+        <label class="form-control-label" for="sub_district-<%= city.slug %>">Jumlah Kecamatan</label>
+        <%= form.text_field :sub_district, id: "sub_district-#{city.slug}",class: "form-control", placeholder: 'Jumlah Kecamatan', autocomplete: "off", required: true %>
+      </div>
+      <div class="form-group mb-3">
+        <label class="form-control-label" for="village-<%= city.slug %>">Jumlah Kelurahan/Desa</label>
+        <%= form.text_field :village, id: "village-#{city.slug}",class: "form-control", placeholder: 'Jumlah Kelurahan/Desa', autocomplete: "off", required: true %>
+      </div>
+      <div class="form-group mb-3">
+        <label class="form-control-label" for="telp-<%= city.slug %>">Nomor Telepon</label>
+        <%= form.text_field :telp, id: "telp-#{city.slug}",class: "form-control", placeholder: 'Nomor Telepon', autocomplete: "off", required: true %>
+      </div>
+      <div class="form-group mb-3">
+        <label class="form-control-label" for="email-<%= city.slug %>">Email</label>
+        <%= form.text_field :email, id: "email-#{city.slug}",class: "form-control", placeholder: 'Email', autocomplete: "off", required: true %>
+      </div>
+      <div class="form-group">
+        <label class="form-control-label" for="logo-<%= city.slug %>">Logo</label>
+        <div class="custom-file">
+          <%= form.file_field :logo_city, id: "logo-city-#{city.slug}", class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
+          <label class="custom-file-label" for="logo-city-<%=city.slug%>">Unggah Logo</label>
+        </div>
       </div>
     </div>
+  </div>
   <% else %>
-    <div class="form-group mb-3">
-      <%= form.text_field :city, class: "form-control", placeholder: 'Nama Kabupaten/Kota', autocomplete: "off", required: true %>
-    </div>
+  <div class="row">
+    <div class="col">
+      <div class="form-group mb-3">
+        <%= label(:city, :city, "Nama Kabupaten/Kota", class: 'form-control-label') %>
+        <%= form.text_field :city, class: "form-control", placeholder: 'Nama Kabupaten/Kota', autocomplete: "off", required: true %>
+      </div>
+      <div class="form-group mb-3">
+        <%= label(:city, :mayor, "Bupati/Walikota", class: 'form-control-label') %>
+        <%= form.text_field :mayor, class: "form-control", placeholder: 'Bupati/Walikota', autocomplete: "off", required: true %>
+      </div>
+      <div class="form-group mb-3">
+        <%= label(:city, :vice_mayor, "Wakil Bupati/Walikota", class: 'form-control-label') %>
+        <%= form.text_field :vice_mayor, class: "form-control", placeholder: 'Wakil Bupati/Walikota', autocomplete: "off", required: true %>
+      </div>
+      <div class="form-group mb-3">
+        <%= label(:city, :area, "Luas Wilayah km", class: 'form-control-label') %> <label><sup>2</sup></label>
+        <%= form.text_field :area, class: "form-control", placeholder: 'Luas Wilayah', autocomplete: "off", required: true %>
+      </div>
+      <div class="form-group mb-3">
+        <%= label(:city, :population, "Jumlah Penduduk", class: 'form-control-label') %>
+        <%= form.text_field :population, class: "form-control", placeholder: 'Jumlah Penduduk', autocomplete: "off", required: true %>
+      </div>
 
-    <div class="form-group">
-      <div class="custom-file">
-        <%= form.file_field :logo_city, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
-        <label class="custom-file-label" for="logo-city">Unggah Logo</label>
+    </div>
+    <div class="col">
+      <!-- <div class="form-group mb-3">
+        <%# <%= label(:city, :head_of_kesbangpol, "Kepala Kesbangpol", class: 'form-control-label') %> %>
+        <%# <%= form.text_field :head_of_kesbangpol, class: "form-control", placeholder: 'Kepala Kesbangpol', autocomplete: "off", required: true %> %>
+      </div>
+      <div class="form-group mb-3">
+        <%# <%= label(:city, :head_division, "Kepala Bagian", class: 'form-control-label') %> %>
+        <%# <%= form.text_field :head_division, class: "form-control", placeholder: 'Kepala Bagian', autocomplete: "off", required: true %> %>
+      </div>
+      <div class="form-group mb-3">
+        <%# <%= label(:city, :address, "Alamat", class: 'form-control-label') %> %>
+        <%# <%= form.text_area :address, class: "form-control", placeholder: 'Alamat', autocomplete: "off", required: true, rows: "4", resize: "none" %> %>
+      </div> -->
+      <div class="form-group mb-3">
+        <%= label(:city, :sub_district, "Jumlah Kecamatan", class: 'form-control-label') %>
+        <%= form.text_field :sub_district, class: "form-control", placeholder: 'Jumlah Kecamatan', autocomplete: "off", required: true %>
+      </div>
+      <div class="form-group mb-3">
+        <%= label(:city, :vicevillage_mayor, "Jumlah Kelurahan/Desa", class: 'form-control-label') %>
+        <%= form.text_field :village, class: "form-control", placeholder: 'Jumlah Kelurahan/Desa', autocomplete: "off", required: true %>
+      </div>
+      <div class="form-group mb-3">
+        <%= label(:city, :telp, "Nomor Telepon", class: 'form-control-label') %>
+        <%= form.text_field :telp, class: "form-control", placeholder: 'Nomor Telepon', autocomplete: "off", required: true %>
+      </div>
+      <div class="form-group mb-3">
+        <%= label(:city, :email, "Email", class: 'form-control-label') %>
+        <%= form.text_field :email, class: "form-control", placeholder: 'Email', autocomplete: "off", required: true %>
+      </div>
+      <div class="form-group">
+        <%= label(:city, "", "Logo", class: 'form-control-label') %>
+        <div class="custom-file">
+          <%= form.file_field :logo_city, class: "custom-file-input", "data-multiple-caption": "{count} files selected", autocomplete: "off", lang: "en" %>
+          <label class="custom-file-label" for="logo-city">Unggah Logo</label>
+        </div>
       </div>
     </div>
+  </div>
+
+
+
+
   <% end %>
 
   <div class="text-center">
-    <%= form.submit 'Simpan', class: "btn btn-neutral my-3" %>
+    <%= form.submit 'Simpan', class: "btn btn-primary my-3" %>
   </div>
 <% end %>
