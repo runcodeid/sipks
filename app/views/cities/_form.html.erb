@@ -14,7 +14,7 @@
 
   <% if city.slug %>
   <div class="row">
-    <div class="col">
+    <div class="col-md">
       <div class="form-group mb-3">
         <label class="form-control-label" for="city-<%= city.slug %>">Nama Kabupaten/Kota</label>
         <%= form.text_field :city, id: "city-#{city.slug}",class: "form-control", placeholder: 'Nama Kabupaten/Kota', autocomplete: "off", required: true %>
@@ -37,7 +37,7 @@
       </div>
 
     </div>
-    <div class="col">
+    <div class="col-md">
       <!-- <div class="form-group mb-3">
         <label class="form-control-label" for="head_of_kesbangpol-<%= city.slug %>">Kepala Kesbangpol</label>
         <%# <%= form.text_field :head_of_kesbangpol, id: "head_of_kesbangpol-#{city.slug}",class: "form-control", placeholder: 'Kepala Kesbangpol', autocomplete: "off", required: true %> %>
@@ -77,7 +77,7 @@
   </div>
   <% else %>
   <div class="row">
-    <div class="col">
+    <div class="col-md">
       <div class="form-group mb-3">
         <%= label(:city, :city, "Nama Kabupaten/Kota", class: 'form-control-label') %>
         <%= form.text_field :city, class: "form-control", placeholder: 'Nama Kabupaten/Kota', autocomplete: "off", required: true %>
@@ -100,7 +100,7 @@
       </div>
 
     </div>
-    <div class="col">
+    <div class="col-md">
       <!-- <div class="form-group mb-3">
         <%# <%= label(:city, :head_of_kesbangpol, "Kepala Kesbangpol", class: 'form-control-label') %> %>
         <%# <%= form.text_field :head_of_kesbangpol, class: "form-control", placeholder: 'Kepala Kesbangpol', autocomplete: "off", required: true %> %>
