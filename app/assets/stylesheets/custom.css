@@ -104,9 +104,6 @@ input:-webkit-autofill:focus{
   border-color: #9D1C2D;
 }
 
-.footer-login{
-  display: none;
-}
 
 .bg-login{
   background-color: #A53040;
@@ -152,4 +149,21 @@ input:-webkit-autofill:focus{
 .dashboard-logo-city{
   height:200px;
   width: 200px;
+}
+
+body.login-body{
+  position: relative;
+  min-height: 100%;
+}
+
+.footer-login{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 60px;
+  width: 100%;
+}
+
+html {
+
 }

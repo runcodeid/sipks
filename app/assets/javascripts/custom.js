@@ -194,4 +194,9 @@ $(".navbar-nav .nav-link").on("click", function(){
    $(this).parents('li.nav-item').children('a.nav-link').addClass("active");
 });
 
-// console.log(location.pathname.split("/")[1]);
+$(window).on('load resize', function() {
+    if ($('body.login-body').height() < 800) {
+        $('body.login-body').css('min-height', '100%');
+        $('#footer-main').addClass('footer-auto-bottom')
+    }
+})
