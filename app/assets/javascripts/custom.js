@@ -184,6 +184,14 @@ $('.btn-ra-detail').on('click', function(){
   );
 });
 
-$('.nav-link').on('click', function(){
-  console.log($(this));
+$('a[href^="/' + location.pathname.split("/")[1] + '"]').parents('li.nav-item').children('a.nav-link').addClass('active');
+$('a[href^="/' + location.pathname.split("/")[1] + '"]').parents('div.sidebar-collapse').addClass('show');
+$('a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
+
+$(".navbar-nav .nav-link").on("click", function(){
+   $(".navbar-nav").find(".active").removeClass("active");
+   $(this).addClass("active");
+   $(this).parents('li.nav-item').children('a.nav-link').addClass("active");
 });
+
+// console.log(location.pathname.split("/")[1]);
