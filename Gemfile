@@ -73,3 +73,4 @@ gem "friendly_id"
 gem "paranoia"
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'figaro'
+gem 'rails_12factor', group: :production
