@@ -267,6 +267,14 @@ permissions =[
         path: 'dashboard_cities_path' #path di rails route
     },
     {
+        name: 'Ubah City Untuk Pengguna', #Penamaan gasan permission nya
+        resource: 'dashboard_city', #nama file di model harus sama
+        action: 'update', #nama function di controller
+        description: 'Ubah City', #gasan penjelasan aja
+        page: false, #ini akan bisa di akses di menu atau tidak
+        path: 'dashboard_city_path' #path di rails route
+    },
+    {
         name: 'Dashboard Year', #Penamaan gasan permission nya
         resource: 'dashboard_year', #nama file di model harus sama
         action: 'index', #nama function di controller

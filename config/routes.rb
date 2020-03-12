@@ -40,7 +40,7 @@ Rails.application.routes.draw do
 
   # scope "/dashboard" do
   namespace :dashboard do #admin,user
-    resources :cities, only: [:show,:index] do #admin
+    resources :cities, only: [:show,:index,:update] do #admin
       resources :years, only: [:show,:index] do #admin,user
         resources :action_plans do #admin,user
           resources :b_fours, only: [:update] #admin,user
