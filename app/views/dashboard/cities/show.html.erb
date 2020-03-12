@@ -84,10 +84,10 @@
               <h4 class="mb-0">
                 <%= dashboard_year.year %>
               </h4>
-              <small><%= dashboard_year.action_plans.where('city_id = ?', @city_param_url.id).count %> Rencana Aksi </small>
+              <small><%= dashboard_year.action_plans.where('city_id = ?', @dashboard_city.id).count %> Rencana Aksi </small>
             </div>
             <div class="col-auto">
-              <%= link_to 'Lihat', dashboard_city_year_action_plans_path(@city_param_url,dashboard_year), class:'btn btn-sm btn-primary'%>
+              <%= link_to 'Lihat', dashboard_city_year_action_plans_path(@dashboard_city, dashboard_year), class:'btn btn-sm btn-primary'%>
             </div>
           </div>
         </div>

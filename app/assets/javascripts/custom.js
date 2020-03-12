@@ -183,3 +183,7 @@ $('.btn-ra-detail').on('click', function(){
     ($(target).hasClass('show') ? 'Lihat Detail' : 'Sembunyikan Detail')
   );
 });
+
+$('.nav-link').on('click', function(){
+  console.log($(this));
+});
