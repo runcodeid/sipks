@@ -1,28 +1,103 @@
-<p id="notice"><%= notice %></p>
-Detail city andaki luas wilayah
-<br/>
-<%= @dashboard_city.city%>
+<% content_for :header do %>
+  <div class="header bg-primary pb-7">
 
-<h1>Years</h1>
+    <% content_for :breadcrumb do %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Tahun</th>
-      <th>Banyak RA</th>
-      <th>Tools</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @dashboard_years.each do |dashboard_year| %>
-      <tr>
-        <td><%= dashboard_year.year %></td>
-        <td><%= dashboard_year.action_plans.where('city_id = ?', @dashboard_city.id).count %></td>
-        <td><%= link_to 'Show', dashboard_city_year_action_plans_path(@dashboard_city,dashboard_year) %></td>
-      </tr>
     <% end %>
-  </tbody>
-</table>
+    <% content_for :header_button do %>
 
-<br>
+    <% end %>
+    <%= render partial: 'layouts/header_all'%>
+  </div>
+<% end %>
+
+<% content_for :isi_content do %>
+<div class="row mt--8">
+  <div class="col-xl">
+    <div class="card">
+      <div class="card-header border-0">
+        <div class="row align-items-center">
+          <div class="col-auto">
+            <% if (@dashboard_city.logo_city.url(:thumb) != '/images/thumb/missing.png')%>
+              <%= image_tag @dashboard_city.logo_city.url(:thumb), style: "width: 109px; height: 160px" %>
+            <% else %>
+              <%= image_tag 'img/no_image.png', style: "width: 130px; height: 130px" %>
+            <% end %>
+          </div>
+          <div class="col pl-4">
+            <div class="row">
+              <h2 class="mb-0"><%= @dashboard_city.city %></h2>
+            </div>
+            <div class="row">
+              <div class="col pl-0">
+                <h5 class="mb-0">
+                  Walikota/Bupati : <%= @dashboard_city.mayor %>
+                </h5>
+                <h5 class="mb-0">
+                  Wakil Walikota/Bupati: <%= @dashboard_city.vice_mayor %>
+                </h5>
+                <!-- <h5 class="mb-0">
+                  <%# Kepala Kesbangpol : <%= @city_param_url.head_of_kesbangpol %> %>
+                </h5>
+                <h5 class="mb-0">
+                  <%# Head of Division : <%= @city_param_url.head_division %> %>
+                </h5>
+                <h5 class="mb-0">
+                  <%# Alamat : <%= @city_param_url.address %> %>
+                </h5> -->
+                <h5 class="mb-0">
+                  Telp : <%= @dashboard_city.telp %>
+                </h5>
+                <h5 class="mb-0">
+                  Email : <%= @dashboard_city.email %>
+                </h5>
+              </div>
+              <div class="col">
+                <h5 class="mb-0">
+                  Luas Wilayah : <%= @dashboard_city.area %> km<sup>2</sup>
+                </h5>
+                <h5 class="mb-0">
+                  Jumlah Penduduk : <%= @dashboard_city.population %>
+                </h5>
+                <h5 class="mb-0">
+                  Jumlah Kecamatan : <%= @dashboard_city.sub_district %>
+                </h5>
+                <h5 class="mb-0">
+                  Jumlah Desa/Kelurahan : <%= @dashboard_city.village %>
+                </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+<% @dashboard_years.sort{|a,b|b.year<=>a.year}.each do |dashboard_year| %>
+    <div class="col-xl-4">
+      <div class="card">
+        <div class="card-body">
+          <div class="row align-items-center">
+            <div class="col ml--2">
+              <h4 class="mb-0">
+                <%= dashboard_year.year %>
+              </h4>
+              <small><%= dashboard_year.action_plans.where('city_id = ?', @city_param_url.id).count %> Rencana Aksi </small>
+            </div>
+            <div class="col-auto">
+              <%= link_to 'Lihat', dashboard_city_year_action_plans_path(@city_param_url,dashboard_year), class:'btn btn-sm btn-primary'%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<% end %>
+</div>
+
+<% end %>
+<% if notice %>
+  <div class="notifikasi" data-notifikasi="<%= notice %>"></div>
+<% end %>
+<%= render partial: 'layouts/body' %>
