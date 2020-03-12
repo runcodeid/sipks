@@ -49,6 +49,8 @@ test:
 #
 production:
   <<: *default
-  database: sipks_production
-  username: sipks
-  password: <%= ENV['SIPKS_DATABASE_PASSWORD'] %>
+  host: dno6xji1n8fm828n.cbetxkdyhwsb.us-east-1.rds.amazonaws.com
+  database: qlrvcslvycr8ugb4
+  username: njekrneid5mutqeh
+  #password: <%= ENV['SIPKS_DATABASE_PASSWORD'] %>
+  password: eikfj82wy7nyfggy
