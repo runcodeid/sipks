@@ -184,9 +184,15 @@ $('.btn-ra-detail').on('click', function(){
   );
 });
 
-$('a[href^="/' + location.pathname.split("/")[1] + '"]').parents('li.nav-item').children('a.nav-link').addClass('active');
-$('a[href^="/' + location.pathname.split("/")[1] + '"]').parents('div.sidebar-collapse').addClass('show');
-$('a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
+if (location.pathname.split("/")[1]== ''){
+  $('#nav-dashboard').addClass('active');
+}else{
+  $('a[href^="/' + location.pathname.split("/")[1] + '"]').parents('li.nav-item').children('a.nav-link').addClass('active');
+  $('a[href^="/' + location.pathname.split("/")[1] + '"]').parents('div.sidebar-collapse').addClass('show');
+  $('a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
+}
+
+
 
 $(".navbar-nav .nav-link").on("click", function(){
    $(".navbar-nav").find(".active").removeClass("active");
