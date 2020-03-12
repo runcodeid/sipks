@@ -51,6 +51,8 @@ class Dashboard::CitiesController < ApplicationController
   # PATCH/PUT /dashboard/cities/1
   # PATCH/PUT /dashboard/cities/1.json
   def update
+
+    authorize @dashboard_city
     respond_to do |format|
       if @dashboard_city.update(dashboard_city_params)
         format.html { redirect_to @dashboard_city, notice: 'City was successfully updated.' }
