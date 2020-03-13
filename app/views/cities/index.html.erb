@@ -56,7 +56,11 @@
       <div class="modal-body p-0">
         <div class="card bg-secondary border-0 mb-0">
           <div class="card-body px-lg-5 py-lg-5">
-            <div class="h3 text-center text-muted mb-4">Kabupaten/Kota</div>
+            <div class="h3 text-center text-muted mb-4">Kabupaten/Kota
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+              </button>
+            </div>
             <%= render partial: 'form', locals: {city: City.new} %>
           </div>
         </div>
@@ -72,7 +76,11 @@
       <div class="modal-body p-0">
         <div class="card bg-secondary border-0 mb-0">
           <div class="card-body px-lg-5 py-lg-5">
-            <div class="h3 text-center text-muted mb-4">Kabupaten/Kota</div>
+            <div class="h3 text-center text-muted mb-4">Kabupaten/Kota
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+              </button>
+            </div>
             <%= render partial: 'form', locals: {city: city} %>
           </div>
         </div>

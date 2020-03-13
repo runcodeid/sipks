@@ -80,7 +80,11 @@
       <div class="modal-body p-0">
         <div class="card bg-secondary border-0 mb-0">
           <div class="card-body px-lg-5 py-lg-5">
-            <div class="h3 text-center text-muted mb-4">Management User</div>
+            <div class="h3 text-center text-muted mb-4">Management User
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+              </button>
+            </div>
             <%= render partial: 'form', locals: {user: User.new} %>
           </div>
         </div>
@@ -96,7 +100,11 @@
       <div class="modal-body p-0">
         <div class="card bg-secondary border-0 mb-0">
           <div class="card-body px-lg-5 py-lg-5">
-            <div class="h3 text-center text-muted mb-4">User</div>
+            <div class="h3 text-center text-muted mb-4">User
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+              </button>
+            </div>
             <%= render partial: 'form', locals: {user: user} %>
           </div>
         </div>
