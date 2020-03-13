@@ -1,38 +1,69 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-<%= form_for(resource, as: resource_name, url: user_registration_path(), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<% content_for :header do %>
+<div class="header bg-primary pb-6">
+  <div class="container-fluid">
+    <div class="header-body">
+      <div class="row align-items-center py-4">
+        <div class="col-lg-6 col-7">
+          <h6 class="h2 text-white d-inline-block mb-0">Ganti Password</h6>
+          <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+              <li class="breadcrumb-item"><a href="<%= root_path %>"><i class="fas fa-home"></i></a></li>
+              <li class="breadcrumb-item"><a href="<%= edit_user_registration_path %>">Ganti Password</a></li>
+              <!-- <li class="breadcrumb-item active" aria-current="page">Roles</li> -->
+            </ol>
+          </nav>
+        </div>
+        <div class="col-lg-6 col-5 text-right">
+        </div>
+      </div>
+    </div>
   </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
+</div>
 <% end %>
-<%= link_to "Bebulik", root_path  %>
+
+<% content_for :isi_content do %>
+
+<div class="row">
+  <div class="col">
+    <div class="card">
+      <div class="card-body">
+        <%= form_for(resource, as: resource_name, url: user_registration_path(), html: { method: :put }) do |f| %>
+
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+          <% end %>
+
+          <div class="form-group mb-3">
+            <label class="form-control-label" for="user_current_password">Password Lama</label>
+            <%= f.password_field :current_password, autocomplete: "current-password", class:"form-control" %>
+            <div class="invalid-feedback">
+              <%= resource.errors[:current_password][0] %>
+            </div>
+          </div>
+
+          <div class="form-group mb-3">
+            <label class="form-control-label" for="user_password">Password Baru</label>
+            <%= f.password_field :password, autocomplete: "new-password", class:"form-control" %>
+            <div class="invalid-feedback">
+              <%= resource.errors[:password][0] %>
+            </div>
+          </div>
+
+          <div class="form-group mb-3">
+            <label class="form-control-label" for="user_password_confirmation">Konfirmasi Password Baru</label>
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control" %>
+            <div class="invalid-feedback">
+              <%= resource.errors[:password_confirmation][0] %>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <%= f.submit 'Simpan', class: "btn btn-primary my-3" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+<%= render partial: 'layouts/body' %>
