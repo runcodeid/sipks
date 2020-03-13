@@ -140,8 +140,9 @@
             <!-- <a href="#!" class="dropdown-item">
               <i class="ni ni-single-02"></i>
               <span>My profile</span>
-            </a>
-            <div class="dropdown-divider"></div> -->
+            </a> -->
+            <%= link_to "Change your password", edit_user_registration_path%>
+            <div class="dropdown-divider"></div>
             <% if user_signed_in? %>
               <%= link_to destroy_user_session_path, class: "dropdown-item" do %>
                 <i class="ni ni-user-run"></i>
