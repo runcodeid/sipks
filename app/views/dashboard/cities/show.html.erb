@@ -27,6 +27,11 @@
           <div class="col pl-4">
             <div class="row">
               <h2 class="mb-0"><%= @dashboard_city.city %></h2>
+              <span data-toggle="modal" data-target="#edit-dashboard-city">
+                <button type="button" class="btn btn-sm btn-outline-primary border-0" data-toggle="tooltip" data-placement="top" title="Ubah">
+                  <i class="fa fa-edit"></i>
+                </button>
+              </span>
             </div>
             <div class="row">
               <div class="col pl-0">
@@ -94,6 +99,26 @@
       </div>
     </div>
 <% end %>
+</div>
+
+<div class="modal fade modal-new" id="edit-dashboard-city" tabindex="-1" role="dialog" aria-labeledby="edit-dashboard-city" aria-hidden="true">
+  <div class="modal-dialog modal- modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body p-0">
+        <div class="card bg-secondary border-0 mb-0">
+          <div class="card-body px-lg-5 py-lg-5">
+            <div class="">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="h3 text-center text-muted mb-4"><%= @dashboard_city.city %></div>
+            <%= render partial: 'dashboard/cities/form', locals: {dashboard_city: @dashboard_city} %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <% end %>

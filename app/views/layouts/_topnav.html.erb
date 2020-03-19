@@ -141,9 +141,12 @@
               <i class="ni ni-single-02"></i>
               <span>My profile</span>
             </a> -->
-            <%= link_to "Change your password", edit_user_registration_path%>
-            <div class="dropdown-divider"></div>
             <% if user_signed_in? %>
+              <%= link_to edit_user_registration_path, class: "dropdown-item" do %>
+                <i class="ni ni-key-25"></i>
+                <span>Ganti Password</span>
+              <% end %>
+              <div class="dropdown-divider"></div>
               <%= link_to destroy_user_session_path, class: "dropdown-item" do %>
                 <i class="ni ni-user-run"></i>
                 <span>Keluar</span>
